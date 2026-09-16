@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-16T17:43:29+00:00",
+ "generado": "2026-09-16T17:55:27+00:00",
  "universo": [
   {
    "simbolo": "SPY",
@@ -169,64 +169,64 @@
  ],
  "precios": {
   "SPY": {
-   "precio": 759.835,
-   "cambio_pct": 0.32281721,
+   "precio": 759.565,
+   "cambio_pct": 0.28716847,
    "cierre_previo": 757.39001,
    "maximo_52": 779.37,
    "minimo_52": 629.28003,
    "fecha": "2026-09-16"
   },
   "QQQ": {
-   "precio": 709.58,
-   "cambio_pct": 0.71536352,
+   "precio": 709.08,
+   "cambio_pct": 0.64439522,
    "cierre_previo": 704.53998,
    "maximo_52": 748.65002,
    "minimo_52": 555.59998,
    "fecha": "2026-09-16"
   },
   "DIA": {
-   "precio": 521.755,
-   "cambio_pct": 0.10072704,
+   "precio": 521.37,
+   "cambio_pct": 0.026863292,
    "cierre_previo": 521.22998,
    "maximo_52": 546.75,
    "minimo_52": 450.44,
    "fecha": "2026-09-16"
   },
   "IWM": {
-   "precio": 286.615,
-   "cambio_pct": 0.51728459,
+   "precio": 286.42,
+   "cambio_pct": 0.44889713,
    "cierre_previo": 285.14001,
    "maximo_52": 305.17999,
    "minimo_52": 228.89999,
    "fecha": "2026-09-16"
   },
   "EWJ": {
-   "precio": 98.025,
-   "cambio_pct": 1.14012,
+   "precio": 97.98,
+   "cambio_pct": 1.093687,
    "cierre_previo": 96.92,
    "maximo_52": 98.79,
    "minimo_52": 78.21,
    "fecha": "2026-09-16"
   },
   "EWH": {
-   "precio": 22.435,
-   "cambio_pct": -0.15576019,
+   "precio": 22.425,
+   "cambio_pct": -0.20026397,
    "cierre_previo": 22.47,
    "maximo_52": 24.66,
    "minimo_52": 20.6,
    "fecha": "2026-09-16"
   },
   "VGK": {
-   "precio": 89.18,
-   "cambio_pct": 0.24730319,
+   "precio": 89.205,
+   "cambio_pct": 0.27540571,
    "cierre_previo": 88.96,
    "maximo_52": 93.29,
    "minimo_52": 77.82,
    "fecha": "2026-09-16"
   },
   "EEM": {
-   "precio": 66.24,
-   "cambio_pct": 0.72992374,
+   "precio": 66.195,
+   "cambio_pct": 0.66149308,
    "cierre_previo": 65.76,
    "maximo_52": 71.57,
    "minimo_52": 51.82,
@@ -241,72 +241,72 @@
    "fecha": "2026-09-16"
   },
   "IEF": {
-   "precio": 91.175,
-   "cambio_pct": 0.3908834,
+   "precio": 91.185,
+   "cambio_pct": 0.40189419,
    "cierre_previo": 90.82,
    "maximo_52": 98.050003,
    "minimo_52": 90.75,
    "fecha": "2026-09-16"
   },
   "TLT": {
-   "precio": 81.21,
-   "cambio_pct": 0.61950306,
+   "precio": 81.245,
+   "cambio_pct": 0.6628682,
    "cierre_previo": 80.71,
    "maximo_52": 92.19,
    "minimo_52": 80.46,
    "fecha": "2026-09-16"
   },
   "LQD": {
-   "precio": 104.91,
-   "cambio_pct": 0.60414387,
+   "precio": 104.92,
+   "cambio_pct": 0.61373344,
    "cierre_previo": 104.28,
    "maximo_52": 112.93,
    "minimo_52": 104.050003,
    "fecha": "2026-09-16"
   },
   "HYG": {
-   "precio": 78.655,
-   "cambio_pct": 0.35085833,
+   "precio": 78.67,
+   "cambio_pct": 0.36999586,
    "cierre_previo": 78.38,
    "maximo_52": 81.36,
    "minimo_52": 78.38,
    "fecha": "2026-09-16"
   },
   "GLD": {
-   "precio": 398.41,
-   "cambio_pct": 1.080808,
+   "precio": 398.34,
+   "cambio_pct": 1.063049,
    "cierre_previo": 394.14999,
    "maximo_52": 509.70001,
    "minimo_52": 333.81,
    "fecha": "2026-09-16"
   },
   "SLV": {
-   "precio": 58.175,
-   "cambio_pct": 1.12116,
+   "precio": 58.12,
+   "cambio_pct": 1.025554,
    "cierre_previo": 57.53,
    "maximo_52": 109.83,
    "minimo_52": 37.35,
    "fecha": "2026-09-16"
   },
   "CPER": {
-   "precio": 38.98,
-   "cambio_pct": 0.8016598,
+   "precio": 38.97,
+   "cambio_pct": 0.77579996,
    "cierre_previo": 38.67,
    "maximo_52": 41.29,
    "minimo_52": 28.2,
    "fecha": "2026-09-16"
   },
   "USO": {
-   "precio": 156.56,
-   "cambio_pct": -3.27444,
+   "precio": 156.61,
+   "cambio_pct": -3.24354,
    "cierre_previo": 161.86,
    "maximo_52": 163.35001,
    "minimo_52": 65.99,
    "fecha": "2026-09-16"
   },
   "VIXY": {
-   "precio": 17.45,
-   "cambio_pct": -0.45636442,
+   "precio": 17.455,
+   "cambio_pct": -0.42784189,
    "cierre_previo": 17.53,
    "maximo_52": 39.7,
    "minimo_52": 16.47,
@@ -321,112 +321,112 @@
    "fecha": "2026-09-16"
   },
   "XLE": {
-   "precio": 64.685,
-   "cambio_pct": -1.88837,
+   "precio": 64.68,
+   "cambio_pct": -1.89595,
    "cierre_previo": 65.93,
    "maximo_52": 66.17,
    "minimo_52": 42.35,
    "fecha": "2026-09-16"
   },
   "XLF": {
-   "precio": 56.555,
-   "cambio_pct": -0.51890674,
+   "precio": 56.58,
+   "cambio_pct": -0.47493137,
    "cierre_previo": 56.85,
    "maximo_52": 58.6,
    "minimo_52": 47.67,
    "fecha": "2026-09-16"
   },
   "XLK": {
-   "precio": 185.16,
-   "cambio_pct": 0.77282816,
+   "precio": 185.21,
+   "cambio_pct": 0.80004053,
    "cierre_previo": 183.74001,
    "maximo_52": 198.73,
    "minimo_52": 126.68,
    "fecha": "2026-09-16"
   },
   "XLU": {
-   "precio": 41.44,
-   "cambio_pct": 0.290417,
+   "precio": 41.495,
+   "cambio_pct": 0.42352446,
    "cierre_previo": 41.32,
    "maximo_52": 47.8,
    "minimo_52": 41.29,
    "fecha": "2026-09-16"
   },
   "XLY": {
-   "precio": 111.265,
-   "cambio_pct": 0.34722471,
+   "precio": 111.28,
+   "cambio_pct": 0.36075285,
    "cierre_previo": 110.88,
    "maximo_52": 125.010002,
    "minimo_52": 105.19,
    "fecha": "2026-09-16"
   },
   "XLP": {
-   "precio": 83.975,
-   "cambio_pct": 0.29260317,
+   "precio": 84.025,
+   "cambio_pct": 0.35231892,
    "cierre_previo": 83.73,
    "maximo_52": 90.14,
    "minimo_52": 75.16,
    "fecha": "2026-09-16"
   },
   "XLV": {
-   "precio": 168.45,
-   "cambio_pct": 0.4711895,
+   "precio": 168.51,
+   "cambio_pct": 0.50697621,
    "cierre_previo": 167.66,
    "maximo_52": 176.60001,
    "minimo_52": 133.73,
    "fecha": "2026-09-16"
   },
   "SMH": {
-   "precio": 548.89,
-   "cambio_pct": 1.25067,
+   "precio": 549.68,
+   "cambio_pct": 1.3964,
    "cierre_previo": 542.10999,
    "maximo_52": 671.83002,
    "minimo_52": 301.37,
    "fecha": "2026-09-16"
   },
   "MRVL": {
-   "precio": 228.42,
-   "cambio_pct": 3.031125,
+   "precio": 229.64,
+   "cambio_pct": 3.58142,
    "cierre_previo": 221.7,
    "maximo_52": 329.88,
    "minimo_52": 67.36,
    "fecha": "2026-09-16"
   },
   "EUR/USD": {
-   "precio": 1.15337,
-   "cambio_pct": -0.071911281,
+   "precio": 1.15325,
+   "cambio_pct": -0.082308092,
    "cierre_previo": 1.1542,
    "maximo_52": 1.20656,
    "minimo_52": 1.13239,
    "fecha": "2026-09-16"
   },
   "USD/JPY": {
-   "precio": 155.13499,
-   "cambio_pct": 0.013635147,
+   "precio": 155.1268,
+   "cambio_pct": 0.0083551539,
    "cierre_previo": 155.11384,
    "maximo_52": 164.08805,
    "minimo_52": 145.476,
    "fecha": "2026-09-16"
   },
   "BTC/USD": {
-   "precio": 75532.01,
-   "cambio_pct": -0.14868236,
+   "precio": 75469.46,
+   "cambio_pct": -0.23137181,
    "cierre_previo": 75644.48,
    "maximo_52": 126199.63,
    "minimo_52": 57800.19,
    "fecha": "2026-09-16"
   },
   "ETH/USD": {
-   "precio": 2378.91,
-   "cambio_pct": -0.80683496,
+   "precio": 2377.3,
+   "cambio_pct": -0.87396696,
    "cierre_previo": 2398.26,
    "maximo_52": 4752.56982,
    "minimo_52": 1507.050049,
    "fecha": "2026-09-16"
   },
   "SOL/USD": {
-   "precio": 96.15,
-   "cambio_pct": -0.7535095,
+   "precio": 96.5,
+   "cambio_pct": -0.39223782,
    "cierre_previo": 96.88,
    "maximo_52": 253.51,
    "minimo_52": 60.13,
@@ -436,13 +436,23 @@
  "titulares": [
   {
    "fuente": "Economia",
-   "titular": "SEC proposes to end shareholder vote oversight, a blow to reformers",
-   "fecha": "2026-09-16 17:24:49"
+   "titular": "Bank of Canada saw elevated inflation risks at September meeting, minutes show",
+   "fecha": "2026-09-16 17:35:49"
   },
   {
    "fuente": "Economia",
    "titular": "European shares rise as oil pauses ahead of Fed rate decision",
-   "fecha": "2026-09-16 17:12:47"
+   "fecha": "2026-09-16 17:31:14"
+  },
+  {
+   "fuente": "Economia",
+   "titular": "US pays $725 million to UN, easing its debt dispute with the world body",
+   "fecha": "2026-09-16 17:30:56"
+  },
+  {
+   "fuente": "Economia",
+   "titular": "SEC proposes to end shareholder vote oversight, a blow to reformers",
+   "fecha": "2026-09-16 17:24:49"
   },
   {
    "fuente": "Economia",
@@ -465,14 +475,19 @@
    "fecha": "2026-09-16 16:37:14"
   },
   {
-   "fuente": "Economia",
-   "titular": "Saudi Aramco targets half East-West pipeline capacity within days - Bloomberg",
-   "fecha": "2026-09-16 16:10:44"
+   "fuente": "Mercados",
+   "titular": "Exclusive-OpenAI’s rogue agents probed Hugging Face for weaknesses two months before major hack",
+   "fecha": "2026-09-16 17:42:34"
   },
   {
-   "fuente": "Economia",
-   "titular": "Robust US retail sales underscore economy’s resilience; inflation pressures building",
-   "fecha": "2026-09-16 16:00:58"
+   "fuente": "Mercados",
+   "titular": "Impulse Space raises $308M in Series D extension on space mobility demand",
+   "fecha": "2026-09-16 17:38:39"
+  },
+  {
+   "fuente": "Mercados",
+   "titular": "Pentagon CTO says government should not take stakes in AI companies",
+   "fecha": "2026-09-16 17:28:31"
   },
   {
    "fuente": "Mercados",
@@ -498,21 +513,6 @@
    "fuente": "Mercados",
    "titular": "Apollo warns cloud computing debt grows riskier amid AI spending",
    "fecha": "2026-09-16 17:14:36"
-  },
-  {
-   "fuente": "Mercados",
-   "titular": "Exclusive-OpenAI’s rogue agents probed Hugging Face for weaknesses two months before major hack",
-   "fecha": "2026-09-16 17:06:53"
-  },
-  {
-   "fuente": "Mercados",
-   "titular": "Nike stock outlook: trading at 12-year lows with turnaround unlikely before 2027",
-   "fecha": "2026-09-16 16:51:00"
-  },
-  {
-   "fuente": "Mercados",
-   "titular": "Anthropic to fold Claude AI features into one interface, launches document tools",
-   "fecha": "2026-09-16 16:48:57"
   },
   {
    "fuente": "Divisas",
@@ -556,6 +556,16 @@
   },
   {
    "fuente": "Materias",
+   "titular": "US DFC approves $500 million in guarantees to boost US exports to emerging markets",
+   "fecha": "2026-09-16 17:43:30"
+  },
+  {
+   "fuente": "Materias",
+   "titular": "Oil slips as Saudi Arabia offers more crude via Oman",
+   "fecha": "2026-09-16 17:42:51"
+  },
+  {
+   "fuente": "Materias",
    "titular": "Continental Resources signs Venezuela oil development deal",
    "fecha": "2026-09-16 17:24:44"
   },
@@ -576,11 +586,6 @@
   },
   {
    "fuente": "Materias",
-   "titular": "Oil slips as Saudi Arabia offers more crude via Oman",
-   "fecha": "2026-09-16 15:49:30"
-  },
-  {
-   "fuente": "Materias",
    "titular": "Raw sugar edges lower as oil prices weigh on market",
    "fecha": "2026-09-16 15:49:03"
   },
@@ -590,9 +595,14 @@
    "fecha": "2026-09-16 14:46:10"
   },
   {
-   "fuente": "Materias",
-   "titular": "Wheat futures ease on technical selling and weaker crude oil",
-   "fecha": "2026-09-16 13:57:24"
+   "fuente": "Cripto",
+   "titular": "Phoenix Enables SOL as Collateral for Perpetual Futures Trading",
+   "fecha": "2026-09-16 17:30:36"
+  },
+  {
+   "fuente": "Cripto",
+   "titular": "Bitcoin extends losses after Clarity Act fails; eyes now on Fed for expected hike",
+   "fecha": "2026-09-16 17:27:03"
   },
   {
    "fuente": "Cripto",
@@ -611,11 +621,6 @@
   },
   {
    "fuente": "Cripto",
-   "titular": "Bitcoin drops below $76k as Clarity vote fails; Fed rate hike in focus",
-   "fecha": "2026-09-16 13:40:40"
-  },
-  {
-   "fuente": "Cripto",
    "titular": "BASIS.pro Expands On-Chain Infrastructure with XDC Network Partnership and Zypher DAO as Auto Earn Goes Live",
    "fecha": "2026-09-16 07:30:36"
   },
@@ -628,11 +633,6 @@
    "fuente": "Cripto",
    "titular": "Bitcoin adds to losses, falls nearly 4% after Clarity Act fails Senate vote",
    "fecha": "2026-09-15 21:49:19"
-  },
-  {
-   "fuente": "Cripto",
-   "titular": "XRP Falls 11% In Rout",
-   "fecha": "2026-09-15 18:44:04"
   },
   {
    "fuente": "CNBC mercados",
@@ -677,7 +677,7 @@
   {
    "fuente": "CNBC economia",
    "titular": "'Science fiction': Transport companies — the backbone of economy — are sounding alarm on fuel prices",
-   "fecha": "Wed, 16 Sep 2026 17:29:19 GMT"
+   "fecha": "Wed, 16 Sep 2026 17:50:28 GMT"
   },
   {
    "fuente": "CNBC economia",
@@ -721,6 +721,11 @@
   },
   {
    "fuente": "Yahoo Finance",
+   "titular": "Stock market today: S&P 500 and Nasdaq rise ahead of crucial Fed interest rate decision",
+   "fecha": "2026-09-16T08:03:56Z"
+  },
+  {
+   "fuente": "Yahoo Finance",
    "titular": "Fed meeting live updates: Fed interest rate decision looms, with traders anticipating first hike in 3 years",
    "fecha": "2026-09-15T14:34:52Z"
   },
@@ -728,6 +733,11 @@
    "fuente": "Yahoo Finance",
    "titular": "Mortgage and refinance interest rates today, Wednesday, September 16, 2026: Rates ease somewhat ahead of the Fed's rate decision",
    "fecha": "2026-09-16T10:00:00Z"
+  },
+  {
+   "fuente": "Yahoo Finance",
+   "titular": "Rich Dad Poor Dad author warns biggest crash in history has started",
+   "fecha": "2026-09-15T17:26:03Z"
   },
   {
    "fuente": "Yahoo Finance",
@@ -741,18 +751,8 @@
   },
   {
    "fuente": "Yahoo Finance",
-   "titular": "Rich Dad Poor Dad author warns biggest crash in history has started",
-   "fecha": "2026-09-15T17:26:03Z"
-  },
-  {
-   "fuente": "Yahoo Finance",
    "titular": "Wall Street bets on a rate hike, but the Fed decision could be a close call",
    "fecha": "2026-09-16T17:12:12Z"
-  },
-  {
-   "fuente": "Yahoo Finance",
-   "titular": "S&P 500 Trucking Stock Craters On CFO's Warning",
-   "fecha": "2026-09-16T17:00:50Z"
   }
  ],
  "fallos": []
