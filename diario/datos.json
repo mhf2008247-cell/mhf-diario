@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-16T17:55:27+00:00",
+ "generado": "2026-09-16T18:49:27+00:00",
  "universo": [
   {
    "simbolo": "SPY",
@@ -155,369 +155,343 @@
    "simbolo": "BTC/USD",
    "nombre": "Bitcoin",
    "bloque": "cripto"
-  },
-  {
-   "simbolo": "ETH/USD",
-   "nombre": "Ethereum",
-   "bloque": "cripto"
-  },
-  {
-   "simbolo": "SOL/USD",
-   "nombre": "Solana",
-   "bloque": "cripto"
   }
  ],
  "precios": {
   "SPY": {
-   "precio": 759.565,
-   "cambio_pct": 0.28716847,
+   "precio": 759.015,
+   "cambio_pct": 0.21455067,
    "cierre_previo": 757.39001,
    "maximo_52": 779.37,
    "minimo_52": 629.28003,
    "fecha": "2026-09-16"
   },
   "QQQ": {
-   "precio": 709.08,
-   "cambio_pct": 0.64439522,
+   "precio": 709.3,
+   "cambio_pct": 0.67562127,
    "cierre_previo": 704.53998,
    "maximo_52": 748.65002,
    "minimo_52": 555.59998,
    "fecha": "2026-09-16"
   },
   "DIA": {
-   "precio": 521.37,
-   "cambio_pct": 0.026863292,
+   "precio": 520.19,
+   "cambio_pct": -0.1995243,
    "cierre_previo": 521.22998,
    "maximo_52": 546.75,
    "minimo_52": 450.44,
    "fecha": "2026-09-16"
   },
   "IWM": {
-   "precio": 286.42,
-   "cambio_pct": 0.44889713,
+   "precio": 285.53,
+   "cambio_pct": 0.13676977,
    "cierre_previo": 285.14001,
    "maximo_52": 305.17999,
    "minimo_52": 228.89999,
    "fecha": "2026-09-16"
   },
   "EWJ": {
-   "precio": 97.98,
-   "cambio_pct": 1.093687,
+   "precio": 97.8,
+   "cambio_pct": 0.90796724,
    "cierre_previo": 96.92,
    "maximo_52": 98.79,
    "minimo_52": 78.21,
    "fecha": "2026-09-16"
   },
   "EWH": {
-   "precio": 22.425,
-   "cambio_pct": -0.20026397,
+   "precio": 22.4,
+   "cambio_pct": -0.31152343,
    "cierre_previo": 22.47,
    "maximo_52": 24.66,
    "minimo_52": 20.6,
    "fecha": "2026-09-16"
   },
   "VGK": {
-   "precio": 89.205,
-   "cambio_pct": 0.27540571,
+   "precio": 89.03,
+   "cambio_pct": 0.07868808,
    "cierre_previo": 88.96,
    "maximo_52": 93.29,
    "minimo_52": 77.82,
    "fecha": "2026-09-16"
   },
   "EEM": {
-   "precio": 66.195,
-   "cambio_pct": 0.66149308,
+   "precio": 66.085,
+   "cambio_pct": 0.49421815,
    "cierre_previo": 65.76,
    "maximo_52": 71.57,
    "minimo_52": 51.82,
    "fecha": "2026-09-16"
   },
   "SHY": {
-   "precio": 81.425,
-   "cambio_pct": 0.14143702,
+   "precio": 81.305,
+   "cambio_pct": -0.0061463027,
    "cierre_previo": 81.31,
    "maximo_52": 83.2,
-   "minimo_52": 81.3,
+   "minimo_52": 81.28,
    "fecha": "2026-09-16"
   },
   "IEF": {
-   "precio": 91.185,
-   "cambio_pct": 0.40189419,
+   "precio": 91.02,
+   "cambio_pct": 0.22021615,
    "cierre_previo": 90.82,
    "maximo_52": 98.050003,
    "minimo_52": 90.75,
    "fecha": "2026-09-16"
   },
   "TLT": {
-   "precio": 81.245,
-   "cambio_pct": 0.6628682,
+   "precio": 81.405,
+   "cambio_pct": 0.86110881,
    "cierre_previo": 80.71,
    "maximo_52": 92.19,
    "minimo_52": 80.46,
    "fecha": "2026-09-16"
   },
   "LQD": {
-   "precio": 104.92,
-   "cambio_pct": 0.61373344,
+   "precio": 104.845,
+   "cambio_pct": 0.54181169,
    "cierre_previo": 104.28,
    "maximo_52": 112.93,
    "minimo_52": 104.050003,
    "fecha": "2026-09-16"
   },
   "HYG": {
-   "precio": 78.67,
-   "cambio_pct": 0.36999586,
+   "precio": 78.54,
+   "cambio_pct": 0.20413722,
    "cierre_previo": 78.38,
    "maximo_52": 81.36,
    "minimo_52": 78.38,
    "fecha": "2026-09-16"
   },
   "GLD": {
-   "precio": 398.34,
-   "cambio_pct": 1.063049,
+   "precio": 394.945,
+   "cambio_pct": 0.20170141,
    "cierre_previo": 394.14999,
    "maximo_52": 509.70001,
    "minimo_52": 333.81,
    "fecha": "2026-09-16"
   },
   "SLV": {
-   "precio": 58.12,
-   "cambio_pct": 1.025554,
+   "precio": 57.92,
+   "cambio_pct": 0.67790932,
    "cierre_previo": 57.53,
    "maximo_52": 109.83,
    "minimo_52": 37.35,
    "fecha": "2026-09-16"
   },
   "CPER": {
-   "precio": 38.97,
-   "cambio_pct": 0.77579996,
+   "precio": 38.87,
+   "cambio_pct": 0.51720155,
    "cierre_previo": 38.67,
    "maximo_52": 41.29,
    "minimo_52": 28.2,
    "fecha": "2026-09-16"
   },
   "USO": {
-   "precio": 156.61,
-   "cambio_pct": -3.24354,
+   "precio": 156.58,
+   "cambio_pct": -3.26208,
    "cierre_previo": 161.86,
    "maximo_52": 163.35001,
    "minimo_52": 65.99,
    "fecha": "2026-09-16"
   },
   "VIXY": {
-   "precio": 17.455,
-   "cambio_pct": -0.42784189,
+   "precio": 17.48,
+   "cambio_pct": -0.28522923,
    "cierre_previo": 17.53,
    "maximo_52": 39.7,
    "minimo_52": 16.47,
    "fecha": "2026-09-16"
   },
   "UUP": {
-   "precio": 28.24,
-   "cambio_pct": 0.070874157,
+   "precio": 28.365,
+   "cambio_pct": 0.51382243,
    "cierre_previo": 28.22,
    "maximo_52": 28.6,
    "minimo_52": 26.4,
    "fecha": "2026-09-16"
   },
   "XLE": {
-   "precio": 64.68,
-   "cambio_pct": -1.89595,
+   "precio": 64.42,
+   "cambio_pct": -2.29031,
    "cierre_previo": 65.93,
    "maximo_52": 66.17,
    "minimo_52": 42.35,
    "fecha": "2026-09-16"
   },
   "XLF": {
-   "precio": 56.58,
-   "cambio_pct": -0.47493137,
+   "precio": 56.35,
+   "cambio_pct": -0.87950482,
    "cierre_previo": 56.85,
    "maximo_52": 58.6,
    "minimo_52": 47.67,
    "fecha": "2026-09-16"
   },
   "XLK": {
-   "precio": 185.21,
-   "cambio_pct": 0.80004053,
+   "precio": 185.195,
+   "cambio_pct": 0.79187682,
    "cierre_previo": 183.74001,
    "maximo_52": 198.73,
    "minimo_52": 126.68,
    "fecha": "2026-09-16"
   },
   "XLU": {
-   "precio": 41.495,
-   "cambio_pct": 0.42352446,
+   "precio": 41.39,
+   "cambio_pct": 0.16941023,
    "cierre_previo": 41.32,
    "maximo_52": 47.8,
    "minimo_52": 41.29,
    "fecha": "2026-09-16"
   },
   "XLY": {
-   "precio": 111.28,
-   "cambio_pct": 0.36075285,
+   "precio": 110.93,
+   "cambio_pct": 0.045096273,
    "cierre_previo": 110.88,
    "maximo_52": 125.010002,
    "minimo_52": 105.19,
    "fecha": "2026-09-16"
   },
   "XLP": {
-   "precio": 84.025,
-   "cambio_pct": 0.35231892,
+   "precio": 83.72,
+   "cambio_pct": -0.011947159,
    "cierre_previo": 83.73,
    "maximo_52": 90.14,
    "minimo_52": 75.16,
    "fecha": "2026-09-16"
   },
   "XLV": {
-   "precio": 168.51,
-   "cambio_pct": 0.50697621,
+   "precio": 168.56,
+   "cambio_pct": 0.53679847,
    "cierre_previo": 167.66,
    "maximo_52": 176.60001,
    "minimo_52": 133.73,
    "fecha": "2026-09-16"
   },
   "SMH": {
-   "precio": 549.68,
-   "cambio_pct": 1.3964,
+   "precio": 547.01,
+   "cambio_pct": 0.90387832,
    "cierre_previo": 542.10999,
    "maximo_52": 671.83002,
    "minimo_52": 301.37,
    "fecha": "2026-09-16"
   },
   "MRVL": {
-   "precio": 229.64,
-   "cambio_pct": 3.58142,
+   "precio": 229.62,
+   "cambio_pct": 3.5724,
    "cierre_previo": 221.7,
    "maximo_52": 329.88,
    "minimo_52": 67.36,
    "fecha": "2026-09-16"
   },
   "EUR/USD": {
-   "precio": 1.15325,
-   "cambio_pct": -0.082308092,
+   "precio": 1.14842,
+   "cambio_pct": -0.50077976,
    "cierre_previo": 1.1542,
    "maximo_52": 1.20656,
    "minimo_52": 1.13239,
    "fecha": "2026-09-16"
   },
   "USD/JPY": {
-   "precio": 155.1268,
-   "cambio_pct": 0.0083551539,
+   "precio": 155.71567,
+   "cambio_pct": 0.38799246,
    "cierre_previo": 155.11384,
    "maximo_52": 164.08805,
    "minimo_52": 145.476,
    "fecha": "2026-09-16"
   },
   "BTC/USD": {
-   "precio": 75469.46,
-   "cambio_pct": -0.23137181,
+   "precio": 75895.06,
+   "cambio_pct": 0.33126013,
    "cierre_previo": 75644.48,
    "maximo_52": 126199.63,
    "minimo_52": 57800.19,
-   "fecha": "2026-09-16"
-  },
-  "ETH/USD": {
-   "precio": 2377.3,
-   "cambio_pct": -0.87396696,
-   "cierre_previo": 2398.26,
-   "maximo_52": 4752.56982,
-   "minimo_52": 1507.050049,
-   "fecha": "2026-09-16"
-  },
-  "SOL/USD": {
-   "precio": 96.5,
-   "cambio_pct": -0.39223782,
-   "cierre_previo": 96.88,
-   "maximo_52": 253.51,
-   "minimo_52": 60.13,
    "fecha": "2026-09-16"
   }
  },
  "titulares": [
   {
    "fuente": "Economia",
-   "titular": "Bank of Canada saw elevated inflation risks at September meeting, minutes show",
-   "fecha": "2026-09-16 17:35:49"
+   "titular": "Robust US retail sales underscore economy’s resilience, inflation pressures building",
+   "fecha": "2026-09-16 18:42:34"
   },
   {
    "fuente": "Economia",
-   "titular": "European shares rise as oil pauses ahead of Fed rate decision",
-   "fecha": "2026-09-16 17:31:14"
+   "titular": "Fed raises rates for first time since 2023, sees one more hike this year",
+   "fecha": "2026-09-16 18:25:01"
   },
   {
    "fuente": "Economia",
-   "titular": "US pays $725 million to UN, easing its debt dispute with the world body",
-   "fecha": "2026-09-16 17:30:56"
+   "titular": "Markets steady after Fed raises rates, points to another hike this year",
+   "fecha": "2026-09-16 18:18:35"
+  },
+  {
+   "fuente": "Economia",
+   "titular": "U.S. bond rally continues after Fed delivers first rate hike since 2023",
+   "fecha": "2026-09-16 18:17:15"
+  },
+  {
+   "fuente": "Economia",
+   "titular": "Fed forecasts see latest hike followed by another before end of year",
+   "fecha": "2026-09-16 18:13:43"
+  },
+  {
+   "fuente": "Economia",
+   "titular": "Stocks wobble but no sign of panic as yields surge",
+   "fecha": "2026-09-16 18:07:14"
+  },
+  {
+   "fuente": "Economia",
+   "titular": "Fed hikes rates, sees more tightening in search of ’timelier’ drop in inflation",
+   "fecha": "2026-09-16 18:06:52"
   },
   {
    "fuente": "Economia",
    "titular": "SEC proposes to end shareholder vote oversight, a blow to reformers",
-   "fecha": "2026-09-16 17:24:49"
-  },
-  {
-   "fuente": "Economia",
-   "titular": "Dollar holds near two-week high ahead of Fed decision",
-   "fecha": "2026-09-16 17:00:33"
-  },
-  {
-   "fuente": "Economia",
-   "titular": "Meloni says she plans to stay in office until term ends",
-   "fecha": "2026-09-16 16:55:08"
-  },
-  {
-   "fuente": "Economia",
-   "titular": "Warsh’s words may matter more than the anticipated Fed rate hike",
-   "fecha": "2026-09-16 16:48:38"
-  },
-  {
-   "fuente": "Economia",
-   "titular": "Calls to slow AI benefit US sector leaders, says French finance minister",
-   "fecha": "2026-09-16 16:37:14"
+   "fecha": "2026-09-16 17:54:47"
   },
   {
    "fuente": "Mercados",
-   "titular": "Exclusive-OpenAI’s rogue agents probed Hugging Face for weaknesses two months before major hack",
-   "fecha": "2026-09-16 17:42:34"
+   "titular": "American, United prepare further capacity trims as fuel shock reshapes flying",
+   "fecha": "2026-09-16 18:31:51"
   },
   {
    "fuente": "Mercados",
-   "titular": "Impulse Space raises $308M in Series D extension on space mobility demand",
-   "fecha": "2026-09-16 17:38:39"
+   "titular": "Why is Ciena stock surging today?",
+   "fecha": "2026-09-16 18:15:02"
   },
   {
    "fuente": "Mercados",
-   "titular": "Pentagon CTO says government should not take stakes in AI companies",
-   "fecha": "2026-09-16 17:28:31"
+   "titular": "Wall Street holds on to gains as Fed delivers widely expected rate hike",
+   "fecha": "2026-09-16 18:12:26"
   },
   {
    "fuente": "Mercados",
-   "titular": "M&A stock targets: quantitative screener picks and analyst watchlist names",
-   "fecha": "2026-09-16 17:22:27"
+   "titular": "Why is Critical Metals stock climbing today?",
+   "fecha": "2026-09-16 18:08:25"
   },
   {
    "fuente": "Mercados",
-   "titular": "Carnival selloff overdone, a buying opportunity into earnings: Stifel",
-   "fecha": "2026-09-16 17:19:01"
+   "titular": "Why is Twist Bioscience stock rallying today?",
+   "fecha": "2026-09-16 18:08:15"
   },
   {
    "fuente": "Mercados",
-   "titular": "American Airlines CEO says shift to premium continues",
-   "fecha": "2026-09-16 17:18:33"
+   "titular": "AMD, SpaceX among market cap stock movers on Wednesday",
+   "fecha": "2026-09-16 18:05:20"
   },
   {
    "fuente": "Mercados",
-   "titular": "JFrog stock: strong growth trajectory meets valuation debate",
-   "fecha": "2026-09-16 17:17:58"
+   "titular": "Building permits, jobless claims and pending home sales due Thursday",
+   "fecha": "2026-09-16 18:00:39"
   },
   {
    "fuente": "Mercados",
-   "titular": "Apollo warns cloud computing debt grows riskier amid AI spending",
-   "fecha": "2026-09-16 17:14:36"
+   "titular": "Union Pacific says high diesel prices shifting freight from trucks to rail",
+   "fecha": "2026-09-16 18:00:32"
   },
   {
    "fuente": "Divisas",
-   "titular": "Dollar rises ahead of pivotal Fed rate decision, sterling slips as UK CPI heats up",
-   "fecha": "2026-09-16 16:49:53"
+   "titular": "Dollar gains after Fed raises interest rates",
+   "fecha": "2026-09-16 18:28:59"
   },
   {
    "fuente": "Divisas",
@@ -556,6 +530,16 @@
   },
   {
    "fuente": "Materias",
+   "titular": "Saudis pound Yemen as Houthis solidify gains in new theatre of Middle East war",
+   "fecha": "2026-09-16 18:18:55"
+  },
+  {
+   "fuente": "Materias",
+   "titular": "Gold pares gains after Fed hikes interest rates for the first time in over 3 years",
+   "fecha": "2026-09-16 18:16:11"
+  },
+  {
+   "fuente": "Materias",
    "titular": "US DFC approves $500 million in guarantees to boost US exports to emerging markets",
    "fecha": "2026-09-16 17:43:30"
   },
@@ -571,11 +555,6 @@
   },
   {
    "fuente": "Materias",
-   "titular": "Gold up 1% as oil prices take a breather ahead of consequential Fed rate decision",
-   "fecha": "2026-09-16 17:04:48"
-  },
-  {
-   "fuente": "Materias",
    "titular": "US farm agency prepares to reopen New Mexico port to livestock trade next week",
    "fecha": "2026-09-16 15:50:07"
   },
@@ -588,11 +567,6 @@
    "fuente": "Materias",
    "titular": "Raw sugar edges lower as oil prices weigh on market",
    "fecha": "2026-09-16 15:49:03"
-  },
-  {
-   "fuente": "Materias",
-   "titular": "US crude oil inventories decline as fuel stocks increase",
-   "fecha": "2026-09-16 14:46:10"
   },
   {
    "fuente": "Cripto",
@@ -636,6 +610,16 @@
   },
   {
    "fuente": "CNBC mercados",
+   "titular": "Here is what changed in the new Fed statement under Warsh",
+   "fecha": "Wed, 16 Sep 2026 18:18:54 GMT"
+  },
+  {
+   "fuente": "CNBC mercados",
+   "titular": "Fed approves interest rate hike, signals one more to come this year",
+   "fecha": "Wed, 16 Sep 2026 18:44:40 GMT"
+  },
+  {
+   "fuente": "CNBC mercados",
    "titular": "Senate is still a toss-up, but Democrats now have slight edge, prediction market traders think",
    "fecha": "Wed, 16 Sep 2026 16:26:41 GMT"
   },
@@ -663,16 +647,6 @@
    "fuente": "CNBC mercados",
    "titular": "China's August retail sales miss forecast while investment slump deepens, piling pressure on Beijing",
    "fecha": "Tue, 15 Sep 2026 09:46:14 GMT"
-  },
-  {
-   "fuente": "CNBC mercados",
-   "titular": "Bank of America expects third-quarter investment banking fees to fall more than 10%; shares slide",
-   "fecha": "Mon, 14 Sep 2026 20:34:23 GMT"
-  },
-  {
-   "fuente": "CNBC mercados",
-   "titular": "Warsh's credibility is on the line this week as Trump policies put pressure on Fed to hike",
-   "fecha": "Mon, 14 Sep 2026 20:49:03 GMT"
   },
   {
    "fuente": "CNBC economia",
@@ -721,39 +695,123 @@
   },
   {
    "fuente": "Yahoo Finance",
-   "titular": "Stock market today: S&P 500 and Nasdaq rise ahead of crucial Fed interest rate decision",
-   "fecha": "2026-09-16T08:03:56Z"
-  },
-  {
-   "fuente": "Yahoo Finance",
-   "titular": "Fed meeting live updates: Fed interest rate decision looms, with traders anticipating first hike in 3 years",
-   "fecha": "2026-09-15T14:34:52Z"
-  },
-  {
-   "fuente": "Yahoo Finance",
-   "titular": "Mortgage and refinance interest rates today, Wednesday, September 16, 2026: Rates ease somewhat ahead of the Fed's rate decision",
-   "fecha": "2026-09-16T10:00:00Z"
-  },
-  {
-   "fuente": "Yahoo Finance",
    "titular": "Rich Dad Poor Dad author warns biggest crash in history has started",
    "fecha": "2026-09-15T17:26:03Z"
   },
   {
    "fuente": "Yahoo Finance",
-   "titular": "Tech stocks today: OpenAI raising funds at $1.2 trillion valuation,  SK Hynix and Intel moves",
-   "fecha": "2026-09-14T14:01:34Z"
+   "titular": "Herbalife (HLF) Bets $250M On Its Own Battered Stock",
+   "fecha": "2026-09-15T09:51:41Z"
   },
   {
    "fuente": "Yahoo Finance",
-   "titular": "Stock Market Today: Nasdaq Leads Gains As Fed News Looms; Oil Ship Stocks Sail North (Live Coverage)",
-   "fecha": "2026-09-16T17:14:02Z"
+   "titular": "Acquisitions Are Doing More of the Work in Core & Main’s (CNM) Growth Story",
+   "fecha": "2026-09-15T09:43:32Z"
   },
   {
    "fuente": "Yahoo Finance",
-   "titular": "Wall Street bets on a rate hike, but the Fed decision could be a close call",
-   "fecha": "2026-09-16T17:12:12Z"
+   "titular": "Anthropic Expects a Second Straight Quarter of Adjusted Operating Profit. Amazon and Alphabet Investors Should Read the Fine Print",
+   "fecha": "2026-09-15T09:47:40Z"
+  },
+  {
+   "fuente": "Yahoo Finance",
+   "titular": "ORIC (ORIC) Doubles Down On Prostate Cancer With Phase 3 Launch",
+   "fecha": "2026-09-15T09:46:27Z"
+  },
+  {
+   "fuente": "Yahoo Finance",
+   "titular": "Trump's Marijuana Rescheduling Push Is Back in Focus. Is Tilray Stock Finally a Buy?",
+   "fecha": "2026-09-15T09:50:00Z"
+  },
+  {
+   "fuente": "Yahoo Finance",
+   "titular": "Jim Cramer Says Lululemon (LULU) is in “No Man’s Land” After Another Brutal Quarter",
+   "fecha": "2026-09-15T09:37:02Z"
   }
  ],
- "fallos": []
+ "fallos": [],
+ "extra": {
+  "semaforo": {
+   "nivel": "amarillo",
+   "titulo": "OJO HOY",
+   "motivos": [
+    [
+     "amarillo",
+     "resultados de LEN"
+    ]
+   ]
+  },
+  "earnings": {
+   "hoy": [
+    {
+     "fecha": "2026-09-16",
+     "ticker": "LEN",
+     "empresa": "Lennar",
+     "cuando": "tras el cierre",
+     "nota": "constructora - termometro directo de lo que los tipos hacen a la economia real; hipoteca a 30 anos por encima del 7 %"
+    }
+   ],
+   "semana": [
+    {
+     "fecha": "2026-09-16",
+     "ticker": "LEN",
+     "empresa": "Lennar",
+     "cuando": "tras el cierre",
+     "nota": "constructora - termometro directo de lo que los tipos hacen a la economia real; hipoteca a 30 anos por encima del 7 %"
+    },
+    {
+     "fecha": "2026-09-17",
+     "ticker": "CCL",
+     "empresa": "Carnival",
+     "cuando": "antes de abrir",
+     "nota": "con el petroleo caro, mirar el coste de combustible"
+    }
+   ],
+   "ya": [
+    {
+     "fecha": "2026-09-15",
+     "ticker": "TCOM",
+     "empresa": "Trip.com",
+     "reaccion_pct": null,
+     "resumen": "presento tras el cierre"
+    },
+    {
+     "fecha": "2026-09-14",
+     "ticker": "PLAY",
+     "empresa": "Dave & Buster's",
+     "reaccion_pct": -15.57,
+     "resumen": "perdida inesperada"
+    },
+    {
+     "fecha": "2026-09-11",
+     "ticker": "ADBE",
+     "empresa": "Adobe",
+     "reaccion_pct": -2.95,
+     "batio_y_cayo": true,
+     "resumen": "batio en ingresos con trimestre record y aun asi cayo por una guia floja del Q4. PER 14,4 y PER adelantado 9,59"
+    }
+   ],
+   "batio_y_cayo": [
+    {
+     "fecha": "2026-09-11",
+     "ticker": "ADBE",
+     "empresa": "Adobe",
+     "reaccion_pct": -2.95,
+     "batio_y_cayo": true,
+     "resumen": "batio en ingresos con trimestre record y aun asi cayo por una guia floja del Q4. PER 14,4 y PER adelantado 9,59"
+    }
+   ],
+   "dias_sin_revisar": 0,
+   "caducada": false
+  },
+  "semana": [
+   {
+    "fecha": "2026-09-18",
+    "nivel": "rojo",
+    "que": "Banco de Japon - decision de tipos",
+    "nota": "el mercado pagaba ~80% de subida",
+    "dias": 2
+   }
+  ]
+ }
 }

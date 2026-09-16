@@ -1,226 +1,280 @@
 <!doctype html><html lang="es"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#09090A">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icono-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="MHF Diario">
 <title>MHF Diario</title><style>
-:root{--fondo:#0B0B0C;--panel:#141416;--linea:#26262A;--tinta:#F4F4F5;
---tinta2:#A1A1A6;--tinta3:#6B6B72;--rojo:#C8102E;--sube:#3FA66A;--baja:#D1495B}
+:root{--fondo:#09090A;--panel:#131315;--panel2:#1A1A1D;--linea:#26262B;--tinta:#F5F5F6;
+--tinta2:#9C9CA4;--tinta3:#63636B;--rojo:#C8102E;--sube:#3FA66A;--baja:#D1495B;--ambar:#D99A2B}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--fondo);color:var(--tinta);
- font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
- -webkit-font-smoothing:antialiased}
-.envoltorio{max-width:1080px;margin:0 auto;padding:0 16px 72px}
-header{border-bottom:1px solid var(--linea);padding:28px 0 22px;margin-bottom:28px;
- display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-header img{height:46px;width:auto;display:block}
-.marca{font-weight:700;letter-spacing:.24em;font-size:13px;text-transform:uppercase}
-.fecha{color:var(--tinta3);font-size:13px;margin-left:auto;letter-spacing:.04em}
-h2{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--tinta2);
- font-weight:600;margin:34px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--linea)}
-.titular{font-size:clamp(20px,3.4vw,28px);line-height:1.3;font-weight:600;
- border-left:3px solid var(--rojo);padding:4px 0 4px 16px;margin:6px 0 26px}
-.rejilla{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(168px,1fr))}
-.ficha{background:var(--panel);border:1px solid var(--linea);border-radius:10px;padding:12px 13px}
-.ficha .n{font-size:11px;color:var(--tinta2);letter-spacing:.06em;text-transform:uppercase;
- white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ficha .p{font-size:20px;font-weight:650;margin-top:5px;font-variant-numeric:tabular-nums}
-.ficha .v{font-size:13px;margin-top:2px;font-variant-numeric:tabular-nums}
+body{background:var(--fondo);color:var(--tinta);-webkit-font-smoothing:antialiased;
+ font:15.5px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ padding-bottom:env(safe-area-inset-bottom)}
+.env{max-width:780px;margin:0 auto;padding:0 14px 60px}
+header{display:flex;align-items:center;gap:14px;padding:22px 0 16px}
+header img{height:38px;width:auto;border-radius:6px}
+.marca{font-size:11px;letter-spacing:.26em;font-weight:700;text-transform:uppercase;color:var(--tinta2);line-height:1.5}
+.marca b{display:block;color:var(--tinta);font-size:13px;letter-spacing:.2em}
+.fecha{margin-left:auto;font-size:12px;color:var(--tinta3);text-align:right}
+
+.sem{border-radius:14px;padding:16px 18px;margin:4px 0 18px;border:1px solid var(--linea);background:var(--panel)}
+.sem.rojo{border-color:rgba(200,16,46,.55);background:linear-gradient(180deg,rgba(200,16,46,.14),var(--panel))}
+.sem.amarillo{border-color:rgba(217,154,43,.5);background:linear-gradient(180deg,rgba(217,154,43,.11),var(--panel))}
+.sem.verde{border-color:rgba(63,166,106,.45);background:linear-gradient(180deg,rgba(63,166,106,.09),var(--panel))}
+.sem .fila{display:flex;align-items:center;gap:11px}
+.sem .bola{width:13px;height:13px;border-radius:50%;flex-shrink:0}
+.rojo .bola{background:var(--rojo);box-shadow:0 0 0 5px rgba(200,16,46,.16)}
+.amarillo .bola{background:var(--ambar);box-shadow:0 0 0 5px rgba(217,154,43,.14)}
+.verde .bola{background:var(--sube);box-shadow:0 0 0 5px rgba(63,166,106,.12)}
+.sem h1{font-size:15px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.sem ul{list-style:none;margin:11px 0 0;padding:0;display:grid;gap:6px}
+.sem li{font-size:14px;color:var(--tinta2);padding-left:15px;position:relative}
+.sem li:before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--tinta3)}
+
+.titular{font-size:clamp(19px,3.6vw,25px);line-height:1.32;font-weight:650;
+ border-left:3px solid var(--rojo);padding:3px 0 3px 15px;margin:0 0 22px}
+
+.tarjeta{background:var(--panel);border:1px solid var(--linea);border-radius:14px;
+ padding:15px 16px;margin-bottom:11px}
+.cab{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.num{width:25px;height:25px;border-radius:7px;background:var(--panel2);border:1px solid var(--linea);
+ display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--tinta2);flex-shrink:0}
+.ico{font-size:15px;color:var(--tinta2)}
+.cab h2{font-size:16px;font-weight:650;letter-spacing:.005em}
+.resumen{font-size:14.5px;color:var(--tinta);font-weight:600;margin:6px 0 12px}
+
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+th{font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--tinta3);
+ font-weight:600;text-align:right;padding:0 0 7px}
+th:first-child{text-align:left}
+td{padding:8px 0;border-top:1px solid var(--linea);font-size:14px;text-align:right}
+td:first-child{text-align:left}
+.tk{font-weight:650} .dsc{color:var(--tinta3);font-size:11.5px;display:block;margin-top:1px}
 .sube{color:var(--sube)} .baja{color:var(--baja)} .plano{color:var(--tinta3)}
-.lectura{background:var(--panel);border:1px solid var(--linea);border-radius:12px;
- padding:22px 24px;margin-top:6px}
-.lectura h3{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta2);
- margin:22px 0 8px} .lectura h3:first-child{margin-top:0}
-.lectura p{margin:0 0 12px;color:#E4E4E7} .lectura ul{margin:0 0 12px 20px}
-.lectura li{margin-bottom:5px;color:#E4E4E7}
-.lectura strong{color:#fff}
-.tit{list-style:none;display:grid;gap:7px}
-.tit li{display:flex;gap:10px;align-items:baseline;font-size:14px;color:var(--tinta2);
- border-bottom:1px solid var(--linea);padding-bottom:7px}
-.tit .f{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta3);
- min-width:96px;flex-shrink:0}
-footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--linea);
- color:var(--tinta3);font-size:12.5px;line-height:1.7}
-.aviso{background:var(--panel);border:1px solid var(--linea);border-left:3px solid var(--rojo);
- border-radius:8px;padding:13px 16px;color:var(--tinta2);font-size:13.5px;margin-top:14px}
-.semaforo{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));margin:0 0 26px}
-.luz{background:var(--panel);border:1px solid var(--linea);border-radius:10px;padding:11px 13px;
- display:flex;gap:10px;align-items:flex-start}
-.bola{width:10px;height:10px;border-radius:50%;margin-top:5px;flex-shrink:0}
-.v-ok{background:var(--sube)} .v-mal{background:var(--baja)} .v-nd{background:var(--tinta3)}
-.luz .t{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta2)}
-.luz .d{display:block;font-size:13px;color:var(--tinta);margin-top:2px}
-.lectura{font-size:16.5px}
-.lectura h3{font-size:12.5px;letter-spacing:.16em;color:#fff;border-bottom:1px solid var(--linea);padding-bottom:7px}
-.numeros{margin-top:10px}
-@media(max-width:560px){.rejilla{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}
- .lectura{padding:18px 16px}.tit li{flex-direction:column;gap:2px}}
-</style></head><body>
-<div class="envoltorio"><header>
+
+.lec{background:var(--panel2);border-radius:10px;padding:12px 14px;margin-top:12px;
+ border-left:2px solid var(--linea)}
+.lec .t{font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--tinta2);
+ font-weight:700;margin-bottom:6px}
+.lec p{font-size:14px;color:#DEDEE2;margin:0 0 7px}.lec p:last-child{margin:0}
+
+.ev{display:grid;gap:8px}
+.ev .it{display:flex;gap:11px;align-items:flex-start;padding:9px 0;border-top:1px solid var(--linea)}
+.ev .it:first-child{border-top:0}
+.ev .d{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta3);
+ min-width:62px;flex-shrink:0;padding-top:2px}
+.ev .p{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:6px}
+.p-rojo{background:var(--rojo)}.p-amarillo{background:var(--ambar)}.p-verde{background:var(--sube)}
+.ev .q{font-size:14px;display:block}.ev .n{display:block;font-size:12.5px;color:var(--tinta3);margin-top:3px;line-height:1.45}
+
+.tit{list-style:none;display:grid;gap:8px}
+.tit li{font-size:13.5px;color:var(--tinta2);border-top:1px solid var(--linea);padding-top:8px}
+.tit li:first-child{border-top:0}
+.tit .f{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta3);display:block;margin-bottom:2px}
+.byc{border-left:2px solid var(--rojo)}
+.aviso{font-size:13px;color:var(--tinta2);background:var(--panel);border:1px solid var(--linea);
+ border-left:3px solid var(--rojo);border-radius:10px;padding:12px 14px;margin-top:16px}
+.viejo{border-left-color:var(--ambar);margin-top:10px}
+footer{margin-top:26px;padding-top:15px;border-top:1px solid var(--linea);
+ color:var(--tinta3);font-size:11.5px;line-height:1.7}
+@media(max-width:480px){.env{padding:0 11px 52px}.tarjeta{padding:13px 13px}
+ .ev .d{min-width:54px}td,.lec p{font-size:13.5px}}
+</style></head><body><div class="env">
+<header>
 <img src="data:image/png;base64,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" alt="MHF">
-<span class="marca">Diario</span>
-<span class="fecha">2026-09-16 17:55 UTC</span></header>
-<div class="titular">Wall Street aguanta en verde a la espera de la Fed mientras el petróleo se desploma</div>
-<h2>Como esta el dia</h2><div class='semaforo'>
-<div class='luz'><span class='bola v-ok'></span><span><span class='t'>Bolsa EEUU</span><span class='d'>media +0.35 % en los cuatro indices</span></span></div>
-<div class='luz'><span class='bola v-ok'></span><span><span class='t'>Miedo</span><span class='d'>la volatilidad baja -0.43 %</span></span></div>
-<div class='luz'><span class='bola v-ok'></span><span><span class='t'>Credito</span><span class='d'>la deuda basura va -0.03 % contra el bono</span></span></div>
-<div class='luz'><span class='bola v-mal'></span><span><span class='t'>Refugio</span><span class='d'>oro y bono ganan a la bolsa</span></span></div>
-<div class='luz'><span class='bola v-ok'></span><span><span class='t'>Dolar</span><span class='d'>se fortalece +0.07 %</span></span></div>
-</div>
-<h2>El diario</h2><div class='lectura'><h3>1. BONOS Y TIPOS</h3>
-<p>Los bonos rebotaron en bloque a la espera de la decisión de la Fed. SHY subió un +0.14% a 81.4250 [DATO], IEF avanzó un +0.40% a 91.1850 [DATO] y TLT ganó un +0.66% a 81.2450 [DATO]. En el crédito corporativo, LQD subió un +0.61% a 104.9200 [DATO] y HYG sumó un +0.37% a 78.6700 [DATO].</p>
-<p>[LECTURA] El mercado de renta fija se cubre las espaldas entrando en bonos antes del anuncio de tipos. Ojo al dato de crédito: Apollo ha alertado de que la deuda vinculada a la computación en la nube es cada vez más riesgosa por el gasto masivo en IA [LECTURA].</p>
-<h3>2. ENERGIA Y GEOPOLITICA</h3>
-<p>Fuerte caída del petróleo tras conocerse que Arabia Saudí ofrecerá más crudo a través de Omán. USO cayó un -3.24% hasta 156.6100 [DATO].</p>
-<p>[LECTURA] Esta oferta de suministro adicional ha aliviado temporalmente la presión compradora sobre el barril, dando un respiro a los costes de combustible que venían tensionando a los transportistas [LECTURA].</p>
-<h3>3. METALES (oro, plata Y cobre)</h3>
-<p>Subidas generalizadas en los tres metales con el oro a la cabeza. GLD subió un +1.06% a 398.3400 [DATO], SLV avanzó un +1.03% a 58.1200 [DATO] y CPER ganó un +0.78% a 38.9700 [DATO].</p>
-<p>[LECTURA] La pausa en la escalada del petróleo y la búsqueda de cobertura previa a la Fed impulsaron las compras en metales preciosos e industriales por igual [LECTURA].</p>
-<h3>4. CRIPTO (BTC, ETH, SOL)</h3>
-<p>Jornada de pérdidas tras el rechazo de la ley Clarity Act en el Senado de EE. UU. BTC/USD cayó un -0.23% a 75469.4600 [DATO], ETH/USD perdió un -0.87% a 2377.3000 [DATO] y SOL/USD cedió un -0.39% a 96.5000 [DATO].</p>
-<p>[LECTURA] El bache regulatorio en el Senado provocó ventas en todo el ecosistema crypto, llevando al Bitcoin a perder la media de 200 sesiones situada en $75,861 [DATO].</p>
-<h3>5. BOLSA Y ROTACION POR SECTORES</h3>
-<p>Cierre positivo en los índices con tecnología tirando del carro, mientras la energía y la banca sufrieron. SPY subió un +0.29% a 759.5650 [DATO], QQQ lideró con un +0.64% a 709.0800 [DATO], IWM avanzó un +0.45% a 286.4200 [DATO] y DIA sumó un +0.03% a 521.3700 [DATO]. Por sectores, la subida la encabezaron XLK con +0.80% a 185.2100 [DATO], XLV con +0.51% a 168.5100 [DATO], XLU con +0.42% a 41.4950 [DATO], XLY con +0.36% a 111.2800 [DATO] y XLP con +0.35% a 84.0250 [DATO]. Las caídas cayeron del lado de XLE con un -1.90% a 64.6800 [DATO] y XLF con un -0.47% a 56.5800 [DATO].</p>
-<p>[LECTURA] Hubo rotación clara hacia sectores defensivos y tech, huyendo de energía por la caída del crudo y del sector financiero tras advertir Bank of America de que sus comisiones de banca de inversión caerán más de un 10% [LECTURA]. No hay casos de &quot;batió y cayó&quot; registrados hoy en los titulares.</p>
-<h3>6. SEMIS E IA (incluye SMH y MRVL)</h3>
-<p>Fuerte empuje del sector de semiconductores. SMH subió un +1.40% a 549.6800 [DATO] y tu posición en MRVL se disparó un +3.58% hasta 229.6400 [DATO].</p>
-<p>[LECTURA] Excelente sesión para la tecnología de chips. El impulso general del Nasdaq y noticias como las valoraciones al alza de OpenAI volvieron a meter dinero en tus nombres de semis [LECTURA].</p>
-<h3>7. DIVISAS (dolar, euro/dolar, dolar/yen)</h3>
-<p>El dólar se mantiene firme cerca de máximos de dos semanas a las puertas de la decisión de la Fed. UUP subió un +0.07% a 28.2400 [DATO], EUR/USD cayó un -0.08% a 1.1533 [DATO] y USD/JPY cotizó plano con un +0.01% a 155.1268 [DATO].</p>
-<p>[LECTURA] Posicionamiento prudente en divisas sin grandes desplazamientos a la espera de lo que decida el banco central estadounidense [LECTURA].</p>
-<h3>8. VIX</h3>
-<p>La volatilidad cedió ligeramente terreno. VIXY cayó un -0.43% a 17.4550 [DATO].</p>
-<p>[LECTURA] Pequeña relajación del miedo antes del catalizador clave de la semana [LECTURA].</p>
-<h3>9. EUROPA, JAPON Y HONG KONG</h3>
-<p>Japón y Europa cerraron en positivo mientras Hong Kong retrocedió. EWJ subió un +1.09% a 97.9800 [DATO], VGK avanzó un +0.28% a 89.2050 [DATO] y EEM subió un +0.66% a 66.1950 [DATO]. EWH bajó un -0.20% a 22.4250 [DATO].</p>
-<p>[LECTURA] La tregua del petróleo ayudó a la renta variable europea. Hong Kong flojeó acusando los malos datos de ventas minoristas e inversión en China [LECTURA].</p>
-<h3>10. QUE MIRAR MANANA</h3>
-<ul>
-<li>Decisión de tipos de la Reserva Federal y rueda de prensa posterior.</li>
-<li>Reacción del dólar (UUP) y los tipos en bonos largos (TLT) tras el comunicado de la Fed.</li>
-<li>Comportamiento del sector cripto (BTC) intentando recuperar la media de 200 sesiones.</li>
-<li>Seguimiento de las alertas de crédito de Apollo sobre la deuda vinculada a infraestructura de IA.</li>
-<li>Continuidad de la fuerza compradora en tu posición de MRVL y el ETF de semis (SMH).</li>
+<span class="marca"><b>MHF</b>Diario de mercados</span>
+<span class="fecha">2026-09-16 18:49<br>UTC</span></header>
+<div class="sem amarillo"><div class="fila"><span class="bola"></span><h1>OJO HOY</h1></div><ul>
+<li>resultados de LEN</li>
 </ul></div>
-<h2>Los numeros</h2><div class='numeros'>
-<h2>Bolsa</h2><div class='rejilla'>
-<div class="ficha"><div class="n">Nasdaq 100</div><div class="p">709.08</div><div class="v sube">▲ +0.64 %</div></div>
-<div class="ficha"><div class="n">Russell 2000</div><div class="p">286.42</div><div class="v sube">▲ +0.45 %</div></div>
-<div class="ficha"><div class="n">S&amp;P 500</div><div class="p">759.57</div><div class="v sube">▲ +0.29 %</div></div>
-<div class="ficha"><div class="n">Dow Jones</div><div class="p">521.37</div><div class="v plano">— +0.03 %</div></div>
+<div class="titular">La Fed sube tipos según lo previsto y la tecnología sostiene al mercado mientras el petróleo se desploma.</div>
+<div class="tarjeta"><div class="cab"><span class="num">★</span><span class="ico">◈</span><h2>Escaneo de resultados</h2></div>
+<div class="resumen">Hoy presentan: LEN (tras el cierre)</div>
+<div class="lec byc"><div class="t">Batio y cayo</div>
+<p><strong>Adobe (ADBE)</strong> -2.95 % · batio en ingresos con trimestre record y aun asi cayo por una guia floja del Q4. PER 14,4 y PER adelantado 9,59</p>
 </div>
-<h2>Rotacion por sectores</h2><div class='rejilla'>
-<div class="ficha"><div class="n">Energia</div><div class="p">64.68</div><div class="v baja">▼ -1.90 %</div></div>
-<div class="ficha"><div class="n">Tecnologia</div><div class="p">185.21</div><div class="v sube">▲ +0.80 %</div></div>
-<div class="ficha"><div class="n">Salud</div><div class="p">168.51</div><div class="v sube">▲ +0.51 %</div></div>
-<div class="ficha"><div class="n">Financieras</div><div class="p">56.58</div><div class="v baja">▼ -0.47 %</div></div>
-<div class="ficha"><div class="n">Utilities</div><div class="p">41.49</div><div class="v sube">▲ +0.42 %</div></div>
-<div class="ficha"><div class="n">Consumo discrecional</div><div class="p">111.28</div><div class="v sube">▲ +0.36 %</div></div>
-<div class="ficha"><div class="n">Consumo basico</div><div class="p">84.03</div><div class="v sube">▲ +0.35 %</div></div>
-</div>
-<h2>Semis e IA</h2><div class='rejilla'>
-<div class="ficha"><div class="n">Marvell (posicion)</div><div class="p">229.64</div><div class="v sube">▲ +3.58 %</div></div>
-<div class="ficha"><div class="n">Semiconductores</div><div class="p">549.68</div><div class="v sube">▲ +1.40 %</div></div>
-</div>
-<h2>Bonos y credito</h2><div class='rejilla'>
-<div class="ficha"><div class="n">Bono 20+ anos</div><div class="p">81.25</div><div class="v sube">▲ +0.66 %</div></div>
-<div class="ficha"><div class="n">Credito bueno</div><div class="p">104.92</div><div class="v sube">▲ +0.61 %</div></div>
-<div class="ficha"><div class="n">Bono 7-10 anos</div><div class="p">91.19</div><div class="v sube">▲ +0.40 %</div></div>
-<div class="ficha"><div class="n">Credito basura</div><div class="p">78.67</div><div class="v sube">▲ +0.37 %</div></div>
-<div class="ficha"><div class="n">Bono 1-3 anos</div><div class="p">81.42</div><div class="v sube">▲ +0.14 %</div></div>
-</div>
-<h2>Metales</h2><div class='rejilla'>
-<div class="ficha"><div class="n">Oro</div><div class="p">398.34</div><div class="v sube">▲ +1.06 %</div></div>
-<div class="ficha"><div class="n">Plata</div><div class="p">58.12</div><div class="v sube">▲ +1.03 %</div></div>
-<div class="ficha"><div class="n">Cobre</div><div class="p">38.97</div><div class="v sube">▲ +0.78 %</div></div>
-</div>
-<h2>Energia</h2><div class='rejilla'>
-<div class="ficha"><div class="n">Petroleo</div><div class="p">156.61</div><div class="v baja">▼ -3.24 %</div></div>
-</div>
-<h2>Divisas</h2><div class='rejilla'>
-<div class="ficha"><div class="n">Euro/Dolar</div><div class="p">1.1533</div><div class="v baja">▼ -0.08 %</div></div>
-<div class="ficha"><div class="n">Dolar (DXY)</div><div class="p">28.24</div><div class="v sube">▲ +0.07 %</div></div>
-<div class="ficha"><div class="n">Dolar/Yen</div><div class="p">155.13</div><div class="v plano">— +0.01 %</div></div>
-</div>
-<h2>Cripto</h2><div class='rejilla'>
-<div class="ficha"><div class="n">Ethereum</div><div class="p">2377.30</div><div class="v baja">▼ -0.87 %</div></div>
-<div class="ficha"><div class="n">Solana</div><div class="p">96.50</div><div class="v baja">▼ -0.39 %</div></div>
-<div class="ficha"><div class="n">Bitcoin</div><div class="p">75469.46</div><div class="v baja">▼ -0.23 %</div></div>
-</div>
-<h2>Miedo</h2><div class='rejilla'>
-<div class="ficha"><div class="n">Volatilidad (VIX)</div><div class="p">17.45</div><div class="v baja">▼ -0.43 %</div></div>
-</div>
-<h2>Mundo</h2><div class='rejilla'>
-<div class="ficha"><div class="n">Japon</div><div class="p">97.98</div><div class="v sube">▲ +1.09 %</div></div>
-<div class="ficha"><div class="n">Emergentes</div><div class="p">66.19</div><div class="v sube">▲ +0.66 %</div></div>
-<div class="ficha"><div class="n">Europa</div><div class="p">89.20</div><div class="v sube">▲ +0.28 %</div></div>
-<div class="ficha"><div class="n">Hong Kong</div><div class="p">22.43</div><div class="v baja">▼ -0.20 %</div></div>
+<div class="ev" style="margin-top:12px">
+<div class="it"><span class="d">09-16</span><span class="p p-amarillo"></span><span><span class="q"><strong>LEN</strong> Lennar · tras el cierre</span><span class="n">constructora - termometro directo de lo que los tipos hacen a la economia real; hipoteca a 30 anos por encima del 7 %</span></span></div>
+<div class="it"><span class="d">09-17</span><span class="p p-amarillo"></span><span><span class="q"><strong>CCL</strong> Carnival · antes de abrir</span><span class="n">con el petroleo caro, mirar el coste de combustible</span></span></div>
 </div>
 </div>
-<h2>Las noticias del dia</h2><ul class='tit'>
-<li><span class='f'>Economia</span><span>Bank of Canada saw elevated inflation risks at September meeting, minutes show</span></li>
-<li><span class='f'>Economia</span><span>European shares rise as oil pauses ahead of Fed rate decision</span></li>
-<li><span class='f'>Economia</span><span>US pays $725 million to UN, easing its debt dispute with the world body</span></li>
-<li><span class='f'>Economia</span><span>SEC proposes to end shareholder vote oversight, a blow to reformers</span></li>
-<li><span class='f'>Economia</span><span>Dollar holds near two-week high ahead of Fed decision</span></li>
-<li><span class='f'>Economia</span><span>Meloni says she plans to stay in office until term ends</span></li>
-<li><span class='f'>Economia</span><span>Warsh’s words may matter more than the anticipated Fed rate hike</span></li>
-<li><span class='f'>Economia</span><span>Calls to slow AI benefit US sector leaders, says French finance minister</span></li>
-<li><span class='f'>Mercados</span><span>Exclusive-OpenAI’s rogue agents probed Hugging Face for weaknesses two months before major hack</span></li>
-<li><span class='f'>Mercados</span><span>Impulse Space raises $308M in Series D extension on space mobility demand</span></li>
-<li><span class='f'>Mercados</span><span>Pentagon CTO says government should not take stakes in AI companies</span></li>
-<li><span class='f'>Mercados</span><span>M&amp;A stock targets: quantitative screener picks and analyst watchlist names</span></li>
-<li><span class='f'>Mercados</span><span>Carnival selloff overdone, a buying opportunity into earnings: Stifel</span></li>
-<li><span class='f'>Mercados</span><span>American Airlines CEO says shift to premium continues</span></li>
-<li><span class='f'>Mercados</span><span>JFrog stock: strong growth trajectory meets valuation debate</span></li>
-<li><span class='f'>Mercados</span><span>Apollo warns cloud computing debt grows riskier amid AI spending</span></li>
-<li><span class='f'>Divisas</span><span>Dollar rises ahead of pivotal Fed rate decision, sterling slips as UK CPI heats up</span></li>
-<li><span class='f'>Divisas</span><span>UBS sees EUR/CHF retest of 0.96 as Swiss franc lags on low yield</span></li>
-<li><span class='f'>Divisas</span><span>Citi sees GBP gains as short-lived ahead of October budget risks</span></li>
-<li><span class='f'>Divisas</span><span>Sterling today: Pound slips as Fed hike bets and UK inflation uptick weigh</span></li>
-<li><span class='f'>Divisas</span><span>Euro zone yields linger at multi-year peaks as traders brace for Fed rate decision</span></li>
-<li><span class='f'>Divisas</span><span>Dollar hits two-week high as traders gear up for anticipated Fed hike on Wednesday</span></li>
-<li><span class='f'>Divisas</span><span>Loonie slips as oil surge fuels rate worries ahead of Fed decision</span></li>
-<li><span class='f'>Divisas</span><span>Sterling today: Pound fall as UK jobs data disappoints, dollar firm</span></li>
-<li><span class='f'>Materias</span><span>US DFC approves $500 million in guarantees to boost US exports to emerging markets</span></li>
-<li><span class='f'>Materias</span><span>Oil slips as Saudi Arabia offers more crude via Oman</span></li>
-<li><span class='f'>Materias</span><span>Continental Resources signs Venezuela oil development deal</span></li>
-<li><span class='f'>Materias</span><span>Gold up 1% as oil prices take a breather ahead of consequential Fed rate decision</span></li>
-<li><span class='f'>Materias</span><span>US farm agency prepares to reopen New Mexico port to livestock trade next week</span></li>
-<li><span class='f'>Materias</span><span>US energy producer to unveil Venezuela investment, energy secretary says</span></li>
-<li><span class='f'>Materias</span><span>Raw sugar edges lower as oil prices weigh on market</span></li>
-<li><span class='f'>Materias</span><span>US crude oil inventories decline as fuel stocks increase</span></li>
-<li><span class='f'>Cripto</span><span>Phoenix Enables SOL as Collateral for Perpetual Futures Trading</span></li>
-<li><span class='f'>Cripto</span><span>Bitcoin extends losses after Clarity Act fails; eyes now on Fed for expected hike</span></li>
-<li><span class='f'>Cripto</span><span>SEC chief vows action on crypto rules after Senate bill fails</span></li>
-<li><span class='f'>Cripto</span><span>Coinbase cuts trading fees for active users on Advanced platform</span></li>
-<li><span class='f'>Cripto</span><span>XRP price outlook after token drops 10% on failed Clarity Act vote</span></li>
-<li><span class='f'>Cripto</span><span>BASIS.pro Expands On-Chain Infrastructure with XDC Network Partnership and Zypher DAO as Auto Earn Goes Live</span></li>
-<li><span class='f'>Cripto</span><span>Bitcoin breaks down below 200MA at $75,861: Live levels</span></li>
-<li><span class='f'>Cripto</span><span>Bitcoin adds to losses, falls nearly 4% after Clarity Act fails Senate vote</span></li>
-<li><span class='f'>CNBC mercados</span><span>Senate is still a toss-up, but Democrats now have slight edge, prediction market traders think</span></li>
-<li><span class='f'>CNBC mercados</span><span>Stocks making the biggest moves premarket: SK Hynix, J.B. Hunt, Expedia &amp; more</span></li>
-<li><span class='f'>CNBC mercados</span><span>China&#x27;s AI leaders keep quiet despite U.S. &#x27;publicity&#x27; on tech risks</span></li>
-<li><span class='f'>CNBC mercados</span><span>Stocks making the biggest moves midday: Skyworks Solutions, Axon, Dave &amp; Buster&#x27;s, Revvity &amp; more</span></li>
-<li><span class='f'>CNBC mercados</span><span>Stocks making the biggest moves premarket: Dave &amp; Buster&#x27;s, Enova, Etsy &amp; more</span></li>
-<li><span class='f'>CNBC mercados</span><span>China&#x27;s August retail sales miss forecast while investment slump deepens, piling pressure on Beijing</span></li>
-<li><span class='f'>CNBC mercados</span><span>Bank of America expects third-quarter investment banking fees to fall more than 10%; shares slide</span></li>
-<li><span class='f'>CNBC mercados</span><span>Warsh&#x27;s credibility is on the line this week as Trump policies put pressure on Fed to hike</span></li>
-<li><span class='f'>CNBC economia</span><span>&#x27;Science fiction&#x27;: Transport companies — the backbone of economy — are sounding alarm on fuel prices</span></li>
-<li><span class='f'>CNBC economia</span><span>Consumers hit by one-two punch of oil and rates from Iran war. The estimated bill is $1,700 per household</span></li>
-<li><span class='f'>CNBC economia</span><span>UK inflation jumps to 3.1% as energy costs soar</span></li>
-<li><span class='f'>CNBC economia</span><span>Indonesia&#x27;s new finance minister faces an uphill battle on fiscal credibility</span></li>
-<li><span class='f'>CNBC economia</span><span>Why de-dollarization discussions are more talk, less action</span></li>
-<li><span class='f'>CNBC economia</span><span>Counting the votes: Warsh faces a tough battle as the Fed girds for expected interest rate hike</span></li>
-<li><span class='f'>CNBC economia</span><span>Inflation is outpacing wage growth again, squeezing Americans’ paychecks</span></li>
-<li><span class='f'>CNBC economia</span><span>Consumer outlook plunges in September as inflation outlook worsens</span></li>
-<li><span class='f'>Yahoo Finance</span><span>How a Costco partner&#x27;s bankruptcy could benefit its biggest rival</span></li>
-<li><span class='f'>Yahoo Finance</span><span>Stock market today: S&amp;P 500 and Nasdaq rise ahead of crucial Fed interest rate decision</span></li>
-<li><span class='f'>Yahoo Finance</span><span>Fed meeting live updates: Fed interest rate decision looms, with traders anticipating first hike in 3 years</span></li>
-<li><span class='f'>Yahoo Finance</span><span>Mortgage and refinance interest rates today, Wednesday, September 16, 2026: Rates ease somewhat ahead of the Fed&#x27;s rate decision</span></li>
-<li><span class='f'>Yahoo Finance</span><span>Rich Dad Poor Dad author warns biggest crash in history has started</span></li>
-<li><span class='f'>Yahoo Finance</span><span>Tech stocks today: OpenAI raising funds at $1.2 trillion valuation,  SK Hynix and Intel moves</span></li>
-<li><span class='f'>Yahoo Finance</span><span>Stock Market Today: Nasdaq Leads Gains As Fed News Looms; Oil Ship Stocks Sail North (Live Coverage)</span></li>
-<li><span class='f'>Yahoo Finance</span><span>Wall Street bets on a rate hike, but the Fed decision could be a close call</span></li>
-</ul>
-<div class="aviso">Los precios son <strong>DATO</strong>: cierres de Twelve Data. La lectura la escribe un modelo a partir de esos numeros y de los titulares de arriba, y <strong>puede equivocarse</strong>. No es consejo de inversion: son datos para que decidas tu.</div>
-<footer>MHF · Diario automatico · precios 33 de 33 · fallos 0 · modelo gemini-3.6-flash<br>Se genera solo cada dia. No sustituye tu criterio.</footer>
+<div class="tarjeta"><div class="cab"><span class="num">▣</span><span class="ico">◷</span><h2>La semana que viene</h2></div><div class="ev">
+<div class="it"><span class="d">+2 dias</span><span class="p p-rojo"></span><span><span class="q">Banco de Japon - decision de tipos</span><span class="n">el mercado pagaba ~80% de subida</span></span></div>
+</div></div>
+<div class="tarjeta"><div class="cab"><span class="num">1</span><span class="ico">▦</span><h2>Bonos y tipos</h2></div>
+<div class="resumen">La Fed subió los tipos de interés y sugirió otra subida este año, pero la parte larga de la curva reaccionó al alza de forma clara [LECTURA].</div>
+<table><tr><th>Activo</th><th>Precio</th><th>Cambio</th><th></th></tr>
+<tr><td><span class="tk">TLT</span><span class="dsc">Bono 20+ anos</span></td><td>81,41</td><td class="sube">+0.86 %</td><td class="sube">▲</td></tr>
+<tr><td><span class="tk">LQD</span><span class="dsc">Credito bueno</span></td><td>104,84</td><td class="sube">+0.54 %</td><td class="sube">▲</td></tr>
+<tr><td><span class="tk">IEF</span><span class="dsc">Bono 7-10 anos</span></td><td>91,02</td><td class="sube">+0.22 %</td><td class="sube">▲</td></tr>
+<tr><td><span class="tk">HYG</span><span class="dsc">Credito basura</span></td><td>78,54</td><td class="sube">+0.20 %</td><td class="sube">▲</td></tr>
+<tr><td><span class="tk">SHY</span><span class="dsc">Bono 1-3 anos</span></td><td>81,31</td><td class="plano">-0.01 %</td><td class="plano">—</td></tr>
+</table>
+<div class="lec"><div class="t">Lectura de mercado</div>
+<p>- SHY: 81.3050, -0.01 % [DATO]</p>
+<p>- IEF: 91.0200, +0.22 % [DATO]</p>
+<p>- TLT: 81.4050, +0.86 % [DATO]</p>
+<p>- LQD: 104.8450, +0.54 % [DATO]</p>
+<p>- HYG: 78.5400, +0.20 % [DATO]</p>
+</div>
+</div>
+<div class="tarjeta"><div class="cab"><span class="num">2</span><span class="ico">◉</span><h2>Energia y geopolitica</h2></div>
+<div class="resumen">Fuerte caída del petróleo tras conocerse que Arabia Saudí ofrecerá más crudo a través de Omán [LECTURA].</div>
+<table><tr><th>Activo</th><th>Precio</th><th>Cambio</th><th></th></tr>
+<tr><td><span class="tk">USO</span><span class="dsc">Petroleo</span></td><td>156,58</td><td class="baja">-3.26 %</td><td class="baja">▼</td></tr>
+</table>
+<div class="lec"><div class="t">Lectura de mercado</div>
+<p>- USO: 156.5800, -3.26 % [DATO]</p>
+</div>
+</div>
+<div class="tarjeta"><div class="cab"><span class="num">3</span><span class="ico">◆</span><h2>Metales</h2></div>
+<div class="resumen">Jornada en verde para los metales, liderados por la plata, ignorando la firmeza del dólar tras la Fed [LECTURA].</div>
+<table><tr><th>Activo</th><th>Precio</th><th>Cambio</th><th></th></tr>
+<tr><td><span class="tk">SLV</span><span class="dsc">Plata</span></td><td>57,92</td><td class="sube">+0.68 %</td><td class="sube">▲</td></tr>
+<tr><td><span class="tk">CPER</span><span class="dsc">Cobre</span></td><td>38,87</td><td class="sube">+0.52 %</td><td class="sube">▲</td></tr>
+<tr><td><span class="tk">GLD</span><span class="dsc">Oro</span></td><td>394,94</td><td class="sube">+0.20 %</td><td class="sube">▲</td></tr>
+</table>
+<div class="lec"><div class="t">Lectura de mercado</div>
+<p>- GLD: 394.9450, +0.20 % [DATO]</p>
+<p>- SLV: 57.9200, +0.68 % [DATO]</p>
+<p>- CPER: 38.8700, +0.52 % [DATO]</p>
+</div>
+</div>
+<div class="tarjeta"><div class="cab"><span class="num">4</span><span class="ico">₿</span><h2>Cripto</h2></div>
+<div class="resumen">Bitcoin aguanta en positivo pese a las dudas regulatorias tras fallar la ley Clarity Act en el Senado [LECTURA].</div>
+<table><tr><th>Activo</th><th>Precio</th><th>Cambio</th><th></th></tr>
+<tr><td><span class="tk">BTC/USD</span><span class="dsc">Bitcoin</span></td><td>75.895,06</td><td class="sube">+0.33 %</td><td class="sube">▲</td></tr>
+</table>
+<div class="lec"><div class="t">Lectura de mercado</div>
+<p>- BTC/USD: 75895.0600, +0.33 % [DATO]</p>
+<p>- ETH: no tengo ese dato.</p>
+<p>- SOL: no tengo ese dato.</p>
+</div>
+</div>
+<div class="tarjeta"><div class="cab"><span class="num">5</span><span class="ico">▲</span><h2>Bolsa e indices</h2></div>
+<div class="resumen">Cierre mixto en los índices donde la tecnología tiró del mercado mientras la energía y las financieras pesaron a la baja [LECTURA].</div>
+<table><tr><th>Activo</th><th>Precio</th><th>Cambio</th><th></th></tr>
+<tr><td><span class="tk">QQQ</span><span class="dsc">Nasdaq 100</span></td><td>709,30</td><td class="sube">+0.68 %</td><td class="sube">▲</td></tr>
+<tr><td><span class="tk">SPY</span><span class="dsc">S&amp;P 500</span></td><td>759,01</td><td class="sube">+0.21 %</td><td class="sube">▲</td></tr>
+<tr><td><span class="tk">DIA</span><span class="dsc">Dow Jones</span></td><td>520,19</td><td class="baja">-0.20 %</td><td class="baja">▼</td></tr>
+<tr><td><span class="tk">IWM</span><span class="dsc">Russell 2000</span></td><td>285,53</td><td class="sube">+0.14 %</td><td class="sube">▲</td></tr>
+</table>
+<div class="lec"><div class="t">Lectura de mercado</div>
+<p>- SPY: 759.0150, +0.21 % [DATO]</p>
+<p>- QQQ: 709.3000, +0.68 % [DATO]</p>
+<p>- DIA: 520.1900, -0.20 % [DATO]</p>
+<p>- IWM: 285.5300, +0.14 % [DATO]</p>
+<p>Por sectores:</p>
+<p>- XLK (Tecnología): 185.1950, +0.79 % [DATO]</p>
+<p>- XLV (Salud): 168.5600, +0.54 % [DATO]</p>
+<p>- XLU (Utilities): 41.3900, +0.17 % [DATO]</p>
+<p>- XLY (Consumo discrecional): 110.9300, +0.05 % [DATO]</p>
+<p>- XLP (Consumo básico): 83.7200, -0.01 % [DATO]</p>
+<p>- XLF (Financieras): 56.3500, -0.88 % [DATO]</p>
+<p>- XLE (Energía): 64.4200, -2.29 % [DATO]</p>
+<p>La rotación hacia tecnología y sectores defensivos refleja apetito de riesgo concentrado tras el anuncio monetario [LECTURA].</p>
+</div>
+</div>
+<div class="tarjeta"><div class="cab"><span class="num">6</span><span class="ico">▤</span><h2>Rotacion por sectores</h2></div>
+<div class="resumen">Sesión sólida para los semiconductores con tu posición en Marvell destacando con fuerza [LECTURA].</div>
+<table><tr><th>Activo</th><th>Precio</th><th>Cambio</th><th></th></tr>
+<tr><td><span class="tk">XLE</span><span class="dsc">Energia</span></td><td>64,42</td><td class="baja">-2.29 %</td><td class="baja">▼</td></tr>
+<tr><td><span class="tk">XLF</span><span class="dsc">Financieras</span></td><td>56,35</td><td class="baja">-0.88 %</td><td class="baja">▼</td></tr>
+<tr><td><span class="tk">XLK</span><span class="dsc">Tecnologia</span></td><td>185,19</td><td class="sube">+0.79 %</td><td class="sube">▲</td></tr>
+<tr><td><span class="tk">XLV</span><span class="dsc">Salud</span></td><td>168,56</td><td class="sube">+0.54 %</td><td class="sube">▲</td></tr>
+<tr><td><span class="tk">XLU</span><span class="dsc">Utilities</span></td><td>41,39</td><td class="sube">+0.17 %</td><td class="sube">▲</td></tr>
+<tr><td><span class="tk">XLY</span><span class="dsc">Consumo discrecional</span></td><td>110,93</td><td class="plano">+0.05 %</td><td class="plano">—</td></tr>
+<tr><td><span class="tk">XLP</span><span class="dsc">Consumo basico</span></td><td>83,72</td><td class="plano">-0.01 %</td><td class="plano">—</td></tr>
+</table>
+<div class="lec"><div class="t">Lectura de mercado</div>
+<p>- SMH: 547.0100, +0.90 % [DATO]</p>
+<p>- MRVL: 229.6200, +3.57 % [DATO]</p>
+</div>
+</div>
+<div class="tarjeta"><div class="cab"><span class="num">7</span><span class="ico">⬢</span><h2>Semis e IA</h2></div>
+<div class="resumen">El dólar cogió impulso frente a sus principales pares tras la subida de tipos de la Fed [LECTURA].</div>
+<table><tr><th>Activo</th><th>Precio</th><th>Cambio</th><th></th></tr>
+<tr><td><span class="tk">MRVL</span><span class="dsc">Marvell (posicion)</span></td><td>229,62</td><td class="sube">+3.57 %</td><td class="sube">▲</td></tr>
+<tr><td><span class="tk">SMH</span><span class="dsc">Semiconductores</span></td><td>547,01</td><td class="sube">+0.90 %</td><td class="sube">▲</td></tr>
+</table>
+<div class="lec"><div class="t">Lectura de mercado</div>
+<p>- UUP: 28.3650, +0.51 % [DATO]</p>
+<p>- EUR/USD: 1.1484, -0.50 % [DATO]</p>
+<p>- USD/JPY: 155.7157, +0.39 % [DATO]</p>
+</div>
+</div>
+<div class="tarjeta"><div class="cab"><span class="num">8</span><span class="ico">⇄</span><h2>Divisas</h2></div>
+<div class="resumen">La volatilidad cedió terreno indicando ausencia de pánico en el mercado tras el comunicado de la Fed [LECTURA].</div>
+<table><tr><th>Activo</th><th>Precio</th><th>Cambio</th><th></th></tr>
+<tr><td><span class="tk">UUP</span><span class="dsc">Dolar (DXY)</span></td><td>28,36</td><td class="sube">+0.51 %</td><td class="sube">▲</td></tr>
+<tr><td><span class="tk">EUR/USD</span><span class="dsc">Euro/Dolar</span></td><td>1.1484</td><td class="baja">-0.50 %</td><td class="baja">▼</td></tr>
+<tr><td><span class="tk">USD/JPY</span><span class="dsc">Dolar/Yen</span></td><td>155,72</td><td class="sube">+0.39 %</td><td class="sube">▲</td></tr>
+</table>
+<div class="lec"><div class="t">Lectura de mercado</div>
+<p>- VIXY: 17.4800, -0.29 % [DATO]</p>
+</div>
+</div>
+<div class="tarjeta"><div class="cab"><span class="num">9</span><span class="ico">⚡</span><h2>Volatilidad</h2></div>
+<div class="resumen">Japón lideró las subidas internacionales, Europa cerró plana y Hong Kong cayó levemente [LECTURA].</div>
+<table><tr><th>Activo</th><th>Precio</th><th>Cambio</th><th></th></tr>
+<tr><td><span class="tk">VIXY</span><span class="dsc">Volatilidad (VIX)</span></td><td>17,48</td><td class="baja">-0.29 %</td><td class="baja">▼</td></tr>
+</table>
+<div class="lec"><div class="t">Lectura de mercado</div>
+<p>- EWJ: 97.8000, +0.91 % [DATO]</p>
+<p>- VGK: 89.0300, +0.08 % [DATO]</p>
+<p>- EWH: 22.4000, -0.31 % [DATO]</p>
+<p>- EEM: 66.0850, +0.49 % [DATO]</p>
+</div>
+</div>
+<div class="tarjeta"><div class="cab"><span class="num">10</span><span class="ico">◍</span><h2>Europa, Japon y Asia</h2></div>
+<div class="resumen">1. Permisos de construcción en EE. UU.</div>
+<table><tr><th>Activo</th><th>Precio</th><th>Cambio</th><th></th></tr>
+<tr><td><span class="tk">EWJ</span><span class="dsc">Japon</span></td><td>97,80</td><td class="sube">+0.91 %</td><td class="sube">▲</td></tr>
+<tr><td><span class="tk">EEM</span><span class="dsc">Emergentes</span></td><td>66,08</td><td class="sube">+0.49 %</td><td class="sube">▲</td></tr>
+<tr><td><span class="tk">EWH</span><span class="dsc">Hong Kong</span></td><td>22,40</td><td class="baja">-0.31 %</td><td class="baja">▼</td></tr>
+<tr><td><span class="tk">VGK</span><span class="dsc">Europa</span></td><td>89,03</td><td class="sube">+0.08 %</td><td class="sube">▲</td></tr>
+</table>
+<div class="lec"><div class="t">Lectura de mercado</div>
+<p>2. Peticiones semanales de subsidio por desempleo (jobless claims).</p>
+<p>3. Ventas pendientes de viviendas.</p>
+<p>4. Seguimiento al precio del crudo tras la oferta adicional de Arabia Saudí.</p>
+<p>5. Reacción de digestión en el mercado tras las proyecciones de la Fed.</p>
+</div>
+</div>
+<div class="tarjeta"><div class="cab"><span class="num">≡</span><span class="ico">◫</span><h2>Las noticias del dia</h2></div><ul class="tit">
+<li><span class="f">Economia</span>Robust US retail sales underscore economy’s resilience, inflation pressures building</li>
+<li><span class="f">Economia</span>Fed raises rates for first time since 2023, sees one more hike this year</li>
+<li><span class="f">Economia</span>Markets steady after Fed raises rates, points to another hike this year</li>
+<li><span class="f">Economia</span>U.S. bond rally continues after Fed delivers first rate hike since 2023</li>
+<li><span class="f">Economia</span>Fed forecasts see latest hike followed by another before end of year</li>
+<li><span class="f">Economia</span>Stocks wobble but no sign of panic as yields surge</li>
+<li><span class="f">Economia</span>Fed hikes rates, sees more tightening in search of ’timelier’ drop in inflation</li>
+<li><span class="f">Economia</span>SEC proposes to end shareholder vote oversight, a blow to reformers</li>
+<li><span class="f">Mercados</span>American, United prepare further capacity trims as fuel shock reshapes flying</li>
+<li><span class="f">Mercados</span>Why is Ciena stock surging today?</li>
+<li><span class="f">Mercados</span>Wall Street holds on to gains as Fed delivers widely expected rate hike</li>
+<li><span class="f">Mercados</span>Why is Critical Metals stock climbing today?</li>
+<li><span class="f">Mercados</span>Why is Twist Bioscience stock rallying today?</li>
+<li><span class="f">Mercados</span>AMD, SpaceX among market cap stock movers on Wednesday</li>
+<li><span class="f">Mercados</span>Building permits, jobless claims and pending home sales due Thursday</li>
+<li><span class="f">Mercados</span>Union Pacific says high diesel prices shifting freight from trucks to rail</li>
+<li><span class="f">Divisas</span>Dollar gains after Fed raises interest rates</li>
+<li><span class="f">Divisas</span>UBS sees EUR/CHF retest of 0.96 as Swiss franc lags on low yield</li>
+<li><span class="f">Divisas</span>Citi sees GBP gains as short-lived ahead of October budget risks</li>
+<li><span class="f">Divisas</span>Sterling today: Pound slips as Fed hike bets and UK inflation uptick weigh</li>
+<li><span class="f">Divisas</span>Euro zone yields linger at multi-year peaks as traders brace for Fed rate decision</li>
+<li><span class="f">Divisas</span>Dollar hits two-week high as traders gear up for anticipated Fed hike on Wednesday</li>
+<li><span class="f">Divisas</span>Loonie slips as oil surge fuels rate worries ahead of Fed decision</li>
+<li><span class="f">Divisas</span>Sterling today: Pound fall as UK jobs data disappoints, dollar firm</li>
+<li><span class="f">Materias</span>Saudis pound Yemen as Houthis solidify gains in new theatre of Middle East war</li>
+<li><span class="f">Materias</span>Gold pares gains after Fed hikes interest rates for the first time in over 3 years</li>
+<li><span class="f">Materias</span>US DFC approves $500 million in guarantees to boost US exports to emerging markets</li>
+<li><span class="f">Materias</span>Oil slips as Saudi Arabia offers more crude via Oman</li>
+</ul></div>
+<div class="aviso">Los precios son <strong>DATO</strong>: cierres de Twelve Data. La lectura la escribe un modelo con esos numeros y los titulares de arriba, y <strong>puede equivocarse</strong>. Esto no es consejo de inversion.</div>
+<footer>MHF · Diario automatico · 31 de 31 precios · 0 fallos · gemini-3.6-flash<br>Se genera solo cada dia a las 7:00. No sustituye tu criterio.</footer>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}</script>
 </div></body></html>
