@@ -3,10 +3,11 @@
 No escribe analisis: solo datos comprobables. Escribe diario/datos.json."""
 import json, os, time, urllib.request, urllib.parse, urllib.error
 import xml.etree.ElementTree as ET
-import semaforo, earnings
+import semaforo, earnings, niveles
 from datetime import datetime, timezone
 
 API   = "https://api.twelvedata.com/quote"
+SERIE = "https://api.twelvedata.com/time_series"
 CLAVE = os.environ.get("TWELVE_KEY", "")
 LOTE, ESPERA = 8, 62          # el plan gratis da 8 creditos por minuto
 SALIDA = "diario/datos.json"
@@ -120,6 +121,35 @@ def titulares(tope=8):
     return out
 
 
+
+def velas(simbolo, n=280):
+    """Velas diarias para calcular EMA y niveles. 1 credito por peticion."""
+    q = urllib.parse.urlencode({"symbol": simbolo, "interval": "1day",
+                                "outputsize": str(n), "order": "ASC", "apikey": CLAVE})
+    with urllib.request.urlopen(SERIE + "?" + q, timeout=30) as r:
+        d = json.load(r)
+    if d.get("status") == "error" or not d.get("values"):
+        raise RuntimeError(str(d.get("message", "sin velas"))[:80])
+    return [(float(v["high"]), float(v["low"]), float(v["close"])) for v in d["values"]]
+
+
+def niveles_de(tickers):
+    """EMA50, EMA200 y niveles mas tocados de cada empresa que presenta."""
+    out, fallos = {}, []
+    for i, t in enumerate(sorted(set(tickers))[:6]):
+        if i:
+            time.sleep(ESPERA / 4)          # estas son 1 credito, no hace falta esperar tanto
+        try:
+            a = niveles.analiza(velas(t))
+            if a:
+                out[t] = a
+            else:
+                fallos.append((t, "pocas velas"))
+        except Exception as e:
+            fallos.append((t, "%s: %s" % (type(e).__name__, str(e)[:60])))
+    return out, fallos
+
+
 def main():
     if not CLAVE:
         raise SystemExit("falta TWELVE_KEY")
@@ -136,8 +166,12 @@ def main():
         e = earnings.estado()
         ev = semaforo.de_hoy()
         niv, tit, mot = semaforo.decide(ev, [x["ticker"] for x in e["hoy"]], None, None)
+        tks = [x["ticker"] for x in e["hoy"]] + [x["ticker"] for x in e["semana"]]
+        niv_t, fal_n = niveles_de(tks)
         d["extra"] = {"semaforo": {"nivel": niv, "titulo": tit, "motivos": mot},
-                      "earnings": e, "semana": semaforo.semana()}
+                      "earnings": e, "semana": semaforo.semana(), "niveles": niv_t}
+        for t_, e_ in fal_n:
+            fallos.append(("niveles " + t_, e_))
     except Exception as ex:
         d["extra"] = {"error": "%s: %s" % (type(ex).__name__, ex)}
     os.makedirs(os.path.dirname(SALIDA), exist_ok=True)

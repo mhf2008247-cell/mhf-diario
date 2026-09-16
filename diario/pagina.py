@@ -74,6 +74,16 @@ td:first-child{text-align:left}
  font-weight:700;margin-bottom:6px}
 .lec p{font-size:14px;color:#DEDEE2;margin:0 0 7px}.lec p:last-child{margin:0}
 
+.niv{margin-top:12px;border-top:1px solid var(--linea);padding-top:11px}
+.niv .h{font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--tinta2);font-weight:700;margin-bottom:8px}
+.niv .g{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.niv .c{background:var(--panel2);border-radius:8px;padding:8px 10px}
+.niv .c .k{font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--tinta3)}
+.niv .c .v{font-size:15px;font-weight:650;margin-top:2px;font-variant-numeric:tabular-nums}
+.niv .c .p{font-size:11.5px;margin-top:1px}
+.niv .lst{margin-top:9px;display:grid;gap:5px}
+.niv .lst div{display:flex;justify-content:space-between;font-size:13px;font-variant-numeric:tabular-nums}
+.niv .lst .e{color:var(--tinta3);font-size:11.5px}
 .ev{display:grid;gap:8px}
 .ev .it{display:flex;gap:11px;align-items:flex-start;padding:9px 0;border-top:1px solid var(--linea)}
 .ev .it:first-child{border-top:0}
@@ -127,6 +137,36 @@ def trozos(texto):
             s = re.sub(r"^\[?(LECTURA|Lectura)\]?:?\s*", "", s)
             out[act].append(re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", html.escape(s)))
     return out
+
+
+
+def bloque_niveles(t, a):
+    """Tarjeta de niveles de una empresa. Todo calculado de sus velas diarias."""
+    def cl(x):
+        return "sube" if x > 0 else ("baja" if x < 0 else "plano")
+    P = ['<div class="niv"><div class="h">%s &middot; niveles del grafico diario</div>' % html.escape(t)]
+    P.append('<div class="g">')
+    for k, val, dist in (("EMA 50", a.get("ema50"), a.get("dist_ema50")),
+                         ("EMA 200", a.get("ema200"), a.get("dist_ema200"))):
+        if val is None:
+            continue
+        P.append('<div class="c"><div class="k">%s</div><div class="v">%s</div>'
+                 '<div class="p %s">el precio esta %+.2f %%</div></div>'
+                 % (k, fnum(val), cl(dist), dist))
+    P.append('<div class="c"><div class="k">Maximo 52 sem</div><div class="v">%s</div></div>' % fnum(a["max52"]))
+    P.append('<div class="c"><div class="k">Minimo 52 sem</div><div class="v">%s</div></div>' % fnum(a["min52"]))
+    P.append("</div>")
+    for rot, lst in (("Por encima", a.get("resistencias") or []),
+                     ("Por debajo", a.get("soportes") or [])):
+        if not lst:
+            continue
+        P.append('<div class="lst"><div><span class="e">%s</span></div>' % rot)
+        for z in lst:
+            P.append('<div><span>%s</span><span class="e">%+.1f %% &middot; se giro %d veces</span></div>'
+                     % (fnum(z["precio"]), z["dist_pct"], z["toques"]))
+        P.append("</div>")
+    P.append("</div>")
+    return "".join(P)
 
 
 def main():
@@ -207,6 +247,11 @@ def main():
                             html.escape(e["cuando"]),
                             '<span class="n">%s</span>' % html.escape(e["nota"]) if e.get("nota") else ""))
             P.append("</div>")
+        niv = extra.get("niveles") or {}
+        for t in [e["ticker"] for e in (ear.get("hoy") or [])] + \
+                 [e["ticker"] for e in (ear.get("semana") or [])]:
+            if t in niv:
+                P.append(bloque_niveles(t, niv.pop(t)))
         if ear.get("caducada"):
             P.append('<div class="aviso viejo">Esta lista lleva %d dias sin revisar. '
                      'Puede faltar alguna empresa.</div>' % ear.get("dias_sin_revisar", 0))
