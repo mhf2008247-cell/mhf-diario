@@ -1,0 +1,44 @@
+name: MHF Diario
+
+on:
+  schedule:
+    - cron: "15 21 * * 1-5"      # 21:15 UTC · despues del cierre de EEUU
+  workflow_dispatch:
+
+concurrency:
+  group: mhf-diario
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  diario:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Bajar precios y titulares
+        env:
+          TWELVE_KEY: ${{ secrets.TWELVE_KEY }}
+        run: python diario/recolector.py
+
+      - name: Escribir la lectura
+        env:
+          GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
+        run: python diario/redactor.py
+
+      - name: Construir la pagina
+        run: python diario/pagina.py
+
+      - name: Publicar
+        run: |
+          git config user.name  "MHF Diario"
+          git config user.email "actions@github.com"
+          git add diario/datos.json diario/lectura.json docs/index.html
+          git commit -m "diario $(date -u +%Y-%m-%d)" || echo "sin cambios"
+          git push
