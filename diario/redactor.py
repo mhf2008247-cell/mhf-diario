@@ -74,7 +74,7 @@ def pregunta(modelo, texto):
     cuerpo = json.dumps({
         "systemInstruction": {"parts": [{"text": REGLAS}]},
         "contents": [{"role": "user", "parts": [{"text": texto}]}],
-        "generationConfig": {"temperature": 0.3, "maxOutputTokens": 4096},
+        "generationConfig": {"temperature": 0.3, "maxOutputTokens": 24000},
     }).encode("utf-8")
     req = urllib.request.Request(
         BASE % modelo + "?key=" + CLAVE, data=cuerpo,
