@@ -1,0 +1,759 @@
+{
+ "generado": "2026-09-16T17:43:29+00:00",
+ "universo": [
+  {
+   "simbolo": "SPY",
+   "nombre": "S&P 500",
+   "bloque": "bolsa"
+  },
+  {
+   "simbolo": "QQQ",
+   "nombre": "Nasdaq 100",
+   "bloque": "bolsa"
+  },
+  {
+   "simbolo": "DIA",
+   "nombre": "Dow Jones",
+   "bloque": "bolsa"
+  },
+  {
+   "simbolo": "IWM",
+   "nombre": "Russell 2000",
+   "bloque": "bolsa"
+  },
+  {
+   "simbolo": "EWJ",
+   "nombre": "Japon",
+   "bloque": "mundo"
+  },
+  {
+   "simbolo": "EWH",
+   "nombre": "Hong Kong",
+   "bloque": "mundo"
+  },
+  {
+   "simbolo": "VGK",
+   "nombre": "Europa",
+   "bloque": "mundo"
+  },
+  {
+   "simbolo": "EEM",
+   "nombre": "Emergentes",
+   "bloque": "mundo"
+  },
+  {
+   "simbolo": "SHY",
+   "nombre": "Bono 1-3 anos",
+   "bloque": "bonos"
+  },
+  {
+   "simbolo": "IEF",
+   "nombre": "Bono 7-10 anos",
+   "bloque": "bonos"
+  },
+  {
+   "simbolo": "TLT",
+   "nombre": "Bono 20+ anos",
+   "bloque": "bonos"
+  },
+  {
+   "simbolo": "LQD",
+   "nombre": "Credito bueno",
+   "bloque": "bonos"
+  },
+  {
+   "simbolo": "HYG",
+   "nombre": "Credito basura",
+   "bloque": "bonos"
+  },
+  {
+   "simbolo": "GLD",
+   "nombre": "Oro",
+   "bloque": "metales"
+  },
+  {
+   "simbolo": "SLV",
+   "nombre": "Plata",
+   "bloque": "metales"
+  },
+  {
+   "simbolo": "CPER",
+   "nombre": "Cobre",
+   "bloque": "metales"
+  },
+  {
+   "simbolo": "USO",
+   "nombre": "Petroleo",
+   "bloque": "energia"
+  },
+  {
+   "simbolo": "VIXY",
+   "nombre": "Volatilidad (VIX)",
+   "bloque": "miedo"
+  },
+  {
+   "simbolo": "UUP",
+   "nombre": "Dolar (DXY)",
+   "bloque": "divisas"
+  },
+  {
+   "simbolo": "XLE",
+   "nombre": "Energia",
+   "bloque": "sectores"
+  },
+  {
+   "simbolo": "XLF",
+   "nombre": "Financieras",
+   "bloque": "sectores"
+  },
+  {
+   "simbolo": "XLK",
+   "nombre": "Tecnologia",
+   "bloque": "sectores"
+  },
+  {
+   "simbolo": "XLU",
+   "nombre": "Utilities",
+   "bloque": "sectores"
+  },
+  {
+   "simbolo": "XLY",
+   "nombre": "Consumo discrecional",
+   "bloque": "sectores"
+  },
+  {
+   "simbolo": "XLP",
+   "nombre": "Consumo basico",
+   "bloque": "sectores"
+  },
+  {
+   "simbolo": "XLV",
+   "nombre": "Salud",
+   "bloque": "sectores"
+  },
+  {
+   "simbolo": "SMH",
+   "nombre": "Semiconductores",
+   "bloque": "semis"
+  },
+  {
+   "simbolo": "MRVL",
+   "nombre": "Marvell (posicion)",
+   "bloque": "semis"
+  },
+  {
+   "simbolo": "EUR/USD",
+   "nombre": "Euro/Dolar",
+   "bloque": "divisas"
+  },
+  {
+   "simbolo": "USD/JPY",
+   "nombre": "Dolar/Yen",
+   "bloque": "divisas"
+  },
+  {
+   "simbolo": "BTC/USD",
+   "nombre": "Bitcoin",
+   "bloque": "cripto"
+  },
+  {
+   "simbolo": "ETH/USD",
+   "nombre": "Ethereum",
+   "bloque": "cripto"
+  },
+  {
+   "simbolo": "SOL/USD",
+   "nombre": "Solana",
+   "bloque": "cripto"
+  }
+ ],
+ "precios": {
+  "SPY": {
+   "precio": 759.835,
+   "cambio_pct": 0.32281721,
+   "cierre_previo": 757.39001,
+   "maximo_52": 779.37,
+   "minimo_52": 629.28003,
+   "fecha": "2026-09-16"
+  },
+  "QQQ": {
+   "precio": 709.58,
+   "cambio_pct": 0.71536352,
+   "cierre_previo": 704.53998,
+   "maximo_52": 748.65002,
+   "minimo_52": 555.59998,
+   "fecha": "2026-09-16"
+  },
+  "DIA": {
+   "precio": 521.755,
+   "cambio_pct": 0.10072704,
+   "cierre_previo": 521.22998,
+   "maximo_52": 546.75,
+   "minimo_52": 450.44,
+   "fecha": "2026-09-16"
+  },
+  "IWM": {
+   "precio": 286.615,
+   "cambio_pct": 0.51728459,
+   "cierre_previo": 285.14001,
+   "maximo_52": 305.17999,
+   "minimo_52": 228.89999,
+   "fecha": "2026-09-16"
+  },
+  "EWJ": {
+   "precio": 98.025,
+   "cambio_pct": 1.14012,
+   "cierre_previo": 96.92,
+   "maximo_52": 98.79,
+   "minimo_52": 78.21,
+   "fecha": "2026-09-16"
+  },
+  "EWH": {
+   "precio": 22.435,
+   "cambio_pct": -0.15576019,
+   "cierre_previo": 22.47,
+   "maximo_52": 24.66,
+   "minimo_52": 20.6,
+   "fecha": "2026-09-16"
+  },
+  "VGK": {
+   "precio": 89.18,
+   "cambio_pct": 0.24730319,
+   "cierre_previo": 88.96,
+   "maximo_52": 93.29,
+   "minimo_52": 77.82,
+   "fecha": "2026-09-16"
+  },
+  "EEM": {
+   "precio": 66.24,
+   "cambio_pct": 0.72992374,
+   "cierre_previo": 65.76,
+   "maximo_52": 71.57,
+   "minimo_52": 51.82,
+   "fecha": "2026-09-16"
+  },
+  "SHY": {
+   "precio": 81.425,
+   "cambio_pct": 0.14143702,
+   "cierre_previo": 81.31,
+   "maximo_52": 83.2,
+   "minimo_52": 81.3,
+   "fecha": "2026-09-16"
+  },
+  "IEF": {
+   "precio": 91.175,
+   "cambio_pct": 0.3908834,
+   "cierre_previo": 90.82,
+   "maximo_52": 98.050003,
+   "minimo_52": 90.75,
+   "fecha": "2026-09-16"
+  },
+  "TLT": {
+   "precio": 81.21,
+   "cambio_pct": 0.61950306,
+   "cierre_previo": 80.71,
+   "maximo_52": 92.19,
+   "minimo_52": 80.46,
+   "fecha": "2026-09-16"
+  },
+  "LQD": {
+   "precio": 104.91,
+   "cambio_pct": 0.60414387,
+   "cierre_previo": 104.28,
+   "maximo_52": 112.93,
+   "minimo_52": 104.050003,
+   "fecha": "2026-09-16"
+  },
+  "HYG": {
+   "precio": 78.655,
+   "cambio_pct": 0.35085833,
+   "cierre_previo": 78.38,
+   "maximo_52": 81.36,
+   "minimo_52": 78.38,
+   "fecha": "2026-09-16"
+  },
+  "GLD": {
+   "precio": 398.41,
+   "cambio_pct": 1.080808,
+   "cierre_previo": 394.14999,
+   "maximo_52": 509.70001,
+   "minimo_52": 333.81,
+   "fecha": "2026-09-16"
+  },
+  "SLV": {
+   "precio": 58.175,
+   "cambio_pct": 1.12116,
+   "cierre_previo": 57.53,
+   "maximo_52": 109.83,
+   "minimo_52": 37.35,
+   "fecha": "2026-09-16"
+  },
+  "CPER": {
+   "precio": 38.98,
+   "cambio_pct": 0.8016598,
+   "cierre_previo": 38.67,
+   "maximo_52": 41.29,
+   "minimo_52": 28.2,
+   "fecha": "2026-09-16"
+  },
+  "USO": {
+   "precio": 156.56,
+   "cambio_pct": -3.27444,
+   "cierre_previo": 161.86,
+   "maximo_52": 163.35001,
+   "minimo_52": 65.99,
+   "fecha": "2026-09-16"
+  },
+  "VIXY": {
+   "precio": 17.45,
+   "cambio_pct": -0.45636442,
+   "cierre_previo": 17.53,
+   "maximo_52": 39.7,
+   "minimo_52": 16.47,
+   "fecha": "2026-09-16"
+  },
+  "UUP": {
+   "precio": 28.24,
+   "cambio_pct": 0.070874157,
+   "cierre_previo": 28.22,
+   "maximo_52": 28.6,
+   "minimo_52": 26.4,
+   "fecha": "2026-09-16"
+  },
+  "XLE": {
+   "precio": 64.685,
+   "cambio_pct": -1.88837,
+   "cierre_previo": 65.93,
+   "maximo_52": 66.17,
+   "minimo_52": 42.35,
+   "fecha": "2026-09-16"
+  },
+  "XLF": {
+   "precio": 56.555,
+   "cambio_pct": -0.51890674,
+   "cierre_previo": 56.85,
+   "maximo_52": 58.6,
+   "minimo_52": 47.67,
+   "fecha": "2026-09-16"
+  },
+  "XLK": {
+   "precio": 185.16,
+   "cambio_pct": 0.77282816,
+   "cierre_previo": 183.74001,
+   "maximo_52": 198.73,
+   "minimo_52": 126.68,
+   "fecha": "2026-09-16"
+  },
+  "XLU": {
+   "precio": 41.44,
+   "cambio_pct": 0.290417,
+   "cierre_previo": 41.32,
+   "maximo_52": 47.8,
+   "minimo_52": 41.29,
+   "fecha": "2026-09-16"
+  },
+  "XLY": {
+   "precio": 111.265,
+   "cambio_pct": 0.34722471,
+   "cierre_previo": 110.88,
+   "maximo_52": 125.010002,
+   "minimo_52": 105.19,
+   "fecha": "2026-09-16"
+  },
+  "XLP": {
+   "precio": 83.975,
+   "cambio_pct": 0.29260317,
+   "cierre_previo": 83.73,
+   "maximo_52": 90.14,
+   "minimo_52": 75.16,
+   "fecha": "2026-09-16"
+  },
+  "XLV": {
+   "precio": 168.45,
+   "cambio_pct": 0.4711895,
+   "cierre_previo": 167.66,
+   "maximo_52": 176.60001,
+   "minimo_52": 133.73,
+   "fecha": "2026-09-16"
+  },
+  "SMH": {
+   "precio": 548.89,
+   "cambio_pct": 1.25067,
+   "cierre_previo": 542.10999,
+   "maximo_52": 671.83002,
+   "minimo_52": 301.37,
+   "fecha": "2026-09-16"
+  },
+  "MRVL": {
+   "precio": 228.42,
+   "cambio_pct": 3.031125,
+   "cierre_previo": 221.7,
+   "maximo_52": 329.88,
+   "minimo_52": 67.36,
+   "fecha": "2026-09-16"
+  },
+  "EUR/USD": {
+   "precio": 1.15337,
+   "cambio_pct": -0.071911281,
+   "cierre_previo": 1.1542,
+   "maximo_52": 1.20656,
+   "minimo_52": 1.13239,
+   "fecha": "2026-09-16"
+  },
+  "USD/JPY": {
+   "precio": 155.13499,
+   "cambio_pct": 0.013635147,
+   "cierre_previo": 155.11384,
+   "maximo_52": 164.08805,
+   "minimo_52": 145.476,
+   "fecha": "2026-09-16"
+  },
+  "BTC/USD": {
+   "precio": 75532.01,
+   "cambio_pct": -0.14868236,
+   "cierre_previo": 75644.48,
+   "maximo_52": 126199.63,
+   "minimo_52": 57800.19,
+   "fecha": "2026-09-16"
+  },
+  "ETH/USD": {
+   "precio": 2378.91,
+   "cambio_pct": -0.80683496,
+   "cierre_previo": 2398.26,
+   "maximo_52": 4752.56982,
+   "minimo_52": 1507.050049,
+   "fecha": "2026-09-16"
+  },
+  "SOL/USD": {
+   "precio": 96.15,
+   "cambio_pct": -0.7535095,
+   "cierre_previo": 96.88,
+   "maximo_52": 253.51,
+   "minimo_52": 60.13,
+   "fecha": "2026-09-16"
+  }
+ },
+ "titulares": [
+  {
+   "fuente": "Economia",
+   "titular": "SEC proposes to end shareholder vote oversight, a blow to reformers",
+   "fecha": "2026-09-16 17:24:49"
+  },
+  {
+   "fuente": "Economia",
+   "titular": "European shares rise as oil pauses ahead of Fed rate decision",
+   "fecha": "2026-09-16 17:12:47"
+  },
+  {
+   "fuente": "Economia",
+   "titular": "Dollar holds near two-week high ahead of Fed decision",
+   "fecha": "2026-09-16 17:00:33"
+  },
+  {
+   "fuente": "Economia",
+   "titular": "Meloni says she plans to stay in office until term ends",
+   "fecha": "2026-09-16 16:55:08"
+  },
+  {
+   "fuente": "Economia",
+   "titular": "Warsh’s words may matter more than the anticipated Fed rate hike",
+   "fecha": "2026-09-16 16:48:38"
+  },
+  {
+   "fuente": "Economia",
+   "titular": "Calls to slow AI benefit US sector leaders, says French finance minister",
+   "fecha": "2026-09-16 16:37:14"
+  },
+  {
+   "fuente": "Economia",
+   "titular": "Saudi Aramco targets half East-West pipeline capacity within days - Bloomberg",
+   "fecha": "2026-09-16 16:10:44"
+  },
+  {
+   "fuente": "Economia",
+   "titular": "Robust US retail sales underscore economy’s resilience; inflation pressures building",
+   "fecha": "2026-09-16 16:00:58"
+  },
+  {
+   "fuente": "Mercados",
+   "titular": "M&A stock targets: quantitative screener picks and analyst watchlist names",
+   "fecha": "2026-09-16 17:22:27"
+  },
+  {
+   "fuente": "Mercados",
+   "titular": "Carnival selloff overdone, a buying opportunity into earnings: Stifel",
+   "fecha": "2026-09-16 17:19:01"
+  },
+  {
+   "fuente": "Mercados",
+   "titular": "American Airlines CEO says shift to premium continues",
+   "fecha": "2026-09-16 17:18:33"
+  },
+  {
+   "fuente": "Mercados",
+   "titular": "JFrog stock: strong growth trajectory meets valuation debate",
+   "fecha": "2026-09-16 17:17:58"
+  },
+  {
+   "fuente": "Mercados",
+   "titular": "Apollo warns cloud computing debt grows riskier amid AI spending",
+   "fecha": "2026-09-16 17:14:36"
+  },
+  {
+   "fuente": "Mercados",
+   "titular": "Exclusive-OpenAI’s rogue agents probed Hugging Face for weaknesses two months before major hack",
+   "fecha": "2026-09-16 17:06:53"
+  },
+  {
+   "fuente": "Mercados",
+   "titular": "Nike stock outlook: trading at 12-year lows with turnaround unlikely before 2027",
+   "fecha": "2026-09-16 16:51:00"
+  },
+  {
+   "fuente": "Mercados",
+   "titular": "Anthropic to fold Claude AI features into one interface, launches document tools",
+   "fecha": "2026-09-16 16:48:57"
+  },
+  {
+   "fuente": "Divisas",
+   "titular": "Dollar rises ahead of pivotal Fed rate decision, sterling slips as UK CPI heats up",
+   "fecha": "2026-09-16 16:49:53"
+  },
+  {
+   "fuente": "Divisas",
+   "titular": "UBS sees EUR/CHF retest of 0.96 as Swiss franc lags on low yield",
+   "fecha": "2026-09-16 09:24:27"
+  },
+  {
+   "fuente": "Divisas",
+   "titular": "Citi sees GBP gains as short-lived ahead of October budget risks",
+   "fecha": "2026-09-16 09:07:19"
+  },
+  {
+   "fuente": "Divisas",
+   "titular": "Sterling today: Pound slips as Fed hike bets and UK inflation uptick weigh",
+   "fecha": "2026-09-16 08:21:55"
+  },
+  {
+   "fuente": "Divisas",
+   "titular": "Euro zone yields linger at multi-year peaks as traders brace for Fed rate decision",
+   "fecha": "2026-09-16 07:43:07"
+  },
+  {
+   "fuente": "Divisas",
+   "titular": "Dollar hits two-week high as traders gear up for anticipated Fed hike on Wednesday",
+   "fecha": "2026-09-15 20:38:48"
+  },
+  {
+   "fuente": "Divisas",
+   "titular": "Loonie slips as oil surge fuels rate worries ahead of Fed decision",
+   "fecha": "2026-09-15 12:40:11"
+  },
+  {
+   "fuente": "Divisas",
+   "titular": "Sterling today: Pound fall as UK jobs data disappoints, dollar firm",
+   "fecha": "2026-09-15 08:06:27"
+  },
+  {
+   "fuente": "Materias",
+   "titular": "Continental Resources signs Venezuela oil development deal",
+   "fecha": "2026-09-16 17:24:44"
+  },
+  {
+   "fuente": "Materias",
+   "titular": "Gold up 1% as oil prices take a breather ahead of consequential Fed rate decision",
+   "fecha": "2026-09-16 17:04:48"
+  },
+  {
+   "fuente": "Materias",
+   "titular": "US farm agency prepares to reopen New Mexico port to livestock trade next week",
+   "fecha": "2026-09-16 15:50:07"
+  },
+  {
+   "fuente": "Materias",
+   "titular": "US energy producer to unveil Venezuela investment, energy secretary says",
+   "fecha": "2026-09-16 15:49:47"
+  },
+  {
+   "fuente": "Materias",
+   "titular": "Oil slips as Saudi Arabia offers more crude via Oman",
+   "fecha": "2026-09-16 15:49:30"
+  },
+  {
+   "fuente": "Materias",
+   "titular": "Raw sugar edges lower as oil prices weigh on market",
+   "fecha": "2026-09-16 15:49:03"
+  },
+  {
+   "fuente": "Materias",
+   "titular": "US crude oil inventories decline as fuel stocks increase",
+   "fecha": "2026-09-16 14:46:10"
+  },
+  {
+   "fuente": "Materias",
+   "titular": "Wheat futures ease on technical selling and weaker crude oil",
+   "fecha": "2026-09-16 13:57:24"
+  },
+  {
+   "fuente": "Cripto",
+   "titular": "SEC chief vows action on crypto rules after Senate bill fails",
+   "fecha": "2026-09-16 16:20:11"
+  },
+  {
+   "fuente": "Cripto",
+   "titular": "Coinbase cuts trading fees for active users on Advanced platform",
+   "fecha": "2026-09-16 14:56:02"
+  },
+  {
+   "fuente": "Cripto",
+   "titular": "XRP price outlook after token drops 10% on failed Clarity Act vote",
+   "fecha": "2026-09-16 13:44:48"
+  },
+  {
+   "fuente": "Cripto",
+   "titular": "Bitcoin drops below $76k as Clarity vote fails; Fed rate hike in focus",
+   "fecha": "2026-09-16 13:40:40"
+  },
+  {
+   "fuente": "Cripto",
+   "titular": "BASIS.pro Expands On-Chain Infrastructure with XDC Network Partnership and Zypher DAO as Auto Earn Goes Live",
+   "fecha": "2026-09-16 07:30:36"
+  },
+  {
+   "fuente": "Cripto",
+   "titular": "Bitcoin breaks down below 200MA at $75,861: Live levels",
+   "fecha": "2026-09-16 07:11:51"
+  },
+  {
+   "fuente": "Cripto",
+   "titular": "Bitcoin adds to losses, falls nearly 4% after Clarity Act fails Senate vote",
+   "fecha": "2026-09-15 21:49:19"
+  },
+  {
+   "fuente": "Cripto",
+   "titular": "XRP Falls 11% In Rout",
+   "fecha": "2026-09-15 18:44:04"
+  },
+  {
+   "fuente": "CNBC mercados",
+   "titular": "Senate is still a toss-up, but Democrats now have slight edge, prediction market traders think",
+   "fecha": "Wed, 16 Sep 2026 16:26:41 GMT"
+  },
+  {
+   "fuente": "CNBC mercados",
+   "titular": "Stocks making the biggest moves premarket: SK Hynix, J.B. Hunt, Expedia & more",
+   "fecha": "Wed, 16 Sep 2026 11:44:23 GMT"
+  },
+  {
+   "fuente": "CNBC mercados",
+   "titular": "China's AI leaders keep quiet despite U.S. 'publicity' on tech risks",
+   "fecha": "Wed, 16 Sep 2026 04:01:59 GMT"
+  },
+  {
+   "fuente": "CNBC mercados",
+   "titular": "Stocks making the biggest moves midday: Skyworks Solutions, Axon, Dave & Buster's, Revvity & more",
+   "fecha": "Tue, 15 Sep 2026 17:55:28 GMT"
+  },
+  {
+   "fuente": "CNBC mercados",
+   "titular": "Stocks making the biggest moves premarket: Dave & Buster's, Enova, Etsy & more",
+   "fecha": "Tue, 15 Sep 2026 11:36:31 GMT"
+  },
+  {
+   "fuente": "CNBC mercados",
+   "titular": "China's August retail sales miss forecast while investment slump deepens, piling pressure on Beijing",
+   "fecha": "Tue, 15 Sep 2026 09:46:14 GMT"
+  },
+  {
+   "fuente": "CNBC mercados",
+   "titular": "Bank of America expects third-quarter investment banking fees to fall more than 10%; shares slide",
+   "fecha": "Mon, 14 Sep 2026 20:34:23 GMT"
+  },
+  {
+   "fuente": "CNBC mercados",
+   "titular": "Warsh's credibility is on the line this week as Trump policies put pressure on Fed to hike",
+   "fecha": "Mon, 14 Sep 2026 20:49:03 GMT"
+  },
+  {
+   "fuente": "CNBC economia",
+   "titular": "'Science fiction': Transport companies — the backbone of economy — are sounding alarm on fuel prices",
+   "fecha": "Wed, 16 Sep 2026 17:29:19 GMT"
+  },
+  {
+   "fuente": "CNBC economia",
+   "titular": "Consumers hit by one-two punch of oil and rates from Iran war. The estimated bill is $1,700 per household",
+   "fecha": "Wed, 16 Sep 2026 17:32:22 GMT"
+  },
+  {
+   "fuente": "CNBC economia",
+   "titular": "UK inflation jumps to 3.1% as energy costs soar",
+   "fecha": "Wed, 16 Sep 2026 07:18:23 GMT"
+  },
+  {
+   "fuente": "CNBC economia",
+   "titular": "Indonesia's new finance minister faces an uphill battle on fiscal credibility",
+   "fecha": "Wed, 16 Sep 2026 01:53:52 GMT"
+  },
+  {
+   "fuente": "CNBC economia",
+   "titular": "Why de-dollarization discussions are more talk, less action",
+   "fecha": "Tue, 15 Sep 2026 23:28:01 GMT"
+  },
+  {
+   "fuente": "CNBC economia",
+   "titular": "Counting the votes: Warsh faces a tough battle as the Fed girds for expected interest rate hike",
+   "fecha": "Mon, 14 Sep 2026 19:47:42 GMT"
+  },
+  {
+   "fuente": "CNBC economia",
+   "titular": "Inflation is outpacing wage growth again, squeezing Americans’ paychecks",
+   "fecha": "Sat, 12 Sep 2026 12:49:15 GMT"
+  },
+  {
+   "fuente": "CNBC economia",
+   "titular": "Consumer outlook plunges in September as inflation outlook worsens",
+   "fecha": "Fri, 11 Sep 2026 16:53:23 GMT"
+  },
+  {
+   "fuente": "Yahoo Finance",
+   "titular": "How a Costco partner's bankruptcy could benefit its biggest rival",
+   "fecha": "2026-09-15T13:33:00Z"
+  },
+  {
+   "fuente": "Yahoo Finance",
+   "titular": "Fed meeting live updates: Fed interest rate decision looms, with traders anticipating first hike in 3 years",
+   "fecha": "2026-09-15T14:34:52Z"
+  },
+  {
+   "fuente": "Yahoo Finance",
+   "titular": "Mortgage and refinance interest rates today, Wednesday, September 16, 2026: Rates ease somewhat ahead of the Fed's rate decision",
+   "fecha": "2026-09-16T10:00:00Z"
+  },
+  {
+   "fuente": "Yahoo Finance",
+   "titular": "Tech stocks today: OpenAI raising funds at $1.2 trillion valuation,  SK Hynix and Intel moves",
+   "fecha": "2026-09-14T14:01:34Z"
+  },
+  {
+   "fuente": "Yahoo Finance",
+   "titular": "Stock Market Today: Nasdaq Leads Gains As Fed News Looms; Oil Ship Stocks Sail North (Live Coverage)",
+   "fecha": "2026-09-16T17:14:02Z"
+  },
+  {
+   "fuente": "Yahoo Finance",
+   "titular": "Rich Dad Poor Dad author warns biggest crash in history has started",
+   "fecha": "2026-09-15T17:26:03Z"
+  },
+  {
+   "fuente": "Yahoo Finance",
+   "titular": "Wall Street bets on a rate hike, but the Fed decision could be a close call",
+   "fecha": "2026-09-16T17:12:12Z"
+  },
+  {
+   "fuente": "Yahoo Finance",
+   "titular": "S&P 500 Trucking Stock Craters On CFO's Warning",
+   "fecha": "2026-09-16T17:00:50Z"
+  }
+ ],
+ "fallos": []
+}
