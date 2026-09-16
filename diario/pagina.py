@@ -154,7 +154,13 @@ def main():
 
     logo = open(LOGO).read().strip() if os.path.exists(LOGO) else ""
     P = ['<!doctype html><html lang="es"><head><meta charset="utf-8">',
-         '<meta name="viewport" content="width=device-width,initial-scale=1">',
+         '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">',
+         '<meta name="theme-color" content="#0B0B0C">',
+         '<link rel="manifest" href="manifest.webmanifest">',
+         '<link rel="apple-touch-icon" href="icono-192.png">',
+         '<meta name="apple-mobile-web-app-capable" content="yes">',
+         '<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">',
+         '<meta name="apple-mobile-web-app-title" content="MHF Diario">',
          '<title>MHF Diario</title><style>%s</style></head><body>' % CSS,
          '<div class="envoltorio"><header>']
     if logo:
@@ -206,6 +212,9 @@ def main():
              'Se genera solo cada dia. No sustituye tu criterio.</footer>'
              % (len(d["precios"]), len(d["universo"]), len(d.get("fallos") or []),
                 (" · modelo " + L["modelo"]) if L.get("modelo") else ""))
+    P.append("<script>if('serviceWorker' in navigator){"
+             "window.addEventListener('load',function(){"
+             "navigator.serviceWorker.register('sw.js').catch(function(){});});}</script>")
     P.append("</div></body></html>")
 
     os.makedirs(os.path.dirname(SALIDA), exist_ok=True)
