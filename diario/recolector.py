@@ -3,6 +3,7 @@
 No escribe analisis: solo datos comprobables. Escribe diario/datos.json."""
 import json, os, time, urllib.request, urllib.parse, urllib.error
 import xml.etree.ElementTree as ET
+import semaforo, earnings
 from datetime import datetime, timezone
 
 API   = "https://api.twelvedata.com/quote"
@@ -43,8 +44,6 @@ UNIVERSO = [
     ("EUR/USD", "Euro/Dolar",      "divisas"),
     ("USD/JPY", "Dolar/Yen",       "divisas"),
     ("BTC/USD", "Bitcoin",         "cripto"),
-    ("ETH/USD", "Ethereum",        "cripto"),
-    ("SOL/USD", "Solana",          "cripto"),
 ]
 
 RSS = [
@@ -132,6 +131,15 @@ def main():
         "titulares": titulares(),
         "fallos": fallos,
     }
+    # --- semaforo de peligro, resultados y calendario de la semana
+    try:
+        e = earnings.estado()
+        ev = semaforo.de_hoy()
+        niv, tit, mot = semaforo.decide(ev, [x["ticker"] for x in e["hoy"]], None, None)
+        d["extra"] = {"semaforo": {"nivel": niv, "titulo": tit, "motivos": mot},
+                      "earnings": e, "semana": semaforo.semana()}
+    except Exception as ex:
+        d["extra"] = {"error": "%s: %s" % (type(ex).__name__, ex)}
     os.makedirs(os.path.dirname(SALIDA), exist_ok=True)
     json.dump(d, open(SALIDA, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print("precios %d/%d · titulares %d · fallos %d"

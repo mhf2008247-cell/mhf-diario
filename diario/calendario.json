@@ -1,0 +1,28 @@
+{
+  "_leeme": "Eventos con fecha confirmada. ROJO = mueve el mercado entero. AMARILLO = importa pero menos. Fuentes: federalreserve.gov (FOMC), bls.gov (empleo), calendario economico (IPC y PCE). Si una fecha no esta confirmada NO se pone.",
+  "eventos": [
+    {"fecha": "2026-09-18", "nivel": "rojo",     "que": "Banco de Japon - decision de tipos", "nota": "el mercado pagaba ~80% de subida"},
+    {"fecha": "2026-09-30", "nivel": "amarillo", "que": "PCE de agosto (la inflacion que mira la Fed)"},
+    {"fecha": "2026-10-02", "nivel": "rojo",     "que": "Informe de empleo de EEUU (septiembre)"},
+    {"fecha": "2026-10-14", "nivel": "rojo",     "que": "IPC de septiembre"},
+    {"fecha": "2026-10-28", "nivel": "rojo",     "que": "Fed - decision de tipos", "nota": "sin cuadro de proyecciones"},
+    {"fecha": "2026-10-29", "nivel": "amarillo", "que": "PCE de septiembre"},
+    {"fecha": "2026-11-06", "nivel": "rojo",     "que": "Informe de empleo de EEUU (octubre)"},
+    {"fecha": "2026-11-10", "nivel": "rojo",     "que": "IPC de octubre"},
+    {"fecha": "2026-11-25", "nivel": "amarillo", "que": "PCE de octubre"},
+    {"fecha": "2026-12-04", "nivel": "rojo",     "que": "Informe de empleo de EEUU (noviembre)"},
+    {"fecha": "2026-12-09", "nivel": "rojo",     "que": "Fed - decision de tipos + dot plot", "nota": "de las que mueven de verdad"},
+    {"fecha": "2027-01-27", "nivel": "rojo",     "que": "Fed - decision de tipos"},
+    {"fecha": "2027-03-17", "nivel": "rojo",     "que": "Fed - decision de tipos + dot plot"},
+    {"fecha": "2027-04-28", "nivel": "rojo",     "que": "Fed - decision de tipos"},
+    {"fecha": "2027-06-09", "nivel": "rojo",     "que": "Fed - decision de tipos + dot plot"},
+    {"fecha": "2027-07-28", "nivel": "rojo",     "que": "Fed - decision de tipos"},
+    {"fecha": "2027-09-15", "nivel": "rojo",     "que": "Fed - decision de tipos + dot plot"},
+    {"fecha": "2027-10-27", "nivel": "rojo",     "que": "Fed - decision de tipos"},
+    {"fecha": "2027-12-08", "nivel": "rojo",     "que": "Fed - decision de tipos + dot plot"}
+  ],
+  "propios": [
+    {"fecha": "2026-10-12", "nivel": "amarillo", "que": "V6: mirar si hay 30 dias de workflow verde"},
+    {"fecha": "2026-11-10", "nivel": "rojo",     "que": "V6: revisar los 4 criterios de validacion"}
+  ]
+}

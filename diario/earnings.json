@@ -1,0 +1,19 @@
+{
+  "_leeme": "Resultados de empresas. El dato de 'batio o no batio' NO es gratis en ninguna fuente (comprobado: FMP denegado, Twelve Data lo cobra en el plan Grow, Nasdaq no permite robots). Esta lista la mantenemos MHF y Claude a mano cada semana. 'revisado' dice cuando se actualizo: si tiene mas de 8 dias, la pagina avisa de que esta vieja.",
+  "revisado": "2026-09-16",
+  "presentan": [
+    {"fecha": "2026-09-16", "ticker": "LEN",  "empresa": "Lennar",     "cuando": "tras el cierre",
+     "nota": "constructora - termometro directo de lo que los tipos hacen a la economia real; hipoteca a 30 anos por encima del 7 %"},
+    {"fecha": "2026-09-17", "ticker": "CCL",  "empresa": "Carnival",   "cuando": "antes de abrir",
+     "nota": "con el petroleo caro, mirar el coste de combustible"}
+  ],
+  "ya_presentaron": [
+    {"fecha": "2026-09-14", "ticker": "PLAY", "empresa": "Dave & Buster's", "reaccion_pct": -15.57,
+     "resumen": "perdida inesperada"},
+    {"fecha": "2026-09-15", "ticker": "TCOM", "empresa": "Trip.com", "reaccion_pct": null,
+     "resumen": "presento tras el cierre"},
+    {"fecha": "2026-09-11", "ticker": "ADBE", "empresa": "Adobe", "reaccion_pct": -2.95,
+     "batio_y_cayo": true,
+     "resumen": "batio en ingresos con trimestre record y aun asi cayo por una guia floja del Q4. PER 14,4 y PER adelantado 9,59"}
+  ]
+}
