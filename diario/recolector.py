@@ -14,37 +14,50 @@ SALIDA = "diario/datos.json"
 
 # (simbolo, nombre, bloque) - todo ETF/divisa/cripto de EEUU, que es lo que da el plan gratis
 UNIVERSO = [
-    ("SPY",  "S&P 500",            "bolsa"),
-    ("QQQ",  "Nasdaq 100",         "bolsa"),
-    ("DIA",  "Dow Jones",          "bolsa"),
-    ("IWM",  "Russell 2000",       "bolsa"),
-    ("EWJ",  "Japon",              "mundo"),
-    ("EWH",  "Hong Kong",          "mundo"),
-    ("VGK",  "Europa",             "mundo"),
-    ("EEM",  "Emergentes",         "mundo"),
-    ("SHY",  "Bono 1-3 anos",      "bonos"),
-    ("IEF",  "Bono 7-10 anos",     "bonos"),
-    ("TLT",  "Bono 20+ anos",      "bonos"),
-    ("LQD",  "Credito bueno",      "bonos"),
-    ("HYG",  "Credito basura",     "bonos"),
-    ("GLD",  "Oro",                "metales"),
-    ("SLV",  "Plata",              "metales"),
-    ("CPER", "Cobre",              "metales"),
-    ("USO",  "Petroleo",           "energia"),
-    ("VIXY", "Volatilidad (VIX)",  "miedo"),
-    ("UUP",  "Dolar (DXY)",        "divisas"),
-    ("XLE",  "Energia",            "sectores"),
-    ("XLF",  "Financieras",        "sectores"),
-    ("XLK",  "Tecnologia",         "sectores"),
-    ("XLU",  "Utilities",          "sectores"),
-    ("XLY",  "Consumo discrecional","sectores"),
-    ("XLP",  "Consumo basico",     "sectores"),
-    ("XLV",  "Salud",              "sectores"),
-    ("SMH",  "Semiconductores",    "semis"),
-    ("MRVL", "Marvell (posicion)", "semis"),
-    ("EUR/USD", "Euro/Dolar",      "divisas"),
-    ("USD/JPY", "Dolar/Yen",       "divisas"),
-    ("BTC/USD", "Bitcoin",         "cripto"),
+    # --- BOLSA E INDICES (indices, no ETF) ---
+    ("SPX",     "S&P 500",            "bolsa"),
+    ("IXIC",    "Nasdaq",             "bolsa"),
+    ("VIX",     "VIX",                "bolsa"),
+    ("DXY",     "Dolar (DXY)",        "bolsa"),
+    ("N225",    "Nikkei",             "bolsa"),
+    ("KS11",    "Kospi",              "bolsa"),
+    ("000300.SHG", "CSI 300",         "bolsa"),
+    # --- ROTACION POR SECTORES (esto SI son ETF, es lo unico que hay) ---
+    ("XLE",  "Energia",              "sectores"),
+    ("XLF",  "Financieras",          "sectores"),
+    ("XLK",  "Tecnologia",           "sectores"),
+    ("XLU",  "Utilities",            "sectores"),
+    ("XLY",  "Consumo discrecional", "sectores"),
+    ("XLP",  "Consumo basico",       "sectores"),
+    ("XLV",  "Salud",                "sectores"),
+    ("XLI",  "Industriales",         "sectores"),
+    # --- IA ---
+    ("NVDA", "Nvidia",               "ia"),
+    ("MRVL", "Marvell (posicion)",   "ia"),
+    ("AVGO", "Broadcom",             "ia"),
+    ("SMH",  "Semiconductores",      "ia"),
+    ("MU",   "Micron",               "ia"),
+    ("AMD",  "AMD",                  "ia"),
+    # --- BONOS Y CREDITO ---
+    ("SHY",  "Bono 1-3 anos",        "bonos"),
+    ("IEF",  "Bono 7-10 anos",       "bonos"),
+    ("TLT",  "Bono 20+ anos",        "bonos"),
+    ("LQD",  "Credito bueno",        "bonos"),
+    ("HYG",  "Credito basura",       "bonos"),
+    # --- METALES ---
+    ("GCZ2026", "Oro (futuro dic)",  "metales"),
+    ("GLD",  "Oro (GLD)",            "metales"),
+    ("SLV",  "Plata",                "metales"),
+    ("CPER", "Cobre",                "metales"),
+    # --- ENERGIA ---
+    ("USO",  "Petroleo (USO)",       "energia"),
+    ("BRENT","Brent",                "energia"),
+    # --- DIVISAS ---
+    ("EUR/USD", "Euro/Dolar",        "divisas"),
+    ("USD/JPY", "Dolar/Yen",         "divisas"),
+    ("USD/CNY", "Dolar/Yuan",        "divisas"),
+    # --- CRIPTO ---
+    ("BTC/USD", "Bitcoin",           "cripto"),
 ]
 
 RSS = [
@@ -136,7 +149,7 @@ def velas(simbolo, n=280):
 def niveles_de(tickers):
     """EMA50, EMA200 y niveles mas tocados de cada empresa que presenta."""
     out, fallos = {}, []
-    for i, t in enumerate(sorted(set(tickers))[:6]):
+    for i, t in enumerate(sorted(set(tickers))[:7]):
         if i:
             time.sleep(ESPERA / 4)          # estas son 1 credito, no hace falta esperar tanto
         try:
@@ -166,7 +179,7 @@ def main():
         e = earnings.estado()
         ev = semaforo.de_hoy()
         niv, tit, mot = semaforo.decide(ev, [x["ticker"] for x in e["hoy"]], None, None)
-        tks = [x["ticker"] for x in e["hoy"]] + [x["ticker"] for x in e["semana"]]
+        tks = ["BTC/USD"] + [x["ticker"] for x in e["hoy"]] + [x["ticker"] for x in e["semana"]]
         niv_t, fal_n = niveles_de(tks)
         d["extra"] = {"semaforo": {"nivel": niv, "titulo": tit, "motivos": mot},
                       "earnings": e, "semana": semaforo.semana(), "niveles": niv_t}

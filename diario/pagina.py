@@ -7,16 +7,14 @@ LOGO = "diario/logo.txt"
 
 # bloque -> (numero, rotulo, icono, simbolos)
 BLOQUES = [
-    ("bonos",    "Bonos y tipos",            "▦"),
-    ("energia",  "Energia y geopolitica",    "◉"),
-    ("metales",  "Metales",                  "◆"),
-    ("cripto",   "Cripto",                   "₿"),
     ("bolsa",    "Bolsa e indices",          "▲"),
+    ("bonos",    "Bonos y tipos",            "▦"),
+    ("energia",  "Energia y petroleo",       "◉"),
+    ("metales",  "Metales",                  "◆"),
+    ("cripto",   "Bitcoin",                  "₿"),
     ("sectores", "Rotacion por sectores",    "▤"),
-    ("semis",    "Semis e IA",               "⬢"),
+    ("ia",       "IA",                       "⬢"),
     ("divisas",  "Divisas",                  "⇄"),
-    ("miedo",    "Volatilidad",              "⚡"),
-    ("mundo",    "Europa, Japon y Asia",     "◍"),
 ]
 
 CSS = """
@@ -84,7 +82,7 @@ td:first-child{text-align:left}
 .niv .lst{margin-top:9px;display:grid;gap:5px}
 .niv .lst div{display:flex;justify-content:space-between;font-size:13px;font-variant-numeric:tabular-nums}
 .niv .lst .e{color:var(--tinta3);font-size:11.5px}
-.ev{display:grid;gap:8px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}\n.h2b{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta2);font-weight:700;margin-bottom:5px}\n@media(max-width:430px){.g2{grid-template-columns:1fr;gap:10px}}\n.ev{display:grid;gap:8px}
 .ev .it{display:flex;gap:11px;align-items:flex-start;padding:9px 0;border-top:1px solid var(--linea)}
 .ev .it:first-child{border-top:0}
 .ev .d{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--tinta3);
@@ -134,10 +132,41 @@ def trozos(texto):
         if s.startswith("#"):
             act = None; continue
         if act:
-            s = re.sub(r"^\[?(LECTURA|Lectura)\]?:?\s*", "", s)
+            s = re.sub(r"^\[?(LECTURA|Lectura|DATO|Dato)\]?:?\s*", "", s)
+            s = re.sub(r"\s*[\[`]+\s*(DATO|Dato|LECTURA|Lectura|ESTIMACION|Estimacion)\s*[\]`]+", "", s)
             out[act].append(re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", html.escape(s)))
     return out
 
+
+
+
+def nota_oro(px):
+    """Solo con los movimientos de HOY. Un dia no define un regimen y se dice."""
+    def c(k):
+        v = px.get(k); return None if not v else v["cambio_pct"]
+    oro = c("GCZ2026") if c("GCZ2026") is not None else c("GLD")
+    bolsa = c("SPX") if c("SPX") is not None else c("SPY")
+    dol = c("DXY") if c("DXY") is not None else c("UUP")
+    if oro is None or bolsa is None:
+        return None
+    if oro > 0.1 and bolsa < -0.1:
+        t = "Hoy SI se comporta como refugio: el oro sube %+.2f %% con la bolsa %+.2f %%." % (oro, bolsa)
+    elif oro < -0.1 and bolsa < -0.1:
+        t = "Hoy NO es refugio: cae %+.2f %% con la bolsa tambien cayendo %+.2f %%. Cuando pasa esto suele mandar el dolar o los tipos reales, no el miedo." % (oro, bolsa)
+    elif oro > 0.1 and bolsa > 0.1:
+        t = "Hoy sube %+.2f %% CON la bolsa (%+.2f %%). Eso no es refugio: es liquidez o inflacion, los dos suben a la vez." % (oro, bolsa)
+    else:
+        t = "Hoy va plano (%+.2f %%) con la bolsa en %+.2f %%. Nada que leer." % (oro, bolsa)
+    if dol is not None:
+        t += " El dolar %+.2f %%." % dol
+    return t + " Es un dia suelto, no un regimen."
+
+
+def ganadores(px, nom, n=5):
+    """Los que mas suben y los que mas bajan del dia, de todo el panel."""
+    L = [(s, nom.get(s, (s, ""))[0], v["cambio_pct"]) for s, v in px.items()]
+    L.sort(key=lambda x: -x[2])
+    return L[:n], L[-n:][::-1]
 
 
 def bloque_niveles(t, a):
@@ -221,6 +250,19 @@ def main():
     if titular:
         P.append('<div class="titular">%s</div>' % html.escape(titular))
 
+    sube, baja = ganadores(d["precios"], nom)
+    if sube:
+        P.append('<div class="tarjeta"><div class="cab"><span class="num">↕</span>'
+                 '<span class="ico">◈</span><h2>Lo que mas se ha movido hoy</h2></div>'
+                 '<div class="g2">')
+        for rot, lst in (("Arriba", sube), ("Abajo", baja)):
+            P.append('<div><div class="h2b">%s</div><table>' % rot)
+            for sy, nb, cb in lst:
+                P.append('<tr><td><span class="tk">%s</span><span class="dsc">%s</span></td>%s</tr>'
+                         % (html.escape(sy), html.escape(nb[:18]), cambio(cb)))
+            P.append("</table></div>")
+        P.append("</div></div>")
+
     # --- earnings: primero, que es lo que mas le importa
     if ear:
         P.append('<div class="tarjeta"><div class="cab"><span class="num">★</span>'
@@ -288,6 +330,15 @@ def main():
                      '<td>%s</td>%s</tr>'
                      % (html.escape(s), html.escape(nb), fnum(v["precio"]), cambio(v["cambio_pct"])))
         P.append("</table>")
+        if clave == "metales":
+            no = nota_oro(d["precios"])
+            if no:
+                P.append('<div class="lec"><div class="t">El oro, ¿refugio?</div><p>%s</p></div>'
+                         % html.escape(no))
+        if clave == "cripto":
+            nb = (extra.get("niveles") or {}).get("BTC/USD")
+            if nb:
+                P.append(bloque_niveles("BTC", nb))
         if len(trozo) > 1:
             P.append('<div class="lec"><div class="t">Lectura de mercado</div>')
             for p in trozo[1:]:
