@@ -1,19 +1,19 @@
 {
-  "_leeme": "Resultados de empresas. El dato de 'batio o no batio' NO es gratis en ninguna fuente (comprobado: FMP denegado, Twelve Data lo cobra en el plan Grow, Nasdaq no permite robots). Esta lista la mantenemos MHF y Claude a mano cada semana. 'revisado' dice cuando se actualizo: si tiene mas de 8 dias, la pagina avisa de que esta vieja.",
-  "revisado": "2026-09-16",
+  "_leeme": "RED DE SEGURIDAD solamente. Desde el 17-sep-2026 el escaneo de resultados es AUTOMATICO: diario/earnings.py lee el calendario de Nasdaq (api.nasdaq.com, sin clave), que da fecha, hora, consenso de BPA, BPA del ano pasado y, cuando ya presentaron, el BPA real y la sorpresa en %. La reaccion del precio sale de Yahoo. Este fichero solo se usa si esa fuente se cae, y entonces la pagina avisa de que el dato es viejo. NO hay que mantenerlo cada semana.",
+  "revisado": "2026-09-17",
   "presentan": [
-    {"fecha": "2026-09-16", "ticker": "LEN",  "empresa": "Lennar",     "cuando": "tras el cierre",
-     "nota": "constructora - termometro directo de lo que los tipos hacen a la economia real; hipoteca a 30 anos por encima del 7 %"},
-    {"fecha": "2026-09-17", "ticker": "CCL",  "empresa": "Carnival",   "cuando": "antes de abrir",
-     "nota": "con el petroleo caro, mirar el coste de combustible"}
+    {"fecha": "2026-09-29", "ticker": "CCL", "empresa": "Carnival", "cuando": "antes de abrir",
+     "nota": "consenso 1,35 $ · hace un ano 1,43 $ · trimestre fiscal cerrado en agosto"}
   ],
   "ya_presentaron": [
-    {"fecha": "2026-09-14", "ticker": "PLAY", "empresa": "Dave & Buster's", "reaccion_pct": -15.57,
-     "resumen": "perdida inesperada"},
-    {"fecha": "2026-09-15", "ticker": "TCOM", "empresa": "Trip.com", "reaccion_pct": null,
-     "resumen": "presento tras el cierre"},
-    {"fecha": "2026-09-11", "ticker": "ADBE", "empresa": "Adobe", "reaccion_pct": -2.95,
+    {"fecha": "2026-09-16", "ticker": "LEN", "empresa": "Lennar", "reaccion_pct": -0.14,
+     "resumen": "fallo el consenso por 4,7 % (1,23 $ frente a 1,29 $)"},
+    {"fecha": "2026-09-15", "ticker": "TCOM", "empresa": "Trip.com", "reaccion_pct": 3.01,
+     "resumen": "batio el consenso por 9,5 % (0,92 $ frente a 0,84 $)"},
+    {"fecha": "2026-09-10", "ticker": "ORCL", "empresa": "Oracle", "reaccion_pct": -1.74,
      "batio_y_cayo": true,
-     "resumen": "batio en ingresos con trimestre record y aun asi cayo por una guia floja del Q4. PER 14,4 y PER adelantado 9,59"}
+     "resumen": "batio el consenso por 17,3 % (1,63 $ frente a 1,39 $) y aun asi cayo"},
+    {"fecha": "2026-09-10", "ticker": "ADBE", "empresa": "Adobe", "reaccion_pct": 1.37,
+     "resumen": "fallo el consenso de BPA por 2,3 % (4,75 $ frente a 4,86 $); subio igualmente"}
   ]
 }
