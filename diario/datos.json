@@ -1,39 +1,39 @@
 {
- "generado": "2026-09-17T10:46:50+00:00",
+ "generado": "2026-09-17T10:53:06+00:00",
  "universo": [
   {
-   "simbolo": "SPX",
+   "simbolo": "SPY",
    "nombre": "S&P 500",
    "bloque": "bolsa"
   },
   {
-   "simbolo": "IXIC",
-   "nombre": "Nasdaq",
+   "simbolo": "QQQ",
+   "nombre": "Nasdaq 100",
    "bloque": "bolsa"
   },
   {
-   "simbolo": "VIX",
-   "nombre": "VIX",
+   "simbolo": "VIXY",
+   "nombre": "VIX (volatilidad)",
    "bloque": "bolsa"
   },
   {
-   "simbolo": "DXY",
+   "simbolo": "UUP",
    "nombre": "Dolar (DXY)",
    "bloque": "bolsa"
   },
   {
-   "simbolo": "N225",
-   "nombre": "Nikkei",
+   "simbolo": "EWJ",
+   "nombre": "Nikkei (Japon)",
    "bloque": "bolsa"
   },
   {
-   "simbolo": "KS11",
-   "nombre": "Kospi",
+   "simbolo": "EWY",
+   "nombre": "Kospi (Corea)",
    "bloque": "bolsa"
   },
   {
-   "simbolo": "000300.SHG",
-   "nombre": "CSI 300",
+   "simbolo": "ASHR",
+   "nombre": "CSI 300 (China)",
    "bloque": "bolsa"
   },
   {
@@ -132,13 +132,8 @@
    "bloque": "bonos"
   },
   {
-   "simbolo": "GCZ2026",
-   "nombre": "Oro (futuro dic)",
-   "bloque": "metales"
-  },
-  {
    "simbolo": "GLD",
-   "nombre": "Oro (GLD)",
+   "nombre": "Oro",
    "bloque": "metales"
   },
   {
@@ -157,7 +152,7 @@
    "bloque": "energia"
   },
   {
-   "simbolo": "BRENT",
+   "simbolo": "BNO",
    "nombre": "Brent",
    "bloque": "energia"
   },
@@ -183,6 +178,62 @@
   }
  ],
  "precios": {
+  "SPY": {
+   "precio": 754.049988,
+   "cambio_pct": -0.44099167,
+   "cierre_previo": 757.39001,
+   "maximo_52": 779.37,
+   "minimo_52": 629.28003,
+   "fecha": "2026-09-16"
+  },
+  "QQQ": {
+   "precio": 704.71997,
+   "cambio_pct": 0.025547546,
+   "cierre_previo": 704.53998,
+   "maximo_52": 748.65002,
+   "minimo_52": 555.59998,
+   "fecha": "2026-09-16"
+  },
+  "VIXY": {
+   "precio": 17.67,
+   "cambio_pct": 0.79862741,
+   "cierre_previo": 17.53,
+   "maximo_52": 39.7,
+   "minimo_52": 16.47,
+   "fecha": "2026-09-16"
+  },
+  "UUP": {
+   "precio": 28.4,
+   "cambio_pct": 0.6378466,
+   "cierre_previo": 28.22,
+   "maximo_52": 28.6,
+   "minimo_52": 26.4,
+   "fecha": "2026-09-16"
+  },
+  "EWJ": {
+   "precio": 97.010002,
+   "cambio_pct": 0.092864186,
+   "cierre_previo": 96.92,
+   "maximo_52": 98.79,
+   "minimo_52": 78.21,
+   "fecha": "2026-09-16"
+  },
+  "EWY": {
+   "precio": 175.53999,
+   "cambio_pct": -0.53828102,
+   "cierre_previo": 176.49001,
+   "maximo_52": 220.89,
+   "minimo_52": 78.27,
+   "fecha": "2026-09-16"
+  },
+  "ASHR": {
+   "precio": 33.28,
+   "cambio_pct": 0.12032822,
+   "cierre_previo": 33.24,
+   "maximo_52": 37.33,
+   "minimo_52": 31.31,
+   "fecha": "2026-09-16"
+  },
   "XLE": {
    "precio": 64.029999,
    "cambio_pct": -2.88185,
@@ -367,33 +418,41 @@
    "minimo_52": 65.99,
    "fecha": "2026-09-16"
   },
+  "BNO": {
+   "precio": 61.71,
+   "cambio_pct": -2.91064,
+   "cierre_previo": 63.56,
+   "maximo_52": 63.98,
+   "minimo_52": 27.14,
+   "fecha": "2026-09-16"
+  },
   "EUR/USD": {
-   "precio": 1.14772,
-   "cambio_pct": 0.11950975,
+   "precio": 1.14782,
+   "cambio_pct": 0.12823309,
    "cierre_previo": 1.14635,
    "maximo_52": 1.20656,
    "minimo_52": 1.13239,
    "fecha": "2026-09-17"
   },
   "USD/JPY": {
-   "precio": 155.6028,
-   "cambio_pct": -0.45636354,
+   "precio": 155.61035,
+   "cambio_pct": -0.45153358,
    "cierre_previo": 156.31617,
    "maximo_52": 164.08805,
    "minimo_52": 145.476,
    "fecha": "2026-09-17"
   },
   "USD/CNY": {
-   "precio": 6.70855,
-   "cambio_pct": 0.025645499,
+   "precio": 6.70808,
+   "cambio_pct": 0.018637717,
    "cierre_previo": 6.70683,
    "maximo_52": 7.1424,
    "minimo_52": 6.69321,
    "fecha": "2026-09-17"
   },
   "BTC/USD": {
-   "precio": 76310.01,
-   "cambio_pct": 0.13647218,
+   "precio": 76360.49,
+   "cambio_pct": 0.20271367,
    "cierre_previo": 76206.01,
    "maximo_52": 126199.63,
    "minimo_52": 57800.19,
@@ -688,28 +747,13 @@
   },
   {
    "fuente": "Yahoo Finance",
-   "titular": "What time is this week's Fed meeting?",
-   "fecha": "2025-05-05T12:00:32Z"
-  },
-  {
-   "fuente": "Yahoo Finance",
    "titular": "Can you have two of the same credit card?",
    "fecha": "2026-09-15T17:50:08Z"
   },
   {
    "fuente": "Yahoo Finance",
-   "titular": "Americans’ Median Household Income Hit a Record High in 2025",
-   "fecha": "2026-09-15T22:46:29Z"
-  },
-  {
-   "fuente": "Yahoo Finance",
-   "titular": "Frozen bank account? How it happens and what to do next.",
-   "fecha": "2024-09-25T18:51:28Z"
-  },
-  {
-   "fuente": "Yahoo Finance",
-   "titular": "A ‘much larger pullback’ is justified: How to prepare",
-   "fecha": "2026-09-15T22:39:20Z"
+   "titular": "What time is this week's Fed meeting?",
+   "fecha": "2025-05-05T12:00:32Z"
   },
   {
    "fuente": "Yahoo Finance",
@@ -718,48 +762,26 @@
   },
   {
    "fuente": "Yahoo Finance",
+   "titular": "Frozen bank account? How it happens and what to do next.",
+   "fecha": "2024-09-25T18:51:28Z"
+  },
+  {
+   "fuente": "Yahoo Finance",
+   "titular": "Ondo takes tokenized assets to Australia in new market push",
+   "fecha": "2026-09-15T22:53:21Z"
+  },
+  {
+   "fuente": "Yahoo Finance",
    "titular": "This High-Yield Construction Stock Just Raised Its Dividend by 40%",
    "fecha": "2026-09-15T23:30:02Z"
+  },
+  {
+   "fuente": "Yahoo Finance",
+   "titular": "The AI gold rush has a dress code: steel-toe boots",
+   "fecha": "2026-09-15T23:37:25Z"
   }
  ],
- "fallos": [
-  [
-   "SPX",
-   "**symbol** SPX is not available with your plan. You may select the appropriate p"
-  ],
-  [
-   "IXIC",
-   "**symbol** not found: IXIC. Please specify it correctly according to API Documen"
-  ],
-  [
-   "VIX",
-   "**symbol** not found: VIX. Please specify it correctly according to API Document"
-  ],
-  [
-   "DXY",
-   "**symbol** not found: DXY. Please specify it correctly according to API Document"
-  ],
-  [
-   "N225",
-   "The index unavailable"
-  ],
-  [
-   "KS11",
-   "The index unavailable"
-  ],
-  [
-   "000300.SHG",
-   "**symbol** not found: 000300.SHG. Please specify it correctly according to API D"
-  ],
-  [
-   "GCZ2026",
-   "**symbol** not found: GCZ2026. Please specify it correctly according to API Docu"
-  ],
-  [
-   "BRENT",
-   "**symbol** BRENT is not available with your plan. You may select the appropriate"
-  ]
- ],
+ "fallos": [],
  "extra": {
   "semaforo": {
    "nivel": "amarillo",
@@ -838,24 +860,24 @@
   ],
   "niveles": {
    "BTC/USD": {
-    "precio": 76310.01,
-    "ema50": 73699.28,
-    "ema200": 72345.44,
-    "dist_ema50": 3.54,
-    "dist_ema200": 5.48,
+    "precio": 76360.49,
+    "ema50": 73701.26,
+    "ema200": 72345.94,
+    "dist_ema50": 3.61,
+    "dist_ema200": 5.55,
     "max52": 97924.49,
     "min52": 57800.19,
     "resistencias": [
      {
       "precio": 79485.66,
       "toques": 1,
-      "dist_pct": 4.16,
+      "dist_pct": 4.09,
       "tipo": "techo"
      },
      {
       "precio": 82209.62,
       "toques": 3,
-      "dist_pct": 7.73,
+      "dist_pct": 7.66,
       "tipo": "techo"
      }
     ],
@@ -863,13 +885,13 @@
      {
       "precio": 74937.52,
       "toques": 1,
-      "dist_pct": -1.8,
+      "dist_pct": -1.86,
       "tipo": "suelo"
      },
      {
       "precio": 67124.15,
       "toques": 2,
-      "dist_pct": -12.04,
+      "dist_pct": -12.1,
       "tipo": "techo"
      }
     ],
@@ -877,25 +899,25 @@
      {
       "precio": 82209.62,
       "toques": 3,
-      "dist_pct": 7.73,
+      "dist_pct": 7.66,
       "tipo": "techo"
      },
      {
       "precio": 67124.15,
       "toques": 2,
-      "dist_pct": -12.04,
+      "dist_pct": -12.1,
       "tipo": "techo"
      },
      {
       "precio": 65087.23,
       "toques": 2,
-      "dist_pct": -14.71,
+      "dist_pct": -14.76,
       "tipo": "techo"
      },
      {
       "precio": 62405.12,
       "toques": 2,
-      "dist_pct": -18.22,
+      "dist_pct": -18.28,
       "tipo": "suelo"
      }
     ]
