@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-17T10:53:06+00:00",
+ "generado": "2026-09-17T11:00:01+00:00",
  "universo": [
   {
    "simbolo": "SPY",
@@ -427,32 +427,32 @@
    "fecha": "2026-09-16"
   },
   "EUR/USD": {
-   "precio": 1.14782,
-   "cambio_pct": 0.12823309,
+   "precio": 1.14772,
+   "cambio_pct": 0.11950975,
    "cierre_previo": 1.14635,
    "maximo_52": 1.20656,
    "minimo_52": 1.13239,
    "fecha": "2026-09-17"
   },
   "USD/JPY": {
-   "precio": 155.61035,
-   "cambio_pct": -0.45153358,
+   "precio": 155.65252,
+   "cambio_pct": -0.42455621,
    "cierre_previo": 156.31617,
    "maximo_52": 164.08805,
    "minimo_52": 145.476,
    "fecha": "2026-09-17"
   },
   "USD/CNY": {
-   "precio": 6.70808,
-   "cambio_pct": 0.018637717,
+   "precio": 6.70736,
+   "cambio_pct": 0.007902392,
    "cierre_previo": 6.70683,
    "maximo_52": 7.1424,
    "minimo_52": 6.69321,
    "fecha": "2026-09-17"
   },
   "BTC/USD": {
-   "precio": 76360.49,
-   "cambio_pct": 0.20271367,
+   "precio": 76390.0,
+   "cambio_pct": 0.24143765,
    "cierre_previo": 76206.01,
    "maximo_52": 126199.63,
    "minimo_52": 57800.19,
@@ -502,43 +502,43 @@
   },
   {
    "fuente": "Mercados",
-   "titular": "The Fed is hiking. Why isn’t UBS worried about stocks?",
-   "fecha": "2026-09-17 10:34:55"
+   "titular": "Ryanair to double Baltic passengers in five years amid airBaltic’s bankruptcy",
+   "fecha": "2026-09-17 10:56:50"
   },
   {
    "fuente": "Mercados",
-   "titular": "Huawei’s Xu says Chinese AI not powerful enough yet to see frontier risks",
-   "fecha": "2026-09-17 10:30:57"
+   "titular": "ECB’s Rehn says Middle East energy shock hasn’t spread yet",
+   "fecha": "2026-09-17 10:55:30"
   },
   {
    "fuente": "Mercados",
-   "titular": "German court rules Meta liable for fake ads on Instagram, Facebook",
-   "fecha": "2026-09-17 10:30:34"
+   "titular": "In Silicon Valley, AI data center boom meets local resistance",
+   "fecha": "2026-09-17 10:54:31"
   },
   {
    "fuente": "Mercados",
-   "titular": "European stocks catch a post-Fed bid as traders weigh Middle East peace chatter",
-   "fecha": "2026-09-17 10:30:15"
+   "titular": "Why is Huuuge stock surging today?",
+   "fecha": "2026-09-17 10:51:52"
   },
   {
    "fuente": "Mercados",
-   "titular": "India stocks mixed at close of trade; Nifty 50 up 0.23%",
-   "fecha": "2026-09-17 10:30:06"
+   "titular": "On Leads BTIG’s Consumer and Lifestyle Stock Picks",
+   "fecha": "2026-09-17 10:51:46"
   },
   {
    "fuente": "Mercados",
-   "titular": "Chile weighs ethanol-gasoline blend as government seeks cheaper fuels amid fiscal strains",
-   "fecha": "2026-09-17 10:26:59"
+   "titular": "Why is Abionyx Pharma stock climbing today?",
+   "fecha": "2026-09-17 10:50:46"
   },
   {
    "fuente": "Mercados",
-   "titular": "Raiffeisen Bank faces short seller scrutiny over Russia sanctions claims",
-   "fecha": "2026-09-17 10:26:38"
+   "titular": "UBS upgrades Man Group on strong AHL returns, buyback potential",
+   "fecha": "2026-09-17 10:49:36"
   },
   {
    "fuente": "Mercados",
-   "titular": "German court rules Meta liable for fake ads on platforms",
-   "fecha": "2026-09-17 10:25:01"
+   "titular": "Nike’s falling share price puts its Dow seat in jeopardy",
+   "fecha": "2026-09-17 10:42:32"
   },
   {
    "fuente": "Divisas",
@@ -552,7 +552,7 @@
   },
   {
    "fuente": "Divisas",
-   "titular": "U.S. 10-year Treasury yield eases in the afterglow of Fed hike",
+   "titular": "U.S. 10-year Treasury yield dips in afterglow of Fed hike",
    "fecha": "2026-09-17 08:09:55"
   },
   {
@@ -579,6 +579,16 @@
    "fuente": "Divisas",
    "titular": "Sterling today: Pound slips as Fed hike bets and UK inflation uptick weigh",
    "fecha": "2026-09-16 08:21:55"
+  },
+  {
+   "fuente": "Materias",
+   "titular": "Morning Bid: A timely hike",
+   "fecha": "2026-09-17 10:42:53"
+  },
+  {
+   "fuente": "Materias",
+   "titular": "Goldman Sachs sees iron ore support at $90-95/t as costs rise",
+   "fecha": "2026-09-17 10:34:27"
   },
   {
    "fuente": "Materias",
@@ -609,16 +619,6 @@
    "fuente": "Materias",
    "titular": "Natural Gas compresses near $2.90 in tight range: Live levels",
    "fecha": "2026-09-17 07:12:05"
-  },
-  {
-   "fuente": "Materias",
-   "titular": "Gold at $4,357 faces resistance wall in bearish regime: Live levels",
-   "fecha": "2026-09-17 07:11:56"
-  },
-  {
-   "fuente": "Materias",
-   "titular": "Brent Oil drops below key support at $103.66: Live levels",
-   "fecha": "2026-09-17 07:11:40"
   },
   {
    "fuente": "Cripto",
@@ -767,8 +767,8 @@
   },
   {
    "fuente": "Yahoo Finance",
-   "titular": "Ondo takes tokenized assets to Australia in new market push",
-   "fecha": "2026-09-15T22:53:21Z"
+   "titular": "Calls for Slower AI Development Have Created a Compelling Dip for AI Stocks",
+   "fecha": "2026-09-15T22:59:00Z"
   },
   {
    "fuente": "Yahoo Finance",
@@ -860,24 +860,24 @@
   ],
   "niveles": {
    "BTC/USD": {
-    "precio": 76360.49,
-    "ema50": 73701.26,
-    "ema200": 72345.94,
-    "dist_ema50": 3.61,
-    "dist_ema200": 5.55,
+    "precio": 76390.0,
+    "ema50": 73702.41,
+    "ema200": 72346.23,
+    "dist_ema50": 3.65,
+    "dist_ema200": 5.59,
     "max52": 97924.49,
     "min52": 57800.19,
     "resistencias": [
      {
       "precio": 79485.66,
       "toques": 1,
-      "dist_pct": 4.09,
+      "dist_pct": 4.05,
       "tipo": "techo"
      },
      {
       "precio": 82209.62,
       "toques": 3,
-      "dist_pct": 7.66,
+      "dist_pct": 7.62,
       "tipo": "techo"
      }
     ],
@@ -885,13 +885,13 @@
      {
       "precio": 74937.52,
       "toques": 1,
-      "dist_pct": -1.86,
+      "dist_pct": -1.9,
       "tipo": "suelo"
      },
      {
       "precio": 67124.15,
       "toques": 2,
-      "dist_pct": -12.1,
+      "dist_pct": -12.13,
       "tipo": "techo"
      }
     ],
@@ -899,25 +899,25 @@
      {
       "precio": 82209.62,
       "toques": 3,
-      "dist_pct": 7.66,
+      "dist_pct": 7.62,
       "tipo": "techo"
      },
      {
       "precio": 67124.15,
       "toques": 2,
-      "dist_pct": -12.1,
+      "dist_pct": -12.13,
       "tipo": "techo"
      },
      {
       "precio": 65087.23,
       "toques": 2,
-      "dist_pct": -14.76,
+      "dist_pct": -14.8,
       "tipo": "techo"
      },
      {
       "precio": 62405.12,
       "toques": 2,
-      "dist_pct": -18.28,
+      "dist_pct": -18.31,
       "tipo": "suelo"
      }
     ]
