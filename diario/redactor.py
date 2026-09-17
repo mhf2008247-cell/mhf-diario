@@ -99,41 +99,55 @@ def resumen_datos(d):
     return "\n".join(L)
 
 
-def pregunta(modelo, texto):
+def pregunta(modelo, texto, pensar=True):
+    """Devuelve (texto, motivo_de_parada). pensar=False apaga el razonamiento:
+    en los modelos 3.x el 'pensar' se come el presupuesto de salida y el diario
+    sale cortado a la mitad."""
+    cfg = {"temperature": 0.3, "maxOutputTokens": 8192}
+    if not pensar:
+        cfg["thinkingConfig"] = {"thinkingBudget": 0}
     cuerpo = json.dumps({
         "systemInstruction": {"parts": [{"text": REGLAS}]},
         "contents": [{"role": "user", "parts": [{"text": texto}]}],
-        "generationConfig": {"temperature": 0.3, "maxOutputTokens": 4096},
+        "generationConfig": cfg,
     }).encode("utf-8")
     req = urllib.request.Request(
         BASE % modelo + "?key=" + CLAVE, data=cuerpo,
         headers={"Content-Type": "application/json"})
-    with urllib.request.urlopen(req, timeout=120) as r:
+    with urllib.request.urlopen(req, timeout=180) as r:
         d = json.load(r)
     cand = (d.get("candidates") or [{}])[0]
     partes = (cand.get("content") or {}).get("parts") or []
-    return "".join(p.get("text", "") for p in partes).strip()
+    txt = "".join(p.get("text", "") for p in partes if not p.get("thought")).strip()
+    return txt, cand.get("finishReason", "?")
 
 
 def main():
     d = json.load(open(ENTRADA, encoding="utf-8"))
+    texto, modelo, err, fin = "", "", "", ""
     if not CLAVE:
-        texto, modelo, err = "", "", "falta GEMINI_KEY"
+        err = "falta GEMINI_KEY"
     else:
-        texto, modelo, err = "", "", ""
         for m in MODELOS:
-            try:
-                texto = pregunta(m, resumen_datos(d))
-                if texto:
-                    modelo = m
+            for pensar in (False, True):      # primero sin pensar: deja todo el sitio al diario
+                try:
+                    t, f2 = pregunta(m, resumen_datos(d), pensar)
+                except Exception as e:
+                    err = "%s pensar=%s -> %s: %s" % (m, pensar, type(e).__name__, str(e)[:100])
+                    continue
+                if t and len(t) > 900:
+                    texto, modelo, fin = t, m + ("" if pensar else " (sin pensar)"), f2
                     break
-            except Exception as e:
-                err = "%s -> %s: %s" % (m, type(e).__name__, str(e)[:120])
+                err = "%s pensar=%s -> solo %d caracteres, motivo %s" % (m, pensar, len(t), f2)
+            if texto:
+                break
     out = {
         "generado": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "modelo": modelo,
         "texto": texto,
         "error": "" if texto else err,
+        "aviso": err if texto else "",
+        "fin": fin,
     }
     json.dump(out, open(SALIDA, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print("modelo: %s · %d caracteres · %s" % (modelo or "-", len(texto), err or "ok"))
