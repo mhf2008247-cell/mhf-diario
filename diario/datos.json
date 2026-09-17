@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-17T05:44:41+00:00",
+ "generado": "2026-09-17T10:46:50+00:00",
  "universo": [
   {
    "simbolo": "SPX",
@@ -368,32 +368,32 @@
    "fecha": "2026-09-16"
   },
   "EUR/USD": {
-   "precio": 1.14651,
-   "cambio_pct": 0.013957343,
+   "precio": 1.14772,
+   "cambio_pct": 0.11950975,
    "cierre_previo": 1.14635,
    "maximo_52": 1.20656,
    "minimo_52": 1.13239,
    "fecha": "2026-09-17"
   },
   "USD/JPY": {
-   "precio": 155.89771,
-   "cambio_pct": -0.26770103,
+   "precio": 155.6028,
+   "cambio_pct": -0.45636354,
    "cierre_previo": 156.31617,
    "maximo_52": 164.08805,
    "minimo_52": 145.476,
    "fecha": "2026-09-17"
   },
   "USD/CNY": {
-   "precio": 6.70801,
-   "cambio_pct": 0.017594005,
+   "precio": 6.70855,
+   "cambio_pct": 0.025645499,
    "cierre_previo": 6.70683,
    "maximo_52": 7.1424,
    "minimo_52": 6.69321,
    "fecha": "2026-09-17"
   },
   "BTC/USD": {
-   "precio": 76359.18,
-   "cambio_pct": 0.20099465,
+   "precio": 76310.01,
+   "cambio_pct": 0.13647218,
    "cierre_previo": 76206.01,
    "maximo_52": 126199.63,
    "minimo_52": 57800.19,
@@ -403,88 +403,98 @@
  "titulares": [
   {
    "fuente": "Economia",
-   "titular": "Analysis-Fed builds credibility, but hawkish turn leaves investors edgy",
-   "fecha": "2026-09-17 05:13:01"
+   "titular": "Lula and Bolsonaro remain tied in Brazil election poll",
+   "fecha": "2026-09-17 10:28:48"
   },
   {
    "fuente": "Economia",
-   "titular": "Morning Bid: Fed lifts the hawkish bar for BoE",
-   "fecha": "2026-09-17 04:37:14"
+   "titular": "EU and Canada are stronger together, Carney says after Trump derides EU alliance",
+   "fecha": "2026-09-17 10:26:26"
   },
   {
    "fuente": "Economia",
-   "titular": "BOJ preview September: 25 bps hike expected with hawkish outlook in focus",
-   "fecha": "2026-09-17 04:32:48"
+   "titular": "Thai monetary policy ’very, very accommodative’, no change to growth outlook, central bank official says",
+   "fecha": "2026-09-17 10:25:07"
   },
   {
    "fuente": "Economia",
-   "titular": "Calls to slow AI benefit US sector leaders, says French finance minister",
-   "fecha": "2026-09-17 04:24:52"
+   "titular": "Huawei chair says Chinese AI not yet advanced enough to face safety risks",
+   "fecha": "2026-09-17 10:22:03"
   },
   {
    "fuente": "Economia",
-   "titular": "Goldman Sachs sees October Fed hike after hawkish signal",
-   "fecha": "2026-09-17 03:36:32"
+   "titular": "Germany calls for EU tariffs on Chinese hybrid cars",
+   "fecha": "2026-09-17 10:18:01"
   },
   {
    "fuente": "Economia",
-   "titular": "Judge in Kennedy Center case orders Trump administration to explain closure plans",
-   "fecha": "2026-09-17 03:00:35"
+   "titular": "China youth unemployment climbs to 18.9% in August",
+   "fecha": "2026-09-17 10:16:44"
   },
   {
    "fuente": "Economia",
-   "titular": "Trump lashes out at Fed after Warsh backs rate hike",
-   "fecha": "2026-09-17 02:36:29"
+   "titular": "Shares and short-term yields edge up after Fed hike, focus turns to BoE",
+   "fecha": "2026-09-17 10:08:18"
   },
   {
    "fuente": "Economia",
-   "titular": "Hawkish Fed lifts dollar to seven-week high as focus turn to BOJ",
-   "fecha": "2026-09-17 02:12:51"
+   "titular": "Goldman’s October hike call underscores renewed Fed tightening risks",
+   "fecha": "2026-09-17 10:06:40"
   },
   {
    "fuente": "Mercados",
-   "titular": "Analysis-Volkswagen’s Seat on the brink as Chinese rivals gain ground",
-   "fecha": "2026-09-17 05:19:07"
+   "titular": "The Fed is hiking. Why isn’t UBS worried about stocks?",
+   "fecha": "2026-09-17 10:34:55"
   },
   {
    "fuente": "Mercados",
-   "titular": "Why is Genscript Biotech stock surging today?",
-   "fecha": "2026-09-17 05:06:26"
+   "titular": "Huawei’s Xu says Chinese AI not powerful enough yet to see frontier risks",
+   "fecha": "2026-09-17 10:30:57"
   },
   {
    "fuente": "Mercados",
-   "titular": "SK Hynix pivots at KRW 1,765,000 breakout zone: Live levels",
-   "fecha": "2026-09-17 05:05:43"
+   "titular": "German court rules Meta liable for fake ads on Instagram, Facebook",
+   "fecha": "2026-09-17 10:30:34"
   },
   {
    "fuente": "Mercados",
-   "titular": "Nikkei 225 trapped in bear flag below key MAs: Live levels",
-   "fecha": "2026-09-17 05:05:39"
+   "titular": "European stocks catch a post-Fed bid as traders weigh Middle East peace chatter",
+   "fecha": "2026-09-17 10:30:15"
   },
   {
    "fuente": "Mercados",
-   "titular": "BOJ rate hike on tap: Watch these Japanese stocks for bull and bear cases",
-   "fecha": "2026-09-17 04:57:51"
+   "titular": "India stocks mixed at close of trade; Nifty 50 up 0.23%",
+   "fecha": "2026-09-17 10:30:06"
   },
   {
    "fuente": "Mercados",
-   "titular": "Why is Weichai Power stock rallying today?",
-   "fecha": "2026-09-17 04:57:20"
+   "titular": "Chile weighs ethanol-gasoline blend as government seeks cheaper fuels amid fiscal strains",
+   "fecha": "2026-09-17 10:26:59"
   },
   {
    "fuente": "Mercados",
-   "titular": "Why is Moore Threads Technology stock surging today?",
-   "fecha": "2026-09-17 04:55:12"
+   "titular": "Raiffeisen Bank faces short seller scrutiny over Russia sanctions claims",
+   "fecha": "2026-09-17 10:26:38"
   },
   {
    "fuente": "Mercados",
-   "titular": "Why is Sumitomo stock climbing today?",
-   "fecha": "2026-09-17 04:28:43"
+   "titular": "German court rules Meta liable for fake ads on platforms",
+   "fecha": "2026-09-17 10:25:01"
   },
   {
    "fuente": "Divisas",
-   "titular": "Asian currencies mixed as dollar holds seven-week high, yen steadies",
-   "fecha": "2026-09-17 05:02:32"
+   "titular": "Yen rise as markets price BOJ rate hike  while dollar pauses post-Fed",
+   "fecha": "2026-09-17 09:27:30"
+  },
+  {
+   "fuente": "Divisas",
+   "titular": "Sterling today: Pound flat as dollar rally pauses ahead of BoE decision",
+   "fecha": "2026-09-17 08:13:47"
+  },
+  {
+   "fuente": "Divisas",
+   "titular": "U.S. 10-year Treasury yield eases in the afterglow of Fed hike",
+   "fecha": "2026-09-17 08:09:55"
   },
   {
    "fuente": "Divisas",
@@ -512,64 +522,59 @@
    "fecha": "2026-09-16 08:21:55"
   },
   {
-   "fuente": "Divisas",
-   "titular": "Euro zone yields linger at multi-year peaks as traders brace for Fed rate decision",
-   "fecha": "2026-09-16 07:43:07"
-  },
-  {
-   "fuente": "Divisas",
-   "titular": "Dollar hits two-week high as traders gear up for anticipated Fed hike on Wednesday",
-   "fecha": "2026-09-15 20:38:48"
+   "fuente": "Materias",
+   "titular": "Yemenis take to boats to flee as Middle East war spreads",
+   "fecha": "2026-09-17 10:26:39"
   },
   {
    "fuente": "Materias",
-   "titular": "Trump hopes Iran war nearing end as Houthi-Saudi fighting escalates",
-   "fecha": "2026-09-17 04:36:31"
+   "titular": "Oil prices drift lower amid easing Mideast supply jitters",
+   "fecha": "2026-09-17 08:54:44"
   },
   {
    "fuente": "Materias",
-   "titular": "Oil prices steady amid cooling M.East supply jitters",
-   "fecha": "2026-09-17 02:11:29"
+   "titular": "Oil prices extend losses as supply disruption fears ease",
+   "fecha": "2026-09-17 08:36:27"
   },
   {
    "fuente": "Materias",
-   "titular": "Oil prices extend losses as fears of Middle East supply disruptions ease",
-   "fecha": "2026-09-17 01:06:48"
+   "titular": "European gas slides to over one-week low as French strike ends",
+   "fecha": "2026-09-17 08:26:39"
   },
   {
    "fuente": "Materias",
-   "titular": "US temporarily eases curb on working hours for fuel truck drivers",
-   "fecha": "2026-09-17 01:06:27"
+   "titular": "Copper rebounds at $6.54 but faces dense resistance: Live levels",
+   "fecha": "2026-09-17 07:12:10"
   },
   {
    "fuente": "Materias",
-   "titular": "Oil halts surge after key Saudi pipeline said to restart at half capacity in days",
-   "fecha": "2026-09-16 21:38:44"
+   "titular": "Natural Gas compresses near $2.90 in tight range: Live levels",
+   "fecha": "2026-09-17 07:12:05"
   },
   {
    "fuente": "Materias",
-   "titular": "Oil slips as Saudi Arabia offers more crude via Oman",
-   "fecha": "2026-09-16 20:36:33"
+   "titular": "Gold at $4,357 faces resistance wall in bearish regime: Live levels",
+   "fecha": "2026-09-17 07:11:56"
   },
   {
    "fuente": "Materias",
-   "titular": "Top Democrat on US House committee will not support Israel bomb sale",
-   "fecha": "2026-09-16 19:43:58"
+   "titular": "Brent Oil drops below key support at $103.66: Live levels",
+   "fecha": "2026-09-17 07:11:40"
   },
   {
-   "fuente": "Materias",
-   "titular": "Soybean futures rise on US-China trade meeting expectations",
-   "fecha": "2026-09-16 19:42:34"
+   "fuente": "Cripto",
+   "titular": "Bitcoin rangebound at $76.7k as markets digest Fed rate hike, M.East tensions",
+   "fecha": "2026-09-17 09:30:31"
+  },
+  {
+   "fuente": "Cripto",
+   "titular": "Bitcoin consolidates above $75K support: Live levels",
+   "fecha": "2026-09-17 07:11:34"
   },
   {
    "fuente": "Cripto",
    "titular": "Bitcoin turns slightly higher as traders digest Clarity Act failure, Fed rate hike",
    "fecha": "2026-09-16 21:54:07"
-  },
-  {
-   "fuente": "Cripto",
-   "titular": "Bitcoin bounces at $75,791 below Ichimoku cloud: Live levels",
-   "fecha": "2026-09-16 19:18:24"
   },
   {
    "fuente": "Cripto",
@@ -597,9 +602,9 @@
    "fecha": "2026-09-16 07:30:36"
   },
   {
-   "fuente": "Cripto",
-   "titular": "Bitcoin adds to losses, falls nearly 4% after Clarity Act fails Senate vote",
-   "fecha": "2026-09-15 21:49:19"
+   "fuente": "CNBC mercados",
+   "titular": "OpenAI and Anthropic are making 10 times more revenue than all Chinese AI models combined, research group Rhodium says",
+   "fecha": "Thu, 17 Sep 2026 09:00:01 GMT"
   },
   {
    "fuente": "CNBC mercados",
@@ -637,11 +642,6 @@
    "fecha": "Tue, 15 Sep 2026 17:55:28 GMT"
   },
   {
-   "fuente": "CNBC mercados",
-   "titular": "Stocks making the biggest moves premarket: Dave & Buster's, Enova, Etsy & more",
-   "fecha": "Tue, 15 Sep 2026 11:36:31 GMT"
-  },
-  {
    "fuente": "CNBC economia",
    "titular": "Bank of England set to defy Fed’s rate-hike lead, despite rising inflation",
    "fecha": "Thu, 17 Sep 2026 05:20:23 GMT"
@@ -659,7 +659,7 @@
   {
    "fuente": "CNBC economia",
    "titular": "UK inflation jumps to 3.1% as energy costs soar",
-   "fecha": "Wed, 16 Sep 2026 07:18:23 GMT"
+   "fecha": "Thu, 17 Sep 2026 07:36:04 GMT"
   },
   {
    "fuente": "CNBC economia",
@@ -688,38 +688,38 @@
   },
   {
    "fuente": "Yahoo Finance",
+   "titular": "What time is this week's Fed meeting?",
+   "fecha": "2025-05-05T12:00:32Z"
+  },
+  {
+   "fuente": "Yahoo Finance",
    "titular": "Can you have two of the same credit card?",
    "fecha": "2026-09-15T17:50:08Z"
   },
   {
    "fuente": "Yahoo Finance",
-   "titular": "Dear Corteva Stock Fans, Mark Your Calendars for September 15",
-   "fecha": "2026-09-15T17:42:13Z"
+   "titular": "Americans’ Median Household Income Hit a Record High in 2025",
+   "fecha": "2026-09-15T22:46:29Z"
   },
   {
    "fuente": "Yahoo Finance",
-   "titular": "Salesforce CEO Benioff Touts AI Strategy In Dreamforce Keynote",
-   "fecha": "2026-09-15T18:01:17Z"
+   "titular": "Frozen bank account? How it happens and what to do next.",
+   "fecha": "2024-09-25T18:51:28Z"
   },
   {
    "fuente": "Yahoo Finance",
-   "titular": "Salesforce Stock Looks Poised To Strengthen. Here's A Cheap Way To Profit.",
-   "fecha": "2026-09-15T18:02:42Z"
+   "titular": "A ‘much larger pullback’ is justified: How to prepare",
+   "fecha": "2026-09-15T22:39:20Z"
   },
   {
    "fuente": "Yahoo Finance",
-   "titular": "Should You Buy Adobe Stock At $260?",
-   "fecha": "2026-09-15T17:48:39Z"
+   "titular": "The Grid’s Wasted-Power Problem Has a Sector-Coupling Fix",
+   "fecha": "2026-09-15T23:02:08Z"
   },
   {
    "fuente": "Yahoo Finance",
-   "titular": "Signal Says 'Buy the Dip' After Nvidia Stock Pullback",
-   "fecha": "2026-09-15T18:03:57Z"
-  },
-  {
-   "fuente": "Yahoo Finance",
-   "titular": "Hold Your Horses: Palantir-Nebius Deal Doesn’t Solve Either Stock’s Biggest Problem",
-   "fecha": "2026-09-15T18:10:24Z"
+   "titular": "This High-Yield Construction Stock Just Raised Its Dividend by 40%",
+   "fecha": "2026-09-15T23:30:02Z"
   }
  ],
  "fallos": [
@@ -838,24 +838,24 @@
   ],
   "niveles": {
    "BTC/USD": {
-    "precio": 76359.18,
-    "ema50": 73701.2,
-    "ema200": 72345.93,
-    "dist_ema50": 3.61,
-    "dist_ema200": 5.55,
+    "precio": 76310.01,
+    "ema50": 73699.28,
+    "ema200": 72345.44,
+    "dist_ema50": 3.54,
+    "dist_ema200": 5.48,
     "max52": 97924.49,
     "min52": 57800.19,
     "resistencias": [
      {
       "precio": 79485.66,
       "toques": 1,
-      "dist_pct": 4.09,
+      "dist_pct": 4.16,
       "tipo": "techo"
      },
      {
       "precio": 82209.62,
       "toques": 3,
-      "dist_pct": 7.66,
+      "dist_pct": 7.73,
       "tipo": "techo"
      }
     ],
@@ -863,13 +863,13 @@
      {
       "precio": 74937.52,
       "toques": 1,
-      "dist_pct": -1.86,
+      "dist_pct": -1.8,
       "tipo": "suelo"
      },
      {
       "precio": 67124.15,
       "toques": 2,
-      "dist_pct": -12.09,
+      "dist_pct": -12.04,
       "tipo": "techo"
      }
     ],
@@ -877,25 +877,25 @@
      {
       "precio": 82209.62,
       "toques": 3,
-      "dist_pct": 7.66,
+      "dist_pct": 7.73,
       "tipo": "techo"
      },
      {
       "precio": 67124.15,
       "toques": 2,
-      "dist_pct": -12.09,
+      "dist_pct": -12.04,
       "tipo": "techo"
      },
      {
       "precio": 65087.23,
       "toques": 2,
-      "dist_pct": -14.76,
+      "dist_pct": -14.71,
       "tipo": "techo"
      },
      {
       "precio": 62405.12,
       "toques": 2,
-      "dist_pct": -18.27,
+      "dist_pct": -18.22,
       "tipo": "suelo"
      }
     ]
