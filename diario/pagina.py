@@ -118,6 +118,15 @@ def cambio(c):
     return '<td class="%s">%+.2f %%</td><td class="%s">%s</td>' % (cl, c, cl, fl)
 
 
+ET = re.compile(r"[\[`(]*\s*\b(DATO|Dato|DATOS|LECTURA|Lectura|ESTIMACION|Estimacion|Estimación)\b\s*[\]`)]*\s*:?", re.I)
+
+
+def sin_etiquetas(t):
+    """Quita [DATO], `[LECTURA]`, DATO:, (ESTIMACION)... en cualquier forma."""
+    t = ET.sub(" ", t)
+    return re.sub(r"\s{2,}", " ", t).strip(" -·:")
+
+
 def trozos(texto):
     """Parte la lectura de Gemini en {numero: [parrafos]} usando sus encabezados."""
     out, act = {}, None
@@ -132,8 +141,8 @@ def trozos(texto):
         if s.startswith("#"):
             act = None; continue
         if act:
-            s = re.sub(r"^\[?(LECTURA|Lectura|DATO|Dato)\]?:?\s*", "", s)
-            s = re.sub(r"\s*[\[`]+\s*(DATO|Dato|LECTURA|Lectura|ESTIMACION|Estimacion)\s*[\]`]+", "", s)
+            s = sin_etiquetas(s)
+            if not s: continue
             out[act].append(re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", html.escape(s)))
     return out
 
@@ -219,7 +228,7 @@ def main():
     titular = ""
     for ln in texto.split("\n"):
         if ln.strip():
-            titular = re.sub(r"^#+\s*|\*\*", "", ln.strip()); break
+            titular = sin_etiquetas(re.sub(r"^#+\s*|\*\*", "", ln.strip())); break
     partes = trozos(texto)
 
     logo = open(LOGO).read().strip() if os.path.exists(LOGO) else ""

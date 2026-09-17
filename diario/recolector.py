@@ -15,13 +15,13 @@ SALIDA = "diario/datos.json"
 # (simbolo, nombre, bloque) - todo ETF/divisa/cripto de EEUU, que es lo que da el plan gratis
 UNIVERSO = [
     # --- BOLSA E INDICES (indices, no ETF) ---
-    ("SPX",     "S&P 500",            "bolsa"),
-    ("IXIC",    "Nasdaq",             "bolsa"),
-    ("VIX",     "VIX",                "bolsa"),
-    ("DXY",     "Dolar (DXY)",        "bolsa"),
-    ("N225",    "Nikkei",             "bolsa"),
-    ("KS11",    "Kospi",              "bolsa"),
-    ("000300.SHG", "CSI 300",         "bolsa"),
+    ("SPY",  "S&P 500",               "bolsa"),
+    ("QQQ",  "Nasdaq 100",            "bolsa"),
+    ("VIXY", "VIX (volatilidad)",     "bolsa"),
+    ("UUP",  "Dolar (DXY)",           "bolsa"),
+    ("EWJ",  "Nikkei (Japon)",        "bolsa"),
+    ("EWY",  "Kospi (Corea)",         "bolsa"),
+    ("ASHR", "CSI 300 (China)",       "bolsa"),
     # --- ROTACION POR SECTORES (esto SI son ETF, es lo unico que hay) ---
     ("XLE",  "Energia",              "sectores"),
     ("XLF",  "Financieras",          "sectores"),
@@ -45,13 +45,12 @@ UNIVERSO = [
     ("LQD",  "Credito bueno",        "bonos"),
     ("HYG",  "Credito basura",       "bonos"),
     # --- METALES ---
-    ("GCZ2026", "Oro (futuro dic)",  "metales"),
-    ("GLD",  "Oro (GLD)",            "metales"),
+    ("GLD",  "Oro",                   "metales"),
     ("SLV",  "Plata",                "metales"),
     ("CPER", "Cobre",                "metales"),
     # --- ENERGIA ---
     ("USO",  "Petroleo (USO)",       "energia"),
-    ("BRENT","Brent",                "energia"),
+    ("BNO",  "Brent",                 "energia"),
     # --- DIVISAS ---
     ("EUR/USD", "Euro/Dolar",        "divisas"),
     ("USD/JPY", "Dolar/Yen",         "divisas"),
