@@ -1,8 +1,16 @@
 name: MHF Diario
 
+# 18 sep 2026 · POR QUE HAY TRES HORAS Y NINGUNA ES EN PUNTO
+# Con "0 6 * * 1-5" la unica vez que GitHub lo lanzo solo fue con 4 h 42 min de retraso
+# (programado 06:00 UTC, ejecutado 10:42 UTC) y al dia siguiente no lo lanzo.
+# Las tareas programadas de GitHub son "cuando se pueda", no "a esta hora", y las horas
+# EN PUNTO son las mas cargadas de todas. Por eso: minuto 7 y tres intentos.
+# El segundo y el tercero se cortan solos si el diario de hoy ya esta hecho.
 on:
   schedule:
-    - cron: "0 6 * * 1-5"        # 06:00 UTC = 7:00 en Canarias (horario de verano)
+    - cron: "7 6 * * 1-5"     # 07:07 en Canarias (verano) · el bueno
+    - cron: "7 8 * * 1-5"     # 09:07 · red de seguridad
+    - cron: "7 10 * * 1-5"    # 11:07 · ultima red
   workflow_dispatch:
 
 concurrency:
@@ -18,24 +26,41 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Si el diario de HOY ya esta publicado, no se vuelve a gastar ni un credito.
+      - name: ¿Ya esta el de hoy?
+        id: ya
+        run: |
+          HOY=$(date -u +%Y-%m-%d)
+          if [ -f diario/datos.json ] && grep -q "\"generado\": \"$HOY" diario/datos.json; then
+            echo "hecho=si" >> $GITHUB_OUTPUT
+            echo "El diario de $HOY ya esta publicado. No se repite."
+          else
+            echo "hecho=no" >> $GITHUB_OUTPUT
+          fi
+
       - uses: actions/setup-python@v5
+        if: steps.ya.outputs.hecho == 'no'
         with:
           python-version: "3.11"
 
       - name: Bajar precios y titulares
+        if: steps.ya.outputs.hecho == 'no'
         env:
           TWELVE_KEY: ${{ secrets.TWELVE_KEY }}
         run: python diario/recolector.py
 
       - name: Escribir la lectura
+        if: steps.ya.outputs.hecho == 'no'
         env:
           GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
         run: python diario/redactor.py
 
       - name: Construir la pagina
+        if: steps.ya.outputs.hecho == 'no'
         run: python diario/pagina.py
 
       - name: Publicar
+        if: steps.ya.outputs.hecho == 'no'
         run: |
           git config user.name  "MHF Diario"
           git config user.email "actions@github.com"
