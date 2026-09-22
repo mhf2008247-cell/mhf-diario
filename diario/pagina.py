@@ -99,6 +99,21 @@ td:first-child{text-align:left}
 .aviso{font-size:13px;color:var(--tinta2);background:var(--panel);border:1px solid var(--linea);
  border-left:3px solid var(--rojo);border-radius:10px;padding:12px 14px;margin-top:16px}
 .viejo{border-left-color:var(--ambar);margin-top:10px}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:430px){.fg{grid-template-columns:1fr}}
+.fg .caja{background:var(--panel2);border-radius:10px;padding:12px 13px}
+.fg .big{display:flex;align-items:baseline;gap:9px;margin:4px 0 8px}
+.fg .big b{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1}
+.fg .big span{font-size:13px;font-weight:650}
+.barra{height:6px;border-radius:3px;position:relative;margin:2px 0 10px;
+ background:linear-gradient(90deg,#D1495B,#D99A2B 45%,#9C9CA4 50%,#3FA66A 60%,#2E8B57)}
+.barra i{position:absolute;top:-4px;width:3px;height:14px;border-radius:2px;background:#F5F5F6;transform:translateX(-50%)}
+.fg .r{display:flex;justify-content:space-between;font-size:13px;padding:5px 0;border-top:1px solid var(--linea);font-variant-numeric:tabular-nums}
+.fg .r .e{color:var(--tinta3)}
+.ext{display:inline-block;width:54px;height:5px;border-radius:3px;background:var(--linea);position:relative;vertical-align:middle;margin-left:6px}
+.ext i{position:absolute;top:-3px;width:3px;height:11px;border-radius:2px;background:var(--tinta);transform:translateX(-50%)}
+.nota{font-size:12px;color:var(--tinta3);margin-top:10px;line-height:1.5}
+.miedo{color:var(--baja)}.neutral{color:var(--ambar)}.codicia{color:var(--sube)}
 footer{margin-top:26px;padding-top:15px;border-top:1px solid var(--linea);
  color:var(--tinta3);font-size:11.5px;line-height:1.7}
 @media(max-width:480px){.env{padding:0 11px 52px}.tarjeta{padding:13px 13px}
@@ -153,7 +168,7 @@ def nota_oro(px):
     """Solo con los movimientos de HOY. Un dia no define un regimen y se dice."""
     def c(k):
         v = px.get(k); return None if not v else v["cambio_pct"]
-    oro = c("GCZ2026") if c("GCZ2026") is not None else c("GLD")
+    oro = c("ORO") if c("ORO") is not None else c("GLD")
     bolsa = c("SPX") if c("SPX") is not None else c("SPY")
     dol = c("DXY") if c("DXY") is not None else c("UUP")
     if oro is None or bolsa is None:
@@ -171,9 +186,75 @@ def nota_oro(px):
     return t + " Es un dia suelto, no un regimen."
 
 
+def celda_cambio(v):
+    """Rentabilidades de bonos en puntos basicos; todo lo demas en %."""
+    if v.get("pb") is not None:
+        c = v["pb"]
+        cl = "sube" if c > 0.05 else ("baja" if c < -0.05 else "plano")
+        fl = "▲" if c > 0.05 else ("▼" if c < -0.05 else "—")
+        return '<td class="%s">%+.1f pb</td><td class="%s">%s</td>' % (cl, c, cl, fl)
+    return cambio(v["cambio_pct"])
+
+
+def tono(v):
+    return "miedo" if v < 45 else ("neutral" if v <= 55 else "codicia")
+
+
+def tarjeta_sentimiento(se):
+    P = ['<div class="tarjeta"><div class="cab"><span class="num">☯</span>'
+         '<span class="ico">◐</span><h2>Miedo y codicia</h2></div><div class="fg">']
+    for k, rot in (("bolsa", "Bolsa EE.UU. (CNN)"), ("cripto", "Cripto")):
+        x = se.get(k)
+        if not x:
+            continue
+        a = x["ahora"]
+        P.append('<div class="caja"><div class="h2b">%s</div>'
+                 '<div class="big"><b class="%s">%d</b><span class="%s">%s</span></div>'
+                 '<div class="barra"><i style="left:%d%%"></i></div>'
+                 % (rot, tono(a["valor"]), a["valor"], tono(a["valor"]), a["etiqueta"], a["valor"]))
+        for kk, rr in (("ayer", "Ayer"), ("semana", "Hace una semana"), ("mes", "Hace un mes"), ("ano", "Hace un ano")):
+            if kk in x:
+                P.append('<div class="r"><span class="e">%s</span><span class="%s">%d · %s</span></div>'
+                         % (rr, tono(x[kk]["valor"]), x[kk]["valor"], x[kk]["etiqueta"]))
+        P.append("</div>")
+    P.append('</div><div class="nota">0 = miedo extremo, 100 = codicia extrema. '
+             'Mide el animo de la gente, no dice hacia donde va el precio.</div></div>')
+    return "".join(P)
+
+
+def tarjeta_posiciones(po):
+    P = ['<div class="tarjeta"><div class="cab"><span class="num">⚖</span>'
+         '<span class="ico">▥</span><h2>Posicionamiento en futuros</h2></div>']
+    cot = po.get("cot") or []
+    if cot:
+        P.append('<div class="resumen">Especuladores grandes (CFTC) · datos del %s</div>' % cot[0]["fecha"])
+        P.append('<table><tr><th>Mercado</th><th>Neto</th><th>Semana</th><th>Extremo 3 a</th></tr>')
+        for c in sorted(cot, key=lambda z: -abs(z["extremo"] - 50)):
+            cl = "sube" if c["neto"] > 0 else "baja"
+            cc = "sube" if c["cambio"] > 0 else ("baja" if c["cambio"] < 0 else "plano")
+            P.append('<tr><td><span class="tk">%s</span><span class="dsc">%s</span></td>'
+                     '<td class="%s">%s</td><td class="%s">%s</td>'
+                     '<td>%d<span class="ext"><i style="left:%d%%"></i></span></td></tr>'
+                     % (html.escape(c["mercado"]), "largos" if c["neto"] > 0 else "cortos",
+                        cl, "{:+,}".format(c["neto"]).replace(",", "."),
+                        cc, "{:+,}".format(c["cambio"]).replace(",", "."),
+                        round(c["extremo"]), max(0, min(100, c["extremo"]))))
+        P.append("</table>")
+    b = po.get("btc")
+    if b:
+        P.append('<div class="lec"><div class="t">Bitcoin · cuentas largas / cortas (OKX)</div>'
+                 '<p>Ahora <strong>%.2f</strong> · ayer %.2f · hace una semana %.2f. '
+                 'Por encima de 1 hay mas cuentas en largo que en corto.</p></div>'
+                 % (b["ahora"], b["ayer"], b["semana"]))
+    P.append('<div class="nota">Neto = contratos largos menos cortos de los especuladores. '
+             'Extremo: 0 = lo mas cortos que han estado en 3 anos, 100 = lo mas largos. '
+             'El informe sale los viernes con datos del martes. Un extremo por si solo no es senal de entrada.</div></div>')
+    return "".join(P)
+
+
 def ganadores(px, nom, n=5):
-    """Los que mas suben y los que mas bajan del dia, de todo el panel."""
-    L = [(s, nom.get(s, (s, ""))[0], v["cambio_pct"]) for s, v in px.items()]
+    """Los que mas suben y los que mas bajan del dia, de todo el panel (sin bonos: van en pb)."""
+    L = [(s, nom.get(s, (s, ""))[0], v["cambio_pct"]) for s, v in px.items() if v.get("pb") is None]
     L.sort(key=lambda x: -x[2])
     return L[:n], L[-n:][::-1]
 
@@ -321,13 +402,19 @@ def main():
                         '<span class="n">%s</span>' % html.escape(e["nota"]) if e.get("nota") else ""))
         P.append("</div></div>")
 
+    # --- sentimiento y posicionamiento
+    if extra.get("sentimiento"):
+        P.append(tarjeta_sentimiento(extra["sentimiento"]))
+    if extra.get("posiciones"):
+        P.append(tarjeta_posiciones(extra["posiciones"]))
+
     # --- bloques de mercado
     n = 0
     for clave, rotulo, ico in BLOQUES:
         if clave not in grupos:
             continue
         n += 1
-        filas = sorted(grupos[clave], key=lambda x: -abs(x[2]["cambio_pct"]))
+        filas = sorted(grupos[clave], key=lambda x: (x[2].get("pb") is None, -abs(x[2]["cambio_pct"])))
         P.append('<div class="tarjeta"><div class="cab"><span class="num">%d</span>'
                  '<span class="ico">%s</span><h2>%s</h2></div>' % (n, ico, rotulo))
         trozo = partes.get(n) or []
@@ -337,7 +424,9 @@ def main():
         for s, nb, v in filas:
             P.append('<tr><td><span class="tk">%s</span><span class="dsc">%s</span></td>'
                      '<td>%s</td>%s</tr>'
-                     % (html.escape(s), html.escape(nb), fnum(v["precio"]), cambio(v["cambio_pct"])))
+                     % (html.escape(s), html.escape(nb),
+                        ("%.3f %%" % v["precio"]).replace(".", ",") if v.get("pb") is not None else fnum(v["precio"]),
+                        celda_cambio(v)))
         P.append("</table>")
         if clave == "metales":
             no = nota_oro(d["precios"])
@@ -376,7 +465,8 @@ def main():
                      % (html.escape(t["fuente"]), html.escape(t["titular"])))
         P.append("</ul></div>")
 
-    P.append('<div class="aviso">Los precios son <strong>DATO</strong>: cierres de Twelve Data. '
+    P.append('<div class="aviso">Fuentes: indices, futuros y bonos de Yahoo; acciones, ETF, divisas y bitcoin de Twelve Data. '
+             'Miedo y codicia: CNN y alternative.me. Posiciones: CFTC y OKX. '
              'La lectura la escribe un modelo con esos numeros y los titulares de arriba, '
              'y <strong>puede equivocarse</strong>. Esto no es consejo de inversion.</div>')
     P.append('<footer>MHF · Diario automatico · %d de %d precios · %d fallos%s<br>'

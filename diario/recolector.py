@@ -3,7 +3,7 @@
 No escribe analisis: solo datos comprobables. Escribe diario/datos.json."""
 import json, os, time, urllib.request, urllib.parse, urllib.error
 import xml.etree.ElementTree as ET
-import semaforo, earnings, niveles
+import semaforo, earnings, niveles, reales, sentimiento, posiciones
 from datetime import datetime, timezone
 
 API   = "https://api.twelvedata.com/quote"
@@ -166,9 +166,20 @@ def main():
     if not CLAVE:
         raise SystemExit("falta TWELVE_KEY")
     px, fallos = precios()
+    universo = [{"simbolo": s, "nombre": n, "bloque": b} for s, n, b in UNIVERSO]
+    # --- precios reales de indices y futuros; el ETF solo se queda si Yahoo falla
+    try:
+        px_r, uni_r, sust, fal_r = reales.todos()
+        for etf in sust:
+            px.pop(etf, None)
+        universo = uni_r + [u for u in universo if u["simbolo"] not in sust]
+        px = dict(px_r, **px)
+        fallos += fal_r
+    except Exception as ex:
+        fallos.append(("reales", "%s: %s" % (type(ex).__name__, ex)))
     d = {
         "generado": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "universo": [{"simbolo": s, "nombre": n, "bloque": b} for s, n, b in UNIVERSO],
+        "universo": universo,
         "precios": px,
         "titulares": titulares(),
         "fallos": fallos,
@@ -186,6 +197,14 @@ def main():
             fallos.append(("niveles " + t_, e_))
     except Exception as ex:
         d["extra"] = {"error": "%s: %s" % (type(ex).__name__, ex)}
+    # --- miedo y codicia, y posicionamiento en futuros (cada uno por su lado)
+    for clave, mod in (("sentimiento", sentimiento), ("posiciones", posiciones)):
+        try:
+            v, f_ = mod.estado()
+            d["extra"][clave] = v
+            fallos += f_
+        except Exception as ex:
+            fallos.append((clave, "%s: %s" % (type(ex).__name__, ex)))
     os.makedirs(os.path.dirname(SALIDA), exist_ok=True)
     json.dump(d, open(SALIDA, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print("precios %d/%d · titulares %d · fallos %d"

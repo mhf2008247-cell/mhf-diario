@@ -89,7 +89,26 @@ def resumen_datos(d):
     for b in sorted(por_bloque):
         L.append("  [%s]" % b.upper())
         for s, n, v in por_bloque[b]:
-            L.append("    %-9s %-22s %12.4f   %+6.2f %%" % (s, n, v["precio"], v["cambio_pct"]))
+            if v.get("pb") is not None:
+                L.append("    %-9s %-22s %12.3f %%  %+6.1f puntos basicos" % (s, n, v["precio"], v["pb"]))
+            else:
+                L.append("    %-9s %-22s %12.4f   %+6.2f %%" % (s, n, v["precio"], v["cambio_pct"]))
+    ex = d.get("extra") or {}
+    se = ex.get("sentimiento") or {}
+    for k, rot in (("bolsa", "MIEDO/CODICIA BOLSA (CNN)"), ("cripto", "MIEDO/CODICIA CRIPTO")):
+        if k in se:
+            x = se[k]
+            L.append("")
+            L.append("%s: ahora %d %s · ayer %d · hace 1 semana %d · hace 1 mes %d"
+                     % (rot, x["ahora"]["valor"], x["ahora"]["etiqueta"], x["ayer"]["valor"],
+                        x["semana"]["valor"], x["mes"]["valor"]))
+    po = ex.get("posiciones") or {}
+    if po.get("cot"):
+        L += ["", "POSICIONAMIENTO ESPECULADORES EN FUTUROS (CFTC, dato del %s; extremo 0=lo mas corto en 3 anos, 100=lo mas largo):" % po["cot"][0]["fecha"]]
+        for c in po["cot"]:
+            L.append("    %-20s neto %+d contratos (semana %+d) · extremo %.0f/100" % (c["mercado"], c["neto"], c["cambio"], c["extremo"]))
+    if po.get("btc"):
+        L.append("    Bitcoin OKX ratio cuentas largas/cortas: %.2f (ayer %.2f, hace 1 semana %.2f)" % (po["btc"]["ahora"], po["btc"]["ayer"], po["btc"]["semana"]))
     if d.get("fallos"):
         L.append("")
         L.append("SIN DATO HOY (no inventes estos): " + ", ".join(s for s, _ in d["fallos"]))
