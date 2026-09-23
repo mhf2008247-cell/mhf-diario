@@ -1,35 +1,80 @@
 {
- "generado": "2026-09-22T11:33:25+00:00",
+ "generado": "2026-09-23T09:29:41+00:00",
  "universo": [
   {
-   "simbolo": "SPY",
-   "nombre": "S&P 500",
+   "simbolo": "SPX",
+   "nombre": "S&P 500 (índice)",
    "bloque": "bolsa"
   },
   {
-   "simbolo": "QQQ",
-   "nombre": "Nasdaq 100",
+   "simbolo": "NDX",
+   "nombre": "Nasdaq 100 (índice)",
    "bloque": "bolsa"
   },
   {
-   "simbolo": "VIXY",
-   "nombre": "VIX (volatilidad)",
+   "simbolo": "VIX",
+   "nombre": "VIX (miedo bolsa)",
    "bloque": "bolsa"
   },
   {
-   "simbolo": "UUP",
-   "nombre": "Dolar (DXY)",
+   "simbolo": "DXY",
+   "nombre": "Índice dólar DXY",
    "bloque": "bolsa"
   },
   {
-   "simbolo": "EWJ",
-   "nombre": "Nikkei (Japon)",
+   "simbolo": "NIKKEI",
+   "nombre": "Nikkei 225 (Japón)",
    "bloque": "bolsa"
   },
   {
-   "simbolo": "EWY",
+   "simbolo": "KOSPI",
    "nombre": "Kospi (Corea)",
    "bloque": "bolsa"
+  },
+  {
+   "simbolo": "ORO",
+   "nombre": "Oro $/onza (futuro)",
+   "bloque": "metales"
+  },
+  {
+   "simbolo": "PLATA",
+   "nombre": "Plata $/onza (futuro)",
+   "bloque": "metales"
+  },
+  {
+   "simbolo": "COBRE",
+   "nombre": "Cobre $/libra (futuro)",
+   "bloque": "metales"
+  },
+  {
+   "simbolo": "WTI",
+   "nombre": "Petróleo WTI $/barril",
+   "bloque": "energia"
+  },
+  {
+   "simbolo": "BRENT",
+   "nombre": "Brent $/barril",
+   "bloque": "energia"
+  },
+  {
+   "simbolo": "US3M",
+   "nombre": "Tipo 3 meses EE.UU. %",
+   "bloque": "bonos"
+  },
+  {
+   "simbolo": "US5Y",
+   "nombre": "Bono 5 años EE.UU. %",
+   "bloque": "bonos"
+  },
+  {
+   "simbolo": "US10Y",
+   "nombre": "Bono 10 años EE.UU. %",
+   "bloque": "bonos"
+  },
+  {
+   "simbolo": "US30Y",
+   "nombre": "Bono 30 años EE.UU. %",
+   "bloque": "bonos"
   },
   {
    "simbolo": "ASHR",
@@ -38,7 +83,7 @@
   },
   {
    "simbolo": "XLE",
-   "nombre": "Energia",
+   "nombre": "Energía",
    "bloque": "sectores"
   },
   {
@@ -48,7 +93,7 @@
   },
   {
    "simbolo": "XLK",
-   "nombre": "Tecnologia",
+   "nombre": "Tecnología",
    "bloque": "sectores"
   },
   {
@@ -63,7 +108,7 @@
   },
   {
    "simbolo": "XLP",
-   "nombre": "Consumo basico",
+   "nombre": "Consumo básico",
    "bloque": "sectores"
   },
   {
@@ -83,7 +128,7 @@
   },
   {
    "simbolo": "MRVL",
-   "nombre": "Marvell (posicion)",
+   "nombre": "Marvell (posición)",
    "bloque": "ia"
   },
   {
@@ -108,67 +153,42 @@
   },
   {
    "simbolo": "SHY",
-   "nombre": "Bono 1-3 anos",
+   "nombre": "Bono 1-3 años",
    "bloque": "bonos"
   },
   {
    "simbolo": "IEF",
-   "nombre": "Bono 7-10 anos",
+   "nombre": "Bono 7-10 años",
    "bloque": "bonos"
   },
   {
    "simbolo": "TLT",
-   "nombre": "Bono 20+ anos",
+   "nombre": "Bono 20+ años",
    "bloque": "bonos"
   },
   {
    "simbolo": "LQD",
-   "nombre": "Credito bueno",
+   "nombre": "Crédito bueno",
    "bloque": "bonos"
   },
   {
    "simbolo": "HYG",
-   "nombre": "Credito basura",
+   "nombre": "Crédito basura",
    "bloque": "bonos"
   },
   {
-   "simbolo": "GLD",
-   "nombre": "Oro",
-   "bloque": "metales"
-  },
-  {
-   "simbolo": "SLV",
-   "nombre": "Plata",
-   "bloque": "metales"
-  },
-  {
-   "simbolo": "CPER",
-   "nombre": "Cobre",
-   "bloque": "metales"
-  },
-  {
-   "simbolo": "USO",
-   "nombre": "Petroleo (USO)",
-   "bloque": "energia"
-  },
-  {
-   "simbolo": "BNO",
-   "nombre": "Brent",
-   "bloque": "energia"
-  },
-  {
    "simbolo": "EUR/USD",
-   "nombre": "Euro/Dolar",
+   "nombre": "Euro/Dólar",
    "bloque": "divisas"
   },
   {
    "simbolo": "USD/JPY",
-   "nombre": "Dolar/Yen",
+   "nombre": "Dólar/Yen",
    "bloque": "divisas"
   },
   {
    "simbolo": "USD/CNY",
-   "nombre": "Dolar/Yuan",
+   "nombre": "Dólar/Yuan",
    "bloque": "divisas"
   },
   {
@@ -178,382 +198,452 @@
   }
  ],
  "precios": {
-  "SPY": {
-   "precio": 773.5,
-   "cambio_pct": 1.5505,
-   "cierre_previo": 761.69,
-   "maximo_52": 779.37,
-   "minimo_52": 629.28003,
-   "fecha": "2026-09-21"
+  "SPX": {
+   "precio": 7764.64,
+   "cambio_pct": -0.000775243228789968,
+   "cierre_previo": 7764.7001953125,
+   "maximo_52": 7816.7,
+   "minimo_52": 6316.91,
+   "fecha": "2026-09-22",
+   "fuente": "Yahoo"
   },
-  "QQQ": {
-   "precio": 741.46997,
-   "cambio_pct": 2.77496,
-   "cierre_previo": 721.45001,
-   "maximo_52": 748.65002,
-   "minimo_52": 555.59998,
-   "fecha": "2026-09-21"
+  "NDX": {
+   "precio": 30732.396,
+   "cambio_pct": 0.8202989396463689,
+   "cierre_previo": 30482.349609375,
+   "maximo_52": 30770.629,
+   "minimo_52": 22841.42,
+   "fecha": "2026-09-22",
+   "fuente": "Yahoo"
   },
-  "VIXY": {
-   "precio": 16.94,
-   "cambio_pct": -0.87770402,
-   "cierre_previo": 17.09,
-   "maximo_52": 39.7,
-   "minimo_52": 16.47,
-   "fecha": "2026-09-21"
+  "VIX": {
+   "precio": 14.149999618530273,
+   "cambio_pct": -4.841965518291847,
+   "cierre_previo": 14.869999885559082,
+   "maximo_52": 35.3,
+   "minimo_52": 13.38,
+   "fecha": "2026-09-23",
+   "fuente": "Yahoo"
   },
-  "UUP": {
-   "precio": 28.48,
-   "cambio_pct": 0.31701358,
-   "cierre_previo": 28.39,
-   "maximo_52": 28.6,
-   "minimo_52": 26.4,
-   "fecha": "2026-09-21"
+  "DXY": {
+   "precio": 100.84700012207031,
+   "cambio_pct": 0.4152143937343311,
+   "cierre_previo": 100.43000030517578,
+   "maximo_52": 101.8,
+   "minimo_52": 95.55,
+   "fecha": "2026-09-23",
+   "fuente": "Yahoo"
   },
-  "EWJ": {
-   "precio": 97.96,
-   "cambio_pct": 0.98968978,
-   "cierre_previo": 97.0,
-   "maximo_52": 98.79,
-   "minimo_52": 78.21,
-   "fecha": "2026-09-21"
+  "NIKKEI": {
+   "precio": 65018.94921875,
+   "cambio_pct": 1.3762875421466036,
+   "cierre_previo": 64136.25,
+   "maximo_52": 72831.73,
+   "minimo_52": 44357.65,
+   "fecha": "2026-09-18",
+   "fuente": "Yahoo"
   },
-  "EWY": {
-   "precio": 189.16,
-   "cambio_pct": 4.3296,
-   "cierre_previo": 181.31,
-   "maximo_52": 220.89,
-   "minimo_52": 78.27,
-   "fecha": "2026-09-21"
+  "KOSPI": {
+   "precio": 7080.919921875,
+   "cambio_pct": 1.044558070058188,
+   "cierre_previo": 7007.72021484375,
+   "maximo_52": 9385.59,
+   "minimo_52": 3365.73,
+   "fecha": "2026-09-23",
+   "fuente": "Yahoo"
+  },
+  "ORO": {
+   "precio": 4353.89990234375,
+   "cambio_pct": -0.5141212069754042,
+   "cierre_previo": 4376.39990234375,
+   "maximo_52": 5586.2,
+   "minimo_52": 3749.7,
+   "fecha": "2026-09-23",
+   "fuente": "Yahoo",
+   "contrato": "GCZ26.CMX"
+  },
+  "PLATA": {
+   "precio": 65.875,
+   "cambio_pct": -0.9845164456860012,
+   "cierre_previo": 66.52999877929688,
+   "maximo_52": 121.3,
+   "minimo_52": 43.7,
+   "fecha": "2026-09-23",
+   "fuente": "Yahoo",
+   "nota": "cambio de contrato: calculado en SIZ26.CMX",
+   "contrato": "SIZ26.CMX"
+  },
+  "COBRE": {
+   "precio": 6.829500198364258,
+   "cambio_pct": -0.09508144142934549,
+   "cierre_previo": 6.835999965667725,
+   "maximo_52": 6.912,
+   "minimo_52": 4.558,
+   "fecha": "2026-09-23",
+   "fuente": "Yahoo",
+   "nota": "cambio de contrato: calculado en HGZ26.CMX",
+   "contrato": "HGZ26.CMX"
+  },
+  "WTI": {
+   "precio": 89.94000244140625,
+   "cambio_pct": -0.6407359955471037,
+   "cierre_previo": 90.5199966430664,
+   "maximo_52": 119.48,
+   "minimo_52": 54.98,
+   "fecha": "2026-09-23",
+   "fuente": "Yahoo",
+   "nota": "cambio de contrato: calculado en CLX26.NYM",
+   "contrato": "CLX26.NYM"
+  },
+  "BRENT": {
+   "precio": 95.56999969482422,
+   "cambio_pct": 0.16769314178151085,
+   "cierre_previo": 95.41000366210938,
+   "maximo_52": 126.1,
+   "minimo_52": 58.72,
+   "fecha": "2026-09-23",
+   "fuente": "Yahoo",
+   "nota": "cambio de contrato: calculado en BZZ26.NYM",
+   "contrato": "BZZ26.NYM"
+  },
+  "US3M": {
+   "precio": 4.005,
+   "cambio_pct": 0.5775963540040285,
+   "cierre_previo": 3.9820001125335693,
+   "maximo_52": 3.987,
+   "minimo_52": 0.0,
+   "fecha": "2026-09-22",
+   "fuente": "Yahoo",
+   "pb": 2.2999887466430557
+  },
+  "US5Y": {
+   "precio": 4.842,
+   "cambio_pct": 0.16549212227350285,
+   "cierre_previo": 4.834000110626221,
+   "maximo_52": 4.94,
+   "minimo_52": 0.0,
+   "fecha": "2026-09-22",
+   "fuente": "Yahoo",
+   "pb": 0.7999889373778934
+  },
+  "US10Y": {
+   "precio": 4.968,
+   "cambio_pct": 0.10074913301238997,
+   "cierre_previo": 4.9629998207092285,
+   "maximo_52": 5.016,
+   "minimo_52": 0.0,
+   "fecha": "2026-09-22",
+   "fuente": "Yahoo",
+   "pb": 0.5000179290771456
+  },
+  "US30Y": {
+   "precio": 5.303,
+   "cambio_pct": 0.1321751544611116,
+   "cierre_previo": 5.296000003814697,
+   "maximo_52": 5.424,
+   "minimo_52": 0.0,
+   "fecha": "2026-09-22",
+   "fuente": "Yahoo",
+   "pb": 0.699999618530267
   },
   "ASHR": {
-   "precio": 34.23,
-   "cambio_pct": 1.36215,
-   "cierre_previo": 33.77,
+   "precio": 34.17,
+   "cambio_pct": -0.17528885,
+   "cierre_previo": 34.23,
    "maximo_52": 37.33,
    "minimo_52": 31.31,
-   "fecha": "2026-09-21"
+   "fecha": "2026-09-22"
   },
   "XLE": {
-   "precio": 62.46,
-   "cambio_pct": -2.87669,
-   "cierre_previo": 64.31,
+   "precio": 61.78,
+   "cambio_pct": -1.088697,
+   "cierre_previo": 62.46,
    "maximo_52": 66.17,
    "minimo_52": 42.35,
-   "fecha": "2026-09-21"
+   "fecha": "2026-09-22"
   },
   "XLF": {
-   "precio": 55.9,
-   "cambio_pct": 0.071609229,
-   "cierre_previo": 55.86,
+   "precio": 54.8,
+   "cambio_pct": -1.9678,
+   "cierre_previo": 55.9,
    "maximo_52": 58.6,
    "minimo_52": 47.67,
-   "fecha": "2026-09-21"
+   "fecha": "2026-09-22"
   },
   "XLK": {
-   "precio": 194.85001,
-   "cambio_pct": 2.76899,
-   "cierre_previo": 189.60001,
+   "precio": 196.27,
+   "cambio_pct": 0.72876475,
+   "cierre_previo": 194.85001,
    "maximo_52": 198.73,
    "minimo_52": 126.68,
-   "fecha": "2026-09-21"
+   "fecha": "2026-09-22"
   },
   "XLU": {
-   "precio": 40.66,
-   "cambio_pct": -1.070556,
-   "cierre_previo": 41.099998,
+   "precio": 40.53,
+   "cambio_pct": -0.31972717,
+   "cierre_previo": 40.66,
    "maximo_52": 47.8,
-   "minimo_52": 40.58,
-   "fecha": "2026-09-21"
+   "minimo_52": 40.45,
+   "fecha": "2026-09-22"
   },
   "XLY": {
-   "precio": 112.23,
-   "cambio_pct": 1.080793,
-   "cierre_previo": 111.029999,
+   "precio": 112.33,
+   "cambio_pct": 0.089101373,
+   "cierre_previo": 112.23,
    "maximo_52": 125.010002,
    "minimo_52": 105.19,
-   "fecha": "2026-09-21"
+   "fecha": "2026-09-22"
   },
   "XLP": {
-   "precio": 81.92,
-   "cambio_pct": -1.062808,
-   "cierre_previo": 82.8,
+   "precio": 82.73,
+   "cambio_pct": 0.98877589,
+   "cierre_previo": 81.92,
    "maximo_52": 90.14,
    "minimo_52": 75.16,
-   "fecha": "2026-09-21"
+   "fecha": "2026-09-22"
   },
   "XLV": {
-   "precio": 169.0099945,
-   "cambio_pct": 0.36818999,
-   "cierre_previo": 168.39,
+   "precio": 169.89,
+   "cambio_pct": 0.52068216,
+   "cierre_previo": 169.0099945,
    "maximo_52": 176.60001,
    "minimo_52": 133.73,
-   "fecha": "2026-09-21"
+   "fecha": "2026-09-22"
   },
   "XLI": {
-   "precio": 169.98,
-   "cambio_pct": 0.13549086,
-   "cierre_previo": 169.75,
+   "precio": 170.27,
+   "cambio_pct": 0.17061334,
+   "cierre_previo": 169.98,
    "maximo_52": 188.19,
    "minimo_52": 147.14,
-   "fecha": "2026-09-21"
+   "fecha": "2026-09-22"
   },
   "NVDA": {
-   "precio": 227.38,
-   "cambio_pct": 2.29901,
-   "cierre_previo": 222.27,
+   "precio": 228.87,
+   "cambio_pct": 0.65528639,
+   "cierre_previo": 227.38,
    "maximo_52": 236.53999,
    "minimo_52": 164.27,
-   "fecha": "2026-09-21"
+   "fecha": "2026-09-22"
   },
   "MRVL": {
-   "precio": 257.38,
-   "cambio_pct": 5.37564,
-   "cierre_previo": 244.25,
+   "precio": 262.35999,
+   "cambio_pct": 1.93487,
+   "cierre_previo": 257.38,
    "maximo_52": 329.88,
    "minimo_52": 70.69,
-   "fecha": "2026-09-21"
+   "fecha": "2026-09-22"
   },
   "AVGO": {
-   "precio": 362.66,
-   "cambio_pct": 1.41216,
-   "cierre_previo": 357.60999,
+   "precio": 364.54001,
+   "cambio_pct": 0.51839322,
+   "cierre_previo": 362.66,
    "maximo_52": 495.0,
    "minimo_52": 289.95999,
-   "fecha": "2026-09-21"
+   "fecha": "2026-09-22"
   },
   "SMH": {
-   "precio": 596.030029,
-   "cambio_pct": 4.019202,
-   "cierre_previo": 573.0,
+   "precio": 607.46002,
+   "cambio_pct": 1.91769,
+   "cierre_previo": 596.030029,
    "maximo_52": 671.83002,
    "minimo_52": 313.60001,
-   "fecha": "2026-09-21"
+   "fecha": "2026-09-22"
   },
   "MU": {
-   "precio": 1043.95996,
-   "cambio_pct": 2.7722,
-   "cierre_previo": 1015.79999,
+   "precio": 1096.16003,
+   "cambio_pct": 5.00019878,
+   "cierre_previo": 1043.95996,
    "maximo_52": 1255.0,
    "minimo_52": 154.64999,
-   "fecha": "2026-09-21"
+   "fecha": "2026-09-22"
   },
   "AMD": {
-   "precio": 615.52002,
-   "cambio_pct": 9.94963,
-   "cierre_previo": 559.82001,
-   "maximo_52": 616.69,
+   "precio": 623.77002,
+   "cambio_pct": 1.34033,
+   "cierre_previo": 615.52002,
+   "maximo_52": 624.52002,
    "minimo_52": 154.78,
-   "fecha": "2026-09-21"
+   "fecha": "2026-09-22"
   },
   "SHY": {
-   "precio": 81.29,
-   "cambio_pct": 0.061549795,
-   "cierre_previo": 81.24,
+   "precio": 81.32,
+   "cambio_pct": 0.036903406,
+   "cierre_previo": 81.29,
    "maximo_52": 83.2,
    "minimo_52": 81.24,
-   "fecha": "2026-09-21"
+   "fecha": "2026-09-22"
   },
   "IEF": {
-   "precio": 91.15,
-   "cambio_pct": 0.38546086,
-   "cierre_previo": 90.8,
+   "precio": 91.16,
+   "cambio_pct": 0.010973271,
+   "cierre_previo": 91.15,
    "maximo_52": 98.050003,
    "minimo_52": 90.7,
-   "fecha": "2026-09-21"
+   "fecha": "2026-09-22"
   },
   "TLT": {
-   "precio": 81.8,
-   "cambio_pct": 0.67692683,
-   "cierre_previo": 81.25,
+   "precio": 81.75,
+   "cambio_pct": -0.061128423,
+   "cierre_previo": 81.8,
    "maximo_52": 92.19,
    "minimo_52": 80.46,
-   "fecha": "2026-09-21"
+   "fecha": "2026-09-22"
   },
   "LQD": {
    "precio": 105.089996,
-   "cambio_pct": 0.37249226,
-   "cierre_previo": 104.7,
+   "cambio_pct": 0.0,
+   "cierre_previo": 105.089996,
    "maximo_52": 112.93,
    "minimo_52": 104.050003,
-   "fecha": "2026-09-21"
+   "fecha": "2026-09-22"
   },
   "HYG": {
-   "precio": 78.68,
-   "cambio_pct": 0.19101175,
-   "cierre_previo": 78.53,
+   "precio": 78.67,
+   "cambio_pct": -0.012712425,
+   "cierre_previo": 78.68,
    "maximo_52": 81.36,
    "minimo_52": 78.36,
-   "fecha": "2026-09-21"
-  },
-  "GLD": {
-   "precio": 398.38,
-   "cambio_pct": -0.69546787,
-   "cierre_previo": 401.17001,
-   "maximo_52": 509.70001,
-   "minimo_52": 341.84,
-   "fecha": "2026-09-21"
-  },
-  "SLV": {
-   "precio": 59.63,
-   "cambio_pct": -0.50058274,
-   "cierre_previo": 59.93,
-   "maximo_52": 109.83,
-   "minimo_52": 39.34,
-   "fecha": "2026-09-21"
-  },
-  "CPER": {
-   "precio": 40.67,
-   "cambio_pct": 1.093708,
-   "cierre_previo": 40.23,
-   "maximo_52": 41.29,
-   "minimo_52": 28.37,
-   "fecha": "2026-09-21"
-  },
-  "USO": {
-   "precio": 148.16,
-   "cambio_pct": -3.67963,
-   "cierre_previo": 153.82001,
-   "maximo_52": 163.35001,
-   "minimo_52": 65.99,
-   "fecha": "2026-09-21"
-  },
-  "BNO": {
-   "precio": 58.87,
-   "cambio_pct": -2.80667,
-   "cierre_previo": 60.57,
-   "maximo_52": 63.98,
-   "minimo_52": 27.14,
-   "fecha": "2026-09-21"
+   "fecha": "2026-09-22"
   },
   "EUR/USD": {
-   "precio": 1.1462,
-   "cambio_pct": -0.019190175,
-   "cierre_previo": 1.14642,
+   "precio": 1.14143,
+   "cambio_pct": -0.30656628,
+   "cierre_previo": 1.14494,
    "maximo_52": 1.20656,
    "minimo_52": 1.13239,
-   "fecha": "2026-09-22"
+   "fecha": "2026-09-23"
   },
   "USD/JPY": {
-   "precio": 157.1555,
-   "cambio_pct": -0.15203806,
-   "cierre_previo": 157.3948,
+   "precio": 157.88208,
+   "cambio_pct": 0.30653191,
+   "cierre_previo": 157.3996,
    "maximo_52": 164.08805,
    "minimo_52": 146.58,
-   "fecha": "2026-09-22"
+   "fecha": "2026-09-23"
   },
   "USD/CNY": {
-   "precio": 6.69974,
-   "cambio_pct": 0.057946253,
-   "cierre_previo": 6.69586,
+   "precio": 6.70498,
+   "cambio_pct": 0.078062614,
+   "cierre_previo": 6.69975,
    "maximo_52": 7.1424,
    "minimo_52": 6.69321,
-   "fecha": "2026-09-22"
+   "fecha": "2026-09-23"
   },
   "BTC/USD": {
-   "precio": 85957.44,
-   "cambio_pct": -0.76490418,
-   "cierre_previo": 86620.0,
+   "precio": 85900.83,
+   "cambio_pct": -0.35695991,
+   "cierre_previo": 86208.56,
    "maximo_52": 126199.63,
    "minimo_52": 57800.19,
-   "fecha": "2026-09-22"
+   "fecha": "2026-09-23"
   }
  },
  "titulares": [
   {
    "fuente": "Economia",
-   "titular": "US open to Iran talks at UN General Assembly, Rubio says",
-   "fecha": "2026-09-22 11:27:30"
+   "titular": "OECD raises UK 2026 growth forecast, cuts inflation outlook on energy support",
+   "fecha": "2026-09-23 09:00:56"
   },
   {
    "fuente": "Economia",
-   "titular": "Don’t expect a grand bargain from the Trump-Xi summit: Yardeni",
-   "fecha": "2026-09-22 10:49:43"
+   "titular": "Global economy defies high oil prices, OECD says, but warns of downside risks",
+   "fecha": "2026-09-23 08:58:44"
   },
   {
    "fuente": "Economia",
-   "titular": "Taiwan minister says he was not \"belittled\" in China during official visit",
-   "fecha": "2026-09-22 10:30:07"
+   "titular": "Bank Indonesia holds policy rate at 5.75% for third meeting",
+   "fecha": "2026-09-23 08:30:09"
   },
   {
    "fuente": "Economia",
-   "titular": "China supports automaker investments in Europe, minister says",
-   "fecha": "2026-09-22 10:26:52"
+   "titular": "Singapore’s link to US stocks is struggling to attract traders",
+   "fecha": "2026-09-23 08:12:27"
   },
   {
    "fuente": "Economia",
-   "titular": "Wall St futures pause after AI rally, focus on Mideast tensions",
-   "fecha": "2026-09-22 10:25:43"
+   "titular": "OECD expects AI boom to help offset Middle East energy shock for now",
+   "fecha": "2026-09-23 08:06:57"
   },
   {
    "fuente": "Economia",
-   "titular": "Kremlin says it welcomes AfD’s push for dialogue with Moscow",
-   "fecha": "2026-09-22 10:25:31"
+   "titular": "Italy sticks with commitment to keep 2026 deficit below EU 3% of GDP ceiling",
+   "fecha": "2026-09-23 07:54:43"
   },
   {
    "fuente": "Economia",
-   "titular": "Switzerland’s trade surplus almost doubles in second quarter",
-   "fecha": "2026-09-22 10:22:49"
+   "titular": "Meta’s Zuckerberg to speak amid Muse hype; oil extends dip - what’s moving markets",
+   "fecha": "2026-09-23 07:54:36"
   },
   {
    "fuente": "Economia",
-   "titular": "UBS CEO calls 90% capital proposal no real compromise",
-   "fecha": "2026-09-22 10:21:25"
+   "titular": "South Korea says Trump welcomes progress in US strategic investment projects",
+   "fecha": "2026-09-23 06:54:31"
   },
   {
    "fuente": "Mercados",
-   "titular": "Roche obesity drug shows 15.5% weight loss in diabetes trial",
-   "fecha": "2026-09-22 11:25:45"
+   "titular": "China maintains reduced oil imports despite Iran war pressures",
+   "fecha": "2026-09-23 09:15:31"
   },
   {
    "fuente": "Mercados",
-   "titular": "Premarket movers: Quest, Labcorp hit by CMS cuts",
-   "fecha": "2026-09-22 11:25:44"
+   "titular": "Greenland welcomes US military pact but trust still shaky",
+   "fecha": "2026-09-23 09:12:46"
   },
   {
    "fuente": "Mercados",
-   "titular": "Accelevation targets up to $5.4 billion valuation in US IPO",
-   "fecha": "2026-09-22 11:25:38"
+   "titular": "UK regulator proposes giving consumers more search choice on Google",
+   "fecha": "2026-09-23 09:12:29"
   },
   {
    "fuente": "Mercados",
-   "titular": "Why is Viking Therapeutics stock surging today?",
-   "fecha": "2026-09-22 11:19:26"
+   "titular": "BTIG shares its Nike stock outlook ahead of next week’s earnings",
+   "fecha": "2026-09-23 09:09:24"
   },
   {
    "fuente": "Mercados",
-   "titular": "Why is BlackBerry stock surging today?",
-   "fecha": "2026-09-22 11:19:14"
+   "titular": "Gold prices drop amid stronger dollar, higher-for-longer rate outlook",
+   "fecha": "2026-09-23 09:02:53"
   },
   {
    "fuente": "Mercados",
-   "titular": "Bernstein upgrades Engie on valuation, resilient earnings outlook",
-   "fecha": "2026-09-22 11:18:36"
+   "titular": "Gift Nifty 50 battles Fib resistance near 23,477: Live levels",
+   "fecha": "2026-09-23 09:02:29"
   },
   {
    "fuente": "Mercados",
-   "titular": "Celldex stock rises after positive phase 3 trial results",
-   "fecha": "2026-09-22 11:16:38"
+   "titular": "Why is KWS SAAT stock sliding today?",
+   "fecha": "2026-09-23 08:50:44"
   },
   {
    "fuente": "Mercados",
-   "titular": "Viking Therapeutics stock surges 27% on weight loss drug data",
-   "fecha": "2026-09-22 11:12:40"
+   "titular": "Why is Arcadis stock sliding today?",
+   "fecha": "2026-09-23 08:49:32"
   },
   {
    "fuente": "Divisas",
-   "titular": "Dollar holds on hawkish Fed pricing while yen languishes despite Tokyo support",
-   "fecha": "2026-09-22 09:38:24"
+   "titular": "Euro yields drop as crude, gas pull back on prospective US-Iran breakthrough",
+   "fecha": "2026-09-23 07:55:33"
+  },
+  {
+   "fuente": "Divisas",
+   "titular": "Dollar creeps higher ahead of U.S.-China summit",
+   "fecha": "2026-09-23 02:59:22"
+  },
+  {
+   "fuente": "Divisas",
+   "titular": "Dollar pinned at nearly 8-week high, euro slips while yen flat amid holiday volume",
+   "fecha": "2026-09-22 20:59:43"
+  },
+  {
+   "fuente": "Divisas",
+   "titular": "Treasury curve flattens as easing oil input costs and UN diplomacy offer respite",
+   "fecha": "2026-09-22 12:15:26"
   },
   {
    "fuente": "Divisas",
    "titular": "Sterling today: Pound slips as hawkish Fed talk lifts dollar broadly",
    "fecha": "2026-09-22 09:01:07"
-  },
-  {
-   "fuente": "Divisas",
-   "titular": "Euro area debt bourses face risk drag from Paris debt trajectory",
-   "fecha": "2026-09-22 08:04:44"
   },
   {
    "fuente": "Divisas",
@@ -571,54 +661,74 @@
    "fecha": "2026-09-21 17:16:09"
   },
   {
-   "fuente": "Divisas",
-   "titular": "U.S. Treasury yields ease on crude pull-back ;  rate hike bets stay",
-   "fecha": "2026-09-21 12:07:57"
-  },
-  {
-   "fuente": "Divisas",
-   "titular": "As lines grow at banks, Cuba tiptoes away from communism but stability seems distant",
-   "fecha": "2026-09-21 11:06:38"
+   "fuente": "Materias",
+   "titular": "Oil holds near two-week lows on easing supply concerns",
+   "fecha": "2026-09-23 08:48:31"
   },
   {
    "fuente": "Materias",
-   "titular": "Hormuz vessel traffic falls to two, data shows",
-   "fecha": "2026-09-22 11:00:44"
+   "titular": "Euro gas treads water near 3-week lows as Tehran hints Hormuz reopening",
+   "fecha": "2026-09-23 08:47:57"
   },
   {
    "fuente": "Materias",
-   "titular": "Morning Bid: As oil swoons, AI recharges",
-   "fecha": "2026-09-22 10:43:11"
+   "titular": "Oil hovers below $100 as Trump signals progress in Iran talks",
+   "fecha": "2026-09-23 08:36:58"
   },
   {
    "fuente": "Materias",
-   "titular": "Iran ready to reopen Strait of Hormuz if US eases military pressure and lifts blockade",
-   "fecha": "2026-09-22 10:19:34"
+   "titular": "London Gas Oil tests $1,517 SuperTrend ceiling: Live levels",
+   "fecha": "2026-09-23 07:11:46"
   },
   {
    "fuente": "Materias",
-   "titular": "Russia reports diplomatic talks on Turkey’s Black Sea grain plan",
-   "fecha": "2026-09-22 10:16:29"
+   "titular": "Brent Oil breaks $104 support, eyes $97.36: Live levels",
+   "fecha": "2026-09-23 07:11:20"
   },
   {
    "fuente": "Materias",
-   "titular": "Saudi Arabia restarts East-West oil pipeline, to resume exports from Yanbu, sources say",
-   "fecha": "2026-09-22 10:13:21"
+   "titular": "Natural Gas snaps back from 9% surge: Live levels",
+   "fecha": "2026-09-23 07:11:19"
   },
   {
    "fuente": "Materias",
-   "titular": "Oil dips below $100 as Iran reportedly offers to reopen Hormuz amid diplomacy push",
-   "fecha": "2026-09-22 09:19:40"
+   "titular": "Crude Oil WTI hits RSI 29 oversold at $89.48: Live levels",
+   "fecha": "2026-09-23 07:11:16"
   },
   {
    "fuente": "Materias",
-   "titular": "US battery startup that chose China over Kentucky opens first factory as Trump, Xi meet",
-   "fecha": "2026-09-22 09:07:05"
+   "titular": "Silver consolidates at $66.29 above key support: Live levels",
+   "fecha": "2026-09-23 07:11:10"
   },
   {
-   "fuente": "Materias",
-   "titular": "European natural gas stabilize from two-week lows; UN talks in focus",
-   "fecha": "2026-09-22 09:02:33"
+   "fuente": "Cripto",
+   "titular": "Cregis Marks Two Years of Middle East Growth as Traditional Financial Firms Drive Adoption",
+   "fecha": "2026-09-23 07:30:34"
+  },
+  {
+   "fuente": "Cripto",
+   "titular": "Bitcoin pulls back from overbought highs at $86,388: Live levels",
+   "fecha": "2026-09-23 07:11:40"
+  },
+  {
+   "fuente": "Cripto",
+   "titular": "Bitcoin steady near $87k as ETF inflows soar; Trump-Xi summit in focus",
+   "fecha": "2026-09-23 06:23:57"
+  },
+  {
+   "fuente": "Cripto",
+   "titular": "Bitcoin takes a breather, halting a big rally that briefly took it above $87k",
+   "fecha": "2026-09-22 22:16:25"
+  },
+  {
+   "fuente": "Cripto",
+   "titular": "EOS Climbs 12% As Investors Gain Confidence",
+   "fecha": "2026-09-22 18:03:00"
+  },
+  {
+   "fuente": "Cripto",
+   "titular": "Farmhouse holds 15.709 Bitcoin with $347K in unrealized gains",
+   "fecha": "2026-09-22 13:38:01"
   },
   {
    "fuente": "Cripto",
@@ -627,43 +737,38 @@
   },
   {
    "fuente": "Cripto",
-   "titular": "Bitcoin climbs toward $86k as Strategy buys more coins",
-   "fecha": "2026-09-22 09:22:45"
-  },
-  {
-   "fuente": "Cripto",
-   "titular": "Bitcoin overbought at $87K high, mean-reversion risk: Live levels",
-   "fecha": "2026-09-22 07:11:43"
-  },
-  {
-   "fuente": "Cripto",
    "titular": "CloudTech Powers Institutional-Grade Digital Asset Trading for Australian Investors Through Integral Technology",
    "fecha": "2026-09-21 22:30:35"
   },
   {
-   "fuente": "Cripto",
-   "titular": "XRP Climbs 10% In a Green Day",
-   "fecha": "2026-09-21 21:39:05"
+   "fuente": "CNBC mercados",
+   "titular": "Trump-Xi meeting: Why China's self-sufficiency changes the calculus",
+   "fecha": "Wed, 23 Sep 2026 09:13:39 GMT"
   },
   {
-   "fuente": "Cripto",
-   "titular": "Bitcoin surges to over 7-month high as tokenized-stock move lifts crypto sentiment",
-   "fecha": "2026-09-21 21:37:00"
+   "fuente": "CNBC mercados",
+   "titular": "CFTC says prediction markets' 'mentions' contracts present a higher risk of manipulation",
+   "fecha": "Wed, 23 Sep 2026 00:58:16 GMT"
   },
   {
-   "fuente": "Cripto",
-   "titular": "NOWPayments Releases Cross-Chain Payout Data Revealing Key Performance Benchmarks Across TRON, BNB Chain, and Solana",
-   "fecha": "2026-09-21 16:00:37"
+   "fuente": "CNBC mercados",
+   "titular": "Stocks making the biggest moves midday: Lennar, Capri, Vicor, Amgen & more",
+   "fecha": "Tue, 22 Sep 2026 17:45:31 GMT"
   },
   {
-   "fuente": "Cripto",
-   "titular": "CryptoPawn Launches Protocol Integration Allowing Authorized AI Agents to Participate in Crypto-Backed Loan Transactions",
-   "fecha": "2026-09-21 15:30:38"
+   "fuente": "CNBC mercados",
+   "titular": "Kalshi asks CFTC to allow margin trading on its platform, letting users buy with borrowed funds",
+   "fecha": "Tue, 22 Sep 2026 12:28:51 GMT"
+  },
+  {
+   "fuente": "CNBC mercados",
+   "titular": "Stocks making the biggest moves premarket: Alibaba, Quest Diagnostics, On Holding, GameStop & more",
+   "fecha": "Tue, 22 Sep 2026 11:49:33 GMT"
   },
   {
    "fuente": "CNBC mercados",
    "titular": "Here's who we know is going to the Trump-Xi dinner so far",
-   "fecha": "Tue, 22 Sep 2026 02:41:10 GMT"
+   "fecha": "Tue, 22 Sep 2026 23:43:43 GMT"
   },
   {
    "fuente": "CNBC mercados",
@@ -674,31 +779,6 @@
    "fuente": "CNBC mercados",
    "titular": "Stocks making the biggest moves premarket: Paramount, Warner Bros., Accenture, Novo & more",
    "fecha": "Mon, 21 Sep 2026 11:40:33 GMT"
-  },
-  {
-   "fuente": "CNBC mercados",
-   "titular": "‘It's awful’: How tariffs, soaring fuel costs and higher interest rates are squeezing American companies",
-   "fecha": "Mon, 21 Sep 2026 15:04:04 GMT"
-  },
-  {
-   "fuente": "CNBC mercados",
-   "titular": "Three words from Kevin Warsh have Wall Street wondering how far the Fed will go with rate hikes",
-   "fecha": "Fri, 18 Sep 2026 18:28:31 GMT"
-  },
-  {
-   "fuente": "CNBC mercados",
-   "titular": "Stocks making the biggest moves premarket: Netflix, Nucor, Xenon Pharmaceuticals & more",
-   "fecha": "Fri, 18 Sep 2026 11:48:19 GMT"
-  },
-  {
-   "fuente": "CNBC mercados",
-   "titular": "Warren Buffett steps down as chairman of Berkshire Hathaway: 'Father Time always wins'",
-   "fecha": "Fri, 18 Sep 2026 12:04:02 GMT"
-  },
-  {
-   "fuente": "CNBC mercados",
-   "titular": "Securitize jumps after regulators greenlight some tokenized U.S. stock trading",
-   "fecha": "Thu, 17 Sep 2026 17:59:51 GMT"
   },
   {
    "fuente": "CNBC economia",
@@ -742,46 +822,51 @@
   },
   {
    "fuente": "Yahoo Finance",
-   "titular": "Bank of America says buy tumbling shares of aviation giant",
-   "fecha": "2026-09-21T14:37:00Z"
+   "titular": "Kalshi asks CFTC to allow margin trading on prediction markets",
+   "fecha": "2026-09-22T12:39:18Z"
   },
   {
    "fuente": "Yahoo Finance",
-   "titular": "12 S&P 500 Stocks Hit Trillion-Dollar Club — What Could Go Wrong?",
-   "fecha": "2026-09-22T11:28:11Z"
+   "titular": "Best Wells Fargo credit cards (2026)",
+   "fecha": "2026-06-01T16:43:10Z"
   },
   {
    "fuente": "Yahoo Finance",
-   "titular": "Credo Technology (CRDO) Just Cleared a Key PCIe 6.0 Milestone. What Comes Next?",
-   "fecha": "2026-09-22T11:21:33Z"
+   "titular": "How to start buying crypto with $100",
+   "fecha": "2026-04-13T15:51:25Z"
   },
   {
    "fuente": "Yahoo Finance",
-   "titular": "Silver price today, Tuesday, September 22, 2026: Silver prices hit high mark ahead of U.S.- China talks this week",
-   "fecha": "2026-09-22T11:15:36Z"
+   "titular": "Work from home? Here are 5 ways to save money on remote work expenses.",
+   "fecha": "2026-09-21T14:26:16Z"
   },
   {
    "fuente": "Yahoo Finance",
-   "titular": "How Does This F-35A Rollout Strengthen NATO Deterrence for Lockheed Martin (LMT)",
-   "fecha": "2026-09-22T11:13:22Z"
+   "titular": "Weekly survey of mortgage lenders with the lowest rates: Sub-6% rates disappearing",
+   "fecha": "2025-11-03T17:08:34Z"
   },
   {
    "fuente": "Yahoo Finance",
-   "titular": "Global diesel shortage from Iran, Ukraine wars to last into 2027",
-   "fecha": "2026-09-21T18:17:21Z"
+   "titular": "Celsius Insiders Just Bought $1.8M of Stock Near Multi-Year Lows. Is the Worst Priced In?",
+   "fecha": "2026-09-21T23:21:18Z"
   },
   {
    "fuente": "Yahoo Finance",
-   "titular": "Stock market today: Nasdaq, Dow and S&P 500 little changed as AI trade powers market",
-   "fecha": "2026-09-22T08:06:25Z"
+   "titular": "Silver Lake sues Carl Icahn and hedge funds over Endeavor buyout",
+   "fecha": "2026-09-21T23:13:53Z"
   },
   {
    "fuente": "Yahoo Finance",
-   "titular": "Saudi Arabia restarts East-West oil pipeline, sources say",
-   "fecha": "2026-09-22T11:09:40Z"
+   "titular": "Vicor (VICR) Licenses its Power Patents to Another AI System Maker. Shares Jump 18%",
+   "fecha": "2026-09-21T23:24:18Z"
   }
  ],
- "fallos": [],
+ "fallos": [
+  [
+   "CSI300",
+   "Yahoo RuntimeError: menos de 2 cierres"
+  ]
+ ],
  "extra": {
   "semaforo": {
    "nivel": "amarillo",
@@ -789,36 +874,12 @@
    "motivos": [
     [
      "amarillo",
-     "resultados de AZO"
+     "resultados de CTAS, GIS, PAYX"
     ]
    ]
   },
   "earnings": {
    "hoy": [
-    {
-     "fecha": "2026-09-22",
-     "ticker": "AZO",
-     "empresa": "AutoZone,",
-     "cuando": "antes de abrir",
-     "consenso": 54.54,
-     "real": null,
-     "sorpresa": null,
-     "ano_pasado": 48.71,
-     "nota": "consenso 54.54 $ · hace un ano 48.71 $"
-    }
-   ],
-   "semana": [
-    {
-     "fecha": "2026-09-22",
-     "ticker": "AZO",
-     "empresa": "AutoZone,",
-     "cuando": "antes de abrir",
-     "consenso": 54.54,
-     "real": null,
-     "sorpresa": null,
-     "ano_pasado": 48.71,
-     "nota": "consenso 54.54 $ · hace un ano 48.71 $"
-    },
     {
      "fecha": "2026-09-23",
      "ticker": "CTAS",
@@ -828,29 +889,70 @@
      "real": null,
      "sorpresa": null,
      "ano_pasado": null,
+     "cap": 78656864000.0,
      "nota": "consenso 1.35 $"
     },
     {
      "fecha": "2026-09-23",
      "ticker": "GIS",
-     "empresa": "General Mills,",
+     "empresa": "General Mills",
      "cuando": "antes de abrir",
      "consenso": 0.72,
      "real": null,
      "sorpresa": null,
      "ano_pasado": 0.86,
-     "nota": "consenso 0.72 $ · hace un ano 0.86 $"
+     "cap": 18931228700.0,
+     "nota": "consenso 0.72 $ · hace un año 0.86 $"
     },
     {
      "fecha": "2026-09-23",
      "ticker": "PAYX",
-     "empresa": "Paychex,",
+     "empresa": "Paychex",
      "cuando": "antes de abrir",
      "consenso": 1.33,
      "real": null,
      "sorpresa": null,
      "ano_pasado": 1.22,
-     "nota": "consenso 1.33 $ · hace un ano 1.22 $"
+     "cap": 40941314000.0,
+     "nota": "consenso 1.33 $ · hace un año 1.22 $"
+    }
+   ],
+   "semana": [
+    {
+     "fecha": "2026-09-23",
+     "ticker": "CTAS",
+     "empresa": "Cintas",
+     "cuando": "antes de abrir",
+     "consenso": 1.35,
+     "real": null,
+     "sorpresa": null,
+     "ano_pasado": null,
+     "cap": 78656864000.0,
+     "nota": "consenso 1.35 $"
+    },
+    {
+     "fecha": "2026-09-23",
+     "ticker": "GIS",
+     "empresa": "General Mills",
+     "cuando": "antes de abrir",
+     "consenso": 0.72,
+     "real": null,
+     "sorpresa": null,
+     "ano_pasado": 0.86,
+     "cap": 18931228700.0,
+     "nota": "consenso 0.72 $ · hace un año 0.86 $"
+    },
+    {
+     "fecha": "2026-09-23",
+     "ticker": "PAYX",
+     "empresa": "Paychex",
+     "cuando": "antes de abrir",
+     "consenso": 1.33,
+     "real": null,
+     "sorpresa": null,
+     "ano_pasado": 1.22,
+     "cap": 40941314000.0,
+     "nota": "consenso 1.33 $ · hace un año 1.22 $"
     },
     {
      "fecha": "2026-09-24",
@@ -861,18 +963,20 @@
      "real": null,
      "sorpresa": null,
      "ano_pasado": 5.87,
-     "nota": "consenso 6.48 $ · hace un ano 5.87 $"
+     "cap": 398456848000.0,
+     "nota": "consenso 6.48 $ · hace un año 5.87 $"
     },
     {
      "fecha": "2026-09-24",
      "ticker": "DRI",
-     "empresa": "Darden Restaurants,",
+     "empresa": "Darden Restaurants",
      "cuando": "antes de abrir",
      "consenso": 2.06,
      "real": null,
      "sorpresa": null,
      "ano_pasado": 1.97,
-     "nota": "consenso 2.06 $ · hace un ano 1.97 $"
+     "cap": 24105816100.0,
+     "nota": "consenso 2.06 $ · hace un año 1.97 $"
     },
     {
      "fecha": "2026-09-24",
@@ -883,18 +987,20 @@
      "real": null,
      "sorpresa": null,
      "ano_pasado": 3.47,
-     "nota": "consenso 4.46 $ · hace un ano 3.47 $"
+     "cap": 22355666900.0,
+     "nota": "consenso 4.46 $ · hace un año 3.47 $"
     },
     {
      "fecha": "2026-09-29",
      "ticker": "CCL",
-     "empresa": "Carnival Ltd.",
+     "empresa": "Carnival Ltd",
      "cuando": "antes de abrir",
      "consenso": 1.36,
      "real": null,
      "sorpresa": null,
      "ano_pasado": 1.43,
-     "nota": "consenso 1.36 $ · hace un ano 1.43 $"
+     "cap": 30556872700.0,
+     "nota": "consenso 1.36 $ · hace un año 1.43 $"
     },
     {
      "fecha": "2026-09-30",
@@ -905,18 +1011,20 @@
      "real": null,
      "sorpresa": null,
      "ano_pasado": 3.12,
-     "nota": "consenso 3.86 $ · hace un ano 3.12 $"
+     "cap": 31820695600.0,
+     "nota": "consenso 3.86 $ · hace un año 3.12 $"
     },
     {
      "fecha": "2026-09-30",
      "ticker": "MU",
-     "empresa": "Micron Technology,",
+     "empresa": "Micron Technology",
      "cuando": "tras el cierre",
      "consenso": null,
      "real": null,
      "sorpresa": null,
      "ano_pasado": 2.86,
-     "nota": "hace un ano 2.86 $"
+     "cap": 1179041270000.0,
+     "nota": "hace un año 2.86 $"
     },
     {
      "fecha": "2026-10-01",
@@ -927,18 +1035,20 @@
      "real": null,
      "sorpresa": null,
      "ano_pasado": 3.03,
-     "nota": "consenso 3.19 $ · hace un ano 3.03 $"
+     "cap": 124230328000.0,
+     "nota": "consenso 3.19 $ · hace un año 3.03 $"
     },
     {
      "fecha": "2026-10-01",
      "ticker": "NKE",
-     "empresa": "Nike,",
+     "empresa": "Nike",
      "cuando": "tras el cierre",
      "consenso": 0.44,
      "real": null,
      "sorpresa": null,
      "ano_pasado": 0.49,
-     "nota": "consenso 0.44 $ · hace un ano 0.49 $"
+     "cap": 53554303000.0,
+     "nota": "consenso 0.44 $ · hace un año 0.49 $"
     },
     {
      "fecha": "2026-10-06",
@@ -949,10 +1059,26 @@
      "real": null,
      "sorpresa": null,
      "ano_pasado": 3.63,
-     "nota": "consenso 3.63 $ · hace un ano 3.63 $"
+     "cap": 20218458100.0,
+     "nota": "consenso 3.63 $ · hace un año 3.63 $"
     }
    ],
    "ya": [
+    {
+     "fecha": "2026-09-22",
+     "ticker": "AZO",
+     "empresa": "AutoZone",
+     "cuando": "sin hora confirmada",
+     "consenso": 54.54,
+     "real": 56.05,
+     "sorpresa": 2.77,
+     "ano_pasado": null,
+     "cap": 45764051000.0,
+     "nota": "consenso 54.54 $",
+     "reaccion_pct": null,
+     "resumen": "batió el consenso por 2.8 % (56.05 $ frente a 54.54 $)",
+     "batio_y_cayo": false
+    },
     {
      "fecha": "2026-09-16",
      "ticker": "LEN",
@@ -962,23 +1088,10 @@
      "real": 1.23,
      "sorpresa": -4.65,
      "ano_pasado": null,
+     "cap": 18809092100.0,
      "nota": "consenso 1.29 $",
      "reaccion_pct": 1.71,
-     "resumen": "fallo el consenso por 4.7 % (1.23 $ frente a 1.29 $), reaccion del 2026-09-17",
-     "batio_y_cayo": false
-    },
-    {
-     "fecha": "2026-09-15",
-     "ticker": "TCOM",
-     "empresa": "Trip.com Group Limited",
-     "cuando": "sin hora confirmada",
-     "consenso": 0.84,
-     "real": 0.92,
-     "sorpresa": 9.52,
-     "ano_pasado": null,
-     "nota": "consenso 0.84 $",
-     "reaccion_pct": 3.01,
-     "resumen": "batio el consenso por 9.5 % (0.92 $ frente a 0.84 $), reaccion del 2026-09-16",
+     "resumen": "falló el consenso por 4.7 % (1.23 $ frente a 1.29 $), reacción del 2026-09-17",
      "batio_y_cayo": false
     }
    ],
@@ -987,141 +1100,35 @@
    "caducada": false,
    "fuente": "Nasdaq"
   },
-  "semana": [],
+  "semana": [
+   {
+    "fecha": "2026-09-30",
+    "nivel": "amarillo",
+    "que": "PCE de agosto (la inflación que mira la Fed)",
+    "dias": 7
+   }
+  ],
   "niveles": {
-   "ACN": {
-    "precio": 186.11,
-    "ema50": 176.8,
-    "ema200": 191.36,
-    "dist_ema50": 5.27,
-    "dist_ema200": -2.75,
-    "max52": 291.09,
-    "min52": 118.15,
-    "resistencias": [
-     {
-      "precio": 188.73,
-      "toques": 1,
-      "dist_pct": 1.41,
-      "tipo": "suelo"
-     },
-     {
-      "precio": 196.66,
-      "toques": 2,
-      "dist_pct": 5.67,
-      "tipo": "techo"
-     }
-    ],
-    "soportes": [
-     {
-      "precio": 185.23,
-      "toques": 3,
-      "dist_pct": -0.47,
-      "tipo": "los dos"
-     },
-     {
-      "precio": 176.46,
-      "toques": 3,
-      "dist_pct": -5.18,
-      "tipo": "los dos"
-     }
-    ],
-    "mas_tocados": [
-     {
-      "precio": 185.23,
-      "toques": 3,
-      "dist_pct": -0.47,
-      "tipo": "los dos"
-     },
-     {
-      "precio": 176.46,
-      "toques": 3,
-      "dist_pct": -5.18,
-      "tipo": "los dos"
-     },
-     {
-      "precio": 196.66,
-      "toques": 2,
-      "dist_pct": 5.67,
-      "tipo": "techo"
-     },
-     {
-      "precio": 200.9,
-      "toques": 2,
-      "dist_pct": 7.95,
-      "tipo": "techo"
-     }
-    ]
-   },
-   "AZO": {
-    "precio": 2803.25,
-    "ema50": 2990.7,
-    "ema200": 3305.8,
-    "dist_ema50": -6.27,
-    "dist_ema200": -15.2,
-    "max52": 4332.68,
-    "min52": 2796.85,
-    "resistencias": [
-     {
-      "precio": 2931.75,
-      "toques": 7,
-      "dist_pct": 4.58,
-      "tipo": "suelo"
-     },
-     {
-      "precio": 3159.57,
-      "toques": 4,
-      "dist_pct": 12.71,
-      "tipo": "techo"
-     }
-    ],
-    "soportes": [],
-    "mas_tocados": [
-     {
-      "precio": 2931.75,
-      "toques": 7,
-      "dist_pct": 4.58,
-      "tipo": "suelo"
-     },
-     {
-      "precio": 3159.57,
-      "toques": 4,
-      "dist_pct": 12.71,
-      "tipo": "techo"
-     },
-     {
-      "precio": 3275.64,
-      "toques": 3,
-      "dist_pct": 16.85,
-      "tipo": "los dos"
-     },
-     {
-      "precio": 3569.85,
-      "toques": 2,
-      "dist_pct": 27.35,
-      "tipo": "los dos"
-     }
-    ]
-   },
    "BTC/USD": {
-    "precio": 85947.34,
-    "ema50": 75443.47,
-    "ema200": 72636.42,
-    "dist_ema50": 13.92,
-    "dist_ema200": 18.33,
-    "max52": 97924.49,
+    "precio": 85888.43,
+    "ema50": 75862.9,
+    "ema200": 72726.66,
+    "dist_ema50": 13.22,
+    "dist_ema200": 18.1,
+    "max52": 97193.34,
     "min52": 57800.19,
     "resistencias": [],
     "soportes": [
      {
       "precio": 82209.62,
       "toques": 3,
-      "dist_pct": -4.35,
+      "dist_pct": -4.28,
       "tipo": "techo"
      },
      {
       "precio": 79485.66,
       "toques": 1,
-      "dist_pct": -7.52,
+      "dist_pct": -7.45,
       "tipo": "techo"
      }
     ],
@@ -1129,98 +1136,111 @@
      {
       "precio": 82209.62,
       "toques": 3,
-      "dist_pct": -4.35,
+      "dist_pct": -4.28,
       "tipo": "techo"
      },
      {
       "precio": 74952.74,
       "toques": 2,
-      "dist_pct": -12.79,
+      "dist_pct": -12.73,
       "tipo": "suelo"
      },
      {
       "precio": 67124.15,
       "toques": 2,
-      "dist_pct": -21.9,
+      "dist_pct": -21.85,
       "tipo": "techo"
      },
      {
       "precio": 65087.23,
       "toques": 2,
-      "dist_pct": -24.27,
+      "dist_pct": -24.22,
       "tipo": "techo"
      }
     ]
    },
-   "CCL": {
-    "precio": 22.31,
-    "ema50": 25.13,
-    "ema200": 27.06,
-    "dist_ema50": -11.22,
-    "dist_ema200": -17.56,
-    "max52": 34.03,
-    "min52": 21.81,
+   "CTAS": {
+    "precio": 198.8,
+    "ema50": 197.81,
+    "ema200": 192.25,
+    "dist_ema50": 0.5,
+    "dist_ema200": 3.41,
+    "max52": 219.17,
+    "min52": 161.16,
     "resistencias": [
      {
-      "precio": 23.53,
-      "toques": 3,
-      "dist_pct": 5.45,
-      "tipo": "suelo"
-     },
-     {
-      "precio": 25.19,
+      "precio": 203.56,
       "toques": 2,
-      "dist_pct": 12.89,
-      "tipo": "suelo"
-     }
-    ],
-    "soportes": [],
-    "mas_tocados": [
-     {
-      "precio": 23.53,
-      "toques": 3,
-      "dist_pct": 5.45,
-      "tipo": "suelo"
-     },
-     {
-      "precio": 25.19,
-      "toques": 2,
-      "dist_pct": 12.89,
-      "tipo": "suelo"
-     },
-     {
-      "precio": 28.22,
-      "toques": 2,
-      "dist_pct": 26.51,
+      "dist_pct": 2.39,
       "tipo": "techo"
      },
      {
-      "precio": 30.19,
+      "precio": 208.31,
+      "toques": 4,
+      "dist_pct": 4.78,
+      "tipo": "techo"
+     }
+    ],
+    "soportes": [
+     {
+      "precio": 197.73,
+      "toques": 3,
+      "dist_pct": -0.54,
+      "tipo": "suelo"
+     },
+     {
+      "precio": 192.35,
+      "toques": 1,
+      "dist_pct": -3.24,
+      "tipo": "suelo"
+     }
+    ],
+    "mas_tocados": [
+     {
+      "precio": 208.31,
+      "toques": 4,
+      "dist_pct": 4.78,
+      "tipo": "techo"
+     },
+     {
+      "precio": 197.73,
+      "toques": 3,
+      "dist_pct": -0.54,
+      "tipo": "suelo"
+     },
+     {
+      "precio": 167.25,
+      "toques": 3,
+      "dist_pct": -15.87,
+      "tipo": "suelo"
+     },
+     {
+      "precio": 203.56,
       "toques": 2,
-      "dist_pct": 35.32,
+      "dist_pct": 2.39,
       "tipo": "techo"
      }
     ]
    },
    "COST": {
-    "precio": 898.48,
-    "ema50": 934.09,
-    "ema200": 957.31,
-    "dist_ema50": -3.81,
-    "dist_ema200": -6.14,
+    "precio": 899.41,
+    "ema50": 932.73,
+    "ema200": 956.88,
+    "dist_ema50": -3.57,
+    "dist_ema200": -6.01,
     "max52": 1096.5,
     "min52": 844.06,
     "resistencias": [
      {
       "precio": 911.99,
       "toques": 2,
-      "dist_pct": 1.5,
+      "dist_pct": 1.4,
       "tipo": "suelo"
      },
      {
       "precio": 932.44,
       "toques": 3,
-      "dist_pct": 3.78,
+      "dist_pct": 3.67,
       "tipo": "suelo"
      }
     ],
@@ -1229,155 +1249,868 @@
      {
       "precio": 968.16,
       "toques": 8,
-      "dist_pct": 7.76,
+      "dist_pct": 7.64,
       "tipo": "los dos"
      },
      {
       "precio": 1025.84,
       "toques": 5,
-      "dist_pct": 14.17,
+      "dist_pct": 14.06,
       "tipo": "techo"
      },
      {
       "precio": 988.3,
       "toques": 4,
-      "dist_pct": 10.0,
+      "dist_pct": 9.88,
       "tipo": "los dos"
      },
      {
       "precio": 932.44,
       "toques": 3,
-      "dist_pct": 3.78,
+      "dist_pct": 3.67,
       "tipo": "suelo"
      }
     ]
    },
-   "CTAS": {
-    "precio": 196.88,
-    "ema50": 197.77,
-    "ema200": 192.22,
-    "dist_ema50": -0.45,
-    "dist_ema200": 2.43,
-    "max52": 219.17,
-    "min52": 161.16,
+   "CCL": {
+    "precio": 22.28,
+    "ema50": 25.02,
+    "ema200": 27.08,
+    "dist_ema50": -10.94,
+    "dist_ema200": -17.71,
+    "max52": 34.03,
+    "min52": 21.81,
     "resistencias": [
      {
-      "precio": 197.73,
+      "precio": 23.53,
       "toques": 3,
-      "dist_pct": 0.43,
+      "dist_pct": 5.6,
       "tipo": "suelo"
      },
      {
-      "precio": 203.56,
+      "precio": 25.19,
       "toques": 2,
-      "dist_pct": 3.39,
+      "dist_pct": 13.04,
+      "tipo": "suelo"
+     }
+    ],
+    "soportes": [],
+    "mas_tocados": [
+     {
+      "precio": 23.53,
+      "toques": 3,
+      "dist_pct": 5.6,
+      "tipo": "suelo"
+     },
+     {
+      "precio": 25.19,
+      "toques": 2,
+      "dist_pct": 13.04,
+      "tipo": "suelo"
+     },
+     {
+      "precio": 28.22,
+      "toques": 2,
+      "dist_pct": 26.68,
+      "tipo": "techo"
+     },
+     {
+      "precio": 30.19,
+      "toques": 2,
+      "dist_pct": 35.5,
+      "tipo": "techo"
+     }
+    ]
+   },
+   "MU": {
+    "precio": 1096.16,
+    "ema50": 946.73,
+    "ema200": 703.57,
+    "dist_ema50": 15.78,
+    "dist_ema200": 55.8,
+    "max52": 1255.0,
+    "min52": 154.65,
+    "resistencias": [
+     {
+      "precio": 1255.0,
+      "toques": 1,
+      "dist_pct": 14.49,
       "tipo": "techo"
      }
     ],
     "soportes": [
      {
-      "precio": 192.35,
+      "precio": 1089.29,
       "toques": 1,
-      "dist_pct": -2.3,
-      "tipo": "suelo"
+      "dist_pct": -0.63,
+      "tipo": "techo"
      },
      {
-      "precio": 184.48,
-      "toques": 1,
-      "dist_pct": -6.3,
+      "precio": 1039.27,
+      "toques": 2,
+      "dist_pct": -5.19,
       "tipo": "techo"
      }
     ],
     "mas_tocados": [
      {
-      "precio": 208.31,
-      "toques": 4,
-      "dist_pct": 5.8,
-      "tipo": "techo"
-     },
-     {
-      "precio": 197.73,
+      "precio": 893.96,
       "toques": 3,
-      "dist_pct": 0.43,
+      "dist_pct": -18.45,
       "tipo": "suelo"
      },
      {
-      "precio": 167.25,
-      "toques": 3,
-      "dist_pct": -15.05,
-      "tipo": "suelo"
-     },
-     {
-      "precio": 203.56,
+      "precio": 1039.27,
       "toques": 2,
-      "dist_pct": 3.39,
-      "tipo": "techo"
-     }
-    ]
-   },
-   "DRI": {
-    "precio": 211.31,
-    "ema50": 211.48,
-    "ema200": 204.46,
-    "dist_ema50": -0.08,
-    "dist_ema200": 3.35,
-    "max52": 229.76,
-    "min52": 169.0,
-    "resistencias": [
-     {
-      "precio": 220.72,
-      "toques": 4,
-      "dist_pct": 4.45,
+      "dist_pct": -5.19,
       "tipo": "techo"
      },
      {
-      "precio": 229.76,
+      "precio": 437.83,
+      "toques": 2,
+      "dist_pct": -60.06,
+      "tipo": "techo"
+     },
+     {
+      "precio": 1089.29,
       "toques": 1,
-      "dist_pct": 8.73,
-      "tipo": "techo"
-     }
-    ],
-    "soportes": [
-     {
-      "precio": 203.71,
-      "toques": 2,
-      "dist_pct": -3.6,
-      "tipo": "techo"
-     },
-     {
-      "precio": 194.26,
-      "toques": 1,
-      "dist_pct": -8.07,
-      "tipo": "suelo"
-     }
-    ],
-    "mas_tocados": [
-     {
-      "precio": 190.49,
-      "toques": 6,
-      "dist_pct": -9.85,
-      "tipo": "suelo"
-     },
-     {
-      "precio": 211.31,
-      "toques": 4,
-      "dist_pct": 0.0,
-      "tipo": "los dos"
-     },
-     {
-      "precio": 220.72,
-      "toques": 4,
-      "dist_pct": 4.45,
-      "tipo": "techo"
-     },
-     {
-      "precio": 203.71,
-      "toques": 2,
-      "dist_pct": -3.6,
+      "dist_pct": -0.63,
       "tipo": "techo"
      }
     ]
    }
-  }
+  },
+  "sentimiento": {
+   "bolsa": {
+    "ahora": {
+     "valor": 35,
+     "etiqueta": "Miedo"
+    },
+    "ayer": {
+     "valor": 35,
+     "etiqueta": "Miedo"
+    },
+    "semana": {
+     "valor": 27,
+     "etiqueta": "Miedo"
+    },
+    "mes": {
+     "valor": 55,
+     "etiqueta": "Neutral"
+    },
+    "ano": {
+     "valor": 57,
+     "etiqueta": "Codicia"
+    },
+    "fuente": "CNN",
+    "dos_semanas": {
+     "valor": 38,
+     "etiqueta": "Miedo"
+    }
+   },
+   "cripto": {
+    "ahora": {
+     "valor": 71,
+     "etiqueta": "Codicia"
+    },
+    "ayer": {
+     "valor": 78,
+     "etiqueta": "Codicia extrema"
+    },
+    "semana": {
+     "valor": 51,
+     "etiqueta": "Neutral"
+    },
+    "dos_semanas": {
+     "valor": 66,
+     "etiqueta": "Codicia"
+    },
+    "mes": {
+     "valor": 73,
+     "etiqueta": "Codicia"
+    },
+    "fuente": "alternative.me"
+   }
+  },
+  "posiciones": {
+   "cot": [
+    {
+     "mercado": "S&P 500 (E-mini)",
+     "fecha": "2026-09-15",
+     "neto": -100461,
+     "cambio": -24425,
+     "pct_oi": -4.106283253880309,
+     "extremo": 39.450613841655176
+    },
+    {
+     "mercado": "Nasdaq 100 (mini)",
+     "fecha": "2026-09-15",
+     "neto": 33718,
+     "cambio": 12823,
+     "pct_oi": 10.349802323011566,
+     "extremo": 75.51579709395521
+    },
+    {
+     "mercado": "Bono 10 años",
+     "fecha": "2026-09-15",
+     "neto": -821236,
+     "cambio": 13547,
+     "pct_oi": -15.27091956397597,
+     "extremo": 38.58576388099933
+    },
+    {
+     "mercado": "Dólar DXY",
+     "fecha": "2026-09-15",
+     "neto": 10593,
+     "cambio": -7011,
+     "pct_oi": 24.215892465252377,
+     "extremo": 69.35076970601864
+    },
+    {
+     "mercado": "Euro",
+     "fecha": "2026-09-15",
+     "neto": -26993,
+     "cambio": 15623,
+     "pct_oi": -2.9339101229844515,
+     "extremo": 18.985610329922853
+    },
+    {
+     "mercado": "Yen",
+     "fecha": "2026-09-15",
+     "neto": 120359,
+     "cambio": 109563,
+     "pct_oi": 22.173647112575118,
+     "extremo": 83.80645782602116
+    },
+    {
+     "mercado": "Oro",
+     "fecha": "2026-09-15",
+     "neto": 230338,
+     "cambio": -1622,
+     "pct_oi": 56.19384287348835,
+     "extremo": 65.13647896965449
+    },
+    {
+     "mercado": "Plata",
+     "fecha": "2026-09-15",
+     "neto": 25326,
+     "cambio": -723,
+     "pct_oi": 24.411778880909925,
+     "extremo": 23.739407744874715
+    },
+    {
+     "mercado": "Cobre",
+     "fecha": "2026-09-15",
+     "neto": 75134,
+     "cambio": -17342,
+     "pct_oi": 25.956339843088752,
+     "extremo": 86.1455745248576
+    },
+    {
+     "mercado": "Petróleo WTI",
+     "fecha": "2026-09-15",
+     "neto": 135905,
+     "cambio": -674,
+     "pct_oi": 6.948946805442784,
+     "extremo": 30.976132536139627
+    },
+    {
+     "mercado": "Bitcoin (CME)",
+     "fecha": "2026-09-15",
+     "neto": 2468,
+     "cambio": 944,
+     "pct_oi": 11.880806816540701,
+     "extremo": 77.52738654147105
+    }
+   ],
+   "btc": {
+    "ahora": 0.95,
+    "ayer": 0.96,
+    "semana": 1.8,
+    "fecha": "2026-09-22",
+    "fuente": "OKX"
+   }
+  },
+  "portafolio": [
+   {
+    "ticker": "KO",
+    "nombre": "Coca-Cola",
+    "fecha": "2026-09-22",
+    "precio": 88.61,
+    "dia": 1.7102814582687031,
+    "semana": -0.11272583192953878,
+    "mes": -2.733258524508575,
+    "ano": 26.748670230761064,
+    "niveles": {
+     "precio": 88.61,
+     "ema50": 87.0,
+     "ema200": 80.62,
+     "dist_ema50": 1.85,
+     "dist_ema200": 9.91,
+     "max52": 92.49,
+     "min52": 65.35,
+     "resistencias": [
+      {
+       "precio": 90.64,
+       "toques": 2,
+       "dist_pct": 2.29,
+       "tipo": "techo"
+      },
+      {
+       "precio": 92.49,
+       "toques": 1,
+       "dist_pct": 4.38,
+       "tipo": "techo"
+      }
+     ],
+     "soportes": [
+      {
+       "precio": 87.41,
+       "toques": 1,
+       "dist_pct": -1.35,
+       "tipo": "suelo"
+      },
+      {
+       "precio": 85.22,
+       "toques": 5,
+       "dist_pct": -3.83,
+       "tipo": "los dos"
+      }
+     ],
+     "mas_tocados": [
+      {
+       "precio": 85.22,
+       "toques": 5,
+       "dist_pct": -3.83,
+       "tipo": "los dos"
+      },
+      {
+       "precio": 80.52,
+       "toques": 3,
+       "dist_pct": -9.13,
+       "tipo": "los dos"
+      },
+      {
+       "precio": 78.49,
+       "toques": 3,
+       "dist_pct": -11.42,
+       "tipo": "los dos"
+      },
+      {
+       "precio": 90.64,
+       "toques": 2,
+       "dist_pct": 2.29,
+       "tipo": "techo"
+      }
+     ]
+    },
+    "resultados": {
+     "fecha": "2026-10-20",
+     "estimada": true
+    },
+    "titulares": [
+     "Coca-Cola Has Raised Its Dividend Through Every Market Crash Since 1962. Here's Whether Income Investors Should Still Own It. - The Motley Fool",
+     "How Investors May Respond To Coca-Cola (KO) $10b U.S. Infrastructure Plan - simplywall.st",
+     "Coca-Cola (KO) Stock Falls Amid Market Uptick: What Investors Need to Know - Yahoo Finance",
+     "CocaCola (NYSE:KO) Trading Up 1.8% - Here's What Happened - MarketBeat",
+     "Two Coca-Cola (NYSE: KO) bond issues come off NYSE - Stock Titan"
+    ]
+   },
+   {
+    "ticker": "NVDA",
+    "nombre": "Nvidia",
+    "fecha": "2026-09-22",
+    "precio": 228.87,
+    "dia": 0.6552885412925535,
+    "semana": 7.871047733033842,
+    "mes": 6.589977039331596,
+    "ano": 22.71849865951743,
+    "niveles": {
+     "precio": 228.87,
+     "ema50": 216.13,
+     "ema200": 200.18,
+     "dist_ema50": 5.89,
+     "dist_ema200": 14.33,
+     "max52": 236.54,
+     "min52": 164.27,
+     "resistencias": [
+      {
+       "precio": 230.22,
+       "toques": 3,
+       "dist_pct": 0.59,
+       "tipo": "techo"
+      },
+      {
+       "precio": 235.65,
+       "toques": 2,
+       "dist_pct": 2.96,
+       "tipo": "techo"
+      }
+     ],
+     "soportes": [
+      {
+       "precio": 215.07,
+       "toques": 3,
+       "dist_pct": -6.03,
+       "tipo": "techo"
+      },
+      {
+       "precio": 208.32,
+       "toques": 3,
+       "dist_pct": -8.98,
+       "tipo": "suelo"
+      }
+     ],
+     "mas_tocados": [
+      {
+       "precio": 197.42,
+       "toques": 4,
+       "dist_pct": -13.74,
+       "tipo": "los dos"
+      },
+      {
+       "precio": 230.22,
+       "toques": 3,
+       "dist_pct": 0.59,
+       "tipo": "techo"
+      },
+      {
+       "precio": 215.07,
+       "toques": 3,
+       "dist_pct": -6.03,
+       "tipo": "techo"
+      },
+      {
+       "precio": 208.32,
+       "toques": 3,
+       "dist_pct": -8.98,
+       "tipo": "suelo"
+      }
+     ]
+    },
+    "resultados": null,
+    "titulares": [
+     "2 Undervalued Semiconductor Stocks to Watch While the Market Is Skeptical of AI Growth - Morningstar",
+     "AMD Stock Has Blown Past Nvidia This Year. Is It Still the Better Buy? - The Motley Fool",
+     "NVDA Stock Eyes the $236 Record High as 2027 NVIDIA Growth Forecasts Rise - FXLeaders",
+     "Is NVIDIA Funding Its Own Stock Rally? - Trefis",
+     "NVIDIA (NVDA) at $205: Why Jensen Huang’s $1 Trillion Blackwell-Rubin Vision Matters More Than the Pullback - TradingKey"
+    ]
+   },
+   {
+    "ticker": "AVGO",
+    "nombre": "Broadcom",
+    "fecha": "2026-09-22",
+    "precio": 364.54,
+    "dia": 0.5183908671776871,
+    "semana": 7.448348455397813,
+    "mes": -1.0612056120204993,
+    "ano": 5.3279380442915025,
+    "niveles": {
+     "precio": 364.54,
+     "ema50": 373.06,
+     "ema200": 364.84,
+     "dist_ema50": -2.28,
+     "dist_ema200": -0.08,
+     "max52": 495.0,
+     "min52": 289.96,
+     "resistencias": [
+      {
+       "precio": 369.92,
+       "toques": 2,
+       "dist_pct": 1.48,
+       "tipo": "suelo"
+      },
+      {
+       "precio": 376.59,
+       "toques": 1,
+       "dist_pct": 3.31,
+       "tipo": "techo"
+      }
+     ],
+     "soportes": [
+      {
+       "precio": 354.36,
+       "toques": 4,
+       "dist_pct": -2.79,
+       "tipo": "los dos"
+      },
+      {
+       "precio": 342.33,
+       "toques": 1,
+       "dist_pct": -6.09,
+       "tipo": "suelo"
+      }
+     ],
+     "mas_tocados": [
+      {
+       "precio": 354.36,
+       "toques": 4,
+       "dist_pct": -2.79,
+       "tipo": "los dos"
+      },
+      {
+       "precio": 369.92,
+       "toques": 2,
+       "dist_pct": 1.48,
+       "tipo": "suelo"
+      },
+      {
+       "precio": 406.16,
+       "toques": 2,
+       "dist_pct": 11.42,
+       "tipo": "los dos"
+      },
+      {
+       "precio": 307.86,
+       "toques": 2,
+       "dist_pct": -15.55,
+       "tipo": "suelo"
+      }
+     ]
+    },
+    "resultados": null,
+    "titulares": [
+     "AVGO Stock Jumps — JPMorgan Says Investors Should Be ‘Aggressive Buyers’ Of Broadcom At Current Levels - Stocktwits",
+     "AVGO Stock Quote Price and Forecast - CNN",
+     "Broadcom: Hard To Ignore The Numbers, Buy Before The Market Catches Up - Seeking Alpha",
+     "2 Undervalued Semiconductor Stocks to Watch While the Market Is Skeptical of AI Growth - Morningstar",
+     "A top chip stock analyst sees big things for Nvidia, Broadcom. How his case aligns with ours - CNBC"
+    ]
+   },
+   {
+    "ticker": "SOFI",
+    "nombre": "SoFi Technologies",
+    "fecha": "2026-09-22",
+    "precio": 17.16,
+    "dia": 1.1196269554117677,
+    "semana": 0.5272425705026285,
+    "mes": -9.254362038779195,
+    "ano": -34.45378227666609,
+    "niveles": {
+     "precio": 17.16,
+     "ema50": 17.63,
+     "ema200": 18.72,
+     "dist_ema50": -2.64,
+     "dist_ema200": -8.33,
+     "max52": 32.73,
+     "min52": 14.88,
+     "resistencias": [
+      {
+       "precio": 17.64,
+       "toques": 1,
+       "dist_pct": 2.8,
+       "tipo": "suelo"
+      },
+      {
+       "precio": 18.79,
+       "toques": 3,
+       "dist_pct": 9.47,
+       "tipo": "techo"
+      }
+     ],
+     "soportes": [
+      {
+       "precio": 17.0,
+       "toques": 2,
+       "dist_pct": -0.93,
+       "tipo": "suelo"
+      },
+      {
+       "precio": 16.67,
+       "toques": 3,
+       "dist_pct": -2.87,
+       "tipo": "suelo"
+      }
+     ],
+     "mas_tocados": [
+      {
+       "precio": 16.67,
+       "toques": 3,
+       "dist_pct": -2.87,
+       "tipo": "suelo"
+      },
+      {
+       "precio": 18.79,
+       "toques": 3,
+       "dist_pct": 9.47,
+       "tipo": "techo"
+      },
+      {
+       "precio": 14.91,
+       "toques": 3,
+       "dist_pct": -13.11,
+       "tipo": "suelo"
+      },
+      {
+       "precio": 17.0,
+       "toques": 2,
+       "dist_pct": -0.93,
+       "tipo": "suelo"
+      }
+     ]
+    },
+    "resultados": {
+     "fecha": "2026-10-27",
+     "estimada": true
+    },
+    "titulares": [
+     "SoFi Technologies, Inc. (SOFI) Stock Moves 1.12%: What You Should Know - Yahoo! Finance Canada",
+     "How SoFi Is Turning Its Consumer App Into A Stablecoin Proving Ground - Investor's Business Daily",
+     "SoFi Rises 5% After Getting Cut in Half: Is SOFI Stock Set to Double From Here? - 24/7 Wall St.",
+     "SoFi Becomes First U.S. Bank to Settle Card Payments on Stablecoin - Barron's",
+     "SoFi stock rises as first bank to use stablecoin settlement - Investing.com"
+    ]
+   },
+   {
+    "ticker": "ORCL",
+    "nombre": "Oracle",
+    "fecha": "2026-09-22",
+    "precio": 149.2,
+    "dia": 0.43080401987338757,
+    "semana": 6.305659787401097,
+    "mes": 1.863862058131116,
+    "ano": -23.451851009838876,
+    "niveles": {
+     "precio": 149.2,
+     "ema50": 149.15,
+     "ema200": 168.01,
+     "dist_ema50": 0.04,
+     "dist_ema200": -11.2,
+     "max52": 329.5,
+     "min52": 114.5,
+     "resistencias": [
+      {
+       "precio": 159.79,
+       "toques": 2,
+       "dist_pct": 7.1,
+       "tipo": "los dos"
+      },
+      {
+       "precio": 165.39,
+       "toques": 1,
+       "dist_pct": 10.85,
+       "tipo": "techo"
+      }
+     ],
+     "soportes": [
+      {
+       "precio": 138.17,
+       "toques": 4,
+       "dist_pct": -7.39,
+       "tipo": "suelo"
+      },
+      {
+       "precio": 134.57,
+       "toques": 1,
+       "dist_pct": -9.81,
+       "tipo": "suelo"
+      }
+     ],
+     "mas_tocados": [
+      {
+       "precio": 138.17,
+       "toques": 4,
+       "dist_pct": -7.39,
+       "tipo": "suelo"
+      },
+      {
+       "precio": 159.79,
+       "toques": 2,
+       "dist_pct": 7.1,
+       "tipo": "los dos"
+      },
+      {
+       "precio": 171.23,
+       "toques": 2,
+       "dist_pct": 14.77,
+       "tipo": "techo"
+      },
+      {
+       "precio": 149.07,
+       "toques": 1,
+       "dist_pct": -0.09,
+       "tipo": "techo"
+      }
+     ]
+    },
+    "resultados": null,
+    "titulares": [
+     "Prediction: Oracle Could Have 50% Upside From Here - Yahoo Finance",
+     "ORCL Stock At 14-Month Low Amid High Debt, Execution Risks: Retail Calls $300B OpenAI Deal A 'Liability' - Stocktwits",
+     "Oracle helps a 23,500-capacity arena track food demand and finances - Stock Titan",
+     "Oracle: The Most Mispriced AI Opportunity On The Market Today - Seeking Alpha",
+     "Jim Cramer’s Oracle (NYSE: ORCL) Stock Post Sends Strong Buy Signal To AI Investors - foreignpolicyjournal.com"
+    ]
+   },
+   {
+    "ticker": "IBM",
+    "nombre": "IBM",
+    "fecha": "2026-09-22",
+    "precio": 231.38,
+    "dia": -0.23713736608016456,
+    "semana": -6.840598885212035,
+    "mes": -1.8245047561999184,
+    "ano": -21.886497189582464,
+    "niveles": {
+     "precio": 231.38,
+     "ema50": 238.45,
+     "ema200": 252.16,
+     "dist_ema50": -2.96,
+     "dist_ema200": -8.24,
+     "max52": 332.46,
+     "min52": 199.19,
+     "resistencias": [
+      {
+       "precio": 234.85,
+       "toques": 2,
+       "dist_pct": 1.5,
+       "tipo": "los dos"
+      },
+      {
+       "precio": 242.1,
+       "toques": 3,
+       "dist_pct": 4.63,
+       "tipo": "los dos"
+      }
+     ],
+     "soportes": [
+      {
+       "precio": 228.96,
+       "toques": 3,
+       "dist_pct": -1.05,
+       "tipo": "suelo"
+      },
+      {
+       "precio": 221.22,
+       "toques": 2,
+       "dist_pct": -4.39,
+       "tipo": "suelo"
+      }
+     ],
+     "mas_tocados": [
+      {
+       "precio": 228.96,
+       "toques": 3,
+       "dist_pct": -1.05,
+       "tipo": "suelo"
+      },
+      {
+       "precio": 242.1,
+       "toques": 3,
+       "dist_pct": 4.63,
+       "tipo": "los dos"
+      },
+      {
+       "precio": 259.05,
+       "toques": 3,
+       "dist_pct": 11.96,
+       "tipo": "techo"
+      },
+      {
+       "precio": 234.85,
+       "toques": 2,
+       "dist_pct": 1.5,
+       "tipo": "los dos"
+      }
+     ]
+    },
+    "resultados": {
+     "fecha": "2026-10-21",
+     "estimada": false
+    },
+    "titulares": [
+     "Can This Number Push IBM Stock Higher? - Trefis",
+     "IBM Holds Flat as z17 Moves Into an AI Classroom - Yahoo Finance",
+     "IBM Stock Tanks To 2-Month Lows In Pre-Market – CEO Says Company ‘Faltered’ In Q2 As ‘Large Deals Failed To Close’ On Expected Timelines - Stocktwits",
+     "IBM Tokenized Stock (Robinhood) price today, IBM to USD live price, marketcap and chart - CoinMarketCap",
+     "How Investors May Respond To IBM Stock Quantum Foundry Funding - simplywall.st"
+    ]
+   },
+   {
+    "ticker": "MP",
+    "nombre": "MP Materials",
+    "fecha": "2026-09-22",
+    "precio": 51.04,
+    "dia": 2.079999999999993,
+    "semana": 3.8031358566039897,
+    "mes": -15.004162117457486,
+    "ano": 1.029294413152404,
+    "niveles": {
+     "precio": 51.04,
+     "ema50": 52.75,
+     "ema200": 54.92,
+     "dist_ema50": -3.25,
+     "dist_ema200": -7.07,
+     "max52": 100.25,
+     "min52": 37.81,
+     "resistencias": [
+      {
+       "precio": 52.4,
+       "toques": 3,
+       "dist_pct": 2.66,
+       "tipo": "suelo"
+      },
+      {
+       "precio": 53.73,
+       "toques": 2,
+       "dist_pct": 5.27,
+       "tipo": "suelo"
+      }
+     ],
+     "soportes": [
+      {
+       "precio": 50.26,
+       "toques": 1,
+       "dist_pct": -1.53,
+       "tipo": "suelo"
+      },
+      {
+       "precio": 44.43,
+       "toques": 1,
+       "dist_pct": -12.95,
+       "tipo": "suelo"
+      }
+     ],
+     "mas_tocados": [
+      {
+       "precio": 52.4,
+       "toques": 3,
+       "dist_pct": 2.66,
+       "tipo": "suelo"
+      },
+      {
+       "precio": 53.73,
+       "toques": 2,
+       "dist_pct": 5.27,
+       "tipo": "suelo"
+      },
+      {
+       "precio": 62.81,
+       "toques": 2,
+       "dist_pct": 23.05,
+       "tipo": "techo"
+      },
+      {
+       "precio": 50.26,
+       "toques": 1,
+       "dist_pct": -1.53,
+       "tipo": "suelo"
+      }
+     ]
+    },
+    "resultados": {
+     "fecha": "2026-11-05",
+     "estimada": true
+    },
+    "titulares": [
+     "MP Materials Corp. (MP) stock price, news, quote and history - Yahoo Finance UK",
+     "MP Materials (MP) Shares Moved, What Is Drawing Attention Now? - simplywall.st",
+     "Why does MP Materials (NYSE:MP) matter in today's metal and mining stocks conversation? - Kalkine Media",
+     "Critical Metals Drops 6% as Greenland Surge Meets Profit Taking; USA Rare Earth Slips, MP Materials Eases - 24/7 Wall St.",
+     "MP Materials Starts Making Permanent Magnets For GM EVs in Texas - GreenCars"
+    ]
+   }
+  ]
  }
 }
