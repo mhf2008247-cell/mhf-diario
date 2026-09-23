@@ -31,7 +31,10 @@ jobs:
         id: ya
         run: |
           HOY=$(date -u +%Y-%m-%d)
-          if [ -f diario/datos.json ] && grep -q "\"generado\": \"$HOY" diario/datos.json; then
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "hecho=no" >> $GITHUB_OUTPUT
+            echo "Lanzado a mano: se rehace aunque ya este el de hoy."
+          elif [ -f diario/datos.json ] && grep -q "\"generado\": \"$HOY" diario/datos.json; then
             echo "hecho=si" >> $GITHUB_OUTPUT
             echo "El diario de $HOY ya esta publicado. No se repite."
           else
