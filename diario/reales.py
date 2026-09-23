@@ -3,6 +3,7 @@
 Sustituyen a los ETF que se usaban como aproximacion (VIXY no es el VIX, UUP no es el DXY,
 GLD no es el precio del oro por onza...). Si Yahoo falla, se queda el ETF de Twelve Data."""
 import json, urllib.request, urllib.parse
+from portafolio import rellena_ultimo
 from datetime import datetime, timezone
 
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
@@ -10,22 +11,22 @@ URL = "https://query1.finance.yahoo.com/v8/finance/chart/%s?range=1mo&interval=1
 
 # (simbolo Yahoo, clave en el diario, nombre, bloque, ETF al que sustituye, es rentabilidad)
 REALES = [
-    ("^GSPC",     "SPX",    "S&P 500 (indice)",      "bolsa",   "SPY",  False),
-    ("^NDX",      "NDX",    "Nasdaq 100 (indice)",   "bolsa",   "QQQ",  False),
+    ("^GSPC",     "SPX",    "S&P 500 (índice)",      "bolsa",   "SPY",  False),
+    ("^NDX",      "NDX",    "Nasdaq 100 (índice)",   "bolsa",   "QQQ",  False),
     ("^VIX",      "VIX",    "VIX (miedo bolsa)",     "bolsa",   "VIXY", False),
-    ("DX-Y.NYB",  "DXY",    "Indice dolar DXY",      "bolsa",   "UUP",  False),
-    ("^N225",     "NIKKEI", "Nikkei 225 (Japon)",    "bolsa",   "EWJ",  False),
+    ("DX-Y.NYB",  "DXY",    "Índice dólar DXY",      "bolsa",   "UUP",  False),
+    ("^N225",     "NIKKEI", "Nikkei 225 (Japón)",    "bolsa",   "EWJ",  False),
     ("^KS11",     "KOSPI",  "Kospi (Corea)",         "bolsa",   "EWY",  False),
     ("000300.SS", "CSI300", "CSI 300 (China)",       "bolsa",   "ASHR", False),
     ("GC=F",      "ORO",    "Oro $/onza (futuro)",   "metales", "GLD",  False),
     ("SI=F",      "PLATA",  "Plata $/onza (futuro)", "metales", "SLV",  False),
     ("HG=F",      "COBRE",  "Cobre $/libra (futuro)","metales", "CPER", False),
-    ("CL=F",      "WTI",    "Petroleo WTI $/barril", "energia", "USO",  False),
+    ("CL=F",      "WTI",    "Petróleo WTI $/barril", "energia", "USO",  False),
     ("BZ=F",      "BRENT",  "Brent $/barril",        "energia", "BNO",  False),
     ("^IRX",      "US3M",   "Tipo 3 meses EE.UU. %", "bonos",   None,   True),
-    ("^FVX",      "US5Y",   "Bono 5 anos EE.UU. %",  "bonos",   None,   True),
-    ("^TNX",      "US10Y",  "Bono 10 anos EE.UU. %", "bonos",   None,   True),
-    ("^TYX",      "US30Y",  "Bono 30 anos EE.UU. %", "bonos",   None,   True),
+    ("^FVX",      "US5Y",   "Bono 5 años EE.UU. %",  "bonos",   None,   True),
+    ("^TNX",      "US10Y",  "Bono 10 años EE.UU. %", "bonos",   None,   True),
+    ("^TYX",      "US30Y",  "Bono 30 años EE.UU. %", "bonos",   None,   True),
 ]
 
 
@@ -36,6 +37,7 @@ def uno(sym):
     m = j["meta"]
     ts = j.get("timestamp") or []
     cl = (j.get("indicators", {}).get("quote") or [{}])[0].get("close") or []
+    cl = rellena_ultimo(ts, cl, m)
     par = [(t, c) for t, c in zip(ts, cl) if c is not None]
     if len(par) < 2:
         raise RuntimeError("menos de 2 cierres")
@@ -62,6 +64,7 @@ def _cierres(sym):
     with urllib.request.urlopen(req, timeout=20) as r:
         j = json.load(r)["chart"]["result"][0]
     cl = (j.get("indicators", {}).get("quote") or [{}])[0].get("close") or []
+    cl = rellena_ultimo(j.get("timestamp") or [], cl, j.get("meta") or {})
     return [c for c in cl if c is not None]
 
 

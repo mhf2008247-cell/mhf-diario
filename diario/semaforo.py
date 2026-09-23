@@ -62,8 +62,8 @@ def decide(eventos_hoy, earnings_hoy, vol_pct, vol_p80):
     if vol_pct is not None and vol_p80 is not None and vol_pct > vol_p80:
         if nivel == "verde":
             nivel = "amarillo"
-        motivos.append(("amarillo", "la volatilidad esta en el 20 %% mas alto del ultimo ano (%.1f %%)" % vol_pct))
-    titulo = {"rojo": "DIA DE PELIGRO", "amarillo": "OJO HOY", "verde": "DIA TRANQUILO"}[nivel]
+        motivos.append(("amarillo", "la volatilidad está en el 20 %% más alto del último año (%.1f %%)" % vol_pct))
+    titulo = {"rojo": "DÍA DE PELIGRO", "amarillo": "OJO HOY", "verde": "DÍA TRANQUILO"}[nivel]
     if not motivos:
         motivos = [("verde", "no hay nada en la agenda")]
     return nivel, titulo, motivos

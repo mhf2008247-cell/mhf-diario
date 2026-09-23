@@ -3,7 +3,7 @@
 No escribe analisis: solo datos comprobables. Escribe diario/datos.json."""
 import json, os, time, urllib.request, urllib.parse, urllib.error
 import xml.etree.ElementTree as ET
-import semaforo, earnings, niveles, reales, sentimiento, posiciones
+import semaforo, earnings, niveles, reales, sentimiento, posiciones, portafolio
 from datetime import datetime, timezone
 
 API   = "https://api.twelvedata.com/quote"
@@ -18,43 +18,43 @@ UNIVERSO = [
     ("SPY",  "S&P 500",               "bolsa"),
     ("QQQ",  "Nasdaq 100",            "bolsa"),
     ("VIXY", "VIX (volatilidad)",     "bolsa"),
-    ("UUP",  "Dolar (DXY)",           "bolsa"),
-    ("EWJ",  "Nikkei (Japon)",        "bolsa"),
+    ("UUP",  "Dólar (DXY)",           "bolsa"),
+    ("EWJ",  "Nikkei (Japón)",        "bolsa"),
     ("EWY",  "Kospi (Corea)",         "bolsa"),
     ("ASHR", "CSI 300 (China)",       "bolsa"),
     # --- ROTACION POR SECTORES (esto SI son ETF, es lo unico que hay) ---
-    ("XLE",  "Energia",              "sectores"),
+    ("XLE",  "Energía",              "sectores"),
     ("XLF",  "Financieras",          "sectores"),
-    ("XLK",  "Tecnologia",           "sectores"),
+    ("XLK",  "Tecnología",           "sectores"),
     ("XLU",  "Utilities",            "sectores"),
     ("XLY",  "Consumo discrecional", "sectores"),
-    ("XLP",  "Consumo basico",       "sectores"),
+    ("XLP",  "Consumo básico",       "sectores"),
     ("XLV",  "Salud",                "sectores"),
     ("XLI",  "Industriales",         "sectores"),
     # --- IA ---
     ("NVDA", "Nvidia",               "ia"),
-    ("MRVL", "Marvell (posicion)",   "ia"),
+    ("MRVL", "Marvell (posición)",   "ia"),
     ("AVGO", "Broadcom",             "ia"),
     ("SMH",  "Semiconductores",      "ia"),
     ("MU",   "Micron",               "ia"),
     ("AMD",  "AMD",                  "ia"),
     # --- BONOS Y CREDITO ---
-    ("SHY",  "Bono 1-3 anos",        "bonos"),
-    ("IEF",  "Bono 7-10 anos",       "bonos"),
-    ("TLT",  "Bono 20+ anos",        "bonos"),
-    ("LQD",  "Credito bueno",        "bonos"),
-    ("HYG",  "Credito basura",       "bonos"),
+    ("SHY",  "Bono 1-3 años",        "bonos"),
+    ("IEF",  "Bono 7-10 años",       "bonos"),
+    ("TLT",  "Bono 20+ años",        "bonos"),
+    ("LQD",  "Crédito bueno",        "bonos"),
+    ("HYG",  "Crédito basura",       "bonos"),
     # --- METALES ---
     ("GLD",  "Oro",                   "metales"),
     ("SLV",  "Plata",                "metales"),
     ("CPER", "Cobre",                "metales"),
     # --- ENERGIA ---
-    ("USO",  "Petroleo (USO)",       "energia"),
+    ("USO",  "Petróleo (USO)",       "energia"),
     ("BNO",  "Brent",                 "energia"),
     # --- DIVISAS ---
-    ("EUR/USD", "Euro/Dolar",        "divisas"),
-    ("USD/JPY", "Dolar/Yen",         "divisas"),
-    ("USD/CNY", "Dolar/Yuan",        "divisas"),
+    ("EUR/USD", "Euro/Dólar",        "divisas"),
+    ("USD/JPY", "Dólar/Yen",         "divisas"),
+    ("USD/CNY", "Dólar/Yuan",        "divisas"),
     # --- CRIPTO ---
     ("BTC/USD", "Bitcoin",           "cripto"),
 ]
@@ -148,7 +148,7 @@ def velas(simbolo, n=280):
 def niveles_de(tickers):
     """EMA50, EMA200 y niveles mas tocados de cada empresa que presenta."""
     out, fallos = {}, []
-    for i, t in enumerate(sorted(set(tickers))[:7]):
+    for i, t in enumerate(list(dict.fromkeys(tickers))[:7]):
         if i:
             time.sleep(ESPERA / 4)          # estas son 1 credito, no hace falta esperar tanto
         try:
@@ -189,7 +189,8 @@ def main():
         e = earnings.estado()
         ev = semaforo.de_hoy()
         niv, tit, mot = semaforo.decide(ev, [x["ticker"] for x in e["hoy"]], None, None)
-        tks = ["BTC/USD"] + [x["ticker"] for x in e["hoy"]] + [x["ticker"] for x in e["semana"]]
+        top, _ = earnings.destacados(e, [p[0] for p in portafolio.PORTAFOLIO])
+        tks = ["BTC/USD"] + [x["ticker"] for x in top]
         niv_t, fal_n = niveles_de(tks)
         d["extra"] = {"semaforo": {"nivel": niv, "titulo": tit, "motivos": mot},
                       "earnings": e, "semana": semaforo.semana(), "niveles": niv_t}
@@ -197,8 +198,9 @@ def main():
             fallos.append(("niveles " + t_, e_))
     except Exception as ex:
         d["extra"] = {"error": "%s: %s" % (type(ex).__name__, ex)}
-    # --- miedo y codicia, y posicionamiento en futuros (cada uno por su lado)
-    for clave, mod in (("sentimiento", sentimiento), ("posiciones", posiciones)):
+    # --- miedo y codicia, posicionamiento en futuros y portafolio (cada uno por su lado)
+    for clave, mod in (("sentimiento", sentimiento), ("posiciones", posiciones),
+                       ("portafolio", portafolio)):
         try:
             v, f_ = mod.estado()
             d["extra"][clave] = v

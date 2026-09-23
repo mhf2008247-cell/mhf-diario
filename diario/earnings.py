@@ -73,7 +73,9 @@ def _cierres(tk):
     out = []
     try:
         r = d["chart"]["result"][0]
-        for t, c in zip(r["timestamp"], r["indicators"]["quote"][0]["close"]):
+        from portafolio import rellena_ultimo       # la última vela de Yahoo llega vacía a veces
+        cl = rellena_ultimo(r["timestamp"], r["indicators"]["quote"][0]["close"], r.get("meta") or {})
+        for t, c in zip(r["timestamp"], cl):
             if c: out.append((dt.datetime.utcfromtimestamp(t).strftime("%Y-%m-%d"), float(c)))
     except Exception:
         out = []
@@ -99,11 +101,14 @@ def _entrada(r, fecha):
     real, prev = _num(r.get("eps")), _num(r.get("lastYearEPS"))
     cons = _num(r.get("epsForecast"))
     sor = _num(r.get("surprise"))
+    if sor is None and real is not None and cons not in (None, 0):
+        sor = round((real - cons) / abs(cons) * 100, 2)   # Nasdaq a veces no la trae (AZO, 22-sep-2026)
     e_basura = False
     e = {"fecha": fecha, "ticker": r.get("symbol", "?"),
          "empresa": (r.get("name") or "").replace(" Inc.", "").replace(" Corporation", "")
-                                          .replace(", Inc.", "").strip()[:26],
-         "cuando": cu, "consenso": cons, "real": real, "sorpresa": sor, "ano_pasado": prev}
+                                          .replace(", Inc.", "").strip().rstrip(",. ")[:26],
+         "cuando": cu, "consenso": cons, "real": real, "sorpresa": sor, "ano_pasado": prev,
+         "cap": _cap(r.get("marketCap"))}
     # guardia: si el consenso es absurdo frente al ano pasado, la fuente trae basura
     # (visto el 17-sep-2026: MU con "consenso 31,17 $" contra 2,86 $ del ano anterior)
     if cons is not None and prev not in (None, 0) and abs(cons) > 10 * abs(prev):
@@ -111,7 +116,7 @@ def _entrada(r, fecha):
         e_basura = True
     trozos = []
     if cons is not None: trozos.append("consenso %.2f $" % cons)
-    if prev is not None: trozos.append("hace un ano %.2f $" % prev)
+    if prev is not None: trozos.append("hace un año %.2f $" % prev)
     e["consenso"] = cons; e["sorpresa"] = sor
     e["nota"] = " · ".join(trozos) if trozos else ("dato de consenso descartado por incoherente"
                                                    if e_basura else "")
@@ -152,9 +157,9 @@ def estado(hoy=None):
             e["reaccion_pct"] = round(pct, 2) if pct is not None else None
             s, real, cons = e["sorpresa"], e["real"], e["consenso"]
             if s is not None and cons is not None and real is not None:
-                verbo = "batio" if s > 0 else ("fallo" if s < 0 else "clavo")
+                verbo = "batió" if s > 0 else ("falló" if s < 0 else "clavó")
                 e["resumen"] = "%s el consenso por %.1f %% (%.2f $ frente a %.2f $)%s" % (
-                    verbo, abs(s), real, cons, (", reaccion del %s" % fr) if fr else "")
+                    verbo, abs(s), real, cons, (", reacción del %s" % fr) if fr else "")
             else:
                 e["resumen"] = "sin consenso publicado"
             e["batio_y_cayo"] = bool(s is not None and s > 0 and
@@ -184,11 +189,30 @@ def estado(hoy=None):
     pres.sort(key=lambda x: (x["fecha"], x["ticker"]))
     return {"hoy": [e for e in pres if e["fecha"] == h.isoformat()],
             "semana": pres,
-            "ya": ya[:6],
+            "ya": ya[:12],
             "batio_y_cayo": [e for e in ya if e.get("batio_y_cayo")],
             "dias_sin_revisar": 0,
             "caducada": bool(fallos) and not pres,
             "fuente": "Nasdaq"}
+
+
+# 23-sep-2026, pedido por él: "solo pon los más importantes, no pongas tantos".
+GRANDE, VENTANA, TOPE = 50_000_000_000, 7, 6
+
+
+def importa(e, extra=()):
+    return e["ticker"] in VIGILA or e["ticker"] in extra or (e.get("cap") or 0) >= GRANDE
+
+
+def destacados(est, extra=(), hoy=None):
+    """Los que salen en el diario: grandes (50.000 M$ o más), su lista de vigilancia o su
+    portafolio, en los próximos 7 días. Como mucho 6. Devuelve (lista, cuántos se quedan fuera)."""
+    h = dt.date.fromisoformat(hoy) if hoy else dt.date.today()
+    fin = (h + dt.timedelta(days=VENTANA)).isoformat()
+    cerca = [e for e in (est.get("semana") or []) if e.get("fecha", "") <= fin]
+    top = [e for e in cerca if importa(e, extra)]
+    top.sort(key=lambda e: (e["fecha"], -(e.get("cap") or 0)))
+    return top[:TOPE], len(cerca) - len(top[:TOPE])
 
 
 def tickers_hoy(hoy=None):

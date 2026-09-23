@@ -12,14 +12,14 @@ CFTC = "https://publicreporting.cftc.gov/resource/6dca-aqww.json"
 MERCADOS = [
     ("13874A", "S&P 500 (E-mini)"),
     ("209742", "Nasdaq 100 (mini)"),
-    ("043602", "Bono 10 anos"),
-    ("098662", "Dolar DXY"),
+    ("043602", "Bono 10 años"),
+    ("098662", "Dólar DXY"),
     ("099741", "Euro"),
     ("097741", "Yen"),
     ("088691", "Oro"),
     ("084691", "Plata"),
     ("085692", "Cobre"),
-    ("067651", "Petroleo WTI"),
+    ("067651", "Petróleo WTI"),
     ("133741", "Bitcoin (CME)"),
 ]
 

@@ -1,20 +1,23 @@
 # -*- coding: utf-8 -*-
-"""MHF DIARIO - construye docs/index.html. Tarjetas numeradas, todo en negro."""
+"""MHF DIARIO - construye docs/index.html. Dos pestañas: Diario y Portafolio. Todo en negro.
+23-sep-2026: orden nuevo pedido por él, tildes y ñ, escaneo de resultados con menos
+empresas y más visible, tabla de miedo de los traders y pestaña de Portafolio."""
 import json, os, re, html, datetime as dt
+import earnings, portafolio
 
 DATOS, LECTURA, SALIDA = "diario/datos.json", "diario/lectura.json", "docs/index.html"
 LOGO = "diario/logo.txt"
 
-# bloque -> (numero, rotulo, icono, simbolos)
-BLOQUES = [
-    ("bolsa",    "Bolsa e indices",          "▲"),
-    ("bonos",    "Bonos y tipos",            "▦"),
-    ("energia",  "Energia y petroleo",       "◉"),
-    ("metales",  "Metales",                  "◆"),
-    ("cripto",   "Bitcoin",                  "₿"),
-    ("sectores", "Rotacion por sectores",    "▤"),
-    ("ia",       "IA",                       "⬢"),
-    ("divisas",  "Divisas",                  "⇄"),
+# Orden de los bloques de mercado (del 3 al 10), tal y como lo pidió él.
+ORDEN = [
+    ("bolsa",    "Bolsa e índices"),
+    ("ia",       "Sector de la IA"),
+    ("metales",  "Metales"),
+    ("cripto",   "Bitcoin"),
+    ("energia",  "Energía y petróleo"),
+    ("bonos",    "Bonos y tipos"),
+    ("divisas",  "Divisas"),
+    ("sectores", "Rotación por sectores"),
 ]
 
 CSS = """
@@ -174,16 +177,16 @@ def nota_oro(px):
     if oro is None or bolsa is None:
         return None
     if oro > 0.1 and bolsa < -0.1:
-        t = "Hoy SI se comporta como refugio: el oro sube %+.2f %% con la bolsa %+.2f %%." % (oro, bolsa)
+        t = "Hoy SÍ se comporta como refugio: el oro sube %+.2f %% con la bolsa %+.2f %%." % (oro, bolsa)
     elif oro < -0.1 and bolsa < -0.1:
-        t = "Hoy NO es refugio: cae %+.2f %% con la bolsa tambien cayendo %+.2f %%. Cuando pasa esto suele mandar el dolar o los tipos reales, no el miedo." % (oro, bolsa)
+        t = "Hoy NO es refugio: cae %+.2f %% con la bolsa también cayendo %+.2f %%. Cuando pasa esto suele mandar el dólar o los tipos reales, no el miedo." % (oro, bolsa)
     elif oro > 0.1 and bolsa > 0.1:
-        t = "Hoy sube %+.2f %% CON la bolsa (%+.2f %%). Eso no es refugio: es liquidez o inflacion, los dos suben a la vez." % (oro, bolsa)
+        t = "Hoy sube %+.2f %% CON la bolsa (%+.2f %%). Eso no es refugio: es liquidez o inflación, los dos suben a la vez." % (oro, bolsa)
     else:
         t = "Hoy va plano (%+.2f %%) con la bolsa en %+.2f %%. Nada que leer." % (oro, bolsa)
     if dol is not None:
-        t += " El dolar %+.2f %%." % dol
-    return t + " Es un dia suelto, no un regimen."
+        t += " El dólar %+.2f %%." % dol
+    return t + " Es un día suelto, no un régimen."
 
 
 def celda_cambio(v):
@@ -200,31 +203,125 @@ def tono(v):
     return "miedo" if v < 45 else ("neutral" if v <= 55 else "codicia")
 
 
+def ganadores(px, nom, n=5):
+    """Los que mas suben y los que mas bajan del dia, de todo el panel (sin bonos: van en pb)."""
+    L = [(s, nom.get(s, (s, ""))[0], v["cambio_pct"]) for s, v in px.items() if v.get("pb") is None]
+    L.sort(key=lambda x: -x[2])
+    return L[:n], L[-n:][::-1]
+
+
+
+CSS += """
+.tabs{display:flex;gap:6px;margin:0 0 16px;position:sticky;top:0;z-index:5;background:var(--fondo);padding:8px 0}
+.tabs a{flex:1;text-align:center;text-decoration:none;color:var(--tinta2);font-size:13px;font-weight:700;
+ letter-spacing:.12em;text-transform:uppercase;padding:10px 0;border-radius:10px;border:1px solid var(--linea);background:var(--panel)}
+.tabs a.on{color:var(--tinta);border-color:rgba(200,16,46,.6);background:linear-gradient(180deg,rgba(200,16,46,.18),var(--panel))}
+.js .pag{display:none}.js .pag.on{display:block}
+
+.sent{width:100%;margin-top:4px}
+.sent th{text-align:center}.sent th:first-child{text-align:left}
+.sent td{text-align:center;padding:9px 0}.sent td:first-child{text-align:left;color:var(--tinta2)}
+.pill{display:inline-block;min-width:92px;padding:4px 8px;border-radius:7px;font-size:13px;font-weight:650;
+ font-variant-numeric:tabular-nums}
+.pill.miedo{background:rgba(209,73,91,.14)}.pill.neutral{background:rgba(217,154,43,.13)}.pill.codicia{background:rgba(63,166,106,.13)}
+.pill.hoy{outline:1px solid currentColor}
+
+.eg{display:grid;gap:9px}
+.ec{display:flex;gap:13px;align-items:stretch;background:var(--panel2);border:1px solid var(--linea);border-radius:12px;padding:11px 12px}
+.ec.hoy{border-color:rgba(200,16,46,.6);background:linear-gradient(90deg,rgba(200,16,46,.13),var(--panel2) 60%)}
+.cal{width:56px;flex-shrink:0;border-radius:9px;background:var(--fondo);border:1px solid var(--linea);
+ display:flex;flex-direction:column;align-items:center;justify-content:center;padding:5px 0}
+.cal .w{font-size:10px;font-weight:700;letter-spacing:.12em;color:var(--rojo)}
+.cal .n{font-size:23px;font-weight:750;line-height:1.05;font-variant-numeric:tabular-nums}
+.cal .m{font-size:10px;letter-spacing:.12em;color:var(--tinta3);font-weight:650}
+.ec .cuerpo{flex:1;min-width:0}
+.ec .tk2{font-size:18px;font-weight:750;letter-spacing:.01em}
+.ec .emp{font-size:13px;color:var(--tinta2);margin-left:6px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.chip{font-size:11.5px;padding:3px 8px;border-radius:20px;background:var(--fondo);border:1px solid var(--linea);color:var(--tinta2)}
+.chip.rojo{color:#fff;background:var(--rojo);border-color:var(--rojo)}
+.chip.amb{color:var(--ambar);border-color:rgba(217,154,43,.45)}
+.ec details{margin-top:6px}.ec summary{font-size:12px;color:var(--tinta3);cursor:pointer}
+.ec .niv{border-top:0;padding-top:4px;margin-top:4px}
+.mas{font-size:12.5px;color:var(--tinta3);margin-top:9px}
+.ya{display:flex;flex-wrap:wrap;gap:7px;margin-top:6px}
+.ya span{font-size:13px;padding:5px 9px;border-radius:8px;background:var(--panel2);border:1px solid var(--linea)}
+.sub{font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--tinta2);font-weight:700;margin:14px 0 7px}
+
+.pf{background:var(--panel);border:1px solid var(--linea);border-radius:14px;padding:14px 15px;margin-bottom:11px}
+.pf .top{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.pf .tk2{font-size:19px;font-weight:750}.pf .nm{font-size:13px;color:var(--tinta2)}
+.pf .px{margin-left:auto;text-align:right}
+.pf .px b{font-size:19px;font-weight:700;font-variant-numeric:tabular-nums}
+.pf .px span{display:block;font-size:13px;font-weight:650}
+.pf .per{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:10px 0}
+.pf .per div{background:var(--panel2);border-radius:8px;padding:6px 9px;font-size:13px;font-variant-numeric:tabular-nums}
+.pf .per .k{display:block;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta3)}
+.rango{margin:8px 0 4px}
+.rango .l{display:flex;justify-content:space-between;font-size:11.5px;color:var(--tinta3);font-variant-numeric:tabular-nums}
+.rango .b{height:6px;border-radius:3px;background:var(--linea);position:relative;margin:4px 0}
+.rango .b i{position:absolute;top:-4px;width:3px;height:14px;border-radius:2px;background:var(--tinta);transform:translateX(-50%)}
+.pf .txt{font-size:14px;color:#DEDEE2;margin-top:10px;border-left:2px solid var(--rojo);padding-left:10px}
+"""
+
+DIAS = ["LUN", "MAR", "MIÉ", "JUE", "VIE", "SÁB", "DOM"]
+MESES = ["ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC"]
+MESES_L = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto",
+           "septiembre", "octubre", "noviembre", "diciembre"]
+
+# bloque de la página -> número de su sección en la lectura de Gemini (ver redactor.py)
+GEMINI = {"bolsa": 1, "ia": 2, "metales": 3, "cripto": 4, "energia": 5, "bonos": 6,
+          "sectores": 7, "divisas": 8}
+G_RESULTADOS, G_MIRAR, G_PORTAFOLIO = 9, 10, 11
+
+
+def hora_local(iso):
+    try:
+        from zoneinfo import ZoneInfo
+        t = dt.datetime.fromisoformat(iso).astimezone(ZoneInfo("Atlantic/Canary"))
+        return "%d %s %d · %02d:%02d (Canarias)" % (t.day, MESES_L[t.month - 1], t.year, t.hour, t.minute)
+    except Exception:
+        return iso.replace("T", " ")[:16] + " UTC"
+
+
+def pct(v, dec=2):
+    if v is None:
+        return '<span class="plano">—</span>'
+    cl = "sube" if v > 0.05 else ("baja" if v < -0.05 else "plano")
+    return '<span class="%s">%+.*f %%</span>' % (cl, dec, v)
+
+
 def tarjeta_sentimiento(se):
-    P = ['<div class="tarjeta"><div class="cab"><span class="num">☯</span>'
-         '<span class="ico">◐</span><h2>Miedo y codicia</h2></div><div class="fg">']
-    for k, rot in (("bolsa", "Bolsa EE.UU. (CNN)"), ("cripto", "Cripto")):
-        x = se.get(k)
-        if not x:
-            continue
-        a = x["ahora"]
+    P = ['<div class="tarjeta"><div class="cab"><span class="num">◐</span>'
+         '<h2>Miedo de los traders</h2></div><div class="fg">']
+    cols = [(k, r) for k, r in (("bolsa", "Bolsa EE.UU. (CNN)"), ("cripto", "Cripto")) if se.get(k)]
+    for k, rot in cols:
+        a = se[k]["ahora"]
         P.append('<div class="caja"><div class="h2b">%s</div>'
                  '<div class="big"><b class="%s">%d</b><span class="%s">%s</span></div>'
-                 '<div class="barra"><i style="left:%d%%"></i></div>'
+                 '<div class="barra"><i style="left:%d%%"></i></div></div>'
                  % (rot, tono(a["valor"]), a["valor"], tono(a["valor"]), a["etiqueta"], a["valor"]))
-        for kk, rr in (("ayer", "Ayer"), ("semana", "Hace una semana"), ("mes", "Hace un mes"), ("ano", "Hace un ano")):
-            if kk in x:
-                P.append('<div class="r"><span class="e">%s</span><span class="%s">%d · %s</span></div>'
-                         % (rr, tono(x[kk]["valor"]), x[kk]["valor"], x[kk]["etiqueta"]))
-        P.append("</div>")
-    P.append('</div><div class="nota">0 = miedo extremo, 100 = codicia extrema. '
-             'Mide el animo de la gente, no dice hacia donde va el precio.</div></div>')
+    P.append("</div>")
+    P.append('<table class="sent"><tr><th></th>%s</tr>'
+             % "".join("<th>%s</th>" % ("Bolsa" if k == "bolsa" else "Cripto") for k, _ in cols))
+    for kk, rr in (("ahora", "Hoy"), ("ayer", "Hace 1 día"), ("semana", "Hace 1 semana"),
+                   ("dos_semanas", "Hace 2 semanas"), ("mes", "Hace 1 mes")):
+        celdas = []
+        for k, _ in cols:
+            x = se[k].get(kk)
+            celdas.append('<td><span class="pill %s%s">%d · %s</span></td>'
+                          % (tono(x["valor"]), " hoy" if kk == "ahora" else "", x["valor"], x["etiqueta"])
+                          if x else "<td>—</td>")
+        P.append("<tr><td>%s</td>%s</tr>" % (rr, "".join(celdas)))
+    P.append("</table>")
+    P.append('<div class="nota">0 = miedo extremo, 100 = codicia extrema. Mide el ánimo de la gente, '
+             'no dice hacia dónde va el precio. Los extremos suelen ir en contra de la masa.</div></div>')
     return "".join(P)
 
 
 def tarjeta_posiciones(po):
     P = ['<div class="tarjeta"><div class="cab"><span class="num">⚖</span>'
-         '<span class="ico">▥</span><h2>Posicionamiento en futuros</h2></div>']
+         '<h2>Posicionamiento en futuros</h2></div>']
     cot = po.get("cot") or []
     if cot:
         P.append('<div class="resumen">Especuladores grandes (CFTC) · datos del %s</div>' % cot[0]["fecha"])
@@ -244,36 +341,31 @@ def tarjeta_posiciones(po):
     if b:
         P.append('<div class="lec"><div class="t">Bitcoin · cuentas largas / cortas (OKX)</div>'
                  '<p>Ahora <strong>%.2f</strong> · ayer %.2f · hace una semana %.2f. '
-                 'Por encima de 1 hay mas cuentas en largo que en corto.</p></div>'
+                 'Por encima de 1 hay más cuentas en largo que en corto.</p></div>'
                  % (b["ahora"], b["ayer"], b["semana"]))
     P.append('<div class="nota">Neto = contratos largos menos cortos de los especuladores. '
-             'Extremo: 0 = lo mas cortos que han estado en 3 anos, 100 = lo mas largos. '
-             'El informe sale los viernes con datos del martes. Un extremo por si solo no es senal de entrada.</div></div>')
+             'Extremo: 0 = lo más cortos que han estado en 3 años, 100 = lo más largos. '
+             'El informe sale los viernes con datos del martes. Un extremo por sí solo no es señal de entrada.</div></div>')
     return "".join(P)
 
 
-def ganadores(px, nom, n=5):
-    """Los que mas suben y los que mas bajan del dia, de todo el panel (sin bonos: van en pb)."""
-    L = [(s, nom.get(s, (s, ""))[0], v["cambio_pct"]) for s, v in px.items() if v.get("pb") is None]
-    L.sort(key=lambda x: -x[2])
-    return L[:n], L[-n:][::-1]
-
-
-def bloque_niveles(t, a):
-    """Tarjeta de niveles de una empresa. Todo calculado de sus velas diarias."""
+def bloque_niveles(t, a, titulo=True):
+    """Niveles de un valor. Todo calculado de sus velas diarias."""
     def cl(x):
         return "sube" if x > 0 else ("baja" if x < 0 else "plano")
-    P = ['<div class="niv"><div class="h">%s &middot; niveles del grafico diario</div>' % html.escape(t)]
+    P = ['<div class="niv">']
+    if titulo:
+        P.append('<div class="h">%s &middot; niveles del gráfico diario</div>' % html.escape(t))
     P.append('<div class="g">')
     for k, val, dist in (("EMA 50", a.get("ema50"), a.get("dist_ema50")),
                          ("EMA 200", a.get("ema200"), a.get("dist_ema200"))):
         if val is None:
             continue
         P.append('<div class="c"><div class="k">%s</div><div class="v">%s</div>'
-                 '<div class="p %s">el precio esta %+.2f %%</div></div>'
+                 '<div class="p %s">el precio está %+.2f %%</div></div>'
                  % (k, fnum(val), cl(dist), dist))
-    P.append('<div class="c"><div class="k">Maximo 52 sem</div><div class="v">%s</div></div>' % fnum(a["max52"]))
-    P.append('<div class="c"><div class="k">Minimo 52 sem</div><div class="v">%s</div></div>' % fnum(a["min52"]))
+    P.append('<div class="c"><div class="k">Máximo 52 sem</div><div class="v">%s</div></div>' % fnum(a["max52"]))
+    P.append('<div class="c"><div class="k">Mínimo 52 sem</div><div class="v">%s</div></div>' % fnum(a["min52"]))
     P.append("</div>")
     for rot, lst in (("Por encima", a.get("resistencias") or []),
                      ("Por debajo", a.get("soportes") or [])):
@@ -281,9 +373,155 @@ def bloque_niveles(t, a):
             continue
         P.append('<div class="lst"><div><span class="e">%s</span></div>' % rot)
         for z in lst:
-            P.append('<div><span>%s</span><span class="e">%+.1f %% &middot; se giro %d veces</span></div>'
+            P.append('<div><span>%s</span><span class="e">%+.1f %% &middot; se giró %d veces</span></div>'
                      % (fnum(z["precio"]), z["dist_pct"], z["toques"]))
         P.append("</div>")
+    P.append("</div>")
+    return "".join(P)
+
+
+def calendario_chip(fecha):
+    f = dt.date.fromisoformat(fecha)
+    return ('<div class="cal"><span class="w">%s</span><span class="n">%d</span><span class="m">%s</span></div>'
+            % (DIAS[f.weekday()], f.day, MESES[f.month - 1]))
+
+
+def cuando_chip(c):
+    if c == "antes de abrir":
+        return '<span class="chip">☀ antes de abrir</span>'
+    if c == "tras el cierre":
+        return '<span class="chip">☾ tras el cierre</span>'
+    return '<span class="chip">hora sin confirmar</span>'
+
+
+def tarjeta_resultados(ear, niv, extra_tks, lectura, hoy):
+    P = ['<div class="tarjeta"><div class="cab"><span class="num">2</span>'
+         '<h2>Escaneo de resultados</h2></div>']
+    top, resto = earnings.destacados(ear, extra_tks, hoy)
+    if top:
+        P.append('<div class="eg">')
+        for e in top:
+            d = (dt.date.fromisoformat(e["fecha"]) - dt.date.fromisoformat(hoy)).days
+            eti = '<span class="chip rojo">HOY</span>' if d == 0 else (
+                '<span class="chip amb">MAÑANA</span>' if d == 1 else "")
+            cons = ('<span class="chip">se espera %.2f $ por acción</span>' % e["consenso"]
+                    if e.get("consenso") is not None else "")
+            P.append('<div class="ec%s">%s<div class="cuerpo"><div><span class="tk2">%s</span>'
+                     '<span class="emp">%s</span></div><div class="chips">%s%s%s</div>'
+                     % (" hoy" if d == 0 else "", calendario_chip(e["fecha"]), html.escape(e["ticker"]),
+                        html.escape(e["empresa"]), eti, cuando_chip(e["cuando"]), cons))
+            if e["ticker"] in niv:
+                P.append('<details><summary>Ver niveles (EMA 50, EMA 200, soportes)</summary>%s</details>'
+                         % bloque_niveles(e["ticker"], niv[e["ticker"]], titulo=False))
+            P.append("</div></div>")
+        P.append("</div>")
+        if resto:
+            P.append('<div class="mas">Y %d empresa%s más pequeña%s esta semana.</div>'
+                     % (resto, "s" if resto > 1 else "", "s" if resto > 1 else ""))
+    else:
+        P.append('<div class="resumen">Esta semana no presenta ninguna de las grandes.</div>')
+
+    byc = ear.get("batio_y_cayo") or []
+    if byc:
+        P.append('<div class="lec byc"><div class="t">Batió y cayó · tu filtro</div>')
+        for e in byc:
+            P.append("<p><strong>%s</strong> %s · %s %s</p>"
+                     % (html.escape(e["ticker"]), html.escape(e["empresa"]),
+                        ("reacción %+.2f %% ·" % e["reaccion_pct"]) if e.get("reaccion_pct") is not None else "",
+                        html.escape(e.get("resumen", ""))))
+        P.append("</div>")
+    ya = [e for e in (ear.get("ya") or []) if earnings.importa(e, extra_tks) and not e.get("batio_y_cayo")]
+    if ya:
+        P.append('<div class="sub">Ya presentaron</div><div class="ya">')
+        for e in ya[:5]:
+            P.append("<span><strong>%s</strong> %s</span>"
+                     % (html.escape(e["ticker"]), pct(e.get("reaccion_pct"))))
+        P.append("</div>")
+    if lectura:
+        P.append('<div class="lec"><div class="t">Lectura</div>%s</div>'
+                 % "".join("<p>%s</p>" % p for p in lectura))
+    if ear.get("caducada"):
+        P.append('<div class="aviso viejo">La fuente de resultados no respondió: la lista puede estar '
+                 'incompleta.</div>')
+    P.append("</div>")
+    return "".join(P)
+
+
+def linea_portafolio(texto):
+    """Sección 11 de Gemini: '- KO: frase'. Devuelve {ticker: frase}."""
+    out = {}
+    for p in texto:
+        m = re.match(r"^[-•*\s]*(?:<strong>)?([A-Z]{1,5})(?:</strong>)?\s*[:·\-–]\s*(?:</strong>)?\s*(.+)$", p)
+        if m:
+            out[m.group(1)] = m.group(2)
+    return out
+
+
+def pagina_portafolio(pf, lineas):
+    P = ['<div class="resumen" style="margin:0 0 12px">Resumen diario de tu lista. Solo nombres: '
+         'sin cantidades ni precios de entrada.</div>']
+    if not pf:
+        P.append('<div class="aviso">Hoy no han llegado los datos del portafolio.</div>')
+    for x in pf:
+        a = x.get("niveles") or {}
+        P.append('<div class="pf"><div class="top"><span class="tk2">%s</span><span class="nm">%s</span>'
+                 '<span class="px"><b>%s</b>%s</span></div>'
+                 % (html.escape(x["ticker"]), html.escape(x["nombre"]), fnum(x["precio"]), pct(x.get("dia"))))
+        P.append('<div class="per"><div><span class="k">Semana</span>%s</div><div><span class="k">Mes</span>%s</div>'
+                 '<div><span class="k">En el año</span>%s</div></div>'
+                 % (pct(x.get("semana"), 1), pct(x.get("mes"), 1), pct(x.get("ano"), 1)))
+        if a.get("max52") and a.get("min52") and a["max52"] > a["min52"]:
+            pos = max(0, min(100, (x["precio"] - a["min52"]) / (a["max52"] - a["min52"]) * 100))
+            P.append('<div class="rango"><div class="l"><span>mín 52 sem %s</span><span>máx %s</span></div>'
+                     '<div class="b"><i style="left:%.0f%%"></i></div></div>'
+                     % (fnum(a["min52"]), fnum(a["max52"]), pos))
+        ch = []
+        for k, v, dd in (("EMA 50", a.get("ema50"), a.get("dist_ema50")), ("EMA 200", a.get("ema200"), a.get("dist_ema200"))):
+            if v is not None:
+                ch.append('<span class="chip">%s %s · %s</span>' % (k, fnum(v), pct(dd, 1)))
+        r = x.get("resultados")
+        if r:
+            f = dt.date.fromisoformat(r["fecha"])
+            ch.append('<span class="chip%s">Resultados %s %d %s%s</span>'
+                      % (" amb" if (f - dt.date.today()).days <= 14 else "", DIAS[f.weekday()].lower(),
+                         f.day, MESES[f.month - 1].lower(), " (estimada)" if r.get("estimada") else ""))
+        else:
+            ch.append('<span class="chip">Resultados: sin fecha publicada</span>')
+        if ch:
+            P.append('<div class="chips">%s</div>' % "".join(ch))
+        if lineas.get(x["ticker"]):
+            P.append('<div class="txt">%s</div>' % lineas[x["ticker"]])
+        P.append("</div>")
+    P.append('<div class="nota">Precios de Yahoo (cierre de Nueva York). Fecha de resultados de Nasdaq; '
+             '"estimada" = la empresa aún no la ha confirmado. El texto lo escribe un modelo con los '
+             'titulares de cada empresa y puede equivocarse.</div>')
+    return "".join(P)
+
+
+def tarjeta_bloque(num, clave, rotulo, filas, trozo, d, extra):
+    P = ['<div class="tarjeta"><div class="cab"><span class="num">%d</span>'
+         '<h2>%s</h2></div>' % (num, rotulo)]
+    if trozo:
+        P.append('<div class="resumen">%s</div>' % trozo[0])
+    P.append('<table><tr><th>Activo</th><th>Precio</th><th>Cambio</th><th></th></tr>')
+    for s, nb, v in filas:
+        P.append('<tr><td><span class="tk">%s</span><span class="dsc">%s</span></td>'
+                 '<td>%s</td>%s</tr>'
+                 % (html.escape(s), html.escape(nb),
+                    ("%.3f %%" % v["precio"]).replace(".", ",") if v.get("pb") is not None else fnum(v["precio"]),
+                    celda_cambio(v)))
+    P.append("</table>")
+    if clave == "metales":
+        no = nota_oro(d["precios"])
+        if no:
+            P.append('<div class="lec"><div class="t">El oro, ¿refugio?</div><p>%s</p></div>' % html.escape(no))
+    if clave == "cripto":
+        nb = (extra.get("niveles") or {}).get("BTC/USD")
+        if nb:
+            P.append(bloque_niveles("BTC", nb))
+    if len(trozo) > 1:
+        P.append('<div class="lec"><div class="t">Lectura de mercado</div>%s</div>'
+                 % "".join("<p>%s</p>" % p for p in trozo[1:]))
     P.append("</div>")
     return "".join(P)
 
@@ -298,6 +536,9 @@ def main():
     sem = extra.get("semaforo") or {}
     ear = extra.get("earnings") or {}
     cal = extra.get("semana") or []
+    pf = extra.get("portafolio") or []
+    pf_tks = [x["ticker"] for x in pf] or [p[0] for p in portafolio.PORTAFOLIO]
+    hoy = d["generado"][:10]
 
     nom = {u["simbolo"]: (u["nombre"], u["bloque"]) for u in d["universo"]}
     grupos = {}
@@ -321,30 +562,37 @@ def main():
          '<meta name="apple-mobile-web-app-capable" content="yes">',
          '<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">',
          '<meta name="apple-mobile-web-app-title" content="MHF Diario">',
-         '<title>MHF Diario</title><style>%s</style></head><body><div class="env">' % CSS]
+         '<title>MHF Diario</title><style>%s</style>' % CSS,
+         "<script>document.documentElement.className='js'</script></head><body><div class=\"env\">"]
 
     P.append('<header>')
     if logo:
         P.append('<img src="%s" alt="MHF">' % logo)
     P.append('<span class="marca"><b>MHF</b>Diario de mercados</span>')
-    P.append('<span class="fecha">%s<br>UTC</span></header>' % d["generado"].replace("T", " ")[:16])
+    P.append('<span class="fecha">%s</span></header>' % hora_local(d["generado"]))
+    P.append('<nav class="tabs"><a href="#diario" data-p="diario">Diario</a>'
+             '<a href="#portafolio" data-p="portafolio">Portafolio</a></nav>')
 
-    # --- semaforo de peligro
+    # ================= PÁGINA 1: DIARIO =================
+    P.append('<section class="pag" id="p-diario">')
     if sem:
         P.append('<div class="sem %s"><div class="fila"><span class="bola"></span>'
                  '<h1>%s</h1></div><ul>' % (sem.get("nivel", "verde"), html.escape(sem.get("titulo", ""))))
         for niv, txt in sem.get("motivos", []):
             P.append("<li>%s</li>" % html.escape(txt))
         P.append("</ul></div>")
-
     if titular:
         P.append('<div class="titular">%s</div>' % html.escape(titular))
 
+    # el miedo de los traders, lo primero (pedido por él el 23-sep-2026)
+    if extra.get("sentimiento"):
+        P.append(tarjeta_sentimiento(extra["sentimiento"]))
+
+    # 1. lo que más se ha movido
     sube, baja = ganadores(d["precios"], nom)
     if sube:
-        P.append('<div class="tarjeta"><div class="cab"><span class="num">↕</span>'
-                 '<span class="ico">◈</span><h2>Lo que mas se ha movido hoy</h2></div>'
-                 '<div class="g2">')
+        P.append('<div class="tarjeta"><div class="cab"><span class="num">1</span>'
+                 '<h2>Lo que más se ha movido hoy</h2></div><div class="g2">')
         for rot, lst in (("Arriba", sube), ("Abajo", baja)):
             P.append('<div><div class="h2b">%s</div><table>' % rot)
             for sy, nb, cb in lst:
@@ -353,128 +601,66 @@ def main():
             P.append("</table></div>")
         P.append("</div></div>")
 
-    # --- earnings: primero, que es lo que mas le importa
+    # 2. resultados
     if ear:
-        P.append('<div class="tarjeta"><div class="cab"><span class="num">★</span>'
-                 '<span class="ico">◈</span><h2>Escaneo de resultados</h2></div>')
-        if ear.get("hoy"):
-            P.append('<div class="resumen">Hoy presentan: %s</div>'
-                     % html.escape(", ".join("%s (%s)" % (e["ticker"], e["cuando"]) for e in ear["hoy"])))
-        else:
-            P.append('<div class="resumen">Hoy no presenta nadie de la lista.</div>')
-        if ear.get("batio_y_cayo"):
-            P.append('<div class="lec byc"><div class="t">Batio y cayo</div>')
-            for e in ear["batio_y_cayo"]:
-                P.append("<p><strong>%s (%s)</strong> %s %s</p>"
-                         % (html.escape(e["empresa"]), html.escape(e["ticker"]),
-                            ("%+.2f %% ·" % e["reaccion_pct"]) if e.get("reaccion_pct") is not None else "",
-                            html.escape(e.get("resumen", ""))))
-            P.append("</div>")
-        if ear.get("semana"):
-            P.append('<div class="ev" style="margin-top:12px">')
-            for e in ear["semana"]:
-                P.append('<div class="it"><span class="d">%s</span><span class="p p-amarillo"></span>'
-                         '<span><span class="q"><strong>%s</strong> %s · %s</span>%s</span></div>'
-                         % (e["fecha"][5:], html.escape(e["ticker"]), html.escape(e["empresa"]),
-                            html.escape(e["cuando"]),
-                            '<span class="n">%s</span>' % html.escape(e["nota"]) if e.get("nota") else ""))
-            P.append("</div>")
-        niv = extra.get("niveles") or {}
-        for t in [e["ticker"] for e in (ear.get("hoy") or [])] + \
-                 [e["ticker"] for e in (ear.get("semana") or [])]:
-            if t in niv:
-                P.append(bloque_niveles(t, niv.pop(t)))
-        if ear.get("caducada"):
-            P.append('<div class="aviso viejo">Esta lista lleva %d dias sin revisar. '
-                     'Puede faltar alguna empresa.</div>' % ear.get("dias_sin_revisar", 0))
-        P.append("</div>")
+        P.append(tarjeta_resultados(ear, extra.get("niveles") or {}, pf_tks,
+                                    partes.get(G_RESULTADOS) or [], hoy))
 
-    # --- calendario de la semana
+    # 3-10. bloques de mercado, en el orden que pidió
+    num = 2
+    for clave, rotulo in ORDEN:
+        if clave not in grupos:
+            continue
+        num += 1
+        filas = sorted(grupos[clave], key=lambda x: (x[2].get("pb") is None, -abs(x[2]["cambio_pct"])))
+        P.append(tarjeta_bloque(num, clave, rotulo, filas, partes.get(GEMINI[clave]) or [], d, extra))
+
+    if partes.get(G_MIRAR):
+        P.append('<div class="tarjeta"><div class="cab"><span class="num">→</span>'
+                 '<h2>Qué mirar</h2></div><div class="lec">%s</div></div>'
+                 % "".join("<p>%s</p>" % p for p in partes[G_MIRAR]))
+
     if cal:
         P.append('<div class="tarjeta"><div class="cab"><span class="num">▣</span>'
-                 '<span class="ico">◷</span><h2>La semana que viene</h2></div><div class="ev">')
+                 '<h2>La semana que viene</h2></div><div class="ev">')
         for e in cal:
             dias = e.get("dias", 0)
-            eti = "HOY" if dias == 0 else ("manana" if dias == 1 else "+%d dias" % dias)
+            eti = "HOY" if dias == 0 else ("mañana" if dias == 1 else "+%d días" % dias)
             P.append('<div class="it"><span class="d">%s</span><span class="p p-%s"></span>'
                      '<span><span class="q">%s</span>%s</span></div>'
                      % (eti, e.get("nivel", "verde"), html.escape(e["que"]),
                         '<span class="n">%s</span>' % html.escape(e["nota"]) if e.get("nota") else ""))
         P.append("</div></div>")
 
-    # --- sentimiento y posicionamiento
-    if extra.get("sentimiento"):
-        P.append(tarjeta_sentimiento(extra["sentimiento"]))
     if extra.get("posiciones"):
         P.append(tarjeta_posiciones(extra["posiciones"]))
 
-    # --- bloques de mercado
-    n = 0
-    for clave, rotulo, ico in BLOQUES:
-        if clave not in grupos:
-            continue
-        n += 1
-        filas = sorted(grupos[clave], key=lambda x: (x[2].get("pb") is None, -abs(x[2]["cambio_pct"])))
-        P.append('<div class="tarjeta"><div class="cab"><span class="num">%d</span>'
-                 '<span class="ico">%s</span><h2>%s</h2></div>' % (n, ico, rotulo))
-        trozo = partes.get(n) or []
-        if trozo:
-            P.append('<div class="resumen">%s</div>' % trozo[0])
-        P.append('<table><tr><th>Activo</th><th>Precio</th><th>Cambio</th><th></th></tr>')
-        for s, nb, v in filas:
-            P.append('<tr><td><span class="tk">%s</span><span class="dsc">%s</span></td>'
-                     '<td>%s</td>%s</tr>'
-                     % (html.escape(s), html.escape(nb),
-                        ("%.3f %%" % v["precio"]).replace(".", ",") if v.get("pb") is not None else fnum(v["precio"]),
-                        celda_cambio(v)))
-        P.append("</table>")
-        if clave == "metales":
-            no = nota_oro(d["precios"])
-            if no:
-                P.append('<div class="lec"><div class="t">El oro, ¿refugio?</div><p>%s</p></div>'
-                         % html.escape(no))
-        if clave == "cripto":
-            nb = (extra.get("niveles") or {}).get("BTC/USD")
-            if nb:
-                P.append(bloque_niveles("BTC", nb))
-        if len(trozo) > 1:
-            P.append('<div class="lec"><div class="t">Lectura de mercado</div>')
-            for p in trozo[1:]:
-                P.append("<p>%s</p>" % p)
-            P.append("</div>")
-        P.append("</div>")
-
-    # --- lo que no encajo en ningun bloque (p.ej. "que mirar manana")
-    sobra = [k for k in partes if k > n]
-    if sobra:
-        P.append('<div class="tarjeta"><div class="cab"><span class="num">→</span>'
-                 '<span class="ico">◎</span><h2>Que mirar</h2></div><div class="lec">')
-        for k in sorted(sobra):
-            for p in partes[k]:
-                P.append("<p>%s</p>" % p)
-        P.append("</div></div>")
-
     if not texto and L.get("error"):
         P.append('<div class="aviso">Hoy no hay lectura: %s</div>' % html.escape(L["error"]))
+    P.append("</section>")
 
-    if d.get("titulares"):
-        P.append('<div class="tarjeta"><div class="cab"><span class="num">≡</span>'
-                 '<span class="ico">◫</span><h2>Las noticias del dia</h2></div><ul class="tit">')
-        for t in d["titulares"][:28]:
-            P.append('<li><span class="f">%s</span>%s</li>'
-                     % (html.escape(t["fuente"]), html.escape(t["titular"])))
-        P.append("</ul></div>")
+    # ================= PÁGINA 2: PORTAFOLIO =================
+    P.append('<section class="pag" id="p-portafolio">')
+    P.append(pagina_portafolio(pf, linea_portafolio(partes.get(G_PORTAFOLIO) or [])))
+    P.append("</section>")
 
-    P.append('<div class="aviso">Fuentes: indices, futuros y bonos de Yahoo; acciones, ETF, divisas y bitcoin de Twelve Data. '
-             'Miedo y codicia: CNN y alternative.me. Posiciones: CFTC y OKX. '
-             'La lectura la escribe un modelo con esos numeros y los titulares de arriba, '
-             'y <strong>puede equivocarse</strong>. Esto no es consejo de inversion.</div>')
-    P.append('<footer>MHF · Diario automatico · %d de %d precios · %d fallos%s<br>'
-             'Se genera solo cada dia a las 7:00. No sustituye tu criterio.</footer>'
+    P.append('<div class="aviso">Fuentes: índices, futuros, bonos y portafolio de Yahoo; acciones, ETF, '
+             'divisas y bitcoin de Twelve Data; resultados de Nasdaq. Miedo y codicia: CNN y alternative.me. '
+             'Posiciones: CFTC y OKX. La lectura la escribe un modelo con esos números y los titulares '
+             'del día, y <strong>puede equivocarse</strong>. Esto no es consejo de inversión.</div>')
+    P.append('<footer>MHF · Diario automático · %d de %d precios · %d fallos%s<br>'
+             'Se genera solo cada día a las 7:00. No sustituye tu criterio.</footer>'
              % (len(d["precios"]), len(d["universo"]), len(d.get("fallos") or []),
                 (" · " + L["modelo"]) if L.get("modelo") else ""))
-    P.append("<script>if('serviceWorker' in navigator){window.addEventListener('load',"
-             "function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}</script>")
+    P.append("""<script>
+(function(){
+ function ver(){var p=(location.hash||'#diario').slice(1);if(p!=='portafolio')p='diario';
+  document.querySelectorAll('.pag').forEach(function(s){s.classList.toggle('on',s.id==='p-'+p);});
+  document.querySelectorAll('.tabs a').forEach(function(a){a.classList.toggle('on',a.dataset.p===p);});}
+ window.addEventListener('hashchange',function(){ver();window.scrollTo(0,0);});ver();
+ if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}
+})();
+</script>""")
     P.append("</div></body></html>")
 
     os.makedirs(os.path.dirname(SALIDA), exist_ok=True)
