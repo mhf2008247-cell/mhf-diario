@@ -1,16 +1,16 @@
 name: MHF Diario
 
-# 18 sep 2026 · POR QUE HAY TRES HORAS Y NINGUNA ES EN PUNTO
-# Con "0 6 * * 1-5" la unica vez que GitHub lo lanzo solo fue con 4 h 42 min de retraso
-# (programado 06:00 UTC, ejecutado 10:42 UTC) y al dia siguiente no lo lanzo.
-# Las tareas programadas de GitHub son "cuando se pueda", no "a esta hora", y las horas
-# EN PUNTO son las mas cargadas de todas. Por eso: minuto 7 y tres intentos.
-# El segundo y el tercero se cortan solos si el diario de hoy ya esta hecho.
+# 24 sep 2026 · POR QUE HAY 16 INTENTOS
+# Las tareas programadas de GitHub son "cuando se pueda", no "a esta hora".
+# El 23 sep los tres intentos (06:07, 08:07, 10:07 UTC) llegaron con 4-5 HORAS de retraso
+# (11:27, 13:35 y 14:52 UTC) y el 24 sep a las 08:16 UTC no habia llegado ninguno.
+# Solucion: empezar antes y llamar a la puerta cada 30 minutos, de 03:17 a 10:47 UTC.
+# El primero que entre hace el diario; todos los demas se cortan solos en ~10 segundos
+# porque el diario de hoy ya esta hecho (repo publico: los minutos no cuestan nada).
+# Minutos 17 y 47: lejos de las horas en punto, que son las mas cargadas.
 on:
   schedule:
-    - cron: "7 6 * * 1-5"     # 07:07 en Canarias (verano) · el bueno
-    - cron: "7 8 * * 1-5"     # 09:07 · red de seguridad
-    - cron: "7 10 * * 1-5"    # 11:07 · ultima red
+    - cron: "17,47 3-10 * * 1-5"   # cada 30 min, 03:17-10:47 UTC, lunes a viernes
   workflow_dispatch:
 
 concurrency:
@@ -67,6 +67,7 @@ jobs:
         run: |
           git config user.name  "MHF Diario"
           git config user.email "actions@github.com"
+          git pull --rebase || true
           git add diario/datos.json diario/lectura.json docs/index.html
           git commit -m "diario $(date -u +%Y-%m-%d)" || echo "sin cambios"
           git push
