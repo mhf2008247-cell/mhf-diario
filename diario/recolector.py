@@ -196,6 +196,11 @@ def main():
                       "earnings": e, "semana": semaforo.semana(), "niveles": niv_t}
         for t_, e_ in fal_n:
             fallos.append(("niveles " + t_, e_))
+        try:
+            d["extra"]["byc"], f_b = portafolio.byc(e)
+            fallos += f_b
+        except Exception as ex:
+            fallos.append(("batió y cayó", "%s: %s" % (type(ex).__name__, ex)))
     except Exception as ex:
         d["extra"] = {"error": "%s: %s" % (type(ex).__name__, ex)}
     # --- miedo y codicia, posicionamiento en futuros y portafolio (cada uno por su lado)

@@ -20,7 +20,7 @@ UA    = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/53
 FICH  = "diario/earnings.json"          # solo red de seguridad
 MINCAP = 15_000_000_000                 # 15.000 M$: por debajo no entra en el diario
 VIGILA = {"MRVL", "NVDA", "AMD", "AVGO", "TSM", "AAPL", "MSFT", "GOOGL", "AMZN", "META",
-          "TSLA", "CCL", "RCL", "NCLH", "ADBE", "ORCL", "CRM", "MU", "SMCI", "PLTR"}
+          "TSLA", "CCL", "RCL", "NCLH", "ADBE", "ORCL", "CRM", "MU", "SMCI", "PLTR", "INTC"}
 ADELANTE, ATRAS, DIAS_FRESCO = 14, 7, 8
 
 

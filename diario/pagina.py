@@ -99,6 +99,12 @@ td:first-child{text-align:left}
 .tit li:first-child{border-top:0}
 .tit .f{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--tinta3);display:block;margin-bottom:2px}
 .byc{border-left:2px solid var(--rojo)}
+.bycx{border:1px solid var(--rojo);border-radius:12px;padding:12px 14px;margin:4px 0 14px}
+.bycx .t{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--rojo);margin-bottom:8px;font-weight:700}
+.bycx.vacio p{margin:0;color:var(--tinta2);font-size:13.5px}
+.bycf{border-top:1px solid #222;padding:10px 0 4px}.bycf:first-of-type{border-top:0;padding-top:2px}
+.bycf .top{display:flex;align-items:baseline;gap:8px}.bycf .px{margin-left:auto}
+.bycf .txt{font-size:13.5px;color:#DEDEE2;margin:6px 0}
 .aviso{font-size:13px;color:var(--tinta2);background:var(--panel);border:1px solid var(--linea);
  border-left:3px solid var(--rojo);border-radius:10px;padding:12px 14px;margin-top:16px}
 .viejo{border-left-color:var(--ambar);margin-top:10px}
@@ -394,9 +400,37 @@ def cuando_chip(c):
     return '<span class="chip">hora sin confirmar</span>'
 
 
-def tarjeta_resultados(ear, niv, extra_tks, lectura, hoy):
+def tarjeta_resultados(ear, niv, extra_tks, lectura, hoy, byc_fichas=None):
     P = ['<div class="tarjeta"><div class="cab"><span class="num">2</span>'
          '<h2>Escaneo de resultados</h2></div>']
+    # 29-sep-2026, él: el filtro "batió y cayó" va PRIMERO y con toda su ficha
+    byc = byc_fichas or [dict(e, niveles={}) for e in (ear.get("batio_y_cayo") or [])]
+    if byc:
+        P.append('<div class="bycx"><div class="t">Batió y cayó · tu filtro (%d)</div>' % len(byc))
+        for x in byc:
+            s_, r_ = x.get("sorpresa"), x.get("reaccion_pct")
+            P.append('<div class="bycf"><div class="top"><span class="tk2">%s</span><span class="nm">%s</span>'
+                     '<span class="px">%s</span></div>'
+                     % (html.escape(x["ticker"]), html.escape(x.get("empresa", "")),
+                        ("<b>%s</b>" % fnum(x["precio"])) if x.get("precio") is not None else ""))
+            chips = ['<span class="chip">presentó %s</span>' % html.escape(x.get("fecha", ""))]
+            if s_ is not None:
+                chips.append('<span class="chip">batió <span class="sube">+%.1f %%</span></span>' % s_)
+            if r_ is not None:
+                chips.append('<span class="chip">reacción <span class="baja">%+.2f %%</span></span>' % r_)
+            if x.get("desde_resultados") is not None:
+                chips.append('<span class="chip">desde entonces %s</span>' % pct(x["desde_resultados"]))
+            P.append('<div class="chips">%s</div>' % "".join(chips))
+            if x.get("resumen"):
+                P.append('<div class="txt">%s</div>' % html.escape(x["resumen"][:1].upper() + x["resumen"][1:]))
+            if x.get("niveles"):
+                P.append('<details open><summary>Niveles (EMA 50, EMA 200, soportes)</summary>%s</details>'
+                         % bloque_niveles(x["ticker"], x["niveles"], titulo=False))
+            P.append("</div>")
+        P.append("</div>")
+    else:
+        P.append('<div class="bycx vacio"><div class="t">Batió y cayó · tu filtro</div>'
+                 '<p>Esta semana ninguna empresa grande batió y cayó.</p></div>')
     top, resto = earnings.destacados(ear, extra_tks, hoy)
     if top:
         P.append('<div class="eg">')
@@ -421,15 +455,6 @@ def tarjeta_resultados(ear, niv, extra_tks, lectura, hoy):
     else:
         P.append('<div class="resumen">Esta semana no presenta ninguna de las grandes.</div>')
 
-    byc = ear.get("batio_y_cayo") or []
-    if byc:
-        P.append('<div class="lec byc"><div class="t">Batió y cayó · tu filtro</div>')
-        for e in byc:
-            P.append("<p><strong>%s</strong> %s · %s %s</p>"
-                     % (html.escape(e["ticker"]), html.escape(e["empresa"]),
-                        ("reacción %+.2f %% ·" % e["reaccion_pct"]) if e.get("reaccion_pct") is not None else "",
-                        html.escape(e.get("resumen", ""))))
-        P.append("</div>")
     ya = [e for e in (ear.get("ya") or []) if earnings.importa(e, extra_tks) and not e.get("batio_y_cayo")]
     if ya:
         P.append('<div class="sub">Ya presentaron</div><div class="ya">')
@@ -604,7 +629,7 @@ def main():
     # 2. resultados
     if ear:
         P.append(tarjeta_resultados(ear, extra.get("niveles") or {}, pf_tks,
-                                    partes.get(G_RESULTADOS) or [], hoy))
+                                    partes.get(G_RESULTADOS) or [], hoy, byc_fichas=extra.get("byc") or []))
 
     # 3-10. bloques de mercado, en el orden que pidió
     num = 2

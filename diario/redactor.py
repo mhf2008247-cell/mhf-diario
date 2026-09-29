@@ -63,10 +63,14 @@ En cada bloque del 1 al 8: primero una frase con la conclusión, después dos o 
 con el porqué y lo que significa. El VIX va en el 1, no en divisas. El dólar va en el 8.
 En el 3 (metales) habla del oro, la plata Y el cobre.
 
-**9. LOS RESULTADOS**: máximo cuatro líneas. Solo las empresas grandes que presentan hoy o
-esta semana y las que presentaron y se movieron fuerte. Busca su filtro "BATIÓ Y CAYÓ":
-empresas que presentaron buenos números y aun así cayeron. De ahí saca él sus operaciones.
-Si no ves ninguna, dilo en una frase.
+**9. LOS RESULTADOS**: EMPIEZA SIEMPRE por su filtro "BATIÓ Y CAYÓ" (sección BATIÓ Y CAYÓ de DATOS):
+empresas que batieron el consenso y aun así cayeron. De ahí saca él sus operaciones a 2-3 meses,
+así que es lo más importante del bloque. Para CADA una, un párrafo de 3-4 líneas: cuánto batió
+(con los números), cuánto cayó y cómo va desde entonces, POR QUÉ cayó según sus titulares
+(guía, márgenes, expectativas...), y dónde queda frente a su EMA 50 y EMA 200 con el número.
+Si sus titulares no explican la caída, dilo. Sin órdenes de compra: lectura, él decide.
+Si no hay ninguna, dilo en una frase. Después, en dos o tres líneas, las grandes que presentan
+hoy o esta semana y las que se movieron fuerte.
 
 **10. QUÉ ESPERO DE HOY Y DE LA SEMANA**: aquí mójate. Qué crees que va a marcar la sesión,
 qué evento de la agenda pesa, qué estarás mirando. Como máximo cinco puntos, cada uno una
@@ -135,6 +139,21 @@ def resumen_datos(d):
                             a.get("max52"), a.get("min52")))
             if r:
                 L.append("     próximos resultados: %s%s" % (r["fecha"], " (fecha estimada)" if r.get("estimada") else " (confirmada)"))
+            for t in (x.get("titulares") or [])[:5]:
+                L.append("     titular: " + t)
+    by = ex.get("byc") or []
+    f = lambda v: "-" if v is None else "%+.2f" % v
+    if by:
+        L += ["", "BATIÓ Y CAYÓ (su filtro; lo más importante de los resultados):"]
+        for x in by:
+            a = x.get("niveles") or {}
+            L.append("  %s (%s) presentó el %s: %s · reacción %s · desde entonces %s · precio %.2f"
+                     % (x["ticker"], x["empresa"], x["fecha"], x.get("resumen", ""), f(x.get("reaccion_pct")),
+                        f(x.get("desde_resultados")), x["precio"]))
+            if a:
+                L.append("     EMA50 %s (precio %s %% de ella) · EMA200 %s (precio %s %%) · máx 52 sem %s · mín 52 sem %s"
+                         % (a.get("ema50"), f(a.get("dist_ema50")), a.get("ema200"), f(a.get("dist_ema200")),
+                            a.get("max52"), a.get("min52")))
             for t in (x.get("titulares") or [])[:5]:
                 L.append("     titular: " + t)
     ea = ex.get("earnings") or {}

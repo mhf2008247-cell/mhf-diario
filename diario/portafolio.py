@@ -12,13 +12,16 @@ import niveles
 
 # (ticker, nombre, lo que se busca en noticias)
 PORTAFOLIO = [
-    ("KO",   "Coca-Cola",         "Coca-Cola KO stock"),
-    ("NVDA", "Nvidia",            "Nvidia NVDA stock"),
-    ("AVGO", "Broadcom",          "Broadcom AVGO stock"),
-    ("SOFI", "SoFi Technologies", "SoFi Technologies SOFI stock"),
-    ("ORCL", "Oracle",            "Oracle ORCL stock"),
-    ("IBM",  "IBM",               "IBM stock"),
-    ("MP",   "MP Materials",      "MP Materials stock"),
+    # 29-sep-2026, él: fuera AVGO, MP, IBM, ORCL y SOFI; dentro las 7 magníficas e Intel.
+    ("KO",    "Coca-Cola",  "Coca-Cola KO stock"),
+    ("NVDA",  "Nvidia",     "Nvidia NVDA stock"),
+    ("AAPL",  "Apple",      "Apple AAPL stock"),
+    ("MSFT",  "Microsoft",  "Microsoft MSFT stock"),
+    ("GOOGL", "Alphabet",   "Alphabet Google GOOGL stock"),
+    ("AMZN",  "Amazon",     "Amazon AMZN stock"),
+    ("META",  "Meta",       "Meta Platforms META stock"),
+    ("TSLA",  "Tesla",      "Tesla TSLA stock"),
+    ("INTC",  "Intel",      "Intel INTC stock"),
 ]
 
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -122,6 +125,36 @@ def uno(tk, nombre, busca):
         "resultados": proximo_resultado(tk),
         "titulares": titulares(busca),
     }
+
+
+def ficha_byc(e):
+    """29-sep-2026, él: 'dale protagonismo a los que batieron y cayeron'. Para cada una:
+    velas de Yahoo (sin créditos), niveles, cómo va desde que presentó y sus titulares."""
+    tk = e["ticker"]
+    v = velas(tk)
+    if len(v) < 30:
+        raise RuntimeError("pocas velas")
+    cie = [x[3] for x in v]
+    p = cie[-1]
+    antes = next((x[3] for x in reversed(v) if x[0] < e["fecha"]), None)
+    return {"ticker": tk, "empresa": e.get("empresa", tk), "fecha": e["fecha"], "precio": round(p, 2),
+            "dia": _pct(p, cie[-2]), "desde_resultados": _pct(p, antes),
+            "reaccion_pct": e.get("reaccion_pct"), "sorpresa": e.get("sorpresa"),
+            "real": e.get("real"), "consenso": e.get("consenso"), "resumen": e.get("resumen", ""),
+            "niveles": niveles.analiza([(x[1], x[2], x[3]) for x in v]) or {},
+            "titulares": titulares("%s %s stock earnings" % (e.get("empresa", tk), tk))}
+
+
+def byc(est, tope=5):
+    out, fallos = [], []
+    for i, e in enumerate((est.get("batio_y_cayo") or [])[:tope]):
+        if i:
+            time.sleep(1.5)
+        try:
+            out.append(ficha_byc(e))
+        except Exception as ex:
+            fallos.append(("batió y cayó " + e.get("ticker", "?"), "%s: %s" % (type(ex).__name__, str(ex)[:60])))
+    return out, fallos
 
 
 def estado():
