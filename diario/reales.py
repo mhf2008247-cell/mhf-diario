@@ -21,7 +21,7 @@ REALES = [
     ("GC=F",      "ORO",    "Oro $/onza (futuro)",   "metales", "GLD",  False),
     ("SI=F",      "PLATA",  "Plata $/onza (futuro)", "metales", "SLV",  False),
     ("HG=F",      "COBRE",  "Cobre $/libra (futuro)","metales", "CPER", False),
-    ("CL=F",      "WTI",    "Petróleo WTI $/barril", "energia", "USO",  False),
+    ("CL=F",      "WTI",    "Petróleo WTI $/barril", "energia", None,   False),  # 30-sep-2026, él: que USO salga también
     ("BZ=F",      "BRENT",  "Brent $/barril",        "energia", "BNO",  False),
     ("^IRX",      "US3M",   "Tipo 3 meses EE.UU. %", "bonos",   None,   True),
     ("^FVX",      "US5Y",   "Bono 5 años EE.UU. %",  "bonos",   None,   True),

@@ -211,13 +211,14 @@ def tono(v):
 
 def ganadores(px, nom, n=5):
     """Los que mas suben y los que mas bajan del dia, de todo el panel (sin bonos: van en pb)."""
-    L = [(s, nom.get(s, (s, ""))[0], v["cambio_pct"]) for s, v in px.items() if v.get("pb") is None]
+    L = [(s, nom.get(s, (s, ""))[0], v["cambio_pct"], v.get("precio")) for s, v in px.items() if v.get("pb") is None]
     L.sort(key=lambda x: -x[2])
     return L[:n], L[-n:][::-1]
 
 
 
 CSS += """
+.g2 td.px{padding-right:10px;font-weight:650}
 .tabs{display:flex;gap:6px;margin:0 0 16px;position:sticky;top:0;z-index:5;background:var(--fondo);padding:8px 0}
 .tabs a{flex:1;text-align:center;text-decoration:none;color:var(--tinta2);font-size:13px;font-weight:700;
  letter-spacing:.12em;text-transform:uppercase;padding:10px 0;border-radius:10px;border:1px solid var(--linea);background:var(--panel)}
@@ -373,14 +374,18 @@ def bloque_niveles(t, a, titulo=True):
     P.append('<div class="c"><div class="k">Máximo 52 sem</div><div class="v">%s</div></div>' % fnum(a["max52"]))
     P.append('<div class="c"><div class="k">Mínimo 52 sem</div><div class="v">%s</div></div>' % fnum(a["min52"]))
     P.append("</div>")
-    for rot, lst in (("Por encima", a.get("resistencias") or []),
-                     ("Por debajo", a.get("soportes") or [])):
+    # 30-sep-2026: zonas como RANGO (desde-hasta) y solo giros de verdad (ver niveles.py)
+    for rot, lst in (("Resistencias (por encima)", a.get("resistencias") or []),
+                     ("El precio está dentro de", a.get("en_zona") or []),
+                     ("Soportes (por debajo)", a.get("soportes") or [])):
         if not lst:
             continue
         P.append('<div class="lst"><div><span class="e">%s</span></div>' % rot)
         for z in lst:
-            P.append('<div><span>%s</span><span class="e">%+.1f %% &middot; se giró %d veces</span></div>'
-                     % (fnum(z["precio"]), z["dist_pct"], z["toques"]))
+            rango = ("%s – %s" % (fnum(z["desde"]), fnum(z["hasta"]))) if "desde" in z else fnum(z["precio"])
+            por = z.get("extremo") or "se giró %d veces" % z["toques"]
+            P.append('<div><span>%s</span><span class="e">%+.1f %% &middot; %s</span></div>'
+                     % (rango, z["dist_pct"], por))
         P.append("</div>")
     P.append("</div>")
     return "".join(P)
@@ -620,9 +625,11 @@ def main():
                  '<h2>Lo que más se ha movido hoy</h2></div><div class="g2">')
         for rot, lst in (("Arriba", sube), ("Abajo", baja)):
             P.append('<div><div class="h2b">%s</div><table>' % rot)
-            for sy, nb, cb in lst:
-                P.append('<tr><td><span class="tk">%s</span><span class="dsc">%s</span></td>%s</tr>'
-                         % (html.escape(sy), html.escape(nb[:18]), cambio(cb)))
+            for sy, nb, cb, pr in lst:
+                # 30-sep-2026, él: además del %, el precio
+                P.append('<tr><td><span class="tk">%s</span><span class="dsc">%s</span></td>'
+                         '<td class="px">%s</td>%s</tr>'
+                         % (html.escape(sy), html.escape(nb[:18]), fnum(pr) if pr else "–", cambio(cb)))
             P.append("</table></div>")
         P.append("</div></div>")
 
