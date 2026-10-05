@@ -1,5 +1,5 @@
 {
- "generado": "2026-10-04T06:05:05+00:00",
+ "generado": "2026-10-05T06:05:05+00:00",
  "universo": [
   {
    "simbolo": "SPX",
@@ -226,26 +226,26 @@
    "cambio_pct": -6.5893777318493445,
    "cierre_previo": 16.389999389648438,
    "maximo_52": 35.3,
-   "minimo_52": 13.38,
+   "minimo_52": 0.0,
    "fecha": "2026-10-02",
    "fuente": "Yahoo"
   },
   "DXY": {
-   "precio": 101.93000030517578,
-   "cambio_pct": -0.1665016371066863,
-   "cierre_previo": 102.0999984741211,
-   "maximo_52": 102.21,
+   "precio": 102.33799743652344,
+   "cambio_pct": 0.4002718827883056,
+   "cierre_previo": 101.93000030517578,
+   "maximo_52": 102.535,
    "minimo_52": 95.55,
-   "fecha": "2026-10-02",
+   "fecha": "2026-10-05",
    "fuente": "Yahoo"
   },
   "NIKKEI": {
-   "precio": 68309.4609375,
-   "cambio_pct": -0.9386435785127878,
-   "cierre_previo": 68956.71875,
+   "precio": 69872.890625,
+   "cambio_pct": 2.2887454622581016,
+   "cierre_previo": 68309.4609375,
    "maximo_52": 72831.73,
    "minimo_52": 46544.05,
-   "fecha": "2026-10-02",
+   "fecha": "2026-10-05",
    "fuente": "Yahoo"
   },
   "KOSPI": {
@@ -258,54 +258,54 @@
    "fuente": "Yahoo"
   },
   "ORO": {
-   "precio": 4162.2998046875,
-   "cambio_pct": -0.9518597401209083,
-   "cierre_previo": 4202.2998046875,
+   "precio": 4160.7001953125,
+   "cambio_pct": -0.0384309023871543,
+   "cierre_previo": 4162.2998046875,
    "maximo_52": 5586.2,
    "minimo_52": 3901.3,
-   "fecha": "2026-10-02",
+   "fecha": "2026-10-05",
    "fuente": "Yahoo",
    "contrato": "GCZ26.CMX"
   },
   "PLATA": {
-   "precio": 60.415000915527344,
-   "cambio_pct": -1.2423348279713364,
-   "cierre_previo": 61.17499923706055,
+   "precio": 61.25,
+   "cambio_pct": 1.3821055562676543,
+   "cierre_previo": 60.415000915527344,
    "maximo_52": 121.3,
    "minimo_52": 45.845,
-   "fecha": "2026-10-02",
+   "fecha": "2026-10-05",
    "fuente": "Yahoo",
    "nota": "cambio de contrato: calculado en SIZ26.CMX",
    "contrato": "SIZ26.CMX"
   },
   "COBRE": {
-   "precio": 6.548999786376953,
-   "cambio_pct": 0.1682422665299388,
-   "cierre_previo": 6.538000106811523,
+   "precio": 6.566999912261963,
+   "cambio_pct": 0.2748530534762539,
+   "cierre_previo": 6.548999786376953,
    "maximo_52": 6.83,
    "minimo_52": 4.834,
-   "fecha": "2026-10-02",
+   "fecha": "2026-10-05",
    "fuente": "Yahoo",
    "nota": "cambio de contrato: calculado en HGZ26.CMX",
    "contrato": "HGZ26.CMX"
   },
   "WTI": {
-   "precio": 91.11000061035156,
-   "cambio_pct": -1.8951244580373894,
-   "cierre_previo": 92.87000274658203,
+   "precio": 89.94000244140625,
+   "cambio_pct": -1.2841599836542872,
+   "cierre_previo": 91.11000061035156,
    "maximo_52": 119.48,
    "minimo_52": 54.98,
-   "fecha": "2026-10-02",
+   "fecha": "2026-10-05",
    "fuente": "Yahoo",
    "contrato": "CLX26.NYM"
   },
   "BRENT": {
-   "precio": 102.25,
-   "cambio_pct": -0.05864290883145218,
-   "cierre_previo": 102.30999755859375,
+   "precio": 101.48999786376953,
+   "cambio_pct": -0.7432783728415382,
+   "cierre_previo": 102.25,
    "maximo_52": 126.1,
    "minimo_52": 58.72,
-   "fecha": "2026-10-02",
+   "fecha": "2026-10-05",
    "fuente": "Yahoo",
    "contrato": "BZZ26.NYM"
   },
@@ -518,118 +518,123 @@
    "fecha": "2026-10-02"
   },
   "EUR/USD": {
-   "precio": 1.12541,
-   "cambio_pct": -0.0088848611,
-   "cierre_previo": 1.12551,
+   "precio": 1.11939,
+   "cambio_pct": -0.56937289,
+   "cierre_previo": 1.1258,
    "maximo_52": 1.20656,
-   "minimo_52": 1.12159,
-   "fecha": "2026-10-04"
+   "minimo_52": 1.11617,
+   "fecha": "2026-10-05"
   },
   "USD/JPY": {
-   "precio": 157.86041,
-   "cambio_pct": -0.0026034982,
-   "cierre_previo": 157.86452,
+   "precio": 157.833,
+   "cambio_pct": -0.028439699,
+   "cierre_previo": 157.8779,
    "maximo_52": 164.08805,
    "minimo_52": 149.22,
-   "fecha": "2026-10-04"
+   "fecha": "2026-10-05"
   },
   "USD/CNY": {
-   "precio": 6.70708,
-   "cambio_pct": -0.036813199,
-   "cierre_previo": 6.70955,
+   "precio": 6.70568,
+   "cambio_pct": -0.0095432368,
+   "cierre_previo": 6.70632,
    "maximo_52": 7.1424,
    "minimo_52": 6.66997,
-   "fecha": "2026-10-04"
+   "fecha": "2026-10-05"
   },
   "BTC/USD": {
-   "precio": 84916.0,
-   "cambio_pct": 0.19166157,
-   "cierre_previo": 84753.56,
+   "precio": 85891.99,
+   "cambio_pct": -0.73732809,
+   "cierre_previo": 86530.0,
    "maximo_52": 126199.63,
    "minimo_52": 57800.19,
-   "fecha": "2026-10-04"
+   "fecha": "2026-10-05"
   }
  },
  "titulares": [
   {
    "fuente": "Economia",
-   "titular": "Houthis claim strike on Saudi Aramco facility as Yemen fighting intensifies",
-   "fecha": "2026-10-04 04:08:47"
+   "titular": "Euro sinks to 17-month low as French fiscal woes spur contagion fears",
+   "fecha": "2026-10-05 05:43:31"
   },
   {
    "fuente": "Economia",
-   "titular": "Trump’s new AI czar outlines U.S. strategy for AI risks and leadership, WSJ says",
-   "fecha": "2026-10-04 03:30:13"
+   "titular": "Euro pummelled by France’s debt burden; stocks mixed",
+   "fecha": "2026-10-05 05:42:40"
   },
   {
    "fuente": "Economia",
-   "titular": "Australia’s Chalmers blames U.S.-Iran war for higher inflation, borrowing costs",
-   "fecha": "2026-10-04 02:41:39"
+   "titular": "Takaichi pledges fiscal discipline as Japan’s debt bill rises",
+   "fecha": "2026-10-05 05:31:03"
   },
   {
    "fuente": "Economia",
-   "titular": "White House forms AI task force to assess technology risks - WSJ",
-   "fecha": "2026-10-03 22:59:47"
+   "titular": "India seen kicking off rate hike cycle as inflation broadens, peers turn hawkish",
+   "fecha": "2026-10-05 05:18:25"
   },
   {
    "fuente": "Economia",
-   "titular": "OpenAI safety employee quits, says ’time for trial and error is over’",
-   "fecha": "2026-10-03 19:30:33"
+   "titular": "Morning Bid: The euro has a France problem",
+   "fecha": "2026-10-05 04:36:24"
   },
   {
    "fuente": "Economia",
-   "titular": "Bessent says rising Treasury yields reflect global trend, not cause for alarm",
-   "fecha": "2026-10-03 16:49:38"
+   "titular": "Revolut’s rise to become Europe’s $115 billion big bank rival",
+   "fecha": "2026-10-05 01:01:57"
   },
   {
    "fuente": "Economia",
-   "titular": "Smoke and fire reported near Aramco facility in Riyadh as Houthi tensions escalate",
-   "fecha": "2026-10-03 12:12:49"
+   "titular": "OpenAI’s Altman says AI benefits warrant accepting some risks",
+   "fecha": "2026-10-05 01:01:03"
   },
   {
    "fuente": "Economia",
-   "titular": "U.S. debt could reach 160% of GDP within decade, Scope warns",
-   "fecha": "2026-10-03 09:26:02"
+   "titular": "Woman at center of Cornell rape allegations targeted with threats, lawyer says",
+   "fecha": "2026-10-05 00:54:48"
   },
   {
    "fuente": "Mercados",
-   "titular": "Citi explains why home improvement stocks are lagging in 2026",
-   "fecha": "2026-10-04 04:37:33"
+   "titular": "Schneider Electric to buy U.S. software maker PTC for $22.6 bln",
+   "fecha": "2026-10-05 05:55:33"
   },
   {
    "fuente": "Mercados",
-   "titular": "AI deal boom drives Hong Kong fundraising to record summer - Bloomberg",
-   "fecha": "2026-10-04 02:12:05"
+   "titular": "Bajaj Finance shares rise 3.4% on strong September quarter AUM growth",
+   "fecha": "2026-10-05 05:54:36"
   },
   {
    "fuente": "Mercados",
-   "titular": "How Muse Stacks up Vs. OpenAI Dots",
-   "fecha": "2026-10-03 22:24:00"
+   "titular": "Daiwa shares fall after vendor hack may expose data of 110,000 clients",
+   "fecha": "2026-10-05 05:50:02"
   },
   {
    "fuente": "Mercados",
-   "titular": "Nestle India product sample declared unsafe by food regulator",
-   "fecha": "2026-10-03 21:52:01"
+   "titular": "European EV sales hit record in ’pivotal’ year for affordable cars, study shows",
+   "fecha": "2026-10-05 05:30:31"
   },
   {
    "fuente": "Mercados",
-   "titular": "Russia stocks lower at close of trade; MOEX Russia Index unchanged",
-   "fecha": "2026-10-03 21:20:04"
+   "titular": "Australia stocks higher at close of trade; S&P/ASX 200 up 0.05%",
+   "fecha": "2026-10-05 05:30:04"
   },
   {
    "fuente": "Mercados",
-   "titular": "U.S. midterms: Breaking down expected impact on equities",
-   "fecha": "2026-10-03 20:33:43"
+   "titular": "Thailand bourse plans dual-class shares to boost listings",
+   "fecha": "2026-10-05 05:19:00"
   },
   {
    "fuente": "Mercados",
-   "titular": "How AI investment has unusually large multiplier effects",
-   "fecha": "2026-10-03 20:21:01"
+   "titular": "OKX joint venture files with SEC to launch tokenized trading platform",
+   "fecha": "2026-10-05 05:12:35"
   },
   {
    "fuente": "Mercados",
-   "titular": "Turkey extends lower margin trading requirement to Oct. 30",
-   "fecha": "2026-10-03 16:32:50"
+   "titular": "Nikkei 225 doji at 70K with RSI overbought: Live levels",
+   "fecha": "2026-10-05 05:02:25"
+  },
+  {
+   "fuente": "Divisas",
+   "titular": "Asian currencies weaker as dollar surges, euro hits 17-month low",
+   "fecha": "2026-10-05 04:46:53"
   },
   {
    "fuente": "Divisas",
@@ -667,59 +672,59 @@
    "fecha": "2026-10-02 03:30:31"
   },
   {
-   "fuente": "Divisas",
-   "titular": "U.S. dollar hits highest since April 2025 while euro slides after French budget",
-   "fecha": "2026-10-01 21:08:36"
+   "fuente": "Materias",
+   "titular": "Yemeni government launches offensive to seize all areas from Iran-backed Houthis",
+   "fecha": "2026-10-05 04:30:41"
   },
   {
    "fuente": "Materias",
-   "titular": "Bosnia votes Sunday in election that could affect EU bid",
-   "fecha": "2026-10-04 05:06:29"
+   "titular": "Oil prices fall as Middle East exports recover, G7 taps emergency stocks",
+   "fecha": "2026-10-05 02:03:06"
   },
   {
    "fuente": "Materias",
-   "titular": "Yemen’s Houthis say they attacked Aramco facility in Riyadh with missiles, drones",
-   "fecha": "2026-10-04 01:12:30"
+   "titular": "OPEC+ agrees to keep November oil output targets steady",
+   "fecha": "2026-10-05 02:00:52"
   },
   {
    "fuente": "Materias",
-   "titular": "Iraq’s state tanker firm moves crude through Hormuz strait",
-   "fecha": "2026-10-03 20:38:15"
+   "titular": "Middle East crude oil exports exceed pre-war levels but tanker attacks increase",
+   "fecha": "2026-10-05 01:18:35"
   },
   {
    "fuente": "Materias",
-   "titular": "Flydubai co-pilot attacked pilot with axe in attempted ’terrorist attack’, UAE says",
-   "fecha": "2026-10-03 11:36:26"
+   "titular": "Gold edges higher after weekly slide as weak jobs data ease Fed hike bets",
+   "fecha": "2026-10-05 01:16:10"
   },
   {
    "fuente": "Materias",
-   "titular": "Beyond the gas pump: How much oil do we really consume?",
-   "fecha": "2026-10-03 10:51:54"
+   "titular": "In crude Ohio rally speech, Trump says he may not help if Democrats win",
+   "fecha": "2026-10-05 00:43:42"
   },
   {
    "fuente": "Materias",
-   "titular": "Trump to speak at Ohio rally as Republicans defend Senate seat in close race",
-   "fecha": "2026-10-03 10:18:25"
+   "titular": "Merz unveils fresh military aid in Kyiv, says Germany won’t be intimidated",
+   "fecha": "2026-10-05 00:38:40"
   },
   {
    "fuente": "Materias",
-   "titular": "Trump says he did not ’jump the gun’ on South Korea Alaska LNG investment announcement",
-   "fecha": "2026-10-02 21:06:47"
-  },
-  {
-   "fuente": "Materias",
-   "titular": "Oil set for weekly loss on supply recovery, G7’s release of emergency stocks",
-   "fecha": "2026-10-02 20:56:20"
+   "titular": "Oil climbs after Yemeni Houthis attack Saudi Aramco sites",
+   "fecha": "2026-10-04 22:18:32"
   },
   {
    "fuente": "Cripto",
-   "titular": "Bitcoin holds near $85,000 as SEC clears first 3x leveraged crypto ETPs",
-   "fecha": "2026-10-04 05:38:13"
+   "titular": "Cardano Climbs 10% In Rally",
+   "fecha": "2026-10-05 02:16:01"
   },
   {
    "fuente": "Cripto",
-   "titular": "Bitcoin stuck at $84,947 in tightening range: Live levels",
-   "fecha": "2026-10-03 19:02:33"
+   "titular": "Bitcoin coils at $85,337 in bull trap or breakout setup: Live",
+   "fecha": "2026-10-04 19:01:54"
+  },
+  {
+   "fuente": "Cripto",
+   "titular": "Bitcoin edges above $85,000 as traders weigh U.S. leveraged-crypto move",
+   "fecha": "2026-10-04 17:30:51"
   },
   {
    "fuente": "Cripto",
@@ -747,9 +752,9 @@
    "fecha": "2026-10-02 14:28:26"
   },
   {
-   "fuente": "Cripto",
-   "titular": "Travala’s Crypto Loyalty Program Passes 170,000 Members, Sets Long-Term Goal of 30% of AVA Supply Locked",
-   "fecha": "2026-10-02 12:30:36"
+   "fuente": "CNBC mercados",
+   "titular": "Sports betting is increasingly the norm for Gen Z.  Here’s why some financial and mental health experts are worried",
+   "fecha": "Sun, 04 Oct 2026 12:57:45 GMT"
   },
   {
    "fuente": "CNBC mercados",
@@ -787,9 +792,9 @@
    "fecha": "Fri, 02 Oct 2026 06:03:23 GMT"
   },
   {
-   "fuente": "CNBC mercados",
-   "titular": "Stocks making the biggest moves midday: Accenture, Synopsys, United Therapeutics, Vicor and more",
-   "fecha": "Thu, 01 Oct 2026 18:50:03 GMT"
+   "fuente": "CNBC economia",
+   "titular": "The 2029 tipping point: Western populations are about to start shrinking, piling pressure on public finances",
+   "fecha": "Mon, 05 Oct 2026 05:00:01 GMT"
   },
   {
    "fuente": "CNBC economia",
@@ -825,11 +830,6 @@
    "fuente": "CNBC economia",
    "titular": "Consumer optimism slides to lowest since 2014 as fears escalate over rising prices and jobs",
    "fecha": "Tue, 29 Sep 2026 16:52:00 GMT"
-  },
-  {
-   "fuente": "CNBC economia",
-   "titular": "America's Canadian import restrictions come into force. Here are the products barred from entry",
-   "fecha": "Tue, 29 Sep 2026 15:57:43 GMT"
   },
   {
    "fuente": "Yahoo Finance",
@@ -1299,6 +1299,42 @@
      "ano_pasado": 8.14,
      "cap": 75429069000.0,
      "nota": "consenso 6.80 $ · hace un año 8.14 $"
+    },
+    {
+     "fecha": "2026-10-19",
+     "ticker": "FITB",
+     "empresa": "Fifth Third Bancorp",
+     "cuando": "antes de abrir",
+     "consenso": 1.09,
+     "real": null,
+     "sorpresa": null,
+     "ano_pasado": 0.93,
+     "cap": 45716455000.0,
+     "nota": "consenso 1.09 $ · hace un año 0.93 $"
+    },
+    {
+     "fecha": "2026-10-19",
+     "ticker": "STLD",
+     "empresa": "Steel Dynamics",
+     "cuando": "sin hora confirmada",
+     "consenso": 5.41,
+     "real": null,
+     "sorpresa": null,
+     "ano_pasado": 2.74,
+     "cap": 32416514000.0,
+     "nota": "consenso 5.41 $ · hace un año 2.74 $"
+    },
+    {
+     "fecha": "2026-10-19",
+     "ticker": "WRB",
+     "empresa": "W.R. Berkley",
+     "cuando": "tras el cierre",
+     "consenso": 1.13,
+     "real": null,
+     "sorpresa": null,
+     "ano_pasado": 1.1,
+     "cap": 25577576400.0,
+     "nota": "consenso 1.13 $ · hace un año 1.10 $"
     }
    ],
    "ya": [
@@ -1429,24 +1465,31 @@
    "caducada": false,
    "fuente": "Nasdaq"
   },
-  "semana": [],
+  "semana": [
+   {
+    "fecha": "2026-10-12",
+    "nivel": "amarillo",
+    "que": "V6: mirar si hay 30 días de workflow verde",
+    "dias": 7
+   }
+  ],
   "niveles": {
    "BTC/USD": {
-    "precio": 84916.0,
-    "ema50": 78836.6,
-    "ema200": 74009.94,
-    "dist_ema50": 7.71,
-    "dist_ema200": 14.74,
+    "precio": 85875.51,
+    "ema50": 79173.24,
+    "ema200": 74219.81,
+    "dist_ema50": 8.47,
+    "dist_ema200": 15.7,
     "max52": 90600.0,
     "min52": 57800.19,
-    "atr": 2206.67,
+    "atr": 1986.47,
     "resistencias": [
      {
       "precio": 90600.0,
-      "desde": 90269.0,
-      "hasta": 90931.0,
+      "desde": 90302.03,
+      "hasta": 90897.97,
       "toques": 1,
-      "dist_pct": 6.69,
+      "dist_pct": 5.5,
       "tipo": "techo",
       "extremo": "máximo 52 sem"
      }
@@ -1457,18 +1500,18 @@
       "desde": 81478.87,
       "hasta": 82850.0,
       "toques": 4,
-      "dist_pct": -3.08,
+      "dist_pct": -4.17,
       "tipo": "los dos",
-      "hace_velas": 6
+      "hace_velas": 7
      },
      {
       "precio": 76132.0,
-      "desde": 75801.0,
-      "hasta": 76463.0,
+      "desde": 75834.03,
+      "hasta": 76429.97,
       "toques": 2,
-      "dist_pct": -10.34,
+      "dist_pct": -11.35,
       "tipo": "los dos",
-      "hace_velas": 32
+      "hace_velas": 33
      }
     ],
     "en_zona": [],
@@ -1478,36 +1521,36 @@
       "desde": 81478.87,
       "hasta": 82850.0,
       "toques": 4,
-      "dist_pct": -3.08,
+      "dist_pct": -4.17,
       "tipo": "los dos",
-      "hace_velas": 6
+      "hace_velas": 7
+     },
+     {
+      "precio": 65109.12,
+      "desde": 64700.0,
+      "hasta": 65618.49,
+      "toques": 4,
+      "dist_pct": -24.18,
+      "tipo": "los dos",
+      "hace_velas": 91
      },
      {
       "precio": 74651.83,
       "desde": 74050.0,
       "hasta": 74967.97,
       "toques": 3,
-      "dist_pct": -12.09,
+      "dist_pct": -13.07,
       "tipo": "los dos",
-      "hace_velas": 19
+      "hace_velas": 20
      },
      {
-      "precio": 65245.5,
-      "desde": 64978.24,
-      "hasta": 65640.25,
+      "precio": 62440.17,
+      "desde": 62107.15,
+      "hasta": 62703.09,
       "toques": 3,
-      "dist_pct": -23.16,
+      "dist_pct": -27.29,
       "tipo": "suelo",
-      "hace_velas": 189
-     },
-     {
-      "precio": 76132.0,
-      "desde": 75801.0,
-      "hasta": 76463.0,
-      "toques": 2,
-      "dist_pct": -10.34,
-      "tipo": "los dos",
-      "hace_velas": 32
+      "hace_velas": 52
      }
     ]
    },
@@ -1786,10 +1829,10 @@
     },
     "titulares": [
      "Accenture (ACN) Crashed 18% After Earnings — Is a Forward P/E Below 10 a Buying Opportunity? - TradingKey",
-     "Company News for Oct 2, 2026 - Yahoo Finance",
-     "Accenture Q4 Earnings Call Sees AI Demand Broaden Into FY27 - TradingView",
-     "Accenture: It Has Stopped Raining, But AI Still Threatens Pricing (NYSE:ACN) - Seeking Alpha",
-     "Accenture options flow after post-earnings pullback - Investing.com"
+     "Accenture Plc (ACN) Stock Analysis 2026 – Graphs, Risks, Opportunities & Valuation ✅ Qatar Airways (C8YVKlcciC) - Unisba Media",
+     "Accenture stock falls 6 percent after earnings rally - AD HOC NEWS",
+     "Accenture vs. Microsoft: Which Technology Stock Is a Better Buy in 2026? - The Motley Fool",
+     "Earnings Scoreboard: all 8 S&P 500 firms beat EPS estimates, 6 saw profits rise Y/Y - Seeking Alpha"
     ]
    },
    {
@@ -1885,11 +1928,11 @@
      ]
     },
     "titulares": [
-     "NIKE (NKE) Cuts 2027 Revenue Outlook As Fair Value Stays Just Above The Stock - Yahoo Finance",
-     "Nike shares tumble after weak revenue outlook and layoff plans underway - CNBC",
-     "NKE Stock Ticks Higher Overnight: Retail Stays Bullish On Nike Ahead of Q1 Earnings – 'Time To Reinvest' - Stocktwits",
-     "Nike falls 9% as revenue miss, weak guidance signal more pain ahead - Investing.com",
-     "Earnings Scoreboard: all 8 S&P 500 firms beat EPS estimates, 6 saw profits rise Y/Y - Seeking Alpha"
+     "Nike's Earnings Are a Disaster. Run -- Don't Walk -- Away From This Stock. - The Motley Fool",
+     "Why Did NKE, NIO, APP Stocks Tumble To 52-Week Lows Last Week? - Yahoo Finance",
+     "Could Nike’s Brutal Sell-Off Finally Be Running Out of Steam? - MarketBeat",
+     "NKE Stock Falls After-Hours — 12% China Sales Decline Overshadows Q4 Earnings Beat - Stocktwits",
+     "Is Buying Nike Stock Now a Brilliant Move or a Disaster Waiting to Happen? Here's the Answer and What to Do Next. - The Motley Fool"
     ]
    },
    {
@@ -2004,11 +2047,11 @@
      ]
     },
     "titulares": [
+     "Carnival and CarMax Pop on Strong Earnings, but Challenges Remain - Yahoo Finance",
      "Carnival Corp. stock gained 2.75 percent after record Q3 results - AD HOC NEWS",
-     "Carnival raises 2026 outlook while Carnival Corporation stock gains 1.03 percent - AD HOC NEWS",
-     "Carnival (CCL) Stock Still Looks Below Fair Value On Cruise AI App Launch - Yahoo Finance",
-     "Earnings Beat Could Be A Fresh Catalyst For Carnival Stock (CCL) - Simply Wall Street",
-     "Carnival and CarMax Pop on Strong Earnings, but Challenges Remain - MarketBeat"
+     "Carnival (CCL) Posted Strong Quarterly Results, Is The Stock Still A Bargain? - Simply Wall Street",
+     "Carnival Corp Generates Strong Free Cash Flow - What's the Best CCL Play - Barchart.com",
+     "Stocktwits Retail Therapy: Consumer Stocks Face Heat But Carnival, Mattel And Stitch Fix Buck The Trend - TradingView"
     ]
    }
   ],
@@ -2036,29 +2079,29 @@
     },
     "fuente": "CNN",
     "dos_semanas": {
-     "valor": 30,
+     "valor": 34,
      "etiqueta": "Miedo"
     }
    },
    "cripto": {
     "ahora": {
-     "valor": 65,
-     "etiqueta": "Codicia"
-    },
-    "ayer": {
-     "valor": 67,
-     "etiqueta": "Codicia"
-    },
-    "semana": {
      "valor": 70,
      "etiqueta": "Codicia"
     },
+    "ayer": {
+     "valor": 65,
+     "etiqueta": "Codicia"
+    },
+    "semana": {
+     "valor": 74,
+     "etiqueta": "Codicia"
+    },
     "dos_semanas": {
-     "valor": 71,
+     "valor": 70,
      "etiqueta": "Codicia"
     },
     "mes": {
-     "valor": 74,
+     "valor": 73,
      "etiqueta": "Codicia"
     },
     "fuente": "alternative.me"
@@ -2156,10 +2199,10 @@
     }
    ],
    "btc": {
-    "ahora": 1.31,
-    "ayer": 1.26,
-    "semana": 1.21,
-    "fecha": "2026-10-03",
+    "ahora": 1.03,
+    "ayer": 1.27,
+    "semana": 1.35,
+    "fecha": "2026-10-04",
     "fuente": "OKX"
    }
   },
@@ -2277,11 +2320,11 @@
      "estimada": false
     },
     "titulares": [
+     "Costa Coffee Profit Return Puts Coca Cola Stock And Coffee Shares In Focus - Simply Wall Street",
      "History Says Coca-Cola Stock Holds Up When the S&P 500 Falls - The Motley Fool",
-     "KO Stock Rises Overnight After Earnings Beat, But Analyst Sees Limited Upside – Says PepsiCo Offers Better Value - Stocktwits",
+     "KO Stock In Focus: Middle East Risk, Consumer Weakness, CEO Stock Sale Amplify Uncertainty - Stocktwits",
      "With Buffett Recently Stepping Back as Chairman, Here's a Look Back at the $1.3 Billion Bet That’s Now Worth $34.7 Billion - The Globe and Mail",
-     "Coca-Cola Looks Like A Safety Trade When Treasuries Yield 5%, Yet I Need 3% Before I Add - Seeking Alpha",
-     "CocaCola Company (The) $KO Stock Bought by CX Institutional - MarketBeat"
+     "Coca-Cola Looks Like A Safety Trade When Treasuries Yield 5%, Yet I Need 3% Before I Add - Seeking Alpha"
     ]
    },
    {
@@ -2388,11 +2431,11 @@
      "estimada": true
     },
     "titulares": [
-     "NVIDIA Corporation (NVDA.NE) Stock Price, News, Quote & History - Yahoo! Finance Canada",
-     "NVIDIA (NVDA) at $205: Why Jensen Huang’s $1 Trillion Blackwell-Rubin Vision Matters More Than the Pullback - TradingKey",
-     "Nvidia Stock Has Become Deeply Undervalued, But Watch Out For Accounts Receivable (NVDA) - Seeking Alpha",
-     "NVDA Stock Looks 'Remarkably Cheap', Says Wall Street After Beat-And-Raise Q1 — Analyst Sees Nvidia Market Cap Soaring Past $10 Trillion - Stocktwits",
-     "NVIDIA (NASDAQ:NVDA) Screens as a Decent Value Stock - ChartMill"
+     "Top Three US Stocks to Watch This Week: PepsiCo, Delta Air Lines, Nvidia - benzinga.com",
+     "NVDY: NVIDIA Shares Break To Record Highs, Don't Cede The Upside Now (NYSEARCA:NVDY) - Seeking Alpha",
+     "Nvidia Just Gave Lumentum Stock a New AI Catalyst - Barchart.com",
+     "AMD Reaches a $1 Trillion Market Cap. Can It Finally Dethrone Nvidia? - The Motley Fool",
+     "NVDA Stock Eyes Third Weekly Gains: Why Japan Wants Nvidia’s Rubin Chips To Power Its Next Robotics Boom - Stocktwits"
     ]
    },
    {
@@ -2491,7 +2534,7 @@
     "titulares": [
      "Dear Apple Stock Fans, Mark Your Calendars for October 13 - Barchart.com",
      "AAPL Stock Heads For Worst Single-Day Fall In Over A Year — Wall Street Warns Apple’s AI Supply Chain Headwinds Are Far From Over - Stocktwits",
-     "Apple (AAPL) Exceeds Market Returns: Some Facts to Consider - Yahoo Finance",
+     "Apple Inc. $AAPL Stock Acquired by Natural Investments LLC - MarketBeat",
      "Apple Stock Forecast: Can Apple Intelligence Spark the Next iPhone Supercycle? - TradingKey",
      "Apple to replace iPhone 18 Pro Max facing AT&T glitch (AAPL) - Seeking Alpha"
     ]
@@ -2609,11 +2652,11 @@
      "estimada": true
     },
     "titulares": [
-     "Microsoft Stock And Secure Cloud Names In The US National Security Trade - Simply Wall Street",
-     "GoalVest Advisory LLC boosts Microsoft stake by 76,981 shares - The Globe and Mail",
-     "Is a Microsoft Stock Split Coming After 23 Years? - The Motley Fool",
+     "Is a Microsoft Stock Split Coming After 23 Years? - Yahoo Finance",
      "Why Is Microsoft Stock Surging Today? Azure Growth Hits 43% as MSFT Targets $560 Next - TradingKey",
-     "Microsoft Copilot Is Turning Into An ‘AI Operating System’ — Here’s What It Means For MSFT Stock, According To Oppenheimer’s Brian Schwartz - Stocktwits"
+     "MSFT Stock Posts Best Quarter Since 1998 As Azure Growth Revives AI Optimism - Stocktwits",
+     "Microsoft Stock And Secure Cloud Names In The US National Security Trade - Simply Wall Street",
+     "GoalVest Advisory LLC boosts Microsoft stake by 76,981 shares - The Globe and Mail"
     ]
    },
    {
@@ -2719,11 +2762,11 @@
      "estimada": true
     },
     "titulares": [
-     "GOOGL Stock: Should You Buy the Best-Performing Magnificent Seven Stock Right Now? - TradingKey",
-     "Alphabet Inc - GOOGL 6 1/4 05/15/29 (NASDAQ:GOOGM): A Quality Investing Standout - ChartMill",
      "Alphabet (GOOGL) Stock Price Forecast 2026: Cloud Hit $20B But FCF Collapsed — Buy or Short? - TradingKey",
-     "Google Stock Isn’t Exactly Beating Markets, But YouTube’s FIFA World Cup Engagement Shows Why It’s Still A Powerhouse - Stocktwits",
-     "Alphabet: Delivering And Getting Cheaper (NASDAQ:GOOG) - Seeking Alpha"
+     "Alphabet Reported Negative Free Cash Flow for the First Time Ever. Here's Why That Milestone Matters for Shareholders. - The Motley Fool",
+     "Alphabet Appears To Be The Easiest AI Trade Of The Year Before Its Q3 Print (NASDAQ:GOOG) - Seeking Alpha",
+     "symbol__ Stock Quote Price and Forecast - edition.cnn.com",
+     "Google Stock Slides Toward Third Red Day As Capex Surge Drowns Out Cloud Growth Story: Retail’s Buying The Dip - Stocktwits"
     ]
    },
    {
@@ -2829,11 +2872,11 @@
      "estimada": true
     },
     "titulares": [
-     "AMZN Stock Drops Nearly 2% After-Hours — Senate Panel Reportedly Probes Amazon Over Alleged Chinese Influence - Stocktwits",
+     "AMZN Stock Rises After Q2, AWS Beat: CEO Says Even Higher CapEx Won’t Be Enough To Meet Soaring Cloud Demand - Stocktwits",
+     "Amazon Stock Is Underperforming Amid Agentic AI Fears. How to Play AMZN Here. - Yahoo Finance",
      "Amazon Reportedly Targeting Up To $42 Billion In Bond Sale - Investor's Business Daily",
-     "Should You Buy Amazon Stock (AMZN) in October? - Yahoo Finance",
-     "Amazon.com (NASDAQ:AMZN) Stock Price Up 1.3% - Here's What Happened - MarketBeat",
-     "The Dates That Matter Most For Amazon Stock - Trefis"
+     "Amazon AWS CEO reveals surprising risk to AI stocks and U.S. economy - thestreet.com",
+     "Amazon's AMZN MGM Studios' “Verity” Launches Strongly Amid Mixed Box Office Weekend - GuruFocus"
     ]
    },
    {
@@ -2939,11 +2982,11 @@
      "estimada": true
     },
     "titulares": [
+     "META Stock Tumbles 11% After-Hours — Soaring AI Costs Squeeze Profits And Soft Q3 Outlook Disappoints - Stocktwits",
+     "Meta Stock Slides as Muse Faces OpenAI Threat - Barron's",
+     "Should I load up on Meta stock in my ISA like there’s no tomorrow? - Yahoo Finance UK",
      "Meta Platforms Stock Rose 25% in September. Is It Still a Buy in October? - The Motley Fool",
-     "META Stock Is Set For Its Best Month In Over 13 Years — It’s Inches Away From $2 Trillion Market Cap - Stocktwits",
-     "META Stock Rides Muse AI To Best Quarter In Over 2 Years — But Analyst Warns Monetization Could Be 'Notoriously Slow' - Yahoo Finance",
-     "How Far Can Meta Stock Jump In The Year Ahead? - Trefis",
-     "Micron, Nike, Meta and More: 5 Stocks Investors Couldn't Stop Buzzing About This Week - benzinga.com"
+     "Meta Q2 Strong But FCF Collapses 91%: Youth-Safety Trial Begins Today as Iris Chip Ramps September - TradingKey"
     ]
    },
    {
@@ -3059,11 +3102,11 @@
      "estimada": true
     },
     "titulares": [
+     "TSLA Stock Jumps Nearly 4% — Tesla Integrates Starlink Into Cybercabs But Not For Safety Purposes - Stocktwits",
      "In 2013, A Los Angeles Engineer Spent $19,000 On His First Tesla Shares. He Survived A 2018 Margin Call And A 76% Crash In 2023. Here's What Investors Can Learn From The Wild Story Of Jason DeBolt's $19,000 Purchase Turning Into $2.8 Million. - 24/7 Wall St.",
-     "Why Tesla (TSLA) Stock Is Trading Up Today - Yahoo Finance",
-     "TSLA Stock Jumps 3% Ahead Of Q2 Report — Analysts Split On Earnings Beat Expectations And Tesla’s Overpromise Problem - Stocktwits",
-     "Tesla stock jumps 5% on better-than-expected vehicle deliveries report - CNBC",
-     "Tesla Q3 Deliveries Top Expectations; The Stock Is Rising - Investor's Business Daily"
+     "SA Asks: What was the biggest takeaway from Tesla's Q3 deliveries report? (TSLA:NASDAQ) - Seeking Alpha",
+     "Tesla Stock Forecast: How Much Will TSLA Stock Be Worth in 2030? Can It Hit $3,000? - TradingKey",
+     "TSLA Stock Sinks As SpaceX IPO Nears — Analyst Says Investors Are Selling Tesla To Catch A Day-1 Pop In Next Musk Trade - Stocktwits"
     ]
    },
    {
@@ -3169,11 +3212,11 @@
      "estimada": true
     },
     "titulares": [
-     "Intel (INTC) Data Center Comeback: Real Recovery or Just a Supply Squeeze? - Yahoo Finance",
-     "INTC Stock Still A Buy After 230% Rally This Year? Jim Cramer Sees More Upside Ahead For Intel - Stocktwits",
-     "Intel Stock Forecast: $20 Billion Offering, AI Growth and Foundry Risks - TradingKey",
+     "Should You Buy Intel Stock as Its Foundry Turnaround Takes Shape? - Yahoo Finance",
+     "Why Is INTC Stock Jumping In Premarket Trading Today? - Stocktwits",
+     "Intel vs. TSM: Which Semiconductor Stock Looks Like the Better Investment? - TradingKey",
      "Where Will Intel Stock Be in 5 Years: Comeback Story or Cautionary Tale? - The Motley Fool",
-     "Intel (INTC) Stock Could Be 50% Overvalued Following Fresh AI Demand News - Simply Wall Street"
+     "Intel (INTC) Data Center Comeback: Real Recovery or Just a Supply Squeeze? - Yahoo Finance"
     ]
    }
   ]
