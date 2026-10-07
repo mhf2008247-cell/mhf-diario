@@ -3848,6 +3848,75 @@
     },
     "titulares": []
    }
-  ]
+  ],
+  "operaciones": {
+   "titulo": "Operación Soros · crisis francesa",
+   "tesis": "Crisis fiscal de Francia con riesgo de contagio a Italia, España y los bancos europeos. El euro pierde tanto si la crisis empeora como si el BCE acaba comprando deuda.",
+   "gestion": "En T1: stop a la entrada y cerrar 1/3. En T2: stop a T1 y cerrar otro 1/3. Stops a 2× ATR.",
+   "vigilar": [
+    "Diferencial Francia-Alemania (OAT-Bund): por encima de 140 pb confirma; por debajo de 100 pb debilita.",
+    "Primas de Italia y España: si se abren, el contagio está en marcha.",
+    "BCE: cualquier anuncio de compras de deuda (TPI) = cerrar GLE.",
+    "Rebajas de rating a Francia y voto del presupuesto francés en noviembre."
+   ],
+   "operaciones": [
+    {
+     "nombre": "EUR/USD",
+     "dsc": "Corto · principal",
+     "yahoo": "EURUSD=X",
+     "lado": "corto",
+     "decimales": 4,
+     "entrada": 1.14,
+     "stop": 1.1525,
+     "targets": [
+      1.116,
+      1.109,
+      1.07
+     ],
+     "extra": "Exploración: 1/3 a mercado (~1,1198) con stop 1,1322, solo a T3. Segundo tercio si rompe 1,1160, con stop 1,1290.",
+     "estado": "abierta",
+     "precio": 1.1198208332061768,
+     "cambio_pct": -0.16797838449982283,
+     "fecha": "2026-10-07",
+     "dist": {
+      "entrada": 1.801999587384695,
+      "stop": 2.9182495828604216,
+      "T1": -0.34120040392865425,
+      "T2": -0.9663004013950593,
+      "T3": -4.449000387279267
+     },
+     "tono": "plano",
+     "situacion": "Esperando rebote a la entrada"
+    },
+    {
+     "nombre": "GLE",
+     "dsc": "Société Générale · corto · táctico",
+     "yahoo": "GLE.PA",
+     "lado": "corto",
+     "decimales": 2,
+     "entrada": 70.0,
+     "stop": 74.7,
+     "targets": [
+      63.1,
+      60.0,
+      56.0
+     ],
+     "extra": "Si el BCE anuncia compras de deuda (TPI o QE): se cierra ese mismo día.",
+     "estado": "abierta",
+     "precio": 63.939998626708984,
+     "cambio_pct": -5.006684079807256,
+     "fecha": "2026-10-07",
+     "dist": {
+      "entrada": 9.477637634417512,
+      "stop": 16.828279018442704,
+      "T1": -1.313729503832206,
+      "T2": -6.162024884784989,
+      "T3": -12.417889892465983
+     },
+     "tono": "plano",
+     "situacion": "Esperando rebote a la entrada"
+    }
+   ]
+  }
  }
 }

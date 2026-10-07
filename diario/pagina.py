@@ -123,6 +123,11 @@ td:first-child{text-align:left}
 .ext i{position:absolute;top:-3px;width:3px;height:11px;border-radius:2px;background:var(--tinta);transform:translateX(-50%)}
 .nota{font-size:12px;color:var(--tinta3);margin-top:10px;line-height:1.5}
 .miedo{color:var(--baja)}.neutral{color:var(--ambar)}.codicia{color:var(--sube)}
+.ops{border-color:rgba(200,16,46,.55)}
+.op{border-top:1px solid var(--linea);padding:12px 0 6px}.op:first-of-type{border-top:0}
+.op .top{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}.op .px{margin-left:auto;font-weight:650;font-variant-numeric:tabular-nums}
+.sit{font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;margin-top:4px}
+.sit.ambar{color:var(--ambar)}
 footer{margin-top:26px;padding-top:15px;border-top:1px solid var(--linea);
  color:var(--tinta3);font-size:11.5px;line-height:1.7}
 @media(max-width:480px){.env{padding:0 11px 52px}.tarjeta{padding:13px 13px}
@@ -323,6 +328,48 @@ def tarjeta_sentimiento(se):
     P.append("</table>")
     P.append('<div class="nota">0 = miedo extremo, 100 = codicia extrema. Mide el ánimo de la gente, '
              'no dice hacia dónde va el precio. Los extremos suelen ir en contra de la masa.</div></div>')
+    return "".join(P)
+
+
+def tarjeta_operaciones(op):
+    """7-oct-2026, pedido por él: las operaciones abiertas van LO PRIMERO del diario."""
+    P = ['<div class="tarjeta ops"><div class="cab"><span class="num">★</span>'
+         '<h2>%s</h2></div>' % html.escape(op.get("titulo", "Operaciones abiertas"))]
+    if op.get("tesis"):
+        P.append('<div class="resumen">%s</div>' % html.escape(op["tesis"]))
+    for o in op.get("operaciones", []):
+        dec = o.get("decimales", 2)
+        f = lambda x: ("{:.%df}" % dec).format(x).replace(".", ",")
+        dist = o.get("dist") or {}
+        dd = lambda k: (' <span class="e">%+.1f %%</span>' % dist[k]).replace(".", ",") if k in dist else ""
+        P.append('<div class="op"><div class="top"><span class="tk">%s</span>'
+                 '<span class="dsc">%s</span>' % (html.escape(o["nombre"]), html.escape(o.get("dsc", ""))))
+        if o.get("precio") is not None:
+            P.append('<span class="px">%s %s</span>' % (f(o["precio"]), cambio(o["cambio_pct"])))
+        P.append("</div>")
+        if o.get("situacion"):
+            P.append('<div class="sit %s">%s</div>' % (o.get("tono", "plano"), html.escape(o["situacion"])))
+        P.append('<div class="niv"><div class="g">'
+                 '<div class="c"><div class="k">Entrada</div><div class="v">%s</div><div class="p">%s</div></div>'
+                 '<div class="c"><div class="k">Stop</div><div class="v baja">%s</div><div class="p">%s</div></div>'
+                 '</div><div class="lst">' % (f(o["entrada"]), dd("entrada"), f(o["stop"]), dd("stop")))
+        e, s_ = o["entrada"], o["stop"]
+        riesgo = abs(s_ - e)
+        for i, t in enumerate(o["targets"]):
+            rb = abs(e - t) / riesgo if riesgo else 0
+            P.append('<div><span>T%d · <b class="sube">%s</b>%s</span><span class="e">R:B %s</span></div>'
+                     % (i + 1, f(t), dd("T%d" % (i + 1)), ("%.1f" % rb).replace(".", ",")))
+        P.append("</div></div>")
+        if o.get("extra"):
+            P.append('<div class="nota">%s</div>' % html.escape(o["extra"]))
+        P.append("</div>")
+    if op.get("gestion"):
+        P.append('<div class="lec"><div class="t">Gestión</div><p>%s</p></div>' % html.escape(op["gestion"]))
+    if op.get("vigilar"):
+        P.append('<div class="lec"><div class="t">Qué vigilar</div>%s</div>'
+                 % "".join("<p>· %s</p>" % html.escape(v) for v in op["vigilar"]))
+    P.append('<div class="nota">Niveles fijados a mano. El % indica a qué distancia está cada nivel '
+             'del precio actual. No es consejo de inversión.</div></div>')
     return "".join(P)
 
 
@@ -614,7 +661,11 @@ def main():
     if titular:
         P.append('<div class="titular">%s</div>' % html.escape(titular))
 
-    # el miedo de los traders, lo primero (pedido por él el 23-sep-2026)
+    # 7-oct-2026, él: las operaciones abiertas, lo PRIMERO de todo
+    if extra.get("operaciones"):
+        P.append(tarjeta_operaciones(extra["operaciones"]))
+
+    # el miedo de los traders (pedido por él el 23-sep-2026)
     if extra.get("sentimiento"):
         P.append(tarjeta_sentimiento(extra["sentimiento"]))
 

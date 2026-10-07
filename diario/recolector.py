@@ -3,7 +3,7 @@
 No escribe analisis: solo datos comprobables. Escribe diario/datos.json."""
 import json, os, time, urllib.request, urllib.parse, urllib.error
 import xml.etree.ElementTree as ET
-import semaforo, earnings, niveles, reales, sentimiento, posiciones, portafolio
+import semaforo, earnings, niveles, reales, sentimiento, posiciones, portafolio, operaciones
 from datetime import datetime, timezone
 
 API   = "https://api.twelvedata.com/quote"
@@ -205,7 +205,7 @@ def main():
         d["extra"] = {"error": "%s: %s" % (type(ex).__name__, ex)}
     # --- miedo y codicia, posicionamiento en futuros y portafolio (cada uno por su lado)
     for clave, mod in (("sentimiento", sentimiento), ("posiciones", posiciones),
-                       ("portafolio", portafolio)):
+                       ("portafolio", portafolio), ("operaciones", operaciones)):
         try:
             v, f_ = mod.estado()
             d["extra"][clave] = v
