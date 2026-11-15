@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-14T07:04:58+00:00",
+ "generado": "2026-11-15T07:05:03+00:00",
  "universo": [
   {
    "simbolo": "SPX",
@@ -268,22 +268,26 @@
    "contrato": "GCZ26.CMX"
   },
   "PLATA": {
-   "precio": 49.03099822998047,
-   "cambio_pct": -1.8830582922260253,
-   "cierre_previo": 49.97200012207031,
+   "precio": 49.12099838256836,
+   "cambio_pct": -1.885549325945679,
+   "cierre_previo": 50.064998626708984,
    "maximo_52": 121.3,
    "minimo_52": 48.125,
    "fecha": "2026-11-13",
-   "fuente": "Yahoo"
+   "fuente": "Yahoo",
+   "nota": "cambio de contrato: calculado en SIZ26.CMX",
+   "contrato": "SIZ26.CMX"
   },
   "COBRE": {
-   "precio": 6.079500198364258,
-   "cambio_pct": -1.66598769270353,
-   "cierre_previo": 6.182499885559082,
+   "precio": 6.0904998779296875,
+   "cambio_pct": -1.7027149703623734,
+   "cierre_previo": 6.196000099182129,
    "maximo_52": 6.83,
    "minimo_52": 4.92,
    "fecha": "2026-11-13",
-   "fuente": "Yahoo"
+   "fuente": "Yahoo",
+   "nota": "cambio de contrato: calculado en HGZ26.CMX",
+   "contrato": "HGZ26.CMX"
   },
   "WTI": {
    "precio": 88.55999755859375,
@@ -466,16 +470,16 @@
    "fecha": "2026-11-13"
   },
   "SHY": {
-   "precio": 81.18,
-   "cambio_pct": 0.049298639,
+   "precio": 81.17,
+   "cambio_pct": 0.036971629,
    "cierre_previo": 81.14,
    "maximo_52": 83.2,
    "minimo_52": 80.95,
    "fecha": "2026-11-13"
   },
   "IEF": {
-   "precio": 90.044998,
-   "cambio_pct": -0.18290757,
+   "precio": 90.040001,
+   "cambio_pct": -0.18844715,
    "cierre_previo": 90.21,
    "maximo_52": 98.050003,
    "minimo_52": 88.64,
@@ -514,118 +518,118 @@
    "fecha": "2026-11-13"
   },
   "EUR/USD": {
-   "precio": 1.10212,
-   "cambio_pct": -0.031746896,
-   "cierre_previo": 1.10247,
+   "precio": 1.10217,
+   "cambio_pct": -0.0027218291,
+   "cierre_previo": 1.1022,
    "maximo_52": 1.20656,
    "minimo_52": 1.10184,
-   "fecha": "2026-11-14"
+   "fecha": "2026-11-15"
   },
   "USD/JPY": {
-   "precio": 159.7071,
-   "cambio_pct": -0.041002022,
-   "cierre_previo": 159.77261,
+   "precio": 159.68824,
+   "cambio_pct": 0.0035633198,
+   "cierre_previo": 159.68255,
    "maximo_52": 164.08805,
    "minimo_52": 152.0463,
-   "fecha": "2026-11-14"
+   "fecha": "2026-11-15"
   },
   "USD/CNY": {
-   "precio": 6.6718,
-   "cambio_pct": -0.0017985827,
-   "cierre_previo": 6.67192,
+   "precio": 6.67182,
+   "cambio_pct": -0.0077933678,
+   "cierre_previo": 6.67234,
    "maximo_52": 7.1176,
    "minimo_52": 6.62334,
-   "fecha": "2026-11-14"
+   "fecha": "2026-11-15"
   },
   "BTC/USD": {
-   "precio": 67440.01,
-   "cambio_pct": -1.27937,
-   "cierre_previo": 68314.0,
-   "maximo_52": 99866.02,
+   "precio": 64320.99,
+   "cambio_pct": 0.26654716,
+   "cierre_previo": 64150.0,
+   "maximo_52": 97924.49,
    "minimo_52": 57800.19,
-   "fecha": "2026-11-14"
+   "fecha": "2026-11-15"
   }
  },
  "titulares": [
   {
    "fuente": "Economia",
-   "titular": "Canada, US make progress on trade deal, Carney says",
-   "fecha": "2026-11-14 06:36:24"
+   "titular": "Iran claims fresh strike on U.S. base as Hormuz shipping crisis deepens",
+   "fecha": "2026-11-15 06:29:31"
   },
   {
    "fuente": "Economia",
-   "titular": "Nvidia fallout throws spotlight on Southeast Asia’s AI boom",
-   "fecha": "2026-11-14 03:42:17"
+   "titular": "Copa Airlines, UPS planes collide while taxiing at Miami airport",
+   "fecha": "2026-11-15 04:23:54"
   },
   {
    "fuente": "Economia",
-   "titular": "How long can fiscal policy stay accommodative amid higher yields?",
-   "fecha": "2026-11-14 01:33:35"
+   "titular": "U.S. diesel prices fall below $6 a gallon to two-month low",
+   "fecha": "2026-11-15 03:02:25"
   },
   {
    "fuente": "Economia",
-   "titular": "Fed’s Jefferson says he is taking his policy cues from inflation",
-   "fecha": "2026-11-14 00:12:41"
+   "titular": "US judge again blocks Trump’s makeover plan for DC golf course",
+   "fecha": "2026-11-15 02:42:22"
   },
   {
    "fuente": "Economia",
-   "titular": "Paraguay widens ueno bank probe with fresh charge against ex-president Peña",
-   "fecha": "2026-11-13 22:54:51"
+   "titular": "UK to expand youth job guarantee program amid rising unemployment",
+   "fecha": "2026-11-15 02:16:30"
   },
   {
    "fuente": "Economia",
-   "titular": "AI rockets to top of worries about financial system in latest Fed survey",
-   "fecha": "2026-11-13 22:30:57"
+   "titular": "Hamas confirms senior commander killed in Israeli airstrike in Gaza",
+   "fecha": "2026-11-15 01:00:19"
   },
   {
    "fuente": "Economia",
-   "titular": "US SEC proposes scaling back rules on executive pay disclosure",
-   "fecha": "2026-11-13 22:00:43"
+   "titular": "Iran reports tanker fire after mine strike as Strait of Hormuz tensions mount",
+   "fecha": "2026-11-14 16:37:48"
   },
   {
    "fuente": "Economia",
-   "titular": "Dollar set for best week in two months, yen weakens toward 160",
-   "fecha": "2026-11-13 21:54:33"
+   "titular": "Fed’s Collins says gradual rate hikes best to manage economic risks",
+   "fecha": "2026-11-14 15:48:19"
   },
   {
    "fuente": "Mercados",
-   "titular": "Why ING says power plays will be a defining theme for the global economy in 2027",
-   "fecha": "2026-11-14 06:15:26"
+   "titular": "Kids’ Choice Awards honor Chris Pratt, BTS",
+   "fecha": "2026-11-15 05:42:21"
   },
   {
    "fuente": "Mercados",
-   "titular": "FAA shutdown exposes aging air traffic systems despite billions in upgrades",
-   "fecha": "2026-11-14 05:13:39"
+   "titular": "FAA router overload in Arkansas triggered nationwide flight grounding - WSJ",
+   "fecha": "2026-11-15 05:08:09"
   },
   {
    "fuente": "Mercados",
-   "titular": "Hours-long halt to US flights leaves travelers frustrated, anxious",
-   "fecha": "2026-11-14 04:48:21"
+   "titular": "ING sets out 10 key questions for China’s economy in 2027",
+   "fecha": "2026-11-15 03:40:50"
   },
   {
    "fuente": "Mercados",
-   "titular": "Trump official seeks $50 billion for air traffic control after outage",
-   "fecha": "2026-11-14 02:48:18"
+   "titular": "US air travel disruptions to persist until late on Sunday, FAA head says",
+   "fecha": "2026-11-15 02:48:20"
   },
   {
    "fuente": "Mercados",
-   "titular": "Elon Musk faces congressional scrutiny over Ukraine Starlink restrictions",
-   "fecha": "2026-11-14 02:39:15"
+   "titular": "Evercore explains why Apple has the right assets to win the personal agents race",
+   "fecha": "2026-11-15 01:38:04"
   },
   {
    "fuente": "Mercados",
-   "titular": "US flight shutdown exposes deepening air traffic network crisis",
-   "fecha": "2026-11-14 02:24:18"
+   "titular": "U.S. flight disruptions persist as FAA probes L3Harris role in nationwide outage",
+   "fecha": "2026-11-14 22:07:51"
   },
   {
    "fuente": "Mercados",
-   "titular": "Democratic US senators order Musk to preserve records on Ukraine Starlink access",
-   "fecha": "2026-11-14 02:18:18"
+   "titular": "Russia stocks lower at close of trade; MOEX Russia Index unchanged",
+   "fecha": "2026-11-14 21:20:03"
   },
   {
    "fuente": "Mercados",
-   "titular": "FAA lifts nationwide ground stop after outage disrupts thousands of flights",
-   "fecha": "2026-11-14 02:17:00"
+   "titular": "Brookfield, CPPIB advance in Uniper sale as Germany plans stake reduction- Reuters",
+   "fecha": "2026-11-14 20:35:42"
   },
   {
    "fuente": "Divisas",
@@ -669,48 +673,78 @@
   },
   {
    "fuente": "Materias",
+   "titular": "Saudi-led coalition intercepts missiles towards Riyadh, drones in Eastern Province",
+   "fecha": "2026-11-15 03:12:19"
+  },
+  {
+   "fuente": "Materias",
+   "titular": "US diesel below $6 a gallon at 2-month low on easing tensions, weaker demand",
+   "fecha": "2026-11-15 01:24:20"
+  },
+  {
+   "fuente": "Materias",
+   "titular": "Iran’s navy says three tankers on fire after hitting mines in Hormuz",
+   "fecha": "2026-11-14 23:00:24"
+  },
+  {
+   "fuente": "Materias",
+   "titular": "As Democrats seek changes to bill on energy permits, divisions emerge",
+   "fecha": "2026-11-14 18:54:23"
+  },
+  {
+   "fuente": "Materias",
+   "titular": "SpaceX’s Starship nears end of 15th test flight and return-landing attempt",
+   "fecha": "2026-11-14 18:06:20"
+  },
+  {
+   "fuente": "Materias",
+   "titular": "As smog hangs over Lahore, Pakistan’s new pollution squad races to douse stubble fires",
+   "fecha": "2026-11-14 14:42:19"
+  },
+  {
+   "fuente": "Materias",
+   "titular": "Goldman Sachs just slashed its 2027 gold forecast. Here are the new numbers",
+   "fecha": "2026-11-14 12:10:32"
+  },
+  {
+   "fuente": "Materias",
    "titular": "Oil prices fall over 2% for the week amid easing fears of fresh U.S.-Iran fighting",
    "fecha": "2026-11-13 22:43:45"
   },
   {
-   "fuente": "Materias",
-   "titular": "Spot gold posts worst week since March amid jump in Fed rate hike expectations",
-   "fecha": "2026-11-13 22:14:06"
-  },
-  {
-   "fuente": "Materias",
-   "titular": "Venezuela to send extra gas output to Colombia by 2028",
-   "fecha": "2026-11-13 21:20:06"
-  },
-  {
-   "fuente": "Materias",
-   "titular": "Tin backwardation widens on LME as exchange stocks fall 60% since June",
-   "fecha": "2026-11-13 20:32:22"
-  },
-  {
-   "fuente": "Materias",
-   "titular": "Oil market positioning risks: surplus, shipping attacks, and spillover into rates and equities",
-   "fecha": "2026-11-13 20:14:58"
-  },
-  {
-   "fuente": "Materias",
-   "titular": "Aluminum pricing overhaul planned by US regulator",
-   "fecha": "2026-11-13 19:33:25"
-  },
-  {
-   "fuente": "Materias",
-   "titular": "Soybean futures hit two-week high on supply concerns",
-   "fecha": "2026-11-13 19:32:59"
-  },
-  {
-   "fuente": "Materias",
-   "titular": "US extends shipping law waiver 90 days, to allow freer movement of oil, commodities",
-   "fecha": "2026-11-13 19:12:29"
+   "fuente": "Cripto",
+   "titular": "Bitcoin slides toward $60,000 as ETF outflows and liquidations intensify",
+   "fecha": "2026-11-15 05:40:35"
   },
   {
    "fuente": "Cripto",
-   "titular": "Bitcoin slides below $68,000 as Anthropic IPO frenzy drains market liquidity",
-   "fecha": "2026-11-14 05:49:56"
+   "titular": "Ethereum Falls 10% In Rout",
+   "fecha": "2026-11-15 01:04:01"
+  },
+  {
+   "fuente": "Cripto",
+   "titular": "Bitcoin falls below $64,000 as ETF outflows extend to seventh straight day",
+   "fecha": "2026-11-14 22:19:32"
+  },
+  {
+   "fuente": "Cripto",
+   "titular": "XRP Falls 10% In Rout",
+   "fecha": "2026-11-14 21:34:02"
+  },
+  {
+   "fuente": "Cripto",
+   "titular": "Litecoin Falls 11% In Rout",
+   "fecha": "2026-11-14 20:55:58"
+  },
+  {
+   "fuente": "Cripto",
+   "titular": "EOS Falls 13% In Rout",
+   "fecha": "2026-11-14 20:52:59"
+  },
+  {
+   "fuente": "Cripto",
+   "titular": "Cardano Falls 10% In Selloff",
+   "fecha": "2026-11-14 18:19:55"
   },
   {
    "fuente": "Cripto",
@@ -718,34 +752,14 @@
    "fecha": "2026-11-13 23:10:07"
   },
   {
-   "fuente": "Cripto",
-   "titular": "WSOT 2026 Main Competition Starts Today,With Up to 3.2 Million USDT for Squads",
-   "fecha": "2026-11-13 20:01:35"
+   "fuente": "CNBC mercados",
+   "titular": "How Nvidia turmoil and a Democratic Congress could reshape the AI trade, according to ETF experts",
+   "fecha": "Sat, 14 Nov 2026 15:50:43 GMT"
   },
   {
-   "fuente": "Cripto",
-   "titular": "EOS Falls 15% In Selloff",
-   "fecha": "2026-11-13 13:01:04"
-  },
-  {
-   "fuente": "Cripto",
-   "titular": "BTSE Enterprise Solutions Wins Best White-Label Digital Asset Exchange Platform at Digital Banker Awards 2026",
-   "fecha": "2026-11-13 01:30:14"
-  },
-  {
-   "fuente": "Cripto",
-   "titular": "Bitcoin hits over 12-week low; Strategy sinks on MSCI index removal",
-   "fecha": "2026-11-12 22:36:36"
-  },
-  {
-   "fuente": "Cripto",
-   "titular": "Binance restores all $6.3 billion stolen in October hack",
-   "fecha": "2026-11-12 18:04:25"
-  },
-  {
-   "fuente": "Cripto",
-   "titular": "AVA Foundation and Travala Unveil AVA 3.0: A Travala-First Roadmap",
-   "fecha": "2026-11-12 12:30:19"
+   "fuente": "CNBC mercados",
+   "titular": "Eric Trump-backed robot soldier startup can't pay staff after founder borrowed $4.6 million from company to buy home",
+   "fecha": "Sat, 14 Nov 2026 12:00:01 GMT"
   },
   {
    "fuente": "CNBC mercados",
@@ -776,16 +790,6 @@
    "fuente": "CNBC mercados",
    "titular": "China's Ministry of State Security thrust into the spotlight by Nvidia CEO affair",
    "fecha": "Thu, 12 Nov 2026 07:28:48 GMT"
-  },
-  {
-   "fuente": "CNBC mercados",
-   "titular": "Prediction markets tied to clinical trials and drug approvals draw lawmakers' ire",
-   "fecha": "Wed, 11 Nov 2026 19:16:23 GMT"
-  },
-  {
-   "fuente": "CNBC mercados",
-   "titular": "Fed's Goolsbee calls inflation report 'borderline disturbing' as central bank weighs more hikes",
-   "fecha": "Wed, 11 Nov 2026 16:49:02 GMT"
   },
   {
    "fuente": "CNBC economia",
@@ -889,108 +893,98 @@
      "resumen": "batio el consenso por 17,3 % (1,63 $ frente a 1,39 $) y aun asi cayo"
     }
    ],
-   "dias_sin_revisar": 58,
+   "dias_sin_revisar": 59,
    "caducada": true,
    "fuente": "copia de seguridad"
   },
   "semana": [],
   "niveles": {
    "BTC/USD": {
-    "precio": 67440.01,
-    "ema50": 77786.23,
-    "ema200": 74654.85,
-    "dist_ema50": -13.3,
-    "dist_ema200": -9.66,
+    "precio": 64320.99,
+    "ema50": 77134.24,
+    "ema200": 74507.92,
+    "dist_ema50": -16.61,
+    "dist_ema200": -13.67,
     "max52": 87395.67,
     "min52": 57800.19,
-    "atr": 2573.27,
+    "atr": 2989.04,
     "resistencias": [
      {
-      "precio": 71504.54,
-      "desde": 70983.0,
-      "hasta": 72026.09,
+      "precio": 65309.25,
+      "desde": 64860.89,
+      "hasta": 65757.6,
       "toques": 2,
-      "dist_pct": 6.03,
-      "tipo": "techo",
-      "hace_velas": 234
+      "dist_pct": 1.54,
+      "tipo": "suelo",
+      "hace_velas": 231
      },
      {
-      "precio": 74651.83,
-      "desde": 74050.0,
-      "hasta": 74967.97,
-      "toques": 3,
-      "dist_pct": 10.69,
-      "tipo": "los dos",
-      "hace_velas": 60
+      "precio": 67124.15,
+      "desde": 66675.79,
+      "hasta": 67572.51,
+      "toques": 2,
+      "dist_pct": 4.36,
+      "tipo": "techo",
+      "hace_velas": 117
      }
     ],
     "soportes": [
      {
-      "precio": 65309.25,
-      "desde": 64923.25,
-      "hasta": 65695.24,
-      "toques": 2,
-      "dist_pct": -3.16,
-      "tipo": "suelo",
-      "hace_velas": 230
-     },
-     {
       "precio": 62392.64,
-      "desde": 62006.65,
-      "hasta": 62778.63,
+      "desde": 61944.28,
+      "hasta": 62841.0,
       "toques": 2,
-      "dist_pct": -7.48,
+      "dist_pct": -3.0,
       "tipo": "suelo",
-      "hace_velas": 105
-     }
-    ],
-    "en_zona": [
-     {
-      "precio": 67124.15,
-      "desde": 66738.16,
-      "hasta": 67510.14,
-      "toques": 2,
-      "dist_pct": -0.47,
-      "tipo": "techo",
-      "hace_velas": 116
-     }
-    ],
-    "mas_tocados": [
-     {
-      "precio": 82077.58,
-      "desde": 81196.01,
-      "hasta": 82850.0,
-      "toques": 5,
-      "dist_pct": 21.7,
-      "tipo": "los dos",
-      "hace_velas": 10
-     },
-     {
-      "precio": 74651.83,
-      "desde": 74050.0,
-      "hasta": 74967.97,
-      "toques": 3,
-      "dist_pct": 10.69,
-      "tipo": "los dos",
-      "hace_velas": 60
+      "hace_velas": 106
      },
      {
       "precio": 58348.7,
       "desde": 57800.19,
       "hasta": 59130.91,
       "toques": 3,
-      "dist_pct": -13.48,
+      "dist_pct": -9.29,
       "tipo": "suelo",
-      "hace_velas": 136
+      "hace_velas": 137
+     }
+    ],
+    "en_zona": [],
+    "mas_tocados": [
+     {
+      "precio": 80218.81,
+      "desde": 79485.66,
+      "hasta": 81196.01,
+      "toques": 4,
+      "dist_pct": 24.72,
+      "tipo": "los dos",
+      "hace_velas": 11
      },
      {
-      "precio": 79893.07,
-      "desde": 79485.66,
-      "hasta": 80393.56,
-      "toques": 3,
-      "dist_pct": 18.47,
+      "precio": 82297.97,
+      "desde": 81478.87,
+      "hasta": 82850.0,
+      "toques": 4,
+      "dist_pct": 27.95,
       "tipo": "los dos",
-      "hace_velas": 30
+      "hace_velas": 48
+     },
+     {
+      "precio": 58348.7,
+      "desde": 57800.19,
+      "hasta": 59130.91,
+      "toques": 3,
+      "dist_pct": -9.29,
+      "tipo": "suelo",
+      "hace_velas": 137
+     },
+     {
+      "precio": 74651.83,
+      "desde": 74050.0,
+      "hasta": 74967.97,
+      "toques": 3,
+      "dist_pct": 16.06,
+      "tipo": "los dos",
+      "hace_velas": 61
      }
     ]
    }
@@ -1098,11 +1092,11 @@
      ]
     },
     "titulares": [
-     "Oracle Is Down 34% in 2026: Is ORCL Stock Dead Money or Due for a Bounce? - Yahoo Finance",
-     "Investors Heavily Search Oracle Corporation (ORCL): Here is What You Need to Know - Yahoo Finance",
-     "Oracle (NYSE:ORCL) Shares Down 1.4% - Time to Sell? - MarketBeat",
-     "Is There Hope for Oracle After Plummeting 35% This Year? 'Yes' Says One Analyst Predicting 210% Gains From Here - 24/7 Wall St.",
-     "Oracle Corporation $ORCL Stock Acquired by Eurizon Capital SGR S.p.A. - MarketBeat"
+     "Oracle (ORCL): Can Surging Cloud Revenue Outpace Its Financing Burden? - Yahoo Finance",
+     "Oracle Corporation $ORCL Stock Bought by Diversified Trust Co - MarketBeat",
+     "Oracle (ORCL) Expanded Its Federal Health Network With Two Major U.S. Departments - Simply Wall St",
+     "4,290 Oracle Corporation $ORCL Shares Sold by Channel Wealth LLC - MarketBeat",
+     "Oracle Corporation $ORCL Stock Sold by Cornerstone Advisors LLC - MarketBeat"
     ]
    }
   ],
@@ -1136,24 +1130,24 @@
    },
    "cripto": {
     "ahora": {
-     "valor": 13,
+     "valor": 10,
      "etiqueta": "Miedo extremo"
     },
     "ayer": {
-     "valor": 20,
+     "valor": 13,
      "etiqueta": "Miedo extremo"
     },
     "semana": {
-     "valor": 25,
+     "valor": 28,
      "etiqueta": "Miedo"
     },
     "dos_semanas": {
-     "valor": 30,
+     "valor": 34,
      "etiqueta": "Miedo"
     },
     "mes": {
-     "valor": 53,
-     "etiqueta": "Neutral"
+     "valor": 63,
+     "etiqueta": "Codicia"
     },
     "fuente": "alternative.me"
    }
@@ -1250,10 +1244,10 @@
     }
    ],
    "btc": {
-    "ahora": 3.04,
-    "ayer": 3.11,
-    "semana": 2.93,
-    "fecha": "2026-11-13",
+    "ahora": 2.35,
+    "ayer": 2.83,
+    "semana": 2.96,
+    "fecha": "2026-11-14",
     "fuente": "OKX"
    }
   },
@@ -1349,11 +1343,11 @@
     },
     "resultados": null,
     "titulares": [
+     "Got $1,000 to Invest? Skip Coca-Cola and PepsiCo. This 4%-Yielding Dividend Stock Could Deliver a 160% Return in 10 Years. - Yahoo Finance",
      "KO Stock Alert: Coca-Cola Just Hit a New All-Time High - Barchart.com",
-     "Coca-Cola Stock Hits 52-Week High: Should You Buy Now or Wait? - Yahoo Finance",
-     "Coca-Cola prints a new all-time high as the 'boring cash machine' rolls on (KO:NYSE) - Seeking Alpha",
-     "Coca-Cola Europacific Partners (CCEP) Stock Hits New 52-Week High - 24/7 Wall St.",
-     "Coca-Cola (NYSE:KO) Stock Jumps 1.7% - Still a Buy? - MarketBeat"
+     "Coca-Cola Has Paid a Growing Dividend for 64 Years. Here's the Income $5,000 Can Start You With. - The Motley Fool",
+     "Coca-Cola evp Nancy Quan sells $1.47 million in company stock - Investing.com",
+     "Coca-Cola prints a new all-time high as the 'boring cash machine' rolls on (KO:NYSE) - Seeking Alpha"
     ]
    },
    {
@@ -1456,11 +1450,11 @@
     },
     "resultados": null,
     "titulares": [
-     "'Nothing has changed': Why some Nvidia stock bulls aren't wavering after Jensen Huang ouster - Yahoo Finance",
-     "Is Nvidia Worth This Much Less Without Jensen Huang? - The Motley Fool",
-     "HSBC downgrades Nvidia, says stock to struggle until new CEO named - CNBC",
-     "Nvidia Stock Braces For AI Chipmaker's First Report Without Jensen Huang - Investor's Business Daily",
-     "Nvidia stock slips as investors digest CEO exit, broader chip sell-off accelerates - Yahoo Finance"
+     "AMD Just Crushed Nvidia by 32 Points After Scandal. Here’s How NVDA Can Come Back - Yahoo Finance",
+     "Nvidia's Ousted CEO Said a 1-Gigawatt Data Center Delay Costs $10 Billion a Quarter. Here's Why That Matters for Power Stocks. - The Motley Fool",
+     "Nvidia closes below $4T market cap for first time since July 2025 in Huang fallout - CNBC",
+     "Nvidia Stock Falls Below $165 After Its CEO Resigns: Is It a Bargain Buy? - Yahoo Finance",
+     "Nvidia Fell While AMD and Broadcom Jumped. Here’s What History Says Happens Next to All 3 Stocks. - The Motley Fool"
     ]
    },
    {
@@ -1555,10 +1549,10 @@
     "resultados": null,
     "titulares": [
      "A $1,999 Sellout. What China Renaissance Sees in Apple (AAPL) - Yahoo Finance",
-     "Apple Is the World’s Largest Company, and Nvidia Is Second. Here’s What $10,000 Invested in Each Today Could Be Worth by the End of Next Year. - The Motley Fool",
+     "Apple: The Business Got Better, The Stock Got Much More Expensive (NASDAQ:AAPL) - Seeking Alpha",
+     "Is Apple Stock a Buy Right Now? - The Motley Fool",
      "AAPL is Trading at a Premium at 36.15X P/E: Is the Stock Still a Hold? - TradingView",
-     "ETFs Are Buying Apple (AAPL) on Wednesday - Yahoo Finance",
-     "Whale Rock Capital takes new stake in Microsoft, exits Apple, among Q3 moves (HPE:NYSE) - Seeking Alpha"
+     "Apple (AAPL) Puts Tim Cook At The Center Of A Surprise CEO Search - Yahoo Finance"
     ]
    },
    {
@@ -1652,11 +1646,11 @@
     },
     "resultados": null,
     "titulares": [
-     "Microsoft Corporation (MSFT) is Attracting Investor Attention: Here is What You Should Know - Yahoo Finance",
+     "Microsoft Corporation (MSFT) Stock Price, News, Quote & History - Yahoo! Finance Canada",
      "Why Microsoft Outage Is the Worst Possible Timing for the Stock - Barron's",
-     "Microsoft Service Outage Gives Software Giant Black Eye - Investor's Business Daily",
-     "Not Apple. Not Microsoft. This \"Magnificent Seven\" Stock Is My Top Tech Buy for 2027. - The Motley Fool",
-     "Microsoft points to ‘broad recovery and stability’ after widespread Outlook outage - MarketWatch"
+     "Microsoft Corporation (MSFT) stock price, news, quote and history - Yahoo Finance UK",
+     "Microsoft (MSFT) stock price forecast: Wall Street analysts see 22% upside - Beinsure",
+     "Not Apple. Not Microsoft. This \"Magnificent Seven\" Stock Is My Top Tech Buy for 2027. - The Motley Fool"
     ]
    },
    {
@@ -1769,11 +1763,11 @@
     },
     "resultados": null,
     "titulares": [
-     "Alphabet Inc. (GOOGL) Stock Forecasts - Yahoo Finance",
-     "Not Apple. Not Microsoft. This \"Magnificent Seven\" Stock Is My Top Tech Buy for 2027. - The Motley Fool",
-     "Alphabet stock price prediction: Upward move targets $307.95 resistance amid bullish momentum - Traders Union",
+     "Sundar Pichai Reported Alphabet's Cloud Revenue Grew 103% Last Quarter While the Gemini App Reached 1 Billion Monthly Users. Is Google Cloud Becoming a Bigger Growth Driver Than Search? - Yahoo Finance",
+     "Alphabet (GOOGL) Stock Price Forecast 2026: Cloud Hit $20B But FCF Collapsed — Buy or Short? - TradingKey",
      "Alphabet (GOOGL) Stock Quotes, Company News And Chart Analysis - Investor's Business Daily",
-     "Anthropic: Why You Should Consider Pre-IPO Ownership Via Alphabet (GOOG) (GOOGL) (ANT) - Seeking Alpha"
+     "Not Apple. Not Microsoft. This \"Magnificent Seven\" Stock Is My Top Tech Buy for 2027. - The Motley Fool",
+     "Alphabet stock price prediction: Upward move targets $307.95 resistance amid bullish momentum - Traders Union"
     ]
    },
    {
@@ -1878,9 +1872,9 @@
     "titulares": [
      "How Investors May Respond To Amazon Stock As AWS Growth And Anthropic IPO Near - Yahoo Finance",
      "What's Wrong With Amazon.com (AMZN) Stock, and Is It a Buy in November? - The Motley Fool",
-     "Dear Amazon Stock Fans, Mark Your Calendars for November 19 - Barchart.com",
-     "AMZN Stock vs. GOOG Stock: Which Is the Better Buy Today? - Cabot Wealth Network",
-     "Anthropic IPO: What It Means For Amazon, Google And Nvidia Stock - Trefis"
+     "Amazon: AI Bet Getting Riskier (NASDAQ:AMZN) - Seeking Alpha",
+     "Amazon.com, Inc. (NASDAQ:AMZN) Stock Has Consensus Price Target of $321.74 According to Brokerages - MarketBeat",
+     "Fund Update: 5,995,909 AMAZON.COM (AMZN) shares added to DODGE & COX portfolio - Quiver Quantitative"
     ]
    },
    {
@@ -1994,10 +1988,10 @@
     "resultados": null,
     "titulares": [
      "Will ETF Buying Change Meta Stock Narrative - Yahoo Finance",
+     "Meta Platforms (META) Stock Quotes, Company News And Chart Analysis - Investor's Business Daily",
+     "Billionaire Bill Ackman Says There’s a Huge Disconnect in Wall Street’s Expectations for Amazon, Microsoft, Meta, and Alphabet - The Motley Fool",
      "As Meta Platforms Continues To Weaken, A Bearish Trade May Be In Order - Investor's Business Daily",
-     "Why is Meta Platforms stock climbing today? - Investing.com",
-     "Meta Stock Forecast: META Reclaims $625 Share-Sale Price, Eyes $651.60 Resistance - FXLeaders",
-     "Meta Platforms (NASDAQ:META) Stock Jumps 2.9% - Here's Why - MarketBeat"
+     "Meta Platforms (NASDAQ:META): A Lynch-Style GARP Case Study - ChartMill"
     ]
    },
    {
@@ -2110,11 +2104,11 @@
     },
     "resultados": null,
     "titulares": [
-     "Tesla (TSLA) Sees $76.2 Million in Net ETF Buying on Wednesday - Yahoo Finance",
+     "Here’s Why Tesla (TSLA) Is One of the Top High P/E Stocks Under the 200-Day SMA - Yahoo Finance",
+     "Tesla (TSLA) Breaks Ground On $10 Billion Texas Solar Factory As EU Approvals Advance - Yahoo Finance",
      "Why Tesla Stock Is Behaving Like a Safe Haven - Barron's",
      "1 Million Reasons to Buy the Dip in Tesla Stock (You Can Thank Terafab) - Barchart.com",
-     "SpaceX Could Announce a Deal for Tesla as Soon as December. Here's What It Would Do to SpaceX Stock. - The Motley Fool",
-     "America's Greatest Opportunities: The Earnings Gap That Put Tesla Stock At Ludicrous Speed - Investor's Business Daily"
+     "SpaceX Could Announce a Deal for Tesla as Soon as December. Here's What It Would Do to SpaceX Stock. - The Motley Fool"
     ]
    },
    {
@@ -2217,11 +2211,11 @@
     },
     "resultados": null,
     "titulares": [
-     "Why Intel Stock Slumped Today - Yahoo Finance",
-     "What Is Going On With Intel Stock After Its Earnings Call? - Trefis",
-     "Prediction: This Will Be Intel’s Stock Price After 1 Year (Hint: It Implies a Nice Jump) - The Motley Fool",
-     "Intel Corporation (INTC) Is a Trending Stock: Facts to Know Before Betting on It - Yahoo Finance",
-     "Intel Corp (INTC) Stock Price, Quote, News & History - Benzinga"
+     "Intel (INTC) Stock Sees Fair Value Falls After Guidance And Operational Issues - Yahoo Finance Singapore",
+     "Intel: Wall Street May Be Underestimating Its Comeback And Nvidia Opportunity (Upgrade) - Seeking Alpha",
+     "Intel (INTC) Stock Week Ahead: Options Flow Braces for an 8.3% Swing by Friday - Moomoo",
+     "Intel Q2 2026: Revenue Up 25%, Data Center +59%, Stock Surges Then Retreats to $100 - TradingKey",
+     "Intel Corporation (INTC) Is a Trending Stock: Facts to Know Before Betting on It - Yahoo Finance"
     ]
    }
   ],
